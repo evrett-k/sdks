@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CAFUI.framework/CAFUI
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s10CAFCombine19CAFVolumeObservableC5CAFUIE11volumeRangeSo08CAFUInt8F0Cvg,
                             _$s10CAFCombine19CAFVolumeObservableC5CAFUIE11volumeRangeSo08CAFUInt8F0CvpMV,
                             _$s10CAFCombine22CAFEqualizerObservableC5CAFUIE10valueRangeSo07CAFInt8F0Cvg,

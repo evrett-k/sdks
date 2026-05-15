@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriTaskEngagement.framework/SiriTaskEngagement
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s18SiriTaskEngagement010ProtoAlarmB10FeatureSetV03hasE10IdentifierSbvg,
                             _$s18SiriTaskEngagement010ProtoAlarmB10FeatureSetV03hasE10IdentifierSbvpMV,
                             _$s18SiriTaskEngagement010ProtoAlarmB10FeatureSetV05clearE10IdentifieryyF,

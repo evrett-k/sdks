@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Dyld.framework/Dyld
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ __Z8crc32cSWNSt3__14spanISt4byteLm18446744073709551615EEE,
                             __dyld_legacy_introspection_vtable,
                             __dyld_process_info_for_each_aot_image,

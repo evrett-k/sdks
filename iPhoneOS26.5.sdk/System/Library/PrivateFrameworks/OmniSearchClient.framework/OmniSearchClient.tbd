@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/OmniSearchClient.framework/OmniSearchClient
 current-version:       3525.7.4
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s10OmniSearch0aB7OptionsV0aB6ClientE03llmbC0ACSgAD09LLMSearchC0V_tcfC,
                             _$s10OmniSearch13DialogContextV0aB6ClientE03llmB7OptionsAcD09LLMSearchG0V_tcfC,
                             _$s15OmniSearchTypes15LLMSearchResultV0aB6ClientE6encode2toys7Encoder_p_tKF,

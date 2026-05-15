@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 current-version:       3683.255.21
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _CNContactsUICoreBundle,
                             _CNContactsUIErrorDialRequestKey,
                             _CNContactsUIErrorDomain, _CNContactsUIErrorURLKey,

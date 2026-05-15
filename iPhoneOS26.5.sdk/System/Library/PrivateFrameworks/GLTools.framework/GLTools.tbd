@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GLTools.framework/GLTools
 current-version:       999
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ __ZN8GPUTools2GL17WireframeRenderer13IsBadDrawCallEjii,
                             __ZN8GPUTools2GL17WireframeRenderer24CreateLineListFromTriFanEPPvjjj,
                             __ZN8GPUTools2GL17WireframeRenderer25CreateLineListFromTriListEPPvjjj,

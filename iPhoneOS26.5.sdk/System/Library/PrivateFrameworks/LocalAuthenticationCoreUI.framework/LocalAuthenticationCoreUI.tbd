@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LocalAuthenticationCoreUI.framework/LocalAuthenticationCoreUI
 current-version:       2005.120.18
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V0gD00F0AAMc,
                             _$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V0gD019UIViewRepresentableAAMc,
                             _$s25LocalAuthenticationCoreUI019LACUILockView_SwiftD0V10$viewModel0gD014ObservedObjectV7WrapperVyAA0efI0C_Gvg,

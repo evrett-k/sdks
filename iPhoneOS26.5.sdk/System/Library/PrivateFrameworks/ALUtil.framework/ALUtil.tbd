@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ALUtil.framework/ALUtil.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s2os6LoggerV6ALUtilE6_fatal_8function4file4lines5NeverOSSyXK_s12StaticStringVALSutF,
                             _$s2os6LoggerV6ALUtilE6_fault_8function4file4lineySSyXK_s12StaticStringVAJSutF,
                             _$s6ALUtil10AONSenseFFO12FeatureFlags0dE3KeyAAMc,

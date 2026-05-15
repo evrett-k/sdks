@@ -1,18 +1,18 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/Frameworks/PassKit.framework/PassKit'
 reexported-libraries:
-  - targets:         [ arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore', 
                        '/System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI' ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore'
 swift-abi-version: 7
 exports:
-  - targets:         [ arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '_$s11PassKitCore013PKIdentityAddA19RequirementsCheckerC016existingIdentityA5StateAA0iaJ0VyF', 
                        '_$s11PassKitCore013PKIdentityAddA19RequirementsCheckerC022hasConflictingIdentityA00H15StartedProofing7context10credential09precursorA0S2b_AA19ProvisioningContextCSgSo19PKPaymentCredentialCSgSo015PKSecureElementA0CSgtF', 
                        '_$s11PassKitCore013PKIdentityAddA19RequirementsCheckerC022hasConflictingIdentityA014identityPassesSbSaySo015PKSecureElementA0CG_tF', 
@@ -6751,11 +6751,11 @@ exports:
                        PKKeychainItemWrapper.keychainItemData, PKPassField._value ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI'
 swift-abi-version: 7
 exports:
-  - targets:         [ arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '_$s10AppIntents12IntentPersonV6HandleV9PassKitUIE02pkE10FromStringyAESSFZ', 
                        '_$s10AppIntents12IntentPersonV9PassKitUIE04pkMeD017counterpartHandleACSSSg_tFZ', 
                        '_$s10AppIntents12IntentPersonV9PassKitUIE13pkDisplayNameSSvg', 

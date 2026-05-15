@@ -1,13 +1,13 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /usr/lib/swift/libswiftNearbyInteraction.dylib
-current-version:       524.0.7
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/swift/libswiftNearbyInteraction.dylib'
+current-version: 524.0.7
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/NearbyInteraction.framework/NearbyInteraction' ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    re-exports:           [ /System/Library/Frameworks/NearbyInteraction.framework/NearbyInteraction ]
-    symbols:              [ __swift_FORCE_LOAD_$_swiftNearbyInteraction ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ '__swift_FORCE_LOAD_$_swiftNearbyInteraction' ]
 ...

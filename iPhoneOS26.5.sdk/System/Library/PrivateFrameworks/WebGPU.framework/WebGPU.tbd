@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebGPU.framework/WebGPU
 current-version:       624.2.5
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ __Z14wgpuBufferCopyP14WGPUBufferImplNSt3__14spanIKhLm18446744073709551615EEEm,
                             __Z14wgpuDDMeshPlayP14WGPUDDMeshImplb,
                             __Z15wgpuBufferUnmapP14WGPUBufferImpl,

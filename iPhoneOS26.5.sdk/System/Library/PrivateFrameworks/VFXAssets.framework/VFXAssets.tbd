@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VFXAssets.framework/VFXAssets
 current-version:       42.0.3
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _VFXAssetsVersionNumber, _VFXAssetsVersionString,
                             __Z33Spawn_comAppleVfxConfetti_graph_5PKvmmR13vfx_int_range,
                             __Z56ParticleInit_comAppleRealitykitVfxGeneral_particleInit_3PKvjDv4_fS1_jbS1_S1_bbffffmmbmmfDv3_fffmS2_fffmRS1_S3_S3_S3_RfS3_S4_R10simd_quatfRS2_S7_,

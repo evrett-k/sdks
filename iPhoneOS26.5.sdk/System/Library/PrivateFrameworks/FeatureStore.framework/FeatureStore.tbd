@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FeatureStore.framework/FeatureStore
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s11CodableType12FeatureStore5CoderPTl,
                             _$s12FeatureStore0aB10BiomeEventC11dataVersions6UInt32VvgTj,
                             _$s12FeatureStore0aB10BiomeEventC11dataVersions6UInt32VvgTq,

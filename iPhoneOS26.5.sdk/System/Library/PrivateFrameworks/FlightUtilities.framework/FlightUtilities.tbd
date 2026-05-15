@@ -1,14 +1,15 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 current-version:       182
 compatibility-version: 1
-objc-constraint:       retain_release
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/FlightUtilitiesCore.framework/FlightUtilitiesCore ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    re-exports:           [ /System/Library/PrivateFrameworks/FlightUtilitiesCore.framework/FlightUtilitiesCore ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     objc-classes:         [ FUErrorView, FUFLightTrack, FUFlightInfoView,
                             FUFlightInfoViewController,
                             FUFlightPreviewController, FUFlightView,

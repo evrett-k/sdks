@@ -1,13 +1,13 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/usr/lib/swift/libswiftPhotosUI.dylib'
 current-version: 852.0.102
 reexported-libraries:
-  - targets:         [ arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/Frameworks/PhotosUI.framework/PhotosUI' ]
 exports:
-  - targets:         [ arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftPhotosUI.dylib', '$ld$install_name$os10.1$@rpath/libswiftPhotosUI.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftPhotosUI.dylib', '$ld$install_name$os10.3$@rpath/libswiftPhotosUI.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftPhotosUI.dylib', '$ld$install_name$os11.1$@rpath/libswiftPhotosUI.dylib', 

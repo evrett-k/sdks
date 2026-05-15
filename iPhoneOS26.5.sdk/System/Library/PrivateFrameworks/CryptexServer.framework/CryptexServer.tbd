@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CryptexServer.framework/CryptexServer
 current-version:       662.120.27
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s10CryptexKit15PkgEnvDirectoryV0A6ServerE5apply2to2asyAD0C9InventoryC_SStYaKF,
                             _$s10CryptexKit15PkgEnvDirectoryV0A6ServerE5apply2to2asyAD0C9InventoryC_SStYaKFTu,
                             _$s10CryptexKit15PkgEnvDirectoryV0A6ServerE6remove_4fromySS_AD0C9InventoryCtYaKF,

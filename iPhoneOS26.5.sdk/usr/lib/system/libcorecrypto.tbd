@@ -1,13 +1,15 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libcorecrypto.dylib
 current-version:       1922.122.1
 compatibility-version: 1
-parent-umbrella:       System
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _CCEC_FAULT_CANARY, _CCMLDSA_FAULT_CANARY,
                             _CCRSA_PKCS1_FAULT_CANARY, _CCRSA_PSS_FAULT_CANARY,
                             _CCSS_PRIME_P192, _CCSS_PRIME_P224, _CCSS_PRIME_P256,

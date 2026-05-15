@@ -1,17 +1,11 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /usr/lib/libDHCPServer.A.dylib
-current-version:       1
-compatibility-version: 1
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libDHCPServer.A.dylib'
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _DHCPSCopyDisabledInterfaces,
-                            _DHCPSDHCPLeaseListCreate,
-                            _DHCPSDHCPLeaseListNotificationKey,
-                            _DHCPSDisabledInterfacesNotificationKey,
-                            _kDHCPSPropDHCPHWAddress, _kDHCPSPropDHCPIPAddress,
-                            _kDHCPSPropDHCPLease, _kDHCPSPropIdentifier,
-                            _kDHCPSPropName ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _DHCPSCopyDisabledInterfaces, _DHCPSDHCPLeaseListCreate, _DHCPSDHCPLeaseListNotificationKey, 
+                       _DHCPSDisabledInterfacesNotificationKey, _kDHCPSPropDHCPHWAddress, 
+                       _kDHCPSPropDHCPIPAddress, _kDHCPSPropDHCPLease, _kDHCPSPropIdentifier, 
+                       _kDHCPSPropName ]
 ...

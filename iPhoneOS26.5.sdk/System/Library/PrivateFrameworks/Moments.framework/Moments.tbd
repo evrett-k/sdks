@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Moments.framework/Moments
 current-version:       308.0.3
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _KEY_ANIMATED, _KEY_BLANK_ENTRY, _KEY_CANCEL,
                             _KEY_CONTENT_OPTIONS, _KEY_FULL_SCREEN,
                             _KEY_PEEK_DETENT, _KEY_SELECTED_SUGGESTION,

@@ -1,12 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSFunctions.framework/MPSFunctions
-current-version:       129.5.1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSFunctions.framework/MPSFunctions'
+current-version: 129.5.1
+allowable-clients:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    clients:         [ MPSImage, MetalPerformanceShaders ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    objc-classes:         [ MPSFColorConversion, MPSFunction ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ MPSFColorConversion, MPSFunction ]
 ...

@@ -1,14 +1,15 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TokenGeneration.framework/TokenGeneration
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/TokenGenerationCore.framework/TokenGenerationCore ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    re-exports:           [ /System/Library/PrivateFrameworks/TokenGenerationCore.framework/TokenGenerationCore ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s15TokenGeneration021PromptCompletionEventC10ModerationV10moderationAA0cD0V0F0VvM,
                             _$s15TokenGeneration021PromptCompletionEventC10ModerationV10moderationAA0cD0V0F0Vvg,
                             _$s15TokenGeneration021PromptCompletionEventC10ModerationV10moderationAA0cD0V0F0VvpMV,

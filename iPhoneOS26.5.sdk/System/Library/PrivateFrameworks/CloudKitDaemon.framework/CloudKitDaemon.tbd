@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 current-version:       2360.120.2
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$sSo12CKDContainerC14CloudKitDaemonE16allowUserKeySync11serviceName24resourceLastModifiedDate014outdatedPublicG2IDySS_10Foundation0N0VSgSSSgtKF,
                             _$sSo12CKDContainerC14CloudKitDaemonE18keySyncEligibility10forService9isManatee11accountDSID16lastModifiedDate20testOverrideProviderSbSS_SbSS10Foundation0P0VSo010CKDPCSTestrS0_ptYaF,
                             _$sSo12CKDContainerC14CloudKitDaemonE18keySyncEligibility10forService9isManatee11accountDSID16lastModifiedDate20testOverrideProviderSbSS_SbSS10Foundation0P0VSo010CKDPCSTestrS0_ptYaFTu,

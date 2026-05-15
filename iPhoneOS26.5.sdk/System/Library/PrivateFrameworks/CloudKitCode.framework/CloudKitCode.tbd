@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudKitCode.framework/CloudKitCode
 current-version:       2360.120.2
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s12CloudKitCode0C10ConnectionC6invoke8function7request10completionySS_xyq_Sg_s5Error_pSgtct21InternalSwiftProtobuf7MessageRzAkLR_r0_lFTj,
                             _$s12CloudKitCode0C10ConnectionC6invoke8function7request10completionySS_xyq_Sg_s5Error_pSgtct21InternalSwiftProtobuf7MessageRzAkLR_r0_lFTq,
                             _$s12CloudKitCode0C10ConnectionCAA9InvocableAAMc,

@@ -1,29 +1,16 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /usr/lib/libspindump.dylib
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libspindump.dylib'
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _SPCachePort, _SPCheckHIDResponseTime,
-                            _SPCheckHIDResponseTime2,
-                            _SPExpectedHIDResponseDelayUntil,
-                            _SPGenerateSpindump, _SPHIDResponseDelayThreshold,
-                            _SPPauseMonitoringHIDResponsiveness,
-                            _SPReportCPUUsageResource,
-                            _SPReportCPUWakeupsResource,
-                            _SPReportDiskWritesResource,
-                            _SPReportFileDescriptorExhaustion,
-                            _SPReportFileDescriptorExhaustion_FatalPort,
-                            _SPReportHIDResponseDelay,
-                            _SPReportKQWorkLoopExhaustion,
-                            _SPReportKQWorkLoopExhaustion_FatalPort,
-                            _SPReportPortExhaustion,
-                            _SPReportPortExhaustion_FatalPort,
-                            _SPReportPowerException,
-                            _SPReportWorkflowResponsivenessDelay,
-                            _SPResumeMonitoringHIDResponsiveness ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _SPCachePort, _SPCheckHIDResponseTime, _SPCheckHIDResponseTime2, 
+                       _SPExpectedHIDResponseDelayUntil, _SPGenerateSpindump, _SPHIDResponseDelayThreshold, 
+                       _SPPauseMonitoringHIDResponsiveness, _SPReportCPUUsageResource, 
+                       _SPReportCPUWakeupsResource, _SPReportDiskWritesResource, 
+                       _SPReportFileDescriptorExhaustion, _SPReportFileDescriptorExhaustion_FatalPort, 
+                       _SPReportHIDResponseDelay, _SPReportKQWorkLoopExhaustion, 
+                       _SPReportKQWorkLoopExhaustion_FatalPort, _SPReportPortExhaustion, 
+                       _SPReportPortExhaustion_FatalPort, _SPReportPowerException, 
+                       _SPReportWorkflowResponsivenessDelay, _SPResumeMonitoringHIDResponsiveness ]
 ...

@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/XPCDistributed.framework/XPCDistributed
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s11Distributed0A5ActorP14XPCDistributedAD9XPCSystemC0B2IDV0E0RtzrlE7sessionAF23OutboundSessionProtocol_pSgvg,
                             _$s11Distributed0A5ActorP14XPCDistributedAD9XPCSystemC0B2IDV0E0RtzrlE7sessionAF23OutboundSessionProtocol_pSgvpMV,
                             _$s14XPCDistributed10generalLog2os6LoggerVvau,

@@ -1,12 +1,14 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /usr/lib/swift/libswiftunistd.dylib
-current-version:       377.120.8
-compatibility-version: 1
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/swift/libswiftunistd.dylib'
+current-version: 377.120.8
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/usr/lib/swift/libswift_DarwinFoundation3.dylib' ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    re-exports:           [ /usr/lib/swift/libswift_DarwinFoundation3.dylib ]
-    symbols:              [ __swift_FORCE_LOAD_$_swiftunistd ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ '$ld$previous$/usr/lib/swift/libswiftDarwin.dylib$$2$12.2$18.0$$', 
+                       '$ld$previous$@rpath/libswiftDarwin.dylib$$2$7.0$12.2$$', 
+                       '__swift_FORCE_LOAD_$_swiftunistd' ]
 ...

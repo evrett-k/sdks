@@ -1,14 +1,15 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileInstallation.framework/MobileInstallation
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/InstalledContentLibrary.framework/InstalledContentLibrary ]
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    re-exports:           [ /System/Library/PrivateFrameworks/InstalledContentLibrary.framework/InstalledContentLibrary ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _MIAcquireReferenceForInstalledAppWithError,
                             _MICreateSerializedPlaceholderForInstalledApplication,
                             _MIFinalizeReferenceForInstalledAppWithError,

@@ -1,12 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MIL.framework/MIL
 current-version:       3520.4.1
 compatibility-version: 3520.4
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ __ZN3MIL10Attributes11IOAliasInfo11TrySetAliasENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_,
                             __ZN3MIL10Attributes11IOAliasInfo14TryRemoveAliasENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE,
                             __ZN3MIL10Attributes11IOAliasInfo4MakeERNS_10MILContextERKNS_10IRFunctionE,

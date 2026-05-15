@@ -1,13 +1,12 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalSearchTypes.framework/PersonalSearchTypes
 current-version:       3525.7.4
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _$s16ProgressReporter19PersonalSearchTypes15ServiceProtocolPTl,
                             _$s19PersonalSearchTypes0aB11ServiceNameSSvg,
                             _$s19PersonalSearchTypes0aB12QueryOptionsV2eeoiySbAC_ACtFZ,

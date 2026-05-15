@@ -1,13 +1,15 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_c.dylib
 current-version:       1752.120.2
 compatibility-version: 1
-parent-umbrella:       System
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:              [ _OSMemoryNotificationCurrentLevel,
                             _OSThermalNotificationCurrentLevel,
                             __CurrentRuneLocale, __DefaultRuneLocale, __Exit,
@@ -333,5 +335,4 @@ exports:
                             _wctype_l, _wcwidth, _wcwidth_l, _wmemchr, _wmemcmp,
                             _wmemcpy, _wmemmove, _wmemset, _wprintf, _wprintf_l, _wscanf,
                             _wscanf_l, _wtmpxname, _xprintf, _xprintf_exec ]
-    weak-def-symbols:     [ __os_debug_log_redirect_func ]
 ...

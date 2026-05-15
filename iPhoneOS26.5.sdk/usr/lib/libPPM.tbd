@@ -1,16 +1,10 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
-platform:              ios
-flags:                 [ flat_namespace ]
-install-name:          /usr/lib/libPPM.dylib
-current-version:       0
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libPPM.dylib'
+current-version: 0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    objc-classes:         [ PPMClient, PPMClientUserClientInterface ]
-    objc-ivars:           [ PPMClient.connect, PPMClient.identifier,
-                            PPMClient.userClient, PPMClient.version,
-                            PPMClientUserClientInterface._attribute,
-                            PPMClientUserClientInterface._connect ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ PPMClient, PPMClientUserClientInterface ]
 ...
