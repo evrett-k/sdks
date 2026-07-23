@@ -33,7 +33,7 @@ on:
 jobs:
   create:
     # https://github.com/actions/runner-images/blob/main/images/macos
-    runs-on: macos-latest
+    runs-on: macos-26
     # needed to be able to push to the repo
     permissions:
       contents: write
@@ -62,6 +62,9 @@ jobs:
 
       - name: Install aria2
         run: brew install aria2
+
+      - name: List available Xcodes
+        run: ls /Applications | grep Xcode
 
       - name: Patch SDK
         id: patch-sdk
