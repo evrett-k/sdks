@@ -74,6 +74,7 @@ jobs:
           IPSW_VERSION="${{ inputs.ipsw_version }}"
           IPSW_DEVICE="${{ inputs.ipsw_device }}"
           IPSW_MAJOR="${IPSW_VERSION%%.*}"
+          DSC_ARCH="${DSC_BASENAME#dyld_shared_cache_}"
 
           cd tools/
           PLATFORM_PATH="$(xcrun --sdk "${XC_SDK_NAME}" --show-sdk-platform-path)"
@@ -81,7 +82,7 @@ jobs:
 
           SYMBOLS_DIR="$(mktemp -d -t symbols)"
           IPSW_DOWNLOAD_DIR="$(mktemp -d -t ipsw)"
-          IPSW_EXTRACTION_DIR="$(mktemp -d -t ipsw)"
+          DYLD_EXTRACT_DIR="$(mktemp -d -t dyld)"
 
           set +e
           IPSW_DOWNLOAD_URL="$(ipsw download ipsw --urls --version "${IPSW_VERSION}" --device "${IPSW_DEVICE}")"
@@ -110,21 +111,13 @@ jobs:
           echo "Downloading ${IPSW_DOWNLOAD_URL}"
           aria2c --dir "${IPSW_DOWNLOAD_DIR}" "${IPSW_DOWNLOAD_URL}"
 
-          unzip -d "${IPSW_EXTRACTION_DIR}" "${IPSW_DOWNLOAD_DIR}"/*.ipsw "*.dmg"
-          rm "${IPSW_DOWNLOAD_DIR}"/*.ipsw
+          IPSW_FILE="$(find "${IPSW_DOWNLOAD_DIR}" -name '*.ipsw' | head -n1)"
 
-          for DMG_FILE in "${IPSW_EXTRACTION_DIR}"/*.dmg; do
-            DMG_MOUNT_ROOT="$(mktemp -d -t dmg)"
-            hdiutil attach "${DMG_FILE}" -mountroot "${DMG_MOUNT_ROOT}" || true
-            for MOUNT_VOL in "${DMG_MOUNT_ROOT}"/*; do
-              DYLD_CACHE_PATH="${MOUNT_VOL}/System/Library/Caches/com.apple.dyld/${DSC_BASENAME}"
-              if [ -e "${DYLD_CACHE_PATH}" ]; then
-                break 2
-              fi
-              unset DYLD_CACHE_PATH
-              hdiutil detach "${MOUNT_VOL}" || true
-            done
-          done
+          # ipsw handles locating the SystemOS DMG, AEA1 decryption (fetching
+          # FCS keys automatically if needed), and dyld_shared_cache extraction.
+          ipsw extract --dyld --dyld-arch "${DSC_ARCH}" --flat --output "${DYLD_EXTRACT_DIR}" "${IPSW_FILE}"
+
+          DYLD_CACHE_PATH="$(find "${DYLD_EXTRACT_DIR}" -maxdepth 1 -name "${DSC_BASENAME}" | head -n1)"
 
           echo "Found dyld_shared_cache: ${DYLD_CACHE_PATH}"
 
