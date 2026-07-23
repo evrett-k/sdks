@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WritingTools.framework/WritingTools
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BaseResponseKey, _InputContextHistoryKey,
+                            _NSStringFromWTTextSuggestionState,
+                            _SelectedEntryKey, _WTFollowUpStoreErrorDomain,
+                            _WTWritingToolsPreservedAttributeName,
+                            _WritingToolsVersionNumber,
+                            _WritingToolsVersionString ]
+    objc-classes:         [ WTAlwaysOnProofreadingPopoverAnchor, WTAvailability,
+                            WTBSCompatibleAttributedString,
+                            WTCodableTextSuggestion, WTContext, WTFollowUpEntry,
+                            WTFollowUpQueryOptions, WTFollowUpStore, WTSession,
+                            WTSmartReplyConfiguration, WTTextSuggestion ]
+    objc-ivars:           [ WTAlwaysOnProofreadingPopoverAnchor._rect,
+                            WTAlwaysOnProofreadingPopoverAnchor._sourceView,
+                            WTBSCompatibleAttributedString._attributedString,
+                            WTContext._attributedText, WTContext._range,
+                            WTContext._smartReplyConfig, WTContext._uuid,
+                            WTFollowUpEntry._creationDate,
+                            WTFollowUpEntry._followUps,
+                            WTFollowUpEntry._sessionUUID, WTFollowUpStore._queue,
+                            WTSession._compositionSessionType,
+                            WTSession._isFromExternalResult,
+                            WTSession._proofreadingSessionType,
+                            WTSession._textViewDelegate, WTSession._type,
+                            WTSession._uuid,
+                            WTSmartReplyConfiguration._baseResponse,
+                            WTSmartReplyConfiguration._entryPoint,
+                            WTSmartReplyConfiguration._inputContextHistory,
+                            WTTextSuggestion._grammarUUID,
+                            WTTextSuggestion._originalRange,
+                            WTTextSuggestion._originalString,
+                            WTTextSuggestion._replacement,
+                            WTTextSuggestion._state,
+                            WTTextSuggestion._suggestionCategory,
+                            WTTextSuggestion._suggestionDescription,
+                            WTTextSuggestion._suggestionShortDescription,
+                            WTTextSuggestion._suggestionType,
+                            WTTextSuggestion._uuid ]
+...

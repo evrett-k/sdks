@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/objc/libobjcMsgSend17.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __objc_msgForward, __objc_msgForward_impcache,
+                            __objc_returnNil, _cache_getImp, _method_invoke,
+                            _objc_msgLookup, _objc_msgLookupSuper2, _objc_msgSend,
+                            _objc_msgSendSuper, _objc_msgSendSuper2,
+                            _objc_msgSendSuper2_debug, _objc_msgSend_debug,
+                            _objc_msgSend_indirect_branch, _objc_msgSend_noarg,
+                            _objc_restartableRanges ]
+...

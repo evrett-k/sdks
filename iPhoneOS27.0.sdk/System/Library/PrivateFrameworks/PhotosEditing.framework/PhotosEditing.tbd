@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosEditing.framework/PhotosEditing
+current-version:       910.33.102
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _TtC13PhotosEditing10PivotLayer,
+                            _TtC13PhotosEditing11CMTextLayer,
+                            _TtC13PhotosEditing11DisplayLink,
+                            _TtC13PhotosEditing11LineSegment,
+                            _TtC13PhotosEditing13CropMaskLayer,
+                            _TtC13PhotosEditing14MediaImageView,
+                            _TtC13PhotosEditing14MediaViewLayer,
+                            _TtC13PhotosEditing17CropPanRecognizer,
+                            _TtC13PhotosEditing17MediaViewROILayer,
+                            _TtC13PhotosEditing17MediaViewSubLayer,
+                            _TtC13PhotosEditing19MediaViewAgentLayer,
+                            _TtC13PhotosEditing21MediaViewPreviewLayer,
+                            _TtC13PhotosEditing22MediaViewBackfillLayer,
+                            _TtC13PhotosEditing24MediaViewBackgroundLayer,
+                            _TtC13PhotosEditing27CropMagnificationRecognizer,
+                            _TtC13PhotosEditing29MediaViewPanGestureRecognizer,
+                            _TtC13PhotosEditing29NUAVPlayerStreamingController,
+                            _TtC13PhotosEditing32MediaViewContentsAnimatableLayer,
+                            _TtC13PhotosEditing33MediaViewMagnifyGestureRecognizer,
+                            _TtC13PhotosEditing5Shape,
+                            _TtC13PhotosEditing6Circle,
+                            _TtC13PhotosEditing8CropView,
+                            _TtC13PhotosEditing9GridLayer,
+                            _TtC13PhotosEditing9Rectangle,
+                            _TtCC13PhotosEditing14MediaViewLayer26LivePhotoAnimationDelegate,
+                            _TtCV13PhotosEditing26MediaCropViewRepresentable11Coordinator,
+                            _TtCV13PhotosEditing27MediaImageViewRepresentable11Coordinator ]
+...

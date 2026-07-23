@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilitySettingsUI.framework/AccessibilitySettingsUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AccessibilitySettingsUIVersionNumber,
+                            _AccessibilitySettingsUIVersionString ]
+    objc-classes:         [ AXSUIProxyViewController,
+                            AXSUISecureIntentViewController, AXTUIWrapper,
+                            AXUIInstructionalCell,
+                            AXUIInstructionalCellContentViewBridge,
+                            _TtC23AccessibilitySettingsUI25AXSUIPreferenceController,
+                            _TtC23AccessibilitySettingsUI37AXUIInstructionalCellContentViewModel,
+                            _TtCV23AccessibilitySettingsUI29AXSUIOnboardingNavigationView11Coordinator,
+                            _TtCV23AccessibilitySettingsUI34GestureRecorderOrientationOverride7Applier,
+                            _TtCV23AccessibilitySettingsUI39SecureIntentViewControllerRepresentable11Coordinator ]
+    objc-ivars:           [ AXSUIProxyViewController._wrapped,
+                            AXSUISecureIntentViewController._context,
+                            AXSUISecureIntentViewController._intentDelegate,
+                            AXSUISecureIntentViewController._pkController,
+                            AXSUISecureIntentViewController._requestSource,
+                            AXUIInstructionalCell._backgroundContentView,
+                            AXUIInstructionalCell._descriptionLabel,
+                            AXUIInstructionalCell._hostingController,
+                            AXUIInstructionalCell._imageView,
+                            AXUIInstructionalCell._titleLabel,
+                            AXUIInstructionalCell._viewModel ]
+...

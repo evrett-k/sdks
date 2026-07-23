@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioSessionServer.framework/AudioSessionServer
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioHUDInformationCreatorProcessNameKey,
+                            _AudioHUDInformationSessionIDKey,
+                            _AudioHUDInformationSessionTypeKey ]
+    objc-classes:         [ AVAudioIONodeSessionDirectServer,
+                            AVAudioMicrophoneMonitor,
+                            AVAudioSessionRemoteXPCClient,
+                            AVAudioSessionServerFactory,
+                            AVAudioSessionServerPriv, AVAudioSessionXPCServer,
+                            AVSpatialManagerNotificationObserver,
+                            NotificationPayloadSpec ]
+    objc-ivars:           [ AVAudioIONodeSessionDirectServer._serverDelegate,
+                            AVAudioIONodeSessionDirectServer._sessionManager,
+                            AVAudioMicrophoneMonitor._clientsWithMicEnabled,
+                            AVAudioMicrophoneMonitor._monitorMutex,
+                            AVAudioSessionRemoteXPCClient._clientProcess,
+                            AVAudioSessionRemoteXPCClient._defaultReplyWatchdogFactory,
+                            AVAudioSessionRemoteXPCClient._invalidated,
+                            AVAudioSessionRemoteXPCClient._longReplyWatchdogFactory,
+                            AVAudioSessionRemoteXPCClient._server,
+                            AVAudioSessionRemoteXPCClient._serverDelegate,
+                            AVAudioSessionServerPriv._serverDelegate,
+                            AVAudioSessionServerPriv._xpcServer,
+                            AVAudioSessionXPCServer._callbackInterface,
+                            AVAudioSessionXPCServer._connections,
+                            AVAudioSessionXPCServer._deallocPromise,
+                            AVAudioSessionXPCServer._exportedInterface,
+                            AVAudioSessionXPCServer._listener,
+                            AVAudioSessionXPCServer._needsDefaultWorldInit,
+                            AVAudioSessionXPCServer._serverDelegate,
+                            AVAudioSessionXPCServer._workloopPool,
+                            AVSpatialManagerNotificationObserver.mManager,
+                            NotificationPayloadSpec._avasNotificationName,
+                            NotificationPayloadSpec._avasPayload,
+                            NotificationPayloadSpec._payload,
+                            NotificationPayloadSpec._removeDuplicates ]
+...

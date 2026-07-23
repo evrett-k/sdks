@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/usr/lib/libpcre2-posix.3.dylib"
+current-version:       4.4
+compatibility-version: 4
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _pcre2_regcomp, _pcre2_regerror, _pcre2_regexec,
+                            _pcre2_regfree ]
+...

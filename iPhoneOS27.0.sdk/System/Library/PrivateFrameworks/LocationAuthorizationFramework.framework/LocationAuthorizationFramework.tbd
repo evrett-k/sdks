@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LocationAuthorizationFramework.framework/LocationAuthorizationFramework
+current-version:       3183
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CLAuthorizationDatabaseErrorDomain,
+                            _SetSharedAuthorizationDatabaseForTesting,
+                            _SharedAuthorizationDatabase,
+                            __Z28attributionMapTableKeyPtrFnsv,
+                            __Z30attributionMapTableValuePtrFnsv,
+                            _getAllBundleIds, _kBundlePathKeyPrefix,
+                            _kExecutableKeyPrefix, _kUserNameKeySeparator,
+                            _serviceTypeStrings ]
+    objc-classes:         [ CLAuthorizationDatabase, CLClientKeyPath,
+                            CLSyncableKey, LocationActiveAntiEntropy,
+                            LocationActiveAntiEntropyManager,
+                            LocationAuthorizationManager,
+                            LocationAuthorizationXPCClient,
+                            _TtC30LocationAuthorizationFramework13BucketManager,
+                            _TtC30LocationAuthorizationFramework19PairedDeviceManager,
+                            _TtC30LocationAuthorizationFramework6Bucket,
+                            _TtC30LocationAuthorizationFramework9AAEEngine ]
+...

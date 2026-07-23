@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/PaperKit.axbundle/PaperKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXPaperKitGlue,
+                            CanvasElementContainerViewAccessibility,
+                            HandwritingReflowViewAccessibility,
+                            PPKPDFIconCollectionViewCell_iOSAccessibility,
+                            PageLabelViewAccessibility,
+                            PaperDocumentViewAccessibility,
+                            SignatureCreationViewControllerAccessibility,
+                            __CanvasElementContainerViewAccessibility_super,
+                            __HandwritingReflowViewAccessibility_super,
+                            __PPKPDFIconCollectionViewCell_iOSAccessibility_super,
+                            __PageLabelViewAccessibility_super,
+                            __PaperDocumentViewAccessibility_super,
+                            __SignatureCreationViewControllerAccessibility_super ]
+...

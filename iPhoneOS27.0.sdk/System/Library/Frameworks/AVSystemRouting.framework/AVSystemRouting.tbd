@@ -1,0 +1,68 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AVSystemRouting.framework/AVSystemRouting
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVSystemRoutingErrorDomain,
+                            _AVSystemRoutingLocalizedErrorWithUnderlyingOSStatus,
+                            _AVSystemRoutingVersionNumber,
+                            _AVSystemRoutingVersionString ]
+    objc-classes:         [ AVCustomRoutingSystemControllerSystemCastingImpl,
+                            AVSRSerializationHelper,
+                            AVSystemMediaSourceExtensionImpl, AVSystemRoute,
+                            AVSystemRouteController, AVSystemRouteDataChannel,
+                            AVSystemRouteEvent, AVSystemRouteMediaSession,
+                            AVSystemRoutePlaybackControl, AVSystemRouteSession,
+                            _TtC15AVSystemRoutingP33_31ADC135A6F2193423E699A1B77CFCCE19WeakObserverWrapper,
+                            _TtC15AVSystemRoutingP33_9923179369F9DD5FC0D4384DC7CF877123WeakDataDelegateWrapper ]
+    objc-ivars:           [ AVCustomRoutingSystemControllerSystemCastingImpl._systemDelegate,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mDelegates,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mDeviceIDs,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mLock,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mMediaServicesResetToken,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mOutputContext,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mOutputContextChangedToken,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mParentController,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mSupportedProtocols,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mSupportsUniversalURLPlayback,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mSystemCastingClient,
+                            AVCustomRoutingSystemControllerSystemCastingImpl.mSystemRoute,
+                            AVSystemMediaSourceExtensionImpl._controllerImpl,
+                            AVSystemMediaSourceExtensionImpl._mediaSourceData,
+                            AVSystemMediaSourceExtensionImpl._mediaSourceDataQueue,
+                            AVSystemMediaSourceExtensionImpl._parentCustomRoute,
+                            AVSystemMediaSourceExtensionImpl._serializationHelper,
+                            AVSystemRoute._lock, AVSystemRoute._protocolID,
+                            AVSystemRoute._protocolType,
+                            AVSystemRoute._routeDataChannel,
+                            AVSystemRoute._routeDisplayName,
+                            AVSystemRoute._routeSymbolName,
+                            AVSystemRoute._sessions,
+                            AVSystemRoute._weakController,
+                            AVSystemRouteController._lock,
+                            AVSystemRouteController._observers,
+                            AVSystemRouteController.mCustomRoutingControllerImpl,
+                            AVSystemRouteDataChannel._applicationID,
+                            AVSystemRouteDataChannel._dataDelegate,
+                            AVSystemRouteDataChannel._lock,
+                            AVSystemRouteDataChannel._weakController,
+                            AVSystemRouteEvent._reason,
+                            AVSystemRouteEvent._route,
+                            AVSystemRouteMediaSession._dataChannel,
+                            AVSystemRouteMediaSession._lock,
+                            AVSystemRouteMediaSession._playbackControl,
+                            AVSystemRoutePlaybackControl._controllerImpl,
+                            AVSystemRoutePlaybackControl._mediaSourceImplemenation,
+                            AVSystemRouteSession._addedToRoute,
+                            AVSystemRouteSession._lock,
+                            AVSystemRouteSession._mediaSessions,
+                            AVSystemRouteSession._mode,
+                            AVSystemRouteSession._stopped,
+                            AVSystemRouteSession._url,
+                            AVSystemRouteSession._weakController ]
+...

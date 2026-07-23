@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/PreBoard.axbundle/PreBoard
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXActiveSBHomeScreenController,
+                            _AXActiveWindowScene, _AXControlCenterCoordinator,
+                            _AXControlCenterPageStatus, _AXLibraryViewController,
+                            _AXSBApplicationController, _AXSBAssistantController,
+                            _AXSBBacklightController,
+                            _AXSBContinuityDisplayWindowScene,
+                            _AXSBCurrentFolderController,
+                            _AXSBFloatingDockControllerFromActiveDisplayWindowScene,
+                            _AXSBFolderControllerIsRootFolder, _AXSBHIconManager,
+                            _AXSBHIconManagerFromSharedIconController,
+                            _AXSBHomeScreenController,
+                            _AXSBHomeScreenControllerForContinuityDisplay,
+                            _AXSBHomeScreenOverlayController,
+                            _AXSBIconController,
+                            _AXSBIconControllerSharedInstance,
+                            _AXSBLockScreenManager, _AXSBMainDisplayWindowScene,
+                            _AXSBMainSwitcherControllerCoordinatorSharedInstance,
+                            _AXSBOnenessOrXCUITestIsCurrentlyRequestingClientDuringContinuitySession,
+                            _AXSBRootFolderController,
+                            _AXSBScrollDescriptionForCurrentPage,
+                            _AXSBTodayViewController,
+                            _AXSpringBoardGlueSBIconControllerClass,
+                            _AXSwitcherController, _AXSwitcherViewController,
+                            _AXWindowScene,
+                            _AX_SBIconLocationFloatingDockSuggestions,
+                            _AX_SBIconLocationFloatingDockUtilities, __Failover,
+                            _accessibilityLocalizedString ]
+    objc-classes:         [ AXPreBoardGlue, AXSpringBoardUtilities,
+                            PBAApplicationAccessibility,
+                            PBADataRecoveryViewControllerAccessibility,
+                            PBADeviceUnlockViewControllerAccessibility,
+                            PBAIdleSleepControllerAccessibility,
+                            PBAPasscodeEntryViewControllerAccessibility,
+                            PBA_SBUICallToActionLabelAccessibility,
+                            __PBAApplicationAccessibility_super,
+                            __PBADataRecoveryViewControllerAccessibility_super,
+                            __PBADeviceUnlockViewControllerAccessibility_super,
+                            __PBAIdleSleepControllerAccessibility_super,
+                            __PBAPasscodeEntryViewControllerAccessibility_super,
+                            __PBA_SBUICallToActionLabelAccessibility_super ]
+...

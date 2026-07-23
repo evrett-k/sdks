@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SymptomLinkAdvisory.framework/SymptomLinkAdvisory
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ALULinkAdvisoryToString ]
+    objc-classes:         [ ALUManager, SLAPowerMonitorBridge,
+                            SymptomLinkAdvisoryBridge,
+                            SymptomLinkAdvisoryConnectionManager,
+                            SymptomLinkAdvisoryNWActivityReporter,
+                            _TtC19SymptomLinkAdvisory19FlowMonitorDelegate ]
+    objc-ivars:           [ ALUManager._delegate,
+                            SLAPowerMonitorBridge._batteryPercentage,
+                            SLAPowerMonitorBridge._pluggedIn,
+                            SymptomLinkAdvisoryConnectionManager._aluManager,
+                            SymptomLinkAdvisoryConnectionManager._connection,
+                            SymptomLinkAdvisoryConnectionManager._nwActivityReporter ]
+...

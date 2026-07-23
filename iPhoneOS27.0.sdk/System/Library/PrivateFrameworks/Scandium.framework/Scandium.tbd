@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Scandium.framework/Scandium
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SCProcessor ]
+    objc-ivars:           [ SCProcessor._bypassAlgorithms, SCProcessor._delegate,
+                            SCProcessor._expectedDuration,
+                            SCProcessor._expectedNumberOfPackets,
+                            SCProcessor._expended, SCProcessor._forBackground,
+                            SCProcessor._forWindbreaker, SCProcessor._frameCount,
+                            SCProcessor._processor,
+                            SCProcessor._rawDataForWindbreaker,
+                            SCProcessor._startTimestamp ]
+...

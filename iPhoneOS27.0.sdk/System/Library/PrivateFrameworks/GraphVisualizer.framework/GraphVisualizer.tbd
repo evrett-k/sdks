@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GraphVisualizer.framework/GraphVisualizer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ GVDummyNode, GVEdge, GVFloatArray, GVGraph, GVGraphPart,
+                            GVGroup, GVHorizontalRank, GVIntegerMap, GVLayout, GVNode,
+                            GVObjectArray, GVRank, GVUIntegerMap, GVVerticalRank ]
+    objc-ivars:           [ GVEdge._forewardCount, GVEdge._from,
+                            GVEdge._reverseCount, GVEdge._to,
+                            GVFloatArray._defaultValue, GVFloatArray._storage,
+                            GVGraph.__edges, GVGraph.__groups,
+                            GVGraph.__groupsFrames, GVGraph.__groupsMargins,
+                            GVGraph.__groupsNumbers, GVGraph.__nodes,
+                            GVGraph.__sinkNodes, GVGraph.__sourceNodes,
+                            GVGraph._allowRedundantEdges,
+                            GVGraph._minimizeEdgeCrossings,
+                            GVGraph._minimizeEdgeLengths, GVGroup._allNodes,
+                            GVGroup._blockingGroups, GVGroup._graph,
+                            GVGroup._group, GVGroup._identifier, GVGroup._indexMax,
+                            GVGroup._indexMin, GVGroup._lastCoord,
+                            GVGroup._margins, GVGroup._rankMax, GVGroup._rankMin,
+                            GVGroup._ranks, GVGroup._startCoord, GVIntegerMap._map,
+                            GVLayout._direction, GVLayout._graphOrig,
+                            GVLayout._graphParts, GVLayout._ranks,
+                            GVLayout._separation, GVLayout.graphPart,
+                            GVLayout.savedOrder, GVNode._group, GVNode._h,
+                            GVNode._inPriority, GVNode._index, GVNode._next,
+                            GVNode._outPriority, GVNode._prev, GVNode._rank,
+                            GVNode._w, GVNode._x, GVNode._y,
+                            GVObjectArray._sortedValues, GVObjectArray._storage,
+                            GVRank._graph, GVRank._nextRank, GVRank._prevRank,
+                            GVRank._rank, GVRank._separation, GVRank.nodes,
+                            GVUIntegerMap._map ]
+...

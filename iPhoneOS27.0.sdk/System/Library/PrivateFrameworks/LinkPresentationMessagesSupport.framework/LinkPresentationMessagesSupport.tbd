@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LinkPresentationMessagesSupport.framework/LinkPresentationMessagesSupport
+current-version:       311
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ RichLinkPluginController, RichLinkPluginDataSource,
+                            RichLinkView ]
+    objc-ivars:           [ RichLinkPluginController._allowsOpeningSensitiveURLs,
+                            RichLinkPluginController._customizationPickerDelegate,
+                            RichLinkPluginController._dataSource,
+                            RichLinkPluginController._keyboardHidden,
+                            RichLinkPluginController._view,
+                            RichLinkPluginDataSource._clients,
+                            RichLinkPluginDataSource._didSendPayload,
+                            RichLinkPluginDataSource._didStartUpdateWatchdog,
+                            RichLinkPluginDataSource._didTapToLoad,
+                            RichLinkPluginDataSource._disableAnimations,
+                            RichLinkPluginDataSource._hasDeferredResize,
+                            RichLinkPluginDataSource._hasReceivedAnyPayload,
+                            RichLinkPluginDataSource._originalURL,
+                            RichLinkPluginDataSource._pendingMetadataProvider,
+                            RichLinkPluginDataSource._resizeDeferralCount,
+                            RichLinkPluginDataSource._richLink,
+                            RichLinkPluginDataSource._shouldFetchWhenSent,
+                            RichLinkPluginDataSource._statusTransformer,
+                            RichLinkPluginDataSource._temporarySizingView,
+                            RichLinkPluginDataSource._updateWatchdogDidFire,
+                            RichLinkView._dataSource ]
+...

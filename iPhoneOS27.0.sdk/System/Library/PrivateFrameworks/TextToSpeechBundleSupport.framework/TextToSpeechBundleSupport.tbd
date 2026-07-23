@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TextToSpeechBundleSupport.framework/TextToSpeechBundleSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TextToSpeechBundleSupportVersionNumber,
+                            _TextToSpeechBundleSupportVersionString,
+                            __TTSSystemFocusedPid,
+                            __Z24on_neural_phonemes_eventRKNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEE ]
+    objc-classes:         [ TTSNeuralStyle, TTSSiriDynamicPrompts, TTSSiriMarker,
+                            TTSSiriSpeakingStyle, TTSSiriSynthWrapper,
+                            TTSSiriVoiceResource, TTSSynthesizerWrapper,
+                            _TtC25TextToSpeechBundleSupport21TTSSiriSynthAudioUnit ]
+    objc-ivars:           [ TTSNeuralStyle._key, TTSNeuralStyle._name,
+                            TTSNeuralStyle._styleVector,
+                            TTSSiriDynamicPrompts._stylePrompts,
+                            TTSSiriDynamicPrompts._voicePrompts,
+                            TTSSiriMarker._length, TTSSiriMarker._location,
+                            TTSSiriMarker._name, TTSSiriMarker._sampleIndex,
+                            TTSSiriMarker._type, TTSSiriSpeakingStyle._key,
+                            TTSSiriSpeakingStyle._localizedName,
+                            TTSSiriSpeakingStyle._styleVector,
+                            TTSSiriSynthWrapper._bufferConverter,
+                            TTSSiriSynthWrapper._currentNeuralStyle,
+                            TTSSiriSynthWrapper._delegate,
+                            TTSSiriSynthWrapper._engineFormat,
+                            TTSSiriSynthWrapper._language,
+                            TTSSiriSynthWrapper._neuralStyles,
+                            TTSSiriSynthWrapper._outputFormat,
+                            TTSSiriSynthWrapper._synthesisQueue,
+                            TTSSiriSynthWrapper._synthesizer,
+                            TTSSiriSynthWrapper._synthesizing,
+                            TTSSiriSynthWrapper._voiceResources,
+                            TTSSiriVoiceResource._resourceData,
+                            TTSSiriVoiceResource._resourceName,
+                            TTSSiriVoiceResource._resourceString,
+                            TTSSiriVoiceResource._siriVoiceResource,
+                            TTSSiriVoiceResource._type,
+                            TTSSynthesizerWrapper._speaking,
+                            TTSSynthesizerWrapper._synthesisQueue,
+                            TTSSynthesizerWrapper._synthesizer ]
+...

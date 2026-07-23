@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/_ScreenCaptureKit_SwiftUI.framework/_ScreenCaptureKit_SwiftUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ScreenCaptureKit_SwiftUIVersionNumber,
+                            __ScreenCaptureKit_SwiftUIVersionString ]
+    objc-classes:         [ _TtC25_ScreenCaptureKit_SwiftUI26RecordingEditorCoordinator ]
+...

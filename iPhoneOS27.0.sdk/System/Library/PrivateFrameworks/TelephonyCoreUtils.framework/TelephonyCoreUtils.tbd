@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TelephonyCoreUtils.framework/TelephonyCoreUtils
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN3tcu28DataStoreErrorHandlingBridge6handleENS_14DataStoreErrorE,
+                            __ZN3tcu28DataStoreErrorHandlingBridgeC1ENSt3__18functionIFvNS_14DataStoreErrorEEEE,
+                            __ZN3tcu28DataStoreErrorHandlingBridgeC2ENSt3__18functionIFvNS_14DataStoreErrorEEEE ]
+...

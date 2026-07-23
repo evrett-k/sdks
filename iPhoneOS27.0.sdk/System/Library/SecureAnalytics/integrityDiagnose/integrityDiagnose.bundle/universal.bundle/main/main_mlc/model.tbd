@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/SecureAnalytics/integrityDiagnose/integrityDiagnose.bundle/universal.bundle/main/main_mlc/model.dylib
+current-version:       0
+compatibility-version: 0
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _nano_espresso_main_execute_sync,
+                            _nano_espresso_main_get_blob,
+                            _nano_espresso_main_get_blob_size,
+                            _nano_espresso_main_get_network,
+                            _nano_espresso_main_get_network_size,
+                            _nano_espresso_main_get_network_version,
+                            _nano_espresso_main_init, _nano_espresso_main_init_2,
+                            _nano_espresso_main_set_blob,
+                            _nano_espresso_main_set_tensor,
+                            _nano_espresso_main_teardown,
+                            _nano_espresso_main_teardown_2,
+                            _nano_espresso_main_tensor,
+                            _nano_espresso_main_tensor_size,
+                            _x11586ea37bc83c4d7bf5c79e7a63f541,
+                            _x2654fade1bb83c72b96d1f845e425461,
+                            _x45c4343d042fb84a91a4fd8afb683f41,
+                            _x693e1f2b3022c145eb942c62de8be9cb,
+                            _x7ef0a29061290be472ace0b79d6fe1dd,
+                            _xb6d3c0c3c013349f07609fe941fb73aa,
+                            _xcb98255884058ce101f742a2fc178a1e,
+                            _xcc7b8e70a17e495bf793712322af0984 ]
+...

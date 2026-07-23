@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FlowToolsSnippetService.framework/FlowToolsSnippetService
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FlowToolsSnippetServiceVersionNumber,
+                            _FlowToolsSnippetServiceVersionString ]
+    objc-classes:         [ FTSnippetServiceManager,
+                            _TtC23FlowToolsSnippetService21SnippetServiceManager,
+                            _TtC23FlowToolsSnippetService23SnippetServiceXPCServer,
+                            _TtCC23FlowToolsSnippetService23SnippetServiceXPCServer6Server ]
+...

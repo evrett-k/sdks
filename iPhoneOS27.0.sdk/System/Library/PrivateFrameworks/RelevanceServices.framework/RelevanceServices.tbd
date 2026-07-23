@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RelevanceServices.framework/RelevanceServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RSDeviceSupportsContextualVolume, _RSInternalBuild,
+                            _RSIsRelevanceDaemon, _RSSendableDictionary,
+                            _RelevanceServicesVersionNumber,
+                            _RelevanceServicesVersionString ]
+    objc-classes:         [ RSConsiderateVolumeContext,
+                            RSConsiderateVolumeSettingsController,
+                            _TtC17RelevanceServices24ConsiderateVolumeContext,
+                            _TtC17RelevanceServices33ConsiderateVolumeAdjustmentResult,
+                            _TtC17RelevanceServices35ConsiderateVolumeSettingsController ]
+...

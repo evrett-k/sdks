@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssistantActionSuggestionCore.framework/AssistantActionSuggestionCore
+current-version:       667
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AssistantActionSuggestionCoreVersionNumber,
+                            _AssistantActionSuggestionCoreVersionString ]
+    objc-classes:         [ ATXAssistantActionSuggestionCoreBridge,
+                            ATXCAPEServer, ATXConversationIndexManagerBridge,
+                            PromptSuggestionMergingManagerBridge,
+                            _TtC29AssistantActionSuggestionCore20AppProtectionMonitor,
+                            _TtC29AssistantActionSuggestionCore20AppWorkspaceObserver,
+                            _TtC29AssistantActionSuggestionCore20AssistantActionEvent,
+                            _TtC29AssistantActionSuggestionCore30PromptSuggestionMergingManager,
+                            _TtC29AssistantActionSuggestionCore31AssistantActionSuggestionLogger,
+                            _TtC29AssistantActionSuggestionCore44ConversationIndexManagerSingletonInitializer ]
+    objc-ivars:           [ ATXAssistantActionSuggestionCoreBridge._server ]
+...

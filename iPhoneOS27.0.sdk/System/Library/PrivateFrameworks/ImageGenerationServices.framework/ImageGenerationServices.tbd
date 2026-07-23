@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ImageGenerationServices.framework/ImageGenerationServices
+current-version:       194.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DPTrieBuildMasked, _DPTrieCreate, _DPTrieDestroy,
+                            _DPTrieFreeKey, _DPTrieFreeSerializedData, _DPTrieLoad,
+                            _DPTrieMaskedLookup, _DPTrieSerialize,
+                            _DPTrieUnmaskedReverseLookup,
+                            _ImageGenerationServicesVersionNumber,
+                            _ImageGenerationServicesVersionString ]
+...

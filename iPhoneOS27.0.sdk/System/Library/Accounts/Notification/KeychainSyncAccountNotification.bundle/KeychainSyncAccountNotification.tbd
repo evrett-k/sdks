@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/KeychainSyncAccountNotification.bundle/KeychainSyncAccountNotification
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _KeychainSyncAccountNotificationVersionNumber,
+                            _KeychainSyncAccountNotificationVersionString,
+                            __SecDebVerboseDatabaseLoggingClearOverride,
+                            __SecDebVerboseDatabaseLoggingIsEnabled,
+                            __SecDebVerboseDatabaseLoggingSetOverride,
+                            __SecDeleteInternalKeychainItemsOnSignoutClearOverride,
+                            __SecDeleteInternalKeychainItemsOnSignoutIsEnabled,
+                            __SecDeleteInternalKeychainItemsOnSignoutSetOverride,
+                            __SecInfoPlistConsistencyEnforcementIsEnabled,
+                            __SecProtectLoginKeychainWithDP,
+                            __SecSystemKeychainAlwaysClearOverride,
+                            __SecSystemKeychainAlwaysIsEnabled,
+                            __SecSystemKeychainAlwaysOverride,
+                            __SecTrustEarlyAnchorExpirationEnabled,
+                            __SecTrustQWACValidationEnabled,
+                            __SecTrustRemoveOldAppleAnchorSource,
+                            __SecTrustRemoveOldSystemAnchorSource,
+                            __SecTrustUseCRLite,
+                            __SecTrustUseCRLiteClearOverride,
+                            __SecTrustUseCRLiteEnforcement,
+                            __SecTrustUseCRLiteEnforcementClearOverride,
+                            __SecTrustUseCRLiteEnforcementSetOverride,
+                            __SecTrustUseCRLiteSetOverride ]
+    objc-classes:         [ KeychainSyncAccountNotification ]
+...

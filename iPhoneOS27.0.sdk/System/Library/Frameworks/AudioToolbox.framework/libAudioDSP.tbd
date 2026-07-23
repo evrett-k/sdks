@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AudioToolbox.framework/libAudioDSP.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DNNVAD_CreateInstance, _DNNVAD_DestroyInstance,
+                            _DNNVAD_EnableLegacyVAD, _DNNVAD_GetPowerMeterValue,
+                            _DNNVAD_GetSoundActivityValue,
+                            _DNNVAD_GetSpeechProbabilityHardValue,
+                            _DNNVAD_GetSpeechProbabilitySoftValue,
+                            _DNNVAD_Initialize, _DNNVAD_IsInitialized,
+                            _DNNVAD_Process, _DNNVAD_Uninitialize,
+                            _GetAudioDSPManager,
+                            _RegisterAUVoiceIsolation_Unsearchable,
+                            _RegisterAudioUnits_Analyzer,
+                            _RegisterAudioUnits_Internal,
+                            _RegisterAudioUnits_InternalUnsearchable,
+                            _RegisterMovieRemixAUs_Unsearchable,
+                            _RegisterPublicAudioUnits, _gSpatialMetadataSPI ]
+    objc-classes:         [ AudioDSPUplinkSpeechMixer,
+                            AudioDSPUplinkSpeechMixerFactory,
+                            CADSPError$loadHelper_x8, CADSPGraph$loadHelper_x8,
+                            CADSPLanguageV1Interpreter$loadHelper_x8,
+                            CADSPMutableBoxModel$loadHelper_x21,
+                            CADSPMutableBoxModel$loadHelper_x8,
+                            CADSPMutableGraphModel$loadHelper_x8,
+                            CADSPMutableJackModel$loadHelper_x23,
+                            CADSPMutableParameterConnectionModel$loadHelper_x8,
+                            CADSPMutableParameterModel$loadHelper_x8,
+                            CADSPMutablePortModel$loadHelper_x19,
+                            CADSPMutablePortModel$loadHelper_x8,
+                            CADSPMutablePropertyConnectionModel$loadHelper_x8,
+                            CADSPMutablePropertyModel$loadHelper_x8,
+                            CADSPMutableWireModel$loadHelper_x28,
+                            CADSPMutableWireModel$loadHelper_x8,
+                            NSCacheWrapperEntry, NeuralNetCache ]
+    objc-ivars:           [ AudioDSPUplinkSpeechMixer._graph,
+                            AudioDSPUplinkSpeechMixer._graphErrorLogger,
+                            AudioDSPUplinkSpeechMixer._graphInputSampleTime,
+                            AudioDSPUplinkSpeechMixer._graphRemoteProcessingBlockHost,
+                            AudioDSPUplinkSpeechMixer._settings,
+                            AudioDSPUplinkSpeechMixerFactory._settings,
+                            NSCacheWrapperEntry._data, NeuralNetCache._impl ]
+...
