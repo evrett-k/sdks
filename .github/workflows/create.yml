@@ -33,7 +33,7 @@ on:
 jobs:
   create:
     # https://github.com/actions/runner-images/blob/main/images/macos
-    runs-on: macos-26
+    runs-on: xcode-27
     # needed to be able to push to the repo
     permissions:
       contents: write
