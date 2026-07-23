@@ -3,8 +3,13 @@ name: Create SDK
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        description: 'Target platform: ios, ipados, tvos, watchos, macos, or visionos'
+        required: true
+        type: string
+        default: 'ios'
       ipsw_device:
-        description: 'The device ID to download the IPSW for, e.g. "iPhone11,2"'
+        description: 'The device ID to download the IPSW for, e.g. "iPhone11,2", "AppleTV14,1", "Mac14,7"'
         required: true
         type: string
       ipsw_version:
@@ -21,7 +26,7 @@ on:
         required: true
         type: string
       xcrun_sdk_name:
-        description: 'The value to pass to "xcrun --sdk", e.g. "iphoneos"'
+        description: 'The value to pass to "xcrun --sdk", e.g. "iphoneos", "appletvos", "watchos", "macosx", "xros"'
         required: true
         type: string
         default: 'iphoneos'
@@ -29,10 +34,15 @@ on:
         description: 'The full name of the output SDK, e.g. "iPhoneOS16.5"'
         required: true
         type: string
+      runner_label:
+        description: 'Runner label to use, e.g. "macos-26", "macos-26-xlarge", "xcode-27"'
+        required: true
+        type: string
+        default: 'macos-26'
 
 jobs:
   create:
-    runs-on: xcode-27
+    runs-on: ${{ inputs.runner_label }}
     permissions:
       contents: write
 
@@ -73,6 +83,7 @@ jobs:
           XC_SDK_NAME="${{ inputs.xcrun_sdk_name }}"
           IPSW_VERSION="${{ inputs.ipsw_version }}"
           IPSW_DEVICE="${{ inputs.ipsw_device }}"
+          PLATFORM="${{ inputs.platform }}"
           IPSW_MAJOR="${IPSW_VERSION%%.*}"
           DSC_ARCH="${DSC_BASENAME#dyld_shared_cache_}"
 
@@ -83,16 +94,41 @@ jobs:
           IPSW_DOWNLOAD_DIR="$(mktemp -d -t ipsw)"
           DYLD_EXTRACT_DIR="$(mktemp -d -t dyld)"
 
+          # ipsw.me's --macos flag is required to disambiguate Mac restores;
+          # other platforms resolve fine from the device identifier alone.
+          IPSW_EXTRA_FLAGS=()
+          if [ "${PLATFORM}" = "macos" ]; then
+            IPSW_EXTRA_FLAGS+=(--macos)
+          fi
+
           set +e
-          IPSW_DOWNLOAD_URL="$(ipsw download ipsw --urls --version "${IPSW_VERSION}" --device "${IPSW_DEVICE}")"
+          IPSW_DOWNLOAD_URL="$(ipsw download ipsw --urls --version "${IPSW_VERSION}" --device "${IPSW_DEVICE}" "${IPSW_EXTRA_FLAGS[@]}")"
           IPSW_EXIT=$?
           set -e
 
           if [ ${IPSW_EXIT} -ne 0 ] || [ -z "${IPSW_DOWNLOAD_URL}" ]; then
             echo "ipsw.me lookup failed for ${IPSW_DEVICE} / ${IPSW_VERSION} (exit ${IPSW_EXIT})."
+
+            # ipswbeta.dev path prefixes: ios, ipados, tvos, macos, visionos.
+            # watchOS is not covered by ipswbeta.dev at all -- fail clearly instead
+            # of guessing at a URL that doesn't exist.
+            case "${PLATFORM}" in
+              ios|ipados|tvos|macos|visionos)
+                IPSWBETA_PREFIX="${PLATFORM}"
+                ;;
+              watchos)
+                echo "watchOS has no ipswbeta.dev fallback available. Aborting."
+                exit 1
+                ;;
+              *)
+                echo "Unrecognized platform '${PLATFORM}' for ipswbeta.dev fallback. Aborting."
+                exit 1
+                ;;
+            esac
+
             echo "Falling back to ipswbeta.dev for the latest ${IPSW_MAJOR}.x beta build..."
 
-            IPSWBETA_URL="https://ipswbeta.dev/ios/${IPSW_MAJOR}.x/${IPSW_DEVICE}"
+            IPSWBETA_URL="https://ipswbeta.dev/${IPSWBETA_PREFIX}/${IPSW_MAJOR}.x/${IPSW_DEVICE}"
             IPSW_DOWNLOAD_URL="$(curl -fsSL "${IPSWBETA_URL}" \
               | grep -oE 'https://updates\.cdn-apple\.com[^"]*\.ipsw' \
               | head -n1)"
@@ -122,12 +158,8 @@ jobs:
             echo "Failed to find ${DSC_BASENAME} in IPSW"
             exit 1
           fi
-          
+
           chmod +x ./create_patched_sdk_image.sh
-          ./create_patched_sdk_image.sh "${DYLD_CACHE_PATH}" "${SDK_OUTPUT_PATH}" "${BASE_SDK_PATH}" "${PLATFORM_PATH}" "${TBD_TOOL_PATH}"
-
-          echo "sdk-path=${SDK_OUTPUT_PATH}" >> "${GITHUB_OUTPUT}"
-
           ./create_patched_sdk_image.sh "${DYLD_CACHE_PATH}" "${SDK_OUTPUT_PATH}" "${BASE_SDK_PATH}" "${PLATFORM_PATH}" "${TBD_TOOL_PATH}"
 
           echo "sdk-path=${SDK_OUTPUT_PATH}" >> "${GITHUB_OUTPUT}"
