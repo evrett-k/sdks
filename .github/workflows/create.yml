@@ -32,9 +32,7 @@ on:
 
 jobs:
   create:
-    # https://github.com/actions/runner-images/blob/main/images/macos
-    runs-on: xcode-27
-    # needed to be able to push to the repo
+    runs-on: macos-latest
     permissions:
       contents: write
 
@@ -46,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: leptos-null/tbd
-          ref: f0ae164d76b7bb802bbdf8ef758cc5637fac0fa1 # pinned, leptos/source-platform
+          ref: f0ae164d76b7bb802bbdf8ef758cc5637fac0fa1
           path: tbd
 
       - name: Build tbd
@@ -63,20 +61,19 @@ jobs:
       - name: Install aria2
         run: brew install aria2
 
-      - name: List available Xcodes
-        run: ls /Applications | grep Xcode
-
       - name: Patch SDK
         id: patch-sdk
         env:
           DEVELOPER_DIR: /Applications/Xcode_${{ inputs.xcode_version }}.app
         run: |
-          # use absolute path since we `cd` later
           TBD_TOOL_PATH="$(pwd)/tbd/bin/tbd"
           SDK_OUTPUT_PATH="$(pwd)/${{ inputs.full_sdk_name }}.sdk"
 
           DSC_BASENAME="${{ inputs.dsc_basename }}"
           XC_SDK_NAME="${{ inputs.xcrun_sdk_name }}"
+          IPSW_VERSION="${{ inputs.ipsw_version }}"
+          IPSW_DEVICE="${{ inputs.ipsw_device }}"
+          IPSW_MAJOR="${IPSW_VERSION%%.*}"
 
           cd tools/
           PLATFORM_PATH="$(xcrun --sdk "${XC_SDK_NAME}" --show-sdk-platform-path)"
@@ -86,29 +83,46 @@ jobs:
           IPSW_DOWNLOAD_DIR="$(mktemp -d -t ipsw)"
           IPSW_EXTRACTION_DIR="$(mktemp -d -t ipsw)"
 
-          # `--dyld` is a convenient parameter for us, however it only supports iOS 16+
-          IPSW_DOWNLOAD_URL="$(ipsw download ipsw --urls --version "${{ inputs.ipsw_version }}" --device "${{ inputs.ipsw_device }}")"
+          set +e
+          IPSW_DOWNLOAD_URL="$(ipsw download ipsw --urls --version "${IPSW_VERSION}" --device "${IPSW_DEVICE}")"
+          IPSW_EXIT=$?
+          set -e
+
+          if [ ${IPSW_EXIT} -ne 0 ] || [ -z "${IPSW_DOWNLOAD_URL}" ]; then
+            echo "ipsw.me lookup failed for ${IPSW_DEVICE} / ${IPSW_VERSION} (exit ${IPSW_EXIT})."
+            echo "Falling back to ipswbeta.dev for the latest ${IPSW_MAJOR}.x beta build..."
+
+            IPSWBETA_URL="https://ipswbeta.dev/ios/${IPSW_MAJOR}.x/${IPSW_DEVICE}"
+            IPSW_DOWNLOAD_URL="$(curl -fsSL "${IPSWBETA_URL}" \
+              | grep -oE 'https://updates\.cdn-apple\.com[^"]*\.ipsw' \
+              | head -n1)"
+
+            if [ -z "${IPSW_DOWNLOAD_URL}" ]; then
+              echo "Failed to resolve any IPSW URL from ${IPSWBETA_URL}"
+              exit 1
+            fi
+
+            echo "Resolved via ipswbeta.dev: ${IPSW_DOWNLOAD_URL}"
+          else
+            echo "Resolved via ipsw.me: ${IPSW_DOWNLOAD_URL}"
+          fi
+
           echo "Downloading ${IPSW_DOWNLOAD_URL}"
           aria2c --dir "${IPSW_DOWNLOAD_DIR}" "${IPSW_DOWNLOAD_URL}"
 
           unzip -d "${IPSW_EXTRACTION_DIR}" "${IPSW_DOWNLOAD_DIR}"/*.ipsw "*.dmg"
-          # remove to save space
           rm "${IPSW_DOWNLOAD_DIR}"/*.ipsw
 
           for DMG_FILE in "${IPSW_EXTRACTION_DIR}"/*.dmg; do
-            # new mount root for each dmg so we don't have to
-            # worry about how we iterate over the mount root
             DMG_MOUNT_ROOT="$(mktemp -d -t dmg)"
-            # some of the dmgs can't be mounted - not sure why
             hdiutil attach "${DMG_FILE}" -mountroot "${DMG_MOUNT_ROOT}" || true
             for MOUNT_VOL in "${DMG_MOUNT_ROOT}"/*; do
               DYLD_CACHE_PATH="${MOUNT_VOL}/System/Library/Caches/com.apple.dyld/${DSC_BASENAME}"
               if [ -e "${DYLD_CACHE_PATH}" ]; then
-                break 2 # break out of DMG_FILE loop
+                break 2
               fi
-              # here becuase we didn't find the dyld shared cache (didn't break)
               unset DYLD_CACHE_PATH
-              hdiutil detach "${MOUNT_VOL}" || true # this fails occasionally - just ignore
+              hdiutil detach "${MOUNT_VOL}" || true
             done
           done
 
@@ -125,7 +139,6 @@ jobs:
 
       - name: Create branch
         run: |
-          # thanks to https://github.com/actions/checkout/discussions/479
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
