@@ -1,0 +1,134 @@
+.Dd June 8, 2026
+.Dt FM 1
+.Os
+.Sh NAME
+.Nm fm
+.Nd command\-line interface for Apple Foundation Models
+.Sh SYNOPSIS
+.Nm
+.Op Fl h
+.Ar command
+.Op Ar options
+.Sh DESCRIPTION
+fm is a command\-line interface for Apple Foundation Models. It generates responses from Apple's on\-device and Private Cloud Compute language models, counts tokens, generates JSON generation schemas, checks model availability and quota usage, and hosts a Chat Completions API server.
+.Pp
+By default every command uses the on\-device system model. Pass \-\-model pcc to run against the Apple Foundation Model on Private Cloud Compute instead.
+.Pp
+Run 'fm <command> \-\-help' for detailed help on an individual command.
+.Sh COMMANDS
+.Bl -tag -width Ds
+.It Sy "respond"
+Generate a response to a prompt.
+.It Sy "chat"
+Start an interactive chat session.
+.It Sy "token\-count"
+Count the tokens in a prompt, instructions, or saved transcript.
+.It Sy "schema"
+Generate a JSON generation schema.
+.It Sy "serve"
+Start a Chat Completions API server for Foundation Models.
+.It Sy "available"
+Check model availability.
+.It Sy "quota\-usage"
+Check model quota usage.
+.El
+.Sh MODELS
+.Bl -tag -width Ds
+.It Sy "system"
+On\-device Apple Foundation Model (default).
+.It Sy "pcc"
+Apple Foundation Model on Private Cloud Compute.
+.El
+.Sh GLOBAL OPTIONS
+.Bl -tag -width Ds
+.It Sy "\-m, \-\-model <model>"
+Model to use: system or pcc (default: system).
+.It Sy "\-h, \-\-help"
+Show help information.
+.El
+.Sh RESPOND OPTIONS
+.Bl -tag -width Ds
+.It Sy "\-i, \-\-instructions <text>"
+Instructions for the model to follow.
+.It Sy "\-\-schema <file>"
+Path to a JSON schema file, or an inline JSON schema string.
+.It Sy "\-\-text <text>"
+Text segment to include in the prompt.
+.It Sy "\-\-image <path>"
+Path to an image to include in the prompt.
+.It Sy "\-\-load\-transcript <file>"
+Path to a saved transcript for conversational context.
+.It Sy "\-\-save\-transcript <name>"
+Save the session transcript to ~/.fm/sessions/<name> after responding.
+.It Sy "\-\-[no\-]stream"
+Stream the output as it is generated (default: on).
+.It Sy "\-g, \-\-greedy"
+Use greedy sampling.
+.It Sy "\-v, \-\-verbose"
+Print verbose output.
+.It Sy "\-\-use\-case <case>"
+System model use case: general or content\-tagging.
+.It Sy "\-\-guardrails <level>"
+System model guardrail level: default or permissive\-content\-transformations.
+.El
+.Sh CHAT OPTIONS
+.Bl -tag -width Ds
+.It Sy "\-r, \-\-resume <session>"
+Resume a saved chat session.
+.It Sy "\-\-continue"
+Continue the most recent chat session.
+.It Sy "\-i, \-\-instructions <text>"
+Instructions for the model.
+.It Sy "\-\-set\-default\-model <model>"
+Persist <model> as the default for future fm chat sessions.
+.El
+.Sh TOKEN-COUNT OPTIONS
+.Bl -tag -width Ds
+.It Sy "\-q, \-\-quiet"
+Print only the integer count (automatic when stdout is piped or redirected).
+.El
+.Sh SERVE OPTIONS
+.Bl -tag -width Ds
+.It Sy "\-\-host <address>"
+Host address to bind to (TCP mode).
+.It Sy "\-\-port <port>"
+Port to listen on, 1\-65535 (TCP mode).
+.It Sy "\-\-socket <path>"
+Unix domain socket path (socket mode).
+.El
+.Sh SCHEMA
+fm schema object generates a JSON generation schema for an object type. Each \-\-string, \-\-integer, \-\-double, or \-\-boolean starts a new property; follow it with \-\-description, \-\-optional, and/or \-\-array to annotate it. Use dot notation (a.b) in property names to nest objects.
+.Pp
+fm schema object \-\-help documents the full property\-declaration syntax.
+.Sh FILES
+.Bl -tag -width Ds
+.It Sy "~/.fm/sessions/"
+Saved chat sessions and transcripts.
+.El
+.Sh EXAMPLES
+Generate a response with the on\-device model:
+.Bd -literal -offset indent
+fm respond 'What is Swift?'
+.Ed
+.Pp
+Stream a response from Private Cloud Compute:
+.Bd -literal -offset indent
+fm respond \-\-model pcc \-\-stream 'Summarize this article'
+.Ed
+.Pp
+Start an interactive chat with custom instructions:
+.Bd -literal -offset indent
+fm chat \-\-instructions 'You are a coding assistant'
+.Ed
+.Pp
+Count the tokens in a prompt:
+.Bd -literal -offset indent
+fm token\-count 'Hello world'
+.Ed
+.Pp
+Generate a JSON schema for an object type:
+.Bd -literal -offset indent
+fm schema object \-\-name Person \-\-string name \-\-int age
+.Ed
+.Sh SEE ALSO
+Foundation Models documentation: https://developer.apple.com/documentation/foundationmodels

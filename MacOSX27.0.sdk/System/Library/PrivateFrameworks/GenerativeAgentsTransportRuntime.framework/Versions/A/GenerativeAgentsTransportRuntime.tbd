@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GenerativeAgentsTransportRuntime.framework/Versions/A/GenerativeAgentsTransportRuntime'
+current-version: 287.0.5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV09ProactiveE7Support0E0AAMc', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV12startServersyyFZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV21iOSSandboxProfileNameSSvMZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV21iOSSandboxProfileNameSSvgZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV21iOSSandboxProfileNameSSvpZMV', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV21iOSSandboxProfileNameSSvsZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV23macOSSandboxProfileNameSSvMZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV23macOSSandboxProfileNameSSvgZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV23macOSSandboxProfileNameSSvpZMV', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV23macOSSandboxProfileNameSSvsZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV5startyyFZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV6logger2os6LoggerVvgZ', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonV6logger2os6LoggerVvpZMV', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonVMa', '_$s32GenerativeAgentsTransportRuntime0abC6DaemonVMn', 
+                       '_$s32GenerativeAgentsTransportRuntime0abC6DaemonVN' ]
+...

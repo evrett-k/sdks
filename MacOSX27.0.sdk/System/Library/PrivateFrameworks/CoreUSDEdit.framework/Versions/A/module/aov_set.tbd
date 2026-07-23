@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/aov_set.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN23_ModuleAovSetCallbacks_13create_moduleER8OfObjectR15OfObjectFactory, 
+                       _on_register_module ]
+...

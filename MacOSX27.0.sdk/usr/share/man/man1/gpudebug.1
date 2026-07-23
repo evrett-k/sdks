@@ -1,0 +1,437 @@
+.TH gpudebug 1 "" 1.0
+.SH NAME
+.B gpudebug
+\- interactive GPU trace debugger
+.SH SYNOPSIS
+ gpudebug \-t <path> [\-o <dir>] [\-d <device>] [\-q] [\-\-timeout <sec>] [\-h]
+ gpudebug \-s <id> [\-c <command>]...
+ gpudebug \-l | \-\-list\-sessions
+ gpudebug \-\-list\-devices
+ gpudebug \-\-terminate <id|all>
+ gpudebug \-\-oneshot \-t <path> [\-c <command>]...
+.SH DESCRIPTION
+.PP
+\fBgpudebug\fP is an interactive CLI debugger for Metal GPU traces. It opens a \fB.gputrace\fP file and provides a REPL for navigating the captured API call hierarchy, inspecting resources and pipeline state, fetching textures and buffers to disk, browsing shader source code, and analyzing GPU performance.
+.PP
+gpudebug runs as a client/server pair. When you open a trace, a backend session is created that persists independently of the REPL. You can disconnect with \fBexit\fP and reconnect later with \fB\-s <id>\fP, or send individual commands with \fB\-c\fP without entering the REPL. Use \fBexit \-\-terminate\fP to end the session.
+.PP
+A \fB.gputrace\fP file is produced by \fBgpucapture\fP(1) or Xcode's Metal Debugger. It contains a recorded sequence of Metal API calls along with all associated resources (buffers, textures, pipeline states, shader libraries) needed to replay the captured GPU workloads.
+.PP
+On startup, gpudebug loads the trace index for immediate browsing. A background replayer connects to the local GPU and begins preparing resources. Static browsing (navigation, listing, info) is available immediately; \fBfetch\fP requires the replayer to be ready (check with \fBstatus\fP).
+.SH OPTIONS
+.B  \-t, \-\-gputrace <path>
+.RS
+Path to a \fB.gputrace\fP file or bundle directory. Required unless using \fB\-s\fP, \fB\-l\fP, or \fB\-\-terminate\fP.
+.RE
+.PP
+.B  \-o, \-\-output <dir>
+.RS
+Output directory for resources saved by the \fBfetch\fP command. If not specified, defaults to \fB$TMPDIR/gpudebug_out/<trace_name>/\fP where \fB<trace_name>\fP is the trace filename without the \fB.gputrace\fP extension. Created automatically if it does not exist.
+.RE
+.PP
+.B  \-d, \-\-device <device>
+.RS
+Target device for replay. Accepts a product name, marketing name, or numeric ID from \fB\-\-list\-devices\fP \(em matching is case-insensitive substring. If the match is ambiguous, all candidates are printed. If no match is found, the full device table is shown. By default the local device is used.
+.RE
+.PP
+.B  \-\-list\-devices
+.RS
+List all replay-capable devices on the network and exit. Does not require a trace file. The local machine is always listed first. Each device shows an ID, name, model, OS version, and UDID.
+.RE
+.PP
+.B  \-s, \-\-session <id>
+.RS
+Connect to an existing debug session by its ID (shown in \fB\-l\fP output and printed when a session is created). Use with \fB\-c\fP to send commands without entering the REPL.
+.RE
+.PP
+.B  \-c <command>
+.RS
+Execute a command and exit. Can be repeated to chain multiple commands: \fB\-c "go cb0" \-c "info"\fP. Requires either \fB\-t\fP (creates a new session) or \fB\-s\fP (connects to an existing one). Sessions persist after commands finish, allowing fast reuse with \fB\-s\fP. Use \fB\-\-terminate\fP when done.
+.RE
+.PP
+.B  \-l, \-\-list\-sessions
+.RS
+List all active debug sessions and exit. Shows session ID, trace name, device, replayer state, and lifetime status.
+.RE
+.PP
+.B  \-\-terminate <id|all>
+.RS
+Terminate a debug session by its ID, or use \fBall\fP to terminate every active session.
+.RE
+.PP
+.B  \-\-timeout <seconds>
+.RS
+Set the idle timeout for the session in seconds. After this period with no commands, the session terminates automatically. Default is 7200 (2 hours). Use \fB\-\-timeout 0\fP to disable the timeout.
+.RE
+.PP
+.B  \-\-oneshot
+.RS
+Run as a one-shot operation: create a session, execute commands (via \fB\-c\fP or pipe), then terminate the session automatically. Forces pipe-mode semantics (blocking fetch, no interactive prompt) regardless of whether stdin is a terminal. \fBNote:\fP each invocation loads the trace and spawns a replayer from scratch, which can take seconds to minutes for large traces. For repeated operations against the same trace, create a session once with \fB\-t\fP and reuse it with \fB\-s\fP.
+.RE
+.PP
+.B  \-q, \-\-quiet
+.RS
+Suppress the startup banner. Useful for scripting and piped input.
+.RE
+.PP
+.B  \-\-json
+.RS
+Output in JSON format. Affects all commands that produce structured output. Useful for machine consumption and AI agent integration.
+.RE
+.PP
+.B  \-\-version
+.RS
+Print the version and exit.
+.RE
+.PP
+.B  \-h, \-\-help
+.RS
+Print usage summary and exit.
+.RE
+.SH TRACE HIERARCHY
+.PP
+A trace is a tree. The root has four children:
+.PP
+.RS
+.nf
+root
+\[u251C] commands                command buffers
+\[u2502]  \[u251C] cb0, cb1, ...
+\[u2502]  \[u2502]  \[u251C] grpN              debug group (can nest at any level)
+\[u2502]  \[u2502]  \[u251C] reN               render encoder
+\[u2502]  \[u2502]  \[u2502]  \[u251C] color0..N      color attachments
+\[u2502]  \[u2502]  \[u2502]  \[u251C] depth          depth attachment
+\[u2502]  \[u2502]  \[u2502]  \[u251C] stencil        stencil attachment
+\[u2502]  \[u2502]  \[u2502]  \[u251C] drawN          draw call
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] pipeline     render pipeline state
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] vertex       vertex-stage bindings
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] buf[0..N]  bound buffers
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] tex[0..N]  bound textures
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u2514] sources    shader source files
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] fragment     fragment-stage bindings
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u251C] color0..N    per-draw attachments
+\[u2502]  \[u2502]  \[u2502]  \[u2502]  \[u2514] indexBuffer  index buffer (if indexed draw)
+\[u2502]  \[u2502]  \[u251C] ceN               compute encoder
+\[u2502]  \[u2502]  \[u2502]  \[u2514] dispN          dispatch call
+\[u2502]  \[u2502]  \[u2514] beN               blit encoder
+\[u2502]  \[u2502]     \[u2514] blitN          blit operation
+\[u251C] performance             GPU profiling data (requires profile load)
+\[u2502]  \[u251C] timeline           GPU execution timeline
+\[u2502]  \[u2502]  \[u251C] encoders        per-encoder timeline
+\[u2502]  \[u2502]  \[u251C] shaders         per-shader timeline
+\[u2502]  \[u2502]  \[u2514] counters        GPU counter time-series
+\[u2502]  \[u251C] encoders           encoder cost ranking
+\[u2502]  \[u251C] commands           draw/dispatch cost ranking
+\[u2502]  \[u2514] shaders            shader cost ranking
+\[u251C] api_calls               flat list of all Metal API calls
+\[u2514] resources               resource catalog
+   \[u251C] buffers                   bufN
+   \[u251C] command_queues            cqN
+   \[u251C] compute_pipelines         cpsN
+   \[u251C] depth_stencil             dssN
+   \[u251C] libraries                 libN (entry points + source files)
+   \[u251C] render_pipelines          rpsN
+   \[u251C] samplers                  samN
+   \[u2514] textures                  texN
+.fi
+.RE
+.PP
+Every node in the tree has a short name (its URL segment) and lists available \fBactions\fP when shown by \fBlist\fP. The actions tell you what commands work on that node: \fBgo\fP (navigable), \fBinfo\fP (inspectable), \fBfetch\fP (downloadable).
+.PP
+Debug groups (\fBgrpN\fP) can appear at any level: inside command buffers, inside other groups, or inside encoders.
+.SH CROSS-TREE LINKS
+.PP
+Some nodes are connected across different parts of the tree. When you navigate to such a node, its links are shown below the child list:
+.PP
+.nf
+Links:
+  :a   /api_calls/api277
+  :pt  /performance/timeline/shaders/frag1
+.fi
+.PP
+Link shortcuts can be used with the \fBgo\fP command (e.g. \fBgo :a\fP). Available link types:
+.PP
+.RS
+.nf
+Shortcut  Meaning
+--------  -------
+:d        debug tree node (command, draw, dispatch)
+:a        api_calls entry
+:ps       profile shader (cost-ranked)
+:pt       profile timeline entry
+:pe       profile encoder
+:pc       profile command
+:l        library entry point
+.fi
+.RE
+.PP
+Links are bidirectional. Navigating from a draw call via \fB:a\fP reaches the API call, which has a \fB:d\fP link back. Library entry points link to profile shaders (\fB:ps\fP) and timeline entries (\fB:pt\fP) when profiling data is loaded.
+.SH NODE NAMING
+.PP
+Node names are stable identifiers formed from a type prefix and a zero-based index:
+.PP
+.RS
+.nf
+Type                   Prefix   Example
+----                   ------   -------
+Command buffer         cb       cb0
+Debug group            grp      grp0
+Render encoder         re       re0
+Compute encoder        ce       ce0
+Blit encoder           be       be0
+Draw call              draw     draw0
+Dispatch call          disp     disp0
+Blit operation         blit     blit0
+Buffer (resource)      buf      buf0
+Texture (resource)     tex      tex0
+Library                lib      lib0
+Heap                   heap     heap0
+Render pipeline        rps      rps0
+Compute pipeline       cps      cps0
+Depth/stencil state    dss      dss0
+Event                  evt      evt0
+Command queue          cq       cq0
+Sampler                sam      sam0
+.fi
+.RE
+.PP
+Inside shader-stage bindings (\fBvertex\fP, \fBfragment\fP, \fBcompute\fP), bound resources use bracket notation with the Metal bind index: \fBbuf[0]\fP, \fBtex[3]\fP, \fBsam[0]\fP. Inline data from \fBsetBytes:\fP calls appears as \fBbuf[N]\fP with an "(inline)" summary and is fetchable.
+.SH COMMANDS
+.PP
+Type \fB<command> ?\fP for built-in help on any command (e.g. \fBlist ?\fP, \fBgo ?\fP).
+.PP
+.B  list
+.RS
+Show children of the current node.
+.PP
+.nf
+list              show first 20 items
+list N-M          show items N through M (e.g. list 20-40)
+list --all        show all items
+.fi
+.PP
+Each row shows the node name, typed value columns, and available actions.
+.RE
+.PP
+.B  go
+.RS
+Navigate to a node. After navigating, \fBgo\fP automatically lists the children of the destination.
+.PP
+.nf
+go <name>         navigate to a child (e.g. go cb0)
+go <url>          navigate to a path (e.g. go cb0/re0/draw3)
+go @<resource>    navigate to a resource (e.g. go @tex0)
+go :shortcut      follow a cross-tree link (e.g. go :a)
+go ..             navigate to parent
+go /              navigate to root
+go -              go back to previous location
+.fi
+.RE
+.PP
+.B  info
+.RS
+Show detailed properties of a node.
+.PP
+.nf
+info              show details of the current node
+info <name>       show details of a child (without navigating)
+info @<resource>  show details of a resource (e.g. info @rps1)
+info --all        show all properties (default: curated summary)
+.fi
+.PP
+On a \fBdraw/dispatch\fP call, shows the API selector with arguments and the encoder state at that point (cull mode, winding, depth bias, stencil refs, depth-stencil state). On an \fBattachment\fP, shows load/store actions and resource properties. On a \fBpipeline\fP, shows entry points, color attachments, depth/stencil, vertex layout, and rasterization. On a \fBlibrary entry point\fP, shows shader stage, parent library, and referencing pipelines.
+.RE
+.PP
+.B  fetch
+.RS
+Download a resource to the output directory (\fB-o\fP). Requires the replayer to be ready.
+.PP
+.nf
+fetch                     fetch the current node
+fetch <name>              fetch a child by name
+fetch @<resource>         fetch a resource (e.g. fetch @tex0)
+fetch <name> --out <path> save to explicit path
+.fi
+.PP
+Textures are saved as \fB.png\fP, buffers as \fB.bin\fP, shader sources as their original filename. Inline bytes from \fBsetBytes:\fP calls are also fetchable as \fB.bin\fP. Heatmap cost types under \fBperformance/commands\fP are fetchable as PNG. Counter time-series under \fBperformance/timeline/counters\fP are fetchable as JSON.
+.RE
+.PP
+.B  find
+.RS
+Search labels, names, and summaries across the entire trace.
+.PP
+.nf
+find <text>       case-insensitive substring match
+.fi
+.PP
+Results are shown as absolute URL paths, navigable with \fBgo\fP.
+.RE
+.PP
+.B  next / prev
+.RS
+Move to the next or previous sibling at the current level.
+.RE
+.PP
+.B  profile
+.RS
+Manage GPU profiling sessions.
+.PP
+.nf
+profile                show profile status
+profile list           list embedded profiling sessions in the trace
+profile load [N]       load session N (default: latest)
+profile run [options]  collect profiling data from device (M3/A17+ required)
+profile embed          embed session into trace
+.fi
+.PP
+Run options: \fB\-\-gpu-state default|low|medium|high\fP, \fB\-\-exec overlapping|serial\fP, \fB\-\-embed\fP. After loading, the \fBperformance\fP subtree is populated with cost breakdowns, timelines, counters, and heatmaps.
+.RE
+.PP
+.B  wait
+.RS
+Reattach to a backgrounded async operation.
+.PP
+.nf
+wait              list active operations
+wait <opN>        wait for a specific operation to complete
+.fi
+.PP
+Long operations (profile load, trace loading) show a spinner. Press \fBCtrl+B\fP to send the operation to the background and continue using the REPL. Use \fBwait\fP to reattach when ready.
+.RE
+.PP
+.B  status
+.RS
+Show current session state: trace file, device, replayer readiness, active operations, and session lifetime.
+.RE
+.PP
+.B  help
+.RS
+Show a summary of all commands. For per-command help, use \fB<command> ?\fP.
+.RE
+.PP
+.B  exit
+.RS
+\fBexit\fP (or \fBquit\fP, \fBq\fP) disconnects from the session but keeps it alive. Reconnect with \fBgpudebug \-s <id>\fP. Use \fBexit \-t\fP or \fBexit \-\-terminate\fP to end the session and free all resources.
+.RE
+.SH RESOURCE REFERENCES
+.PP
+Resources are identified by \fB@\fP-prefixed short names throughout gpudebug: \fB@buf4\fP, \fB@tex12\fP, \fB@rps0\fP. These references appear in info output, API call summaries, and encoder state. They can be used with \fBgo\fP, \fBinfo\fP, and \fBfetch\fP to access the resource directly from anywhere in the tree.
+.SH SCRIPTING
+.PP
+Trace loading and replayer startup can take seconds to minutes. For any investigation beyond a single command, create a session once and reuse it:
+.PP
+.nf
+gpudebug -t trace.gputrace -c "list"    # creates session 268
+gpudebug -s 268 -c "go commands/cb0/re0/draw0" -c "fetch color0"
+gpudebug -s 268 -c "next" -c "fetch color0"
+gpudebug --terminate 268                # done
+.fi
+.PP
+Each \fB\-s\fP invocation reuses the loaded trace and replayer instantly.
+.PP
+\fBPipe mode\fP reads commands from standard input:
+.PP
+.nf
+echo -e "go commands/cb0/re0/draw0\\nfetch color0\\nexit" | gpudebug -q -t trace.gputrace
+.fi
+.PP
+\fBOneshot mode\fP (\fB\-\-oneshot\fP) creates and terminates a session in one invocation:
+.PP
+.nf
+gpudebug --oneshot -t trace.gputrace -c "go commands/cb0/re0/draw0" -c "info pipeline"
+.fi
+.SH REPLAYER
+.PP
+The replayer loads in the background and prepares resources for \fBfetch\fP. Check readiness with \fBstatus\fP.
+.IP \[bu] 2
+\fBTTY mode\fP: the REPL is usable immediately. A notification prints when the replayer is ready.
+.IP \[bu] 2
+\fBPipe mode\fP: \fBfetch\fP blocks until the replayer is ready.
+.PP
+If the replay device is incompatible, \fBstatus\fP shows specific reasons. Navigation, listing, and info remain functional; only \fBfetch\fP is affected.
+.SH SESSIONS
+.PP
+Sessions are persistent backend processes. They survive disconnection and retain navigation position and replayer state. Reconnect with \fBgpudebug \-s <id>\fP.
+.PP
+Sessions are tied to the terminal's session leader (typically your shell). They terminate when that process exits or after an idle timeout (default 2 hours). Use \fBgpudebug \-l\fP to list sessions and \fBgpudebug \-\-terminate <id>\fP to end them.
+.SH EXAMPLES
+.PP
+ Open a trace and browse.
+.RS
+.nf
+$ gpudebug -t Scene.gputrace
+gpudebug> go commands/cb0/re0
+gpudebug commands/cb0/re0> info draw0
+gpudebug commands/cb0/re0> fetch depth
+.fi
+.RE
+.PP
+ Browse API calls with inline argument values.
+.RS
+.nf
+gpudebug> go api_calls
+gpudebug api_calls> list 0-10
+gpudebug api_calls> go api15
+gpudebug api_calls/api15> go :d
+.fi
+.RE
+.PP
+ Load profiling data and inspect shader costs.
+.RS
+.nf
+gpudebug> profile load
+gpudebug> go performance/shaders
+gpudebug performance/shaders> info frag0
+gpudebug performance/shaders> go :l
+.fi
+.RE
+.PP
+ Fetch a GPU heatmap for a draw call.
+.RS
+.nf
+gpudebug> go performance/commands/draw0/heatmap/fragment
+gpudebug .../fragment> fetch cost
+.fi
+.RE
+.PP
+ Inspect a library's entry points and shader sources.
+.RS
+.nf
+gpudebug> go resources/libraries/lib0
+gpudebug resources/libraries/lib0> info vertexShader
+gpudebug resources/libraries/lib0> fetch AAPLShaders.metal
+.fi
+.RE
+.PP
+ List devices and replay on a remote device.
+.RS
+.nf
+$ gpudebug --list-devices
+$ gpudebug -t trace.gputrace -d 0
+.fi
+.RE
+.PP
+ Reuse a session for scripted operations.
+.RS
+.nf
+$ gpudebug -t trace.gputrace -c "list"    # session 42
+$ gpudebug -s 42 -c "go commands/cb0/re0/draw0" -c "fetch color0"
+$ gpudebug -s 42 -c "next" -c "fetch color0"
+$ gpudebug --terminate 42
+.fi
+.RE
+.SH TIPS
+.IP \[bu] 2
+\fBgo\fP automatically lists children after navigating \(em you rarely need to type \fBlist\fP separately.
+.IP \[bu] 2
+\fBinfo <name>\fP inspects a child from the parent without navigating. Useful for checking multiple items.
+.IP \[bu] 2
+\fBgo \-\fP works like \fBcd \-\fP in a shell. Useful after jumping to a resource and wanting to return.
+.IP \[bu] 2
+Attachments appear both on encoders (final state) and on individual draws (per-draw state). Info on either shows load/store actions.
+.IP \[bu] 2
+Use \fBprofile load\fP to load embedded profiling data from a trace captured with GPU profiling enabled. The \fBperformance\fP subtree becomes navigable after loading.
+.IP \[bu] 2
+In the \fBapi_calls\fP list, receivers show as \fB@ref\fP when resolvable (e.g. \fB[@heap5 setPurgeableState:Volatile]\fP) and return values appear in the Result column.
+.SH SEE ALSO
+gpucapture(1)

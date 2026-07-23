@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MediaIntentsAISBridge.framework/Versions/A/MediaIntentsAISBridge'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s12MediaIntents11AudioSearchV03AppB8Services11IntentValue0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11AudioSearchV03AppB8Services23EntityPropertyWrappable0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11AudioSearchV03AppB8Services26IntentValueSequenceElement0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11AudioSearchV03AppB8Services28IntentValueOptionalWrappable0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11AudioSearchV03AppB8Services33StandardRepresentationIntentValue0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11VideoSearchV03AppB8Services11IntentValue0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11VideoSearchV03AppB8Services23EntityPropertyWrappable0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11VideoSearchV03AppB8Services26IntentValueSequenceElement0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11VideoSearchV03AppB8Services28IntentValueOptionalWrappable0aB9AISBridgeMc', 
+                       '_$s12MediaIntents11VideoSearchV03AppB8Services33StandardRepresentationIntentValue0aB9AISBridgeMc' ]
+...

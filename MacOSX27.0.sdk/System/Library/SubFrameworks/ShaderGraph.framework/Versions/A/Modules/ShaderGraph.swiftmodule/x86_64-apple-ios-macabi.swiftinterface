@@ -1,0 +1,2121 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target x86_64-apple-ios27.0-macabi -enable-objc-interop -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 159.0.4 -module-name ShaderGraph
+// swift-module-flags-ignorable: -strict-memory-safety -public-module-name RealityKit -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import CoreGraphics.CGColor
+import CoreGraphics
+import CryptoKit
+import Foundation
+import Metal
+import OSLog
+@_exported import ShaderGraph
+import Swift
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import simd.matrix
+import os
+import simd
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  public enum Value : Swift::Sendable, Swift::Equatable, Swift::Hashable {
+    public static func == (lhs: ShaderGraph::ShaderGraph.ShaderGraph::Value, rhs: ShaderGraph::ShaderGraph.ShaderGraph::Value) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    case bool(Swift::Bool)
+    case uchar(Swift::UInt8)
+    case int(Swift::Int32)
+    case uint(Swift::UInt32)
+    case float(Swift::Float)
+    case string(Swift::String)
+    case float2(Swift::SIMD2<Swift::Float>)
+    case float3(Swift::SIMD3<Swift::Float>)
+    case float4(Swift::SIMD4<Swift::Float>)
+    case int2(Swift::SIMD2<Swift::Int32>)
+    case int3(Swift::SIMD3<Swift::Int32>)
+    case int4(Swift::SIMD4<Swift::Int32>)
+    case float2x2(simd::simd_float2x2)
+    case float3x3(simd::simd_float3x3)
+    case float4x4(simd::simd_float4x4)
+    case cgColor3(CoreGraphics::CGColor)
+    case cgColor4(CoreGraphics::CGColor)
+    public var dataType: ShaderGraph::ShaderGraph.ShaderGraph::DataType {
+      get
+    }
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  public enum DataType : Swift::Sendable, Swift::Equatable, Swift::Hashable, Swift::CaseIterable {
+    case bool
+    case uchar
+    case int
+    case uint
+    case half
+    case float
+    case string
+    case float2
+    case float3
+    case float4
+    case half2
+    case half3
+    case half4
+    case int2
+    case int3
+    case int4
+    case float2x2
+    case float3x3
+    case float4x4
+    case half2x2
+    case half3x3
+    case half4x4
+    case surfaceShader
+    case geometryModifier
+    case postLightingShader
+    case cgColor3
+    case cgColor4
+    case texture
+    public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::DataType, b: ShaderGraph::ShaderGraph.ShaderGraph::DataType) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias AllCases = [ShaderGraph::ShaderGraph.ShaderGraph::DataType]
+    nonisolated public static var allCases: [ShaderGraph::ShaderGraph.ShaderGraph::DataType] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  public enum TextureCoordinate : Swift::Sendable, Swift::Equatable, Swift::Hashable {
+    case uv0
+    case uv1
+    case uv2
+    case uv3
+    case uv4
+    case uv5
+    case uv6
+    case uv7
+    public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::TextureCoordinate, b: ShaderGraph::ShaderGraph.ShaderGraph::TextureCoordinate) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct MaterialDecodingConfiguration {
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  public struct NodeDefinition : Swift::Equatable {
+    public enum Platform : Swift::String {
+      case iOS
+      case macOS
+      case watchOS
+      case tvOS
+      case visionOS
+      public init?(rawValue: Swift::String)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::String
+      public var rawValue: Swift::String {
+        get
+      }
+    }
+    public enum Availability : Swift::Hashable {
+      case available(introduced: Foundation::OperatingSystemVersion?, deprecated: Foundation::OperatingSystemVersion?, obsoleted: Foundation::OperatingSystemVersion?)
+      case unavailable
+      public static func == (lhs: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Availability, rhs: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Availability) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public struct SemanticType : Swift::Equatable {
+      public let name: Swift::String
+      public let values: [Swift::String]?
+      public init(name: Swift::String, values: [Swift::String]? = nil)
+      public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType, b: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType) -> Swift::Bool
+    }
+    public struct Output : Swift::Equatable {
+      public let name: Swift::String
+      public let type: ShaderGraph::ShaderGraph.ShaderGraph::DataType
+      public let semanticType: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType?
+      public let defaultValue: ShaderGraph::ShaderGraph.ShaderGraph::Value?
+      public init(name: Swift::String, type: ShaderGraph::ShaderGraph.ShaderGraph::DataType, semanticType: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType? = nil, defaultValue: ShaderGraph::ShaderGraph.ShaderGraph::Value? = nil)
+      public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output, b: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output) -> Swift::Bool
+    }
+    public struct Input : Swift::Equatable {
+      public let name: Swift::String
+      public let type: ShaderGraph::ShaderGraph.ShaderGraph::DataType
+      public let isUniform: Swift::Bool
+      public let semanticType: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType?
+      public let defaultValue: ShaderGraph::ShaderGraph.ShaderGraph::Value?
+      public init(name: Swift::String, type: ShaderGraph::ShaderGraph.ShaderGraph::DataType, isUniform: Swift::Bool = false, semanticType: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::SemanticType? = nil, defaultValue: ShaderGraph::ShaderGraph.ShaderGraph::Value? = nil)
+      public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input, b: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input) -> Swift::Bool
+    }
+    public var name: Swift::String {
+      get
+    }
+    public var functionalName: Swift::String {
+      get
+    }
+    public var group: Swift::String? {
+      get
+    }
+    public var availability: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Platform : ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Availability] {
+      get
+    }
+    public func isAvailable(on platform: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Platform, version: Foundation::OperatingSystemVersion? = nil) -> Swift::Bool
+    public var inputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input] {
+      get
+    }
+    public var outputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output] {
+      get
+    }
+    public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition, b: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition) -> Swift::Bool
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class ShaderGraph : Swift::Equatable {
+  final public var nodes: [Swift::String : ShaderGraph::ShaderGraph.ShaderGraph::Node] {
+    get
+  }
+  final public var edges: [ShaderGraph::ShaderGraph.ShaderGraph::Edge] {
+    get
+  }
+  final public var arguments: ShaderGraph::ShaderGraph.ShaderGraph::Node {
+    get
+  }
+  final public var results: ShaderGraph::ShaderGraph.ShaderGraph::Node {
+    get
+  }
+  final public var inputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input] {
+    get
+  }
+  final public var outputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output] {
+    get
+  }
+  @available(*, deprecated, renamed: "init(named:inputs:outputs:nodeLibrary:)", message: "Create a `ShaderGraph` instance with a NodeLibrary value instead.")
+  public init(named name: Swift::String, inputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input], outputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output]) throws
+  public init(named name: Swift::String, inputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Input], outputs: [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Output], nodeLibrary: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary) throws
+  final public subscript(node: Swift::String) -> ShaderGraph::ShaderGraph.ShaderGraph::Node? {
+    get
+  }
+  final public func replace(nodes: [Swift::String : ShaderGraph::ShaderGraph.ShaderGraph::Node], edges: [ShaderGraph::ShaderGraph.ShaderGraph::Edge]) throws
+  final public func validateAddingNode(_ node: ShaderGraph::ShaderGraph.ShaderGraph::Node) throws
+  final public func canAddNode(_ node: ShaderGraph::ShaderGraph.ShaderGraph::Node) -> Swift::Bool
+  @discardableResult
+  final public func addNode(_ node: ShaderGraph::ShaderGraph.ShaderGraph::Node) throws -> Swift::String
+  final public func updateNode(_ node: ShaderGraph::ShaderGraph.ShaderGraph::Node, forKey name: Swift::String) throws
+  final public func removeNode(_ nodeName: Swift::String) throws
+  final public func validateAddingEdge(_ edge: ShaderGraph::ShaderGraph.ShaderGraph::Edge) throws
+  final public func canAddEdge(_ edge: ShaderGraph::ShaderGraph.ShaderGraph::Edge) -> Swift::Bool
+  final public func containsEdge(_ edge: ShaderGraph::ShaderGraph.ShaderGraph::Edge) -> Swift::Bool
+  final public func addEdge(_ edge: ShaderGraph::ShaderGraph.ShaderGraph::Edge) throws
+  final public func connect(_ outputNode: Swift::String, outputPort: Swift::String? = nil, to inputNode: Swift::String, inputPort: Swift::String) throws
+  final public func connect(_ outputNode: ShaderGraph::ShaderGraph.ShaderGraph::Node, outputPort: Swift::String? = nil, to inputNode: ShaderGraph::ShaderGraph.ShaderGraph::Node, inputPort: Swift::String) throws
+  final public func removeEdge(_ edge: ShaderGraph::ShaderGraph.ShaderGraph::Edge) throws
+  final public func validate() -> Swift::Bool
+  final public var primvarMappings: [Swift::String : ShaderGraph::ShaderGraph.ShaderGraph::TextureCoordinate]
+  final public var functionConstantInputs: [Swift::String]
+  public typealias NodeKey = Swift::String
+  public typealias NodeType = ShaderGraph::ShaderGraph.ShaderGraph::Node
+  public typealias NodeError = Swift::Error
+  public typealias EdgeType = ShaderGraph::ShaderGraph.ShaderGraph::Edge
+  public typealias EdgeError = Swift::Error
+  public struct Node : Swift::Equatable {
+    public enum NodeData : Swift::Equatable {
+      case definition(ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition)
+      case graph(ShaderGraph::ShaderGraph)
+      case constant(ShaderGraph::ShaderGraph.ShaderGraph::Value)
+      public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::Node.ShaderGraph::NodeData, b: ShaderGraph::ShaderGraph.ShaderGraph::Node.ShaderGraph::NodeData) -> Swift::Bool
+    }
+    public var name: Swift::String
+    public var data: ShaderGraph::ShaderGraph.ShaderGraph::Node.ShaderGraph::NodeData
+    public init(name: Swift::String, data: ShaderGraph::ShaderGraph.ShaderGraph::Node.ShaderGraph::NodeData)
+    public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::Node, b: ShaderGraph::ShaderGraph.ShaderGraph::Node) -> Swift::Bool
+  }
+  public struct Edge : Swift::Equatable {
+    public var from: Swift::String {
+      get
+    }
+    public var to: Swift::String {
+      get
+    }
+    public var outputNode: Swift::String
+    public var outputPort: Swift::String?
+    public var inputNode: Swift::String
+    public var inputPort: Swift::String
+    public init(outputNode: Swift::String, outputPort: Swift::String? = nil, inputNode: Swift::String, inputPort: Swift::String)
+    public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::Edge, b: ShaderGraph::ShaderGraph.ShaderGraph::Edge) -> Swift::Bool
+  }
+  public static func == (lhs: ShaderGraph::ShaderGraph, rhs: ShaderGraph::ShaderGraph) -> Swift::Bool
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  @discardableResult
+  final public func addConstant(_ value: ShaderGraph::ShaderGraph.ShaderGraph::Value, named name: Swift::String) throws -> Swift::String
+  @discardableResult
+  final public func addConstant(_ value: ShaderGraph::ShaderGraph.ShaderGraph::Value) throws -> Swift::String
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  final public func encode() throws -> Foundation::Data
+  convenience public init(from data: Foundation::Data) throws
+}
+@inlinable @inline(__always) internal var _isCollectionsInternalCheckingEnabled: Swift::Bool {
+  get {
+  return false
+}
+}
+extension Swift::UInt {
+  @inlinable @inline(__always) internal var _firstSetBit: Swift::UInt? {
+    get {
+    guard self != 0 else { return nil }
+    let v = UInt.bitWidth &- 1 &- self.leadingZeroBitCount
+    return UInt(truncatingIfNeeded: v)
+  }
+  }
+  @inlinable @inline(__always) internal var _lastSetBit: Swift::UInt? {
+    get {
+    guard self != 0 else { return nil }
+    return UInt(truncatingIfNeeded: self.trailingZeroBitCount)
+  }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet {
+  @usableFromInline
+  @frozen internal struct _Word {
+    @usableFromInline
+    internal var value: Swift::UInt
+    @inlinable @inline(__always) internal init(_ value: Swift::UInt) {
+      self.value = value
+    }
+    @inlinable @inline(__always) internal init(upTo bit: Swift::UInt) {
+      assert(bit <= _Word.capacity)
+      self.init((1 << bit) &- 1)
+    }
+    @inlinable @inline(__always) internal init(from start: Swift::UInt, to end: Swift::UInt) {
+      assert(start <= end && end <= _Word.capacity)
+      self = Self(upTo: end).symmetricDifference(Self(upTo: start))
+    }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal static func wordCount(forBitCount count: Swift::UInt) -> Swift::Int {
+     
+    let width = UInt(bitPattern: Self.capacity)
+    return Int(bitPattern: (count + width - 1) / width)
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal static var capacity: Swift::Int {
+    get {
+    return UInt.bitWidth
+  }
+  }
+  @inlinable @inline(__always) internal var count: Swift::Int {
+    get {
+    value.nonzeroBitCount
+  }
+  }
+  @inlinable @inline(__always) internal var isEmpty: Swift::Bool {
+    get {
+    value == 0
+  }
+  }
+  @inlinable @inline(__always) internal var isFull: Swift::Bool {
+    get {
+    value == UInt.max
+  }
+  }
+  @inlinable @inline(__always) internal func contains(_ bit: Swift::UInt) -> Swift::Bool {
+    assert(bit >= 0 && bit < UInt.bitWidth)
+    return value & (1 &<< bit) != 0
+  }
+  @inlinable @inline(__always) internal var firstMember: Swift::UInt? {
+    get {
+    value._lastSetBit
+  }
+  }
+  @inlinable @inline(__always) internal var lastMember: Swift::UInt? {
+    get {
+    value._firstSetBit
+  }
+  }
+  @discardableResult
+  @inlinable @inline(__always) internal mutating func insert(_ bit: Swift::UInt) -> Swift::Bool {
+    assert(bit < UInt.bitWidth)
+    let mask: UInt = 1 &<< bit
+    let inserted = value & mask == 0
+    value |= mask
+    return inserted
+  }
+  @discardableResult
+  @inlinable @inline(__always) internal mutating func remove(_ bit: Swift::UInt) -> Swift::Bool {
+    assert(bit < UInt.bitWidth)
+    let mask: UInt = 1 &<< bit
+    let removed = (value & mask) != 0
+    value &= ~mask
+    return removed
+  }
+  @inlinable @inline(__always) internal mutating func update(_ bit: Swift::UInt, to value: Swift::Bool) {
+    assert(bit < UInt.bitWidth)
+    let mask: UInt = 1 &<< bit
+    if value {
+      self.value |= mask
+    } else {
+      self.value &= ~mask
+    }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal mutating func insertAll(upTo bit: Swift::UInt) {
+    assert(bit >= 0 && bit < Self.capacity)
+    let mask: UInt = (1 as UInt &<< bit) &- 1
+    value |= mask
+  }
+  @inlinable @inline(__always) internal mutating func removeAll(upTo bit: Swift::UInt) {
+    assert(bit >= 0 && bit < Self.capacity)
+    let mask = UInt.max &<< bit
+    value &= mask
+  }
+  @inlinable @inline(__always) internal mutating func removeAll(through bit: Swift::UInt) {
+    assert(bit >= 0 && bit < Self.capacity)
+    var mask = UInt.max &<< bit
+    mask &= mask &- 1        
+    value &= mask
+  }
+  @inlinable @inline(__always) internal mutating func removeAll(from bit: Swift::UInt) {
+    assert(bit >= 0 && bit < Self.capacity)
+    let mask: UInt = (1 as UInt &<< bit) &- 1
+    value &= mask
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal static var empty: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    get {
+    Self(0)
+  }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::Sequence, Swift::IteratorProtocol {
+  @inlinable @inline(__always) internal var underestimatedCount: Swift::Int {
+    get {
+    count
+  }
+  }
+  @inlinable internal mutating func next() -> Swift::UInt? {
+    guard value != 0 else { return nil }
+    let bit = UInt(truncatingIfNeeded: value.trailingZeroBitCount)
+    value &= value &- 1        
+    return bit
+  }
+  @usableFromInline
+  internal typealias Element = Swift::UInt
+  @usableFromInline
+  internal typealias Iterator = ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::Equatable {
+  @inlinable internal static func == (left: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word, right: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) -> Swift::Bool {
+    left.value == right.value
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::Hashable {
+  @inlinable internal func hash(into hasher: inout Swift::Hasher) {
+    hasher.combine(value)
+  }
+  @usableFromInline
+  internal var hashValue: Swift::Int {
+    @usableFromInline
+    get
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal func complement() -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    Self(~self.value)
+  }
+  @inlinable @inline(__always) internal mutating func formComplement() {
+    self.value = ~self.value
+  }
+  @inlinable @inline(__always) internal func union(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    Self(self.value | other.value)
+  }
+  @inlinable @inline(__always) internal mutating func formUnion(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) {
+    self.value |= other.value
+  }
+  @inlinable @inline(__always) internal func intersection(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    Self(self.value & other.value)
+  }
+  @inlinable @inline(__always) internal mutating func formIntersection(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) {
+    self.value &= other.value
+  }
+  @inlinable @inline(__always) internal func symmetricDifference(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    Self(self.value ^ other.value)
+  }
+  @inlinable @inline(__always) internal mutating func formSymmetricDifference(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) {
+    self.value ^= other.value
+  }
+  @inlinable @inline(__always) internal func subtracting(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    Self(self.value & ~other.value)
+  }
+  @inlinable @inline(__always) internal mutating func subtract(_ other: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word) {
+    self.value &= ~other.value
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+  @inlinable @inline(__always) internal func shiftedDown(by shift: Swift::UInt) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    assert(shift >= 0 && shift < Self.capacity)
+    return Self(self.value &>> shift)
+  }
+  @inlinable @inline(__always) internal func shiftedUp(by shift: Swift::UInt) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word {
+    assert(shift >= 0 && shift < Self.capacity)
+    return Self(self.value &<< shift)
+  }
+}
+extension Swift::UnsafeBufferPointer {
+  @inlinable @inline(__always) internal func _ptr(at index: Swift::Int) -> Swift::UnsafePointer<Element> {
+    assert(index >= 0 && index < count)
+      return baseAddress.unsafelyUnwrapped + index
+  }
+}
+@usableFromInline
+@unsafe @frozen internal struct _UnsafeBitSet {
+  @usableFromInline
+  internal let _words: Swift::UnsafeBufferPointer<ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word>
+  @inlinable @inline(__always) internal func ensureMutable() {
+  }
+  @inlinable @inline(__always) internal var _mutableWords: Swift::UnsafeMutableBufferPointer<ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word> {
+    get {
+      ensureMutable()
+      return UnsafeMutableBufferPointer(mutating: _words)
+  }
+  }
+  @inlinable @inline(__always) internal init(words: Swift::UnsafeBufferPointer<ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word>, mutable: Swift::Bool) {
+      assert(words.baseAddress != nil)
+      self._words = words
+  }
+  @inlinable @inline(__always) internal init(words: Swift::UnsafeMutableBufferPointer<ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word>, mutable: Swift::Bool) {
+      self.init(words: UnsafeBufferPointer(words), mutable: mutable)
+  }
+}
+extension ShaderGraph::_UnsafeBitSet {
+  @inlinable @inline(__always) internal var wordCount: Swift::Int {
+    get {
+      _words.count
+  }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet {
+  @inlinable @inline(__always) internal static func withTemporaryBitSet<R>(capacity: Swift::Int, run body: (inout ShaderGraph::_UnsafeBitSet) throws -> R) rethrows -> R {
+      let wordCount = _UnsafeBitSet.wordCount(forCapacity: UInt(capacity))
+      return try withTemporaryBitSet(wordCount: wordCount, run: body)
+  }
+  @inlinable @inline(__always) internal static func withTemporaryBitSet<R>(wordCount: Swift::Int, run body: (inout ShaderGraph::_UnsafeBitSet) throws -> R) rethrows -> R {
+    var result: R?
+      try _withTemporaryBitSet(wordCount: wordCount) { bitset in
+        result = try body(&bitset)
+    }
+    return result!
+  }
+  @usableFromInline
+  @inline(never) internal static func _withTemporaryBitSet(wordCount: Swift::Int, run body: (inout ShaderGraph::_UnsafeBitSet) throws -> Swift::Void) rethrows
+}
+extension ShaderGraph::_UnsafeBitSet {
+  @_effects(readnone) @inlinable @inline(__always) internal static func wordCount(forCapacity capacity: Swift::UInt) -> Swift::Int {
+    _Word.wordCount(forBitCount: capacity)
+  }
+  @inlinable @inline(__always) internal var capacity: Swift::UInt {
+    get {
+      UInt(wordCount &* _Word.capacity)
+  }
+  }
+  @inlinable @inline(__always) internal func isWithinBounds(_ element: Swift::UInt) -> Swift::Bool {
+      element < capacity
+  }
+  @usableFromInline
+  @_effects(releasenone) @inline(__always) internal func contains(_ element: Swift::UInt) -> Swift::Bool
+  @usableFromInline
+  @discardableResult
+  @_effects(releasenone) internal mutating func insert(_ element: Swift::UInt) -> Swift::Bool
+  @usableFromInline
+  @discardableResult
+  @_effects(releasenone) internal mutating func remove(_ element: Swift::UInt) -> Swift::Bool
+  @usableFromInline
+  @_effects(releasenone) internal mutating func update(_ member: Swift::UInt, to newValue: Swift::Bool) -> Swift::Bool
+  @usableFromInline
+  @_effects(releasenone) internal mutating func insertAll(upTo max: Swift::UInt)
+  @usableFromInline
+  @discardableResult
+  @_alwaysEmitIntoClient @inline(__always) internal mutating func insert(_ element: Swift::Int) -> Swift::Bool {
+    precondition(element >= 0)
+      return insert(UInt(bitPattern: element))
+  }
+  @usableFromInline
+  @discardableResult
+  @_alwaysEmitIntoClient @inline(__always) internal mutating func remove(_ element: Swift::Int) -> Swift::Bool {
+    guard element >= 0 else { return false }
+      return remove(UInt(bitPattern: element))
+  }
+  @usableFromInline
+  @_alwaysEmitIntoClient @inline(__always) internal mutating func insertAll(upTo max: Swift::Int) {
+    precondition(max >= 0)
+      return insertAll(upTo: UInt(bitPattern: max))
+  }
+}
+extension ShaderGraph::_UnsafeBitSet : @unsafe Swift::Sequence {
+  @usableFromInline
+  internal typealias Element = Swift::UInt
+  @inlinable @inline(__always) internal var underestimatedCount: Swift::Int {
+    get {
+      count  
+  }
+  }
+  @inlinable @inline(__always) internal func makeIterator() -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Iterator {
+      return Iterator(self)
+  }
+  @usableFromInline
+  @unsafe @frozen internal struct Iterator : Swift::IteratorProtocol {
+    @usableFromInline
+    internal let _bitset: ShaderGraph::_UnsafeBitSet
+    @usableFromInline
+    internal var _index: Swift::Int
+    @usableFromInline
+    internal var _word: ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word
+    @inlinable internal init(_ bitset: ShaderGraph::_UnsafeBitSet) {
+        self._bitset = bitset
+        self._index = 0
+        self._word = bitset.wordCount > 0 ? bitset._words[0] : .empty
+    }
+    @usableFromInline
+    @_effects(releasenone) internal mutating func next() -> Swift::UInt?
+    @usableFromInline
+    internal typealias Element = Swift::UInt
+  }
+}
+extension ShaderGraph::_UnsafeBitSet : @unsafe Swift::BidirectionalCollection {
+  @inlinable @inline(__always) internal var count: Swift::Int {
+    get {
+      _words.reduce(0) { $0 + $1.count }
+  }
+  }
+  @inlinable @inline(__always) internal var isEmpty: Swift::Bool {
+    get {
+      _words.firstIndex(where: { !$0.isEmpty }) == nil
+  }
+  }
+  @inlinable internal var startIndex: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index {
+    get {
+      let word = _words.firstIndex { !$0.isEmpty }
+      guard let word = word else { return endIndex }
+      return Index(word: word, bit: _words[word].firstMember!)
+  }
+  }
+  @inlinable internal var endIndex: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index {
+    get {
+      Index(word: wordCount, bit: 0)
+  }
+  }
+  @inlinable internal subscript(position: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> Swift::UInt {
+    get {
+    position.value
+  }
+  }
+  @usableFromInline
+  @_effects(releasenone) internal func index(after index: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index
+  @usableFromInline
+  @_effects(releasenone) internal func index(before index: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index
+  @usableFromInline
+  @_effects(releasenone) internal func distance(from start: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index, to end: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> Swift::Int
+  @usableFromInline
+  @_effects(releasenone) internal func index(_ i: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index, offsetBy distance: Swift::Int) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index
+  @usableFromInline
+  @_effects(releasenone) internal func index(_ i: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index, offsetBy distance: Swift::Int, limitedBy limit: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index?
+  @usableFromInline
+  internal typealias Indices = Swift::DefaultIndices<ShaderGraph::_UnsafeBitSet>
+  @usableFromInline
+  internal typealias SubSequence = Swift::Slice<ShaderGraph::_UnsafeBitSet>
+}
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  @frozen internal struct Bucket {
+    @usableFromInline
+    internal var offset: Swift::Int
+    @inlinable @inline(__always) internal init(offset: Swift::Int) {
+      assert(offset >= 0)
+      self.offset = offset
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::Bucket : Swift::Equatable {
+  @usableFromInline
+  @_transparent internal static func == (left: ShaderGraph::_HashTable.ShaderGraph::Bucket, right: ShaderGraph::_HashTable.ShaderGraph::Bucket) -> Swift::Bool {
+    left.offset == right.offset
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct MaterialXVersion : Swift::Hashable, Swift::Sendable, Swift::Codable {
+  public static func == (a: ShaderGraph::MaterialXVersion, b: ShaderGraph::MaterialXVersion) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+extension Swift::FixedWidthInteger {
+  @inlinable internal func _roundUpToPowerOfTwo() -> Self {
+    guard self > 0 else { return 0 }
+    let l = Self.bitWidth - (self &- 1).leadingZeroBitCount
+    return 1 << l
+  }
+}
+extension Swift::RandomAccessCollection {
+  @_alwaysEmitIntoClient @inline(__always) internal func _index(at offset: Swift::Int) -> Self.Index {
+    index(startIndex, offsetBy: offset)
+  }
+  @_alwaysEmitIntoClient @inline(__always) internal func _offset(of index: Self.Index) -> Swift::Int {
+    distance(from: startIndex, to: index)
+  }
+  @_alwaysEmitIntoClient @inline(__always) internal subscript(_offset offset: Swift::Int) -> Self.Element {
+    get {
+    self[_index(at: offset)]
+  }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::Header : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var _description: Swift::String {
+    get
+  }
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::_HashTable : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::Storage : Swift::CustomStringConvertible {
+  @usableFromInline
+  final internal var description: Swift::String {
+    get
+  }
+}
+extension Swift::MutableCollection where Self : Swift::RandomAccessCollection, Self.Element : Swift::Hashable {
+  @inlinable internal mutating func _partition(with hashTable: ShaderGraph::_UnsafeHashTable, by belongsInSecondPartition: (Self.Element) throws -> Swift::Bool, callback: (Swift::Int, Swift::Int) -> Swift::Void) rethrows -> Self.Index {
+    var low = startIndex
+    var high = endIndex
+
+    while true {
+       
+       
+       
+       
+
+       
+      while true {
+        if low == high { return low }
+        if try belongsInSecondPartition(self[low]) { break }
+        formIndex(after: &low)
+      }
+
+       
+      while true {
+        formIndex(before: &high)
+        if low == high { return low }
+        if try !belongsInSecondPartition(self[high]) { break }
+      }
+
+       
+      swapAt(low, high)
+      let offsetLow = _offset(of: low)
+      let offsetHigh = _offset(of: high)
+        hashTable.swapBucketValues(for: self[low], withCurrentValue: offsetHigh,
+                                 and: self[high], withCurrentValue: offsetLow)
+      callback(offsetLow, offsetHigh)
+
+      formIndex(after: &low)
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable @inline(__always) internal func swapBucketValues<Element>(for left: Element, withCurrentValue leftValue: Swift::Int, and right: Element, withCurrentValue rightValue: Swift::Int) where Element : Swift::Hashable {
+      let left = idealBucket(for: left)
+      let right = idealBucket(for: right)
+      swapBucketValues(for: left, withCurrentValue: leftValue,
+                     and: right, withCurrentValue: rightValue)
+  }
+  @usableFromInline
+  @_effects(releasenone) internal func swapBucketValues(for left: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket, withCurrentValue leftValue: Swift::Int, and right: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket, withCurrentValue rightValue: Swift::Int)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol _Proto_GraphEdge : Swift::Equatable {
+  associatedtype NodeKey
+  var from: Self.NodeKey { get }
+  var to: Self.NodeKey { get }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol _Proto_GraphNode {
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol _Proto_NodeGraph<NodeType, EdgeType> {
+  associatedtype NodeKey : Swift::Hashable where Self.NodeKey == Self.EdgeType.NodeKey
+  associatedtype NodeType : ShaderGraph::_Proto_GraphNode
+  associatedtype NodeError : Swift::Error
+  associatedtype NodeSequence : Swift::Sequence where Self.NodeSequence.Element == (key: Self.NodeKey, value: Self.NodeType)
+  associatedtype EdgeType : ShaderGraph::_Proto_GraphEdge where Self.EdgeType == Self.EdgeSequence.Element
+  associatedtype EdgeError : Swift::Error
+  associatedtype EdgeSequence : Swift::Sequence
+  var nodes: Self.NodeSequence { get }
+  var edges: Self.EdgeSequence { get }
+  subscript(node: Self.NodeKey) -> Self.NodeType? { get }
+  func canAdd(node: Self.NodeType) -> Swift::Bool
+  mutating func add(node: Self.NodeType) throws(Self.NodeError) -> Self.NodeKey
+  mutating func update(node: Self.NodeType, forKey: Self.NodeKey) throws(Self.NodeError)
+  mutating func remove(node: Self.NodeKey) throws(Self.NodeError)
+  func canAdd(edge: Self.EdgeType) -> Swift::Bool
+  func contains(edge: Self.EdgeType) -> Swift::Bool
+  mutating func add(edge: Self.EdgeType) throws(Self.EdgeError)
+  mutating func remove(edge: Self.EdgeType) throws(Self.EdgeError)
+  mutating func replace(nodes: Self.NodeSequence, edges: Self.EdgeSequence) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol _Proto_NodeGraphLibrary {
+  associatedtype DefinitionType : Swift::Equatable where Self.DefinitionType == Self.DefinitionsSequence.Element
+  associatedtype GraphType : ShaderGraph::_Proto_NodeGraph
+  associatedtype DefinitionsSequence : Swift::Sequence
+  var definitions: Self.DefinitionsSequence { get }
+  func add(_ definitionType: Self.DefinitionType, to graph: inout Self.GraphType) throws -> Self.GraphType.NodeKey
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct _Proto_ShaderGraphNodeDefinition : Swift::Equatable {
+  public struct Version : Swift::Hashable {
+    public let major: Swift::Int
+    public let minor: Swift::Int?
+    public let patch: Swift::Int?
+    public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Version, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Version) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum Platform : Swift::String {
+    case iOS
+    case macOS
+    case watchOS
+    case tvOS
+    case visionOS
+    public init?(rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public enum Availability : Swift::Hashable {
+    case available(introduced: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Version?, deprecated: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Version?, obsoleted: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Version?)
+    case unavailable
+    public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Availability, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Availability) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct Flags : Swift::OptionSet, Swift::Sendable {
+    public let rawValue: Swift::UInt
+    public init(rawValue: Swift::UInt)
+    public static let none: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Flags
+    public static let uniform: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Flags
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias ArrayLiteralElement = ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Flags
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Element = ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Flags
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::UInt
+  }
+  public struct SemanticType : Swift::Equatable {
+    public let name: Swift::String
+    public let values: [Swift::String]?
+    public init(name: Swift::String, values: [Swift::String]? = nil)
+    public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType) -> Swift::Bool
+  }
+  public struct Output : Swift::Equatable {
+    public let name: Swift::String
+    public let type: ShaderGraph::_Proto_ShaderDataType
+    public let semanticType: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType?
+    public let defaultValue: ShaderGraph::_Proto_ShaderGraphValue?
+    public init(name: Swift::String, type: ShaderGraph::_Proto_ShaderDataType, semanticType: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType? = nil, defaultValue: ShaderGraph::_Proto_ShaderGraphValue? = nil)
+    public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output) -> Swift::Bool
+  }
+  public struct Input : Swift::Equatable {
+    public let name: Swift::String
+    public let type: ShaderGraph::_Proto_ShaderDataType
+    public let semanticType: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType?
+    public let flags: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Flags
+    public let defaultValue: ShaderGraph::_Proto_ShaderGraphValue?
+    public init(name: Swift::String, type: ShaderGraph::_Proto_ShaderDataType, semanticType: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::SemanticType? = nil, defaultValue: ShaderGraph::_Proto_ShaderGraphValue? = nil)
+    public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Input, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Input) -> Swift::Bool
+  }
+  public var name: Swift::String {
+    get
+  }
+  public var functionalName: Swift::String {
+    get
+  }
+  public var displayName: Swift::String? {
+    get
+  }
+  public var group: Swift::String? {
+    get
+  }
+  public var availability: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Platform : ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Availability] {
+    get
+  }
+  public var inputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Input] {
+    get
+  }
+  public var outputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output] {
+    get
+  }
+  public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeDefinition, b: ShaderGraph::_Proto_ShaderGraphNodeDefinition) -> Swift::Bool
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct _Proto_ShaderGraphNodeConstant : Swift::Equatable {
+  public typealias TypeStorage = ShaderGraph::_Proto_ShaderGraphValue
+  public var value: ShaderGraph::_Proto_ShaderGraphNodeConstant.ShaderGraph::TypeStorage {
+    get
+    set
+  }
+  public init(constantValue: ShaderGraph::_Proto_ShaderGraphValue)
+  public static func == (a: ShaderGraph::_Proto_ShaderGraphNodeConstant, b: ShaderGraph::_Proto_ShaderGraphNodeConstant) -> Swift::Bool
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class _Proto_ShaderNodeGraph : ShaderGraph::_Proto_NodeGraph, Swift::Equatable {
+  final public func replace(nodes: [Swift::String : ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node], edges: [ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge]) throws
+  final public var nodes: [Swift::String : ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node] {
+    get
+  }
+  final public var edges: [ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge] {
+    get
+  }
+  final public var arguments: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node {
+    get
+  }
+  final public var results: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node {
+    get
+  }
+  final public var inputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Input] {
+    get
+  }
+  final public var outputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output] {
+    get
+  }
+  public init(named name: Swift::String, inputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Input], outputs: [ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output]) throws
+  final public subscript(node: Swift::String) -> ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node? {
+    get
+  }
+  final public func validate(adding node: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node) -> (any Swift::Error)?
+  final public func canAdd(node: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node) -> Swift::Bool
+  final public func add(node: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node) throws -> Swift::String
+  final public func update(node: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node, forKey name: Swift::String) throws
+  final public func remove(node nodeName: Swift::String) throws
+  final public func validate(adding edge: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) -> (any Swift::Error)?
+  final public func canAdd(edge: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) -> Swift::Bool
+  final public func contains(edge: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) -> Swift::Bool
+  final public func add(edge: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) throws
+  final public func connect(_ outputNode: Swift::String, _ outputPort: Swift::String = "out", to inputNode: Swift::String, _ inputPort: Swift::String) throws
+  final public func remove(edge: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) throws
+  final public func constantTextureValues() throws -> [Swift::String : Swift::String]
+  final public var primvarMappings: [Swift::String : ShaderGraph::_Proto_TextureCoordinate]
+  final public var functionConstantInputs: [Swift::String]
+  public typealias NodeKey = Swift::String
+  public typealias NodeType = ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node
+  public typealias NodeError = Swift::Error
+  public typealias EdgeType = ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge
+  public typealias EdgeError = Swift::Error
+  public struct Node : ShaderGraph::_Proto_GraphNode, Swift::Equatable {
+    public enum NodeData : Swift::Equatable {
+      case definition(ShaderGraph::_Proto_ShaderGraphNodeDefinition)
+      case graph(ShaderGraph::_Proto_ShaderNodeGraph)
+      case constant(ShaderGraph::_Proto_ShaderGraphValue)
+      public static func == (a: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node.ShaderGraph::NodeData, b: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node.ShaderGraph::NodeData) -> Swift::Bool
+    }
+    public var name: Swift::String
+    public var data: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node.ShaderGraph::NodeData
+    public init(name: Swift::String, data: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node.ShaderGraph::NodeData)
+    public static func == (a: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node, b: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node) -> Swift::Bool
+  }
+  public struct Edge : ShaderGraph::_Proto_GraphEdge {
+    public var from: Swift::String {
+      get
+    }
+    public var to: Swift::String {
+      get
+    }
+    public var outputNode: Swift::String
+    public var outputPort: Swift::String
+    public var inputNode: Swift::String
+    public var inputPort: Swift::String
+    public init(outputNode: Swift::String, outputPort: Swift::String = "out", inputNode: Swift::String, inputPort: Swift::String)
+    public static func == (a: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge, b: ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias NodeKey = Swift::String
+  }
+  public static func == (lhs: ShaderGraph::_Proto_ShaderNodeGraph, rhs: ShaderGraph::_Proto_ShaderNodeGraph) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias EdgeSequence = [ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Edge]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias NodeSequence = [Swift::String : ShaderGraph::_Proto_ShaderNodeGraph.ShaderGraph::Node]
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderNodeGraph {
+  public static func material(named name: Swift::String) -> ShaderGraph::_Proto_ShaderNodeGraph
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderNodeGraph {
+  @discardableResult
+  final public func add(constant value: ShaderGraph::_Proto_ShaderGraphValue, named name: Swift::String) throws -> Swift::String
+  @discardableResult
+  final public func add(constant value: ShaderGraph::_Proto_ShaderGraphValue) throws -> Swift::String
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderNodeGraph {
+  final public func encode() throws -> Foundation::Data
+  convenience public init(from data: Foundation::Data) throws
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class _Proto_ShaderNodeGraphLibrary : ShaderGraph::_Proto_NodeGraphLibrary {
+  public static var shared: ShaderGraph::_Proto_ShaderNodeGraphLibrary {
+    get
+  }
+  final public var definitions: some Swift::Collection<ShaderGraph::_Proto_ShaderGraphNodeDefinition> {
+    get
+  }
+  final public func add(_ definition: ShaderGraph::_Proto_ShaderGraphNodeDefinition, to graph: inout ShaderGraph::_Proto_ShaderNodeGraph) throws -> Swift::String
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias DefinitionType = ShaderGraph::_Proto_ShaderGraphNodeDefinition
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias DefinitionsSequence = @_opaqueReturnTypeOf("$s11ShaderGraph07_Proto_a4NodeB7LibraryC11definitionsQrvp", 0) __
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias GraphType = ShaderGraph::_Proto_ShaderNodeGraph
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderNodeGraphLibrary {
+  final public func definition(named name: Swift::String) -> ShaderGraph::_Proto_ShaderGraphNodeDefinition?
+  final public func definitions(function: Swift::String, input type: ShaderGraph::_Proto_ShaderDataType) -> [ShaderGraph::_Proto_ShaderGraphNodeDefinition]
+  final public func definitions(function: Swift::String, output outputType: ShaderGraph::_Proto_ShaderDataType) -> [ShaderGraph::_Proto_ShaderGraphNodeDefinition]
+  final public func definitions(function: Swift::String, inputs inputTypes: ShaderGraph::_Proto_ShaderDataType...) -> [ShaderGraph::_Proto_ShaderGraphNodeDefinition]
+  final public func definitions(function: Swift::String, inputs inputTypes: [ShaderGraph::_Proto_ShaderDataType]) -> [ShaderGraph::_Proto_ShaderGraphNodeDefinition]
+}
+extension ShaderGraph::_HashTable.ShaderGraph::Bucket : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::BucketIterator : Swift::CustomStringConvertible {
+  @usableFromInline
+  internal var description: Swift::String {
+    get
+  }
+}
+@usableFromInline
+internal typealias _UnsafeHashTable = ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  @unsafe @frozen internal struct UnsafeHandle {
+    @usableFromInline
+    internal typealias Bucket = ShaderGraph::_HashTable.ShaderGraph::Bucket
+    @usableFromInline
+    internal var _header: Swift::UnsafeMutablePointer<ShaderGraph::_HashTable.ShaderGraph::Header>
+    @usableFromInline
+    internal var _buckets: Swift::UnsafeMutablePointer<Swift::UInt64>
+    @inlinable @inline(__always) internal init(header: Swift::UnsafeMutablePointer<ShaderGraph::_HashTable.ShaderGraph::Header>, buckets: Swift::UnsafeMutablePointer<Swift::UInt64>, readonly: Swift::Bool) {
+        self._header = header
+        self._buckets = buckets
+    }
+    @inlinable @inline(__always) internal func assertMutable() {
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable @inline(__always) internal var scale: Swift::Int {
+    get { _header.pointee.scale }
+  }
+  @inlinable @inline(__always) internal var reservedScale: Swift::Int {
+    get { _header.pointee.reservedScale }
+  }
+  @inlinable @inline(__always) internal var seed: Swift::Int {
+    get { _header.pointee.seed }
+  }
+  @inlinable @inline(__always) internal var bias: Swift::Int {
+    get { _header.pointee.bias }
+    nonmutating set { _header.pointee.bias = newValue }
+  }
+  @inlinable @inline(__always) internal var bucketCount: Swift::Int {
+    get { 1 &<< scale }
+  }
+  @inlinable @inline(__always) internal var bucketMask: Swift::UInt64 {
+    get { UInt64(truncatingIfNeeded: bucketCount) - 1 }
+  }
+  @inlinable @inline(__always) internal var bitCount: Swift::Int {
+    get { scale &<< scale }
+  }
+  @inlinable @inline(__always) internal var wordCount: Swift::Int {
+    get { (bitCount + UInt64.bitWidth - 1) / UInt64.bitWidth }
+  }
+  @inlinable @inline(__always) internal var capacity: Swift::Int {
+    get { _HashTable.maximumCapacity(forScale: scale) }
+  }
+  @inlinable @inline(__always) internal func bucket(after bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket {
+    var offset = bucket.offset + 1
+      if offset == bucketCount {
+      offset = 0
+    }
+    return Bucket(offset: offset)
+  }
+  @inlinable @inline(__always) internal func bucket(before bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket {
+      let offset = (bucket.offset == 0 ? bucketCount : bucket.offset) - 1
+    return Bucket(offset: offset)
+  }
+  @inlinable @inline(__always) internal func word(after word: Swift::Int) -> Swift::Int {
+    var result = word + 1
+      if result == wordCount {
+      result = 0
+    }
+    return result
+  }
+  @inlinable @inline(__always) internal func word(before word: Swift::Int) -> Swift::Int {
+    if word == 0 {
+        return wordCount - 1
+    }
+    return word - 1
+  }
+  @inlinable internal func position(of bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> (word: Swift::Int, bit: Swift::Int) {
+      let start = bucket.offset &* scale
+    return (start &>> 6, start & 0x3F)
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable internal func _value(forBucketContents bucketContents: Swift::UInt64) -> Swift::Int? {
+      let mask = bucketMask
+    assert(bucketContents <= mask)
+    guard bucketContents != 0 else { return nil }
+      let v = (bucketContents ^ mask) &+ UInt64(truncatingIfNeeded: bias)
+    return Int(truncatingIfNeeded: v >= mask ? v - mask : v)
+  }
+  @inlinable internal func _bucketContents(for value: Swift::Int?) -> Swift::UInt64 {
+    guard var value = value else { return 0 }
+      let mask = Int(truncatingIfNeeded: bucketMask)
+    assert(value >= 0 && value < mask)
+      value &-= bias
+    if value < 0 { value += mask }
+    assert(value >= 0 && value < mask)
+    return UInt64(truncatingIfNeeded: value ^ mask)
+  }
+  @inlinable internal subscript(word word: Swift::Int) -> Swift::UInt64 {
+    @inline(__always) get {
+        assert(word >= 0 && word < bucketCount)
+        return _buckets[word]
+    }
+    @inline(__always) nonmutating set {
+        assert(word >= 0 && word < bucketCount)
+        assertMutable()
+        _buckets[word] = newValue
+    }
+  }
+  @inlinable internal subscript(raw bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> Swift::UInt64 {
+    get {
+        assert(bucket.offset < bucketCount)
+        let (word, bit) = position(of: bucket)
+        var value = self[word: word] &>> bit
+      let extractedBits = 64 - bit
+        if extractedBits < scale {
+          let word2 = self.word(after: word)
+        value &= (1 &<< extractedBits) - 1
+          value |= self[word: word2] &<< extractedBits
+      }
+        return value & bucketMask
+    }
+    nonmutating set {
+        assertMutable()
+        assert(bucket.offset < bucketCount)
+        let mask = bucketMask
+      assert(newValue <= mask)
+        let (word, bit) = position(of: bucket)
+        self[word: word] &= ~(mask &<< bit)
+        self[word: word] |= newValue &<< bit
+      let extractedBits = 64 - bit
+        if extractedBits < scale {
+          let word2 = self.word(after: word)
+          self[word: word2] &= ~((1 &<< (scale - extractedBits)) - 1)
+            self[word: word2] |= newValue &>> extractedBits
+      }
+    }
+  }
+  @inlinable @inline(__always) internal func isOccupied(_ bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> Swift::Bool {
+      self[raw: bucket] != 0
+  }
+  @inlinable internal subscript(bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> Swift::Int? {
+    get {
+        let contents = self[raw: bucket]
+        return _value(forBucketContents: contents)
+    }
+    nonmutating set {
+        assertMutable()
+        let v = _bucketContents(for: newValue)
+        self[raw: bucket] = v
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable internal func _find<Element>(_ item: Element, in elements: Swift::ContiguousArray<Element>) -> (index: Swift::Int?, bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) where Element : Swift::Hashable {
+      elements.withUnsafeBufferPointer { buffer in
+          _find(item, in: buffer)
+    }
+  }
+  @inlinable internal func _find<Element>(_ item: Element, in elements: Swift::UnsafeBufferPointer<Element>) -> (index: Swift::Int?, bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) where Element : Swift::Hashable {
+      let start = idealBucket(for: item)
+      var (iterator, value) = startFind(start)
+    while let index = value {
+        if elements[_offset: index] == item {
+            return (index, iterator.currentBucket)
+      }
+        value = iterator.findNext()
+    }
+      return (nil, iterator.currentBucket)
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @usableFromInline
+  internal func firstOccupiedBucketInChain(with bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket
+  @inlinable internal func delete(bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket, hashValueGenerator: (Swift::Int, Swift::Int) -> Swift::Int) {
+      assertMutable()
+      var it = bucketIterator(startingAt: bucket)
+      assert(it.isOccupied)
+      it.advance()
+      guard it.isOccupied else {
+       
+        self[bucket] = nil
+      return
+    }
+     
+     
+
+     
+      let start = firstOccupiedBucketInChain(with: bucket)
+    var hole = bucket
+
+      while it.isOccupied {
+        let hash = hashValueGenerator(it.currentValue!, seed)
+        let candidate = idealBucket(forHashValue: hash)
+
+       
+       
+       
+      let c0 = candidate.offset >= start.offset
+      let c1 = candidate.offset <= hole.offset
+      if start.offset <= hole.offset ? (c0 && c1) : (c0 || c1) {
+         
+         
+         
+          self[hole] = it.currentValue
+          hole = it.currentBucket
+      }
+        it.advance()
+    }
+      self[hole] = nil
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable internal func adjustContents<Base>(preparingForInsertionOfElementAtOffset offset: Swift::Int, in elements: Base) where Base : Swift::RandomAccessCollection, Base.Element : Swift::Hashable {
+      assertMutable()
+    let index = elements._index(at: offset)
+    if offset < elements.count / 2 {
+        self.bias += 1
+        if offset <= capacity / 3 {
+        var i = 1
+        for item in elements[..<index] {
+            var it = bucketIterator(for: item)
+            it.advance(until: i)
+            it.currentValue! -= 1
+          i += 1
+        }
+      } else {
+          var it = bucketIterator(startingAt: Bucket(offset: 0))
+        repeat {
+            if let value = it.currentValue, value <= offset {
+              it.currentValue = value - 1
+          }
+            it.advance()
+        } while it.currentBucket.offset != 0
+      }
+    } else {
+        if elements.count - offset - 1 <= capacity / 3 {
+        var i = offset
+        for item in elements[index...] {
+            var it = bucketIterator(for: item)
+            it.advance(until: i)
+            it.currentValue! += 1
+          i += 1
+        }
+      } else {
+          var it = bucketIterator(startingAt: Bucket(offset: 0))
+        repeat {
+            if let value = it.currentValue, value >= offset {
+                it.currentValue = value + 1
+          }
+            it.advance()
+        } while it.currentBucket.offset != 0
+      }
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable @inline(__always) internal func adjustContents<Base>(preparingForRemovalOf index: Base.Index, in elements: Base) where Base : Swift::RandomAccessCollection, Base.Element : Swift::Hashable {
+    let next = elements.index(after: index)
+      adjustContents(preparingForRemovalOf: index ..< next, in: elements)
+  }
+  @inlinable internal func adjustContents<Base>(preparingForRemovalOf bounds: Swift::Range<Base.Index>, in elements: Base) where Base : Swift::RandomAccessCollection, Base.Element : Swift::Hashable {
+      assertMutable()
+    let startOffset = elements._offset(of: bounds.lowerBound)
+    let endOffset = elements._offset(of: bounds.upperBound)
+    let c = endOffset - startOffset
+    guard c > 0 else { return }
+    let remainingCount = elements.count - c
+
+    if startOffset >= remainingCount / 2 {
+      let tailCount = elements.count - endOffset
+        if tailCount < capacity / 3 {
+        var i = endOffset
+        for item in elements[bounds.upperBound...] {
+            var it = self.bucketIterator(for: item)
+            it.advance(until: i)
+            it.currentValue = i - c
+          i += 1
+        }
+      } else {
+          var it = bucketIterator(startingAt: Bucket(offset: 0))
+        repeat {
+            if let value = it.currentValue {
+            if value >= endOffset {
+                it.currentValue = value - c
+            } else {
+              assert(value < startOffset)
+            }
+          }
+            it.advance()
+        } while it.currentBucket.offset != 0
+      }
+    } else {
+        if startOffset < capacity / 3 {
+        var i = 0
+        for item in elements[..<bounds.lowerBound] {
+            var it = self.bucketIterator(for: item)
+            it.advance(until: i)
+            it.currentValue = i + c
+          i += 1
+        }
+      } else {
+          var it = bucketIterator(startingAt: Bucket(offset: 0))
+        repeat {
+            if let value = it.currentValue {
+            if value < startOffset {
+                it.currentValue = value + c
+            } else {
+              assert(value >= endOffset)
+            }
+          }
+            it.advance()
+        } while it.currentBucket.offset != 0
+      }
+        self.bias -= c
+    }
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @usableFromInline
+  internal func clear()
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @inlinable internal func fill<C>(uncheckedUniqueElements elements: C) where C : Swift::RandomAccessCollection, C.Element : Swift::Hashable {
+      assertMutable()
+      assert(elements.count <= capacity)
+     
+     
+     
+    let fastPath: Void? = elements.withContiguousStorageIfAvailable { elements in
+       
+      var offset = 0
+      for index in elements.indices {
+         
+         
+          var it = bucketIterator(for: elements[index])
+          it.advanceToNextUnoccupiedBucket()
+          it.currentValue = offset
+        offset += 1
+      }
+    }
+    if fastPath != nil {
+      return
+    }
+     
+    var offset = 0
+    for index in elements.indices {
+       
+       
+        var it = bucketIterator(for: elements[index])
+        it.advanceToNextUnoccupiedBucket()
+        it.currentValue = offset
+      offset += 1
+    }
+  }
+  @inlinable internal func fill<C>(untilFirstDuplicateIn elements: C) -> (success: Swift::Bool, end: C.Index) where C : Swift::RandomAccessCollection, C.Element : Swift::Hashable {
+      assertMutable()
+      assert(elements.count <= capacity)
+     
+    
+     
+     
+     
+    let fastPath: (success: Bool, end: Int)? = elements.withContiguousStorageIfAvailable { elements in
+      var offset = 0
+      for index in elements.indices {
+         
+         
+          var it = bucketIterator(for: elements[index])
+          while let offset = it.currentValue {
+            guard elements[_offset: offset] != elements[index] else {
+            return (false, index)
+          }
+              it.advance()
+        }
+          it.currentValue = offset
+        offset += 1
+      }
+      return (true, elements.endIndex)
+    }
+    if let fastPath {
+      return (fastPath.success, elements.index(elements.startIndex, offsetBy: fastPath.end))
+    }
+    var offset = 0
+    for index in elements.indices {
+       
+       
+        var it = bucketIterator(for: elements[index])
+        while let offset = it.currentValue {
+        guard elements[_offset: offset] != elements[index] else {
+          return (false, index)
+        }
+          it.advance()
+      }
+        it.currentValue = offset
+      offset += 1
+    }
+    return (true, elements.endIndex)
+  }
+}
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  internal struct Header {
+    @usableFromInline
+    internal var _scaleAndSeed: Swift::UInt64
+    @usableFromInline
+    internal var _reservedScaleAndBias: Swift::UInt64
+    @inlinable @inline(__always) internal var scale: Swift::Int {
+      get { Int(_scaleAndSeed & 0x3F) }
+    }
+    @inlinable internal var reservedScale: Swift::Int {
+      @inline(__always) get { Int(_reservedScaleAndBias & 0x3F) }
+      set {
+        assert(newValue >= 0 && newValue < 64)
+        _reservedScaleAndBias &= ~0x3F
+        _reservedScaleAndBias |= UInt64(truncatingIfNeeded: newValue) & 0x3F
+      }
+    }
+    @inlinable @inline(__always) internal var seed: Swift::Int {
+      get {
+      Int(truncatingIfNeeded: _scaleAndSeed)
+    }
+    }
+    @inlinable internal var bias: Swift::Int {
+      @inline(__always) get { Int(truncatingIfNeeded: _reservedScaleAndBias) &>> 6 }
+      set {
+        let limit = (1 &<< scale) - 1
+        var bias = newValue
+        if bias < 0 { bias += limit }
+        if bias >= limit { bias -= limit }
+        assert(bias >= 0 && bias < limit)
+        _reservedScaleAndBias &= 0x3F
+        _reservedScaleAndBias |= UInt64(truncatingIfNeeded: bias) &<< 6
+        assert(self.bias >= 0 && self.bias < limit)
+      }
+    }
+    @inlinable @inline(__always) internal var capacity: Swift::Int {
+      get { _HashTable.maximumCapacity(forScale: scale) }
+    }
+  }
+}
+extension Swift::FixedWidthInteger {
+  @inlinable @inline(__always) internal var _nonzeroBitCount: Self {
+    get {
+    Self(truncatingIfNeeded: nonzeroBitCount)
+  }
+  }
+  @inlinable @inline(__always) internal func _rank(ofBit bit: Swift::UInt) -> Swift::Int {
+    assert(bit < Self.bitWidth)
+    let mask: Self = (1 &<< bit) &- 1
+    return (self & mask).nonzeroBitCount
+  }
+}
+extension Swift::UInt {
+  @usableFromInline
+  @_effects(releasenone) internal func _bit(ranked n: Swift::Int) -> Swift::UInt?
+}
+extension Swift::UInt32 {
+  @usableFromInline
+  @_effects(releasenone) internal func _bit(ranked n: Swift::Int) -> Swift::UInt?
+}
+extension Swift::UInt16 {
+  @usableFromInline
+  @_effects(releasenone) internal func _bit(ranked n: Swift::Int) -> Swift::UInt?
+}
+extension Swift::UnsafeBufferPointer where Element : Swift::Equatable {
+  @inlinable internal func _firstIndex(of element: Element) -> Swift::UnsafeBufferPointer<Element>.Swift::Index? {
+    var i = self.startIndex
+    while i != self.endIndex {
+        if self[i] == element {
+        return i
+      }
+        self.formIndex(after: &i)
+    }
+    return nil
+  }
+}
+extension Swift::UnsafeMutableBufferPointer {
+  @inlinable internal func initialize(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) -> Swift::UnsafeMutableBufferPointer<Element>.Swift::Index {
+    guard source.count > 0 else { return 0 }
+    precondition(
+      source.count <= self.count,
+      "buffer cannot contain every element from source.")
+      baseAddress.unsafelyUnwrapped.initialize(
+      from: source.baseAddress.unsafelyUnwrapped,
+      count: source.count)
+    return source.count
+  }
+  @inlinable internal func initialize(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) -> Swift::UnsafeMutableBufferPointer<Element>.Swift::Index {
+      let sourceCount = source.count
+    guard sourceCount > 0 else { return 0 }
+    precondition(
+      sourceCount <= self.count,
+      "buffer cannot contain every element from source.")
+      baseAddress.unsafelyUnwrapped.initialize(
+      from: source.base.baseAddress.unsafelyUnwrapped + source.startIndex,
+      count: sourceCount)
+    return sourceCount
+  }
+}
+extension Swift::Slice {
+  @inlinable @inline(__always) internal func initialize<Element>(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) -> Swift::Slice<Base>.Index where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      let i = target.initialize(fromContentsOf: source)
+      return self.startIndex + i
+  }
+  @inlinable @inline(__always) internal func initialize<Element>(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) -> Swift::Slice<Base>.Index where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      let i = target.initialize(fromContentsOf: source)
+      return self.startIndex + i
+  }
+}
+extension Swift::UnsafeMutableBufferPointer {
+  @inlinable @inline(__always) internal func initializeAll<C>(fromContentsOf source: C) where Element == C.Element, C : Swift::Collection {
+      let i = self.initialize(fromContentsOf: source)
+    assert(i == self.endIndex)
+  }
+  @inlinable @inline(__always) internal func initializeAll(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) {
+      let i = self.initialize(fromContentsOf: source)
+    assert(i == self.endIndex)
+  }
+  @inlinable @inline(__always) internal func initializeAll(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) {
+      let i = self.initialize(fromContentsOf: source)
+    assert(i == self.endIndex)
+  }
+  @inlinable @inline(__always) internal func moveInitializeAll(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) {
+      let i = self.moveInitialize(fromContentsOf: source)
+    assert(i == self.endIndex)
+  }
+  @inlinable @inline(__always) internal func moveInitializeAll(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) {
+      let i = self.moveInitialize(fromContentsOf: source)
+    assert(i == self.endIndex)
+  }
+}
+extension Swift::Slice {
+  @inlinable @inline(__always) internal func initializeAll<C>(fromContentsOf source: C) where Base == Swift::UnsafeMutableBufferPointer<C.Element>, C : Swift::Collection {
+      let i = self.initialize(fromContentsOf: source)
+      assert(i == self.endIndex)
+  }
+  @inlinable @inline(__always) internal func initializeAll<Element>(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      target.initializeAll(fromContentsOf: source)
+  }
+  @inlinable @inline(__always) internal func initializeAll<Element>(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      target.initializeAll(fromContentsOf: source)
+  }
+  @inlinable @inline(__always) internal func moveInitializeAll<Element>(fromContentsOf source: Swift::UnsafeMutableBufferPointer<Element>) where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      target.moveInitializeAll(fromContentsOf: source)
+  }
+  @inlinable @inline(__always) internal func moveInitializeAll<Element>(fromContentsOf source: Swift::Slice<Swift::UnsafeMutableBufferPointer<Element>>) where Base == Swift::UnsafeMutableBufferPointer<Element> {
+      let target = UnsafeMutableBufferPointer(rebasing: self)
+      target.moveInitializeAll(fromContentsOf: source)
+  }
+}
+extension ShaderGraph::_UnsafeBitSet {
+  @usableFromInline
+  @frozen internal struct Index : Swift::Comparable, Swift::Hashable {
+    @usableFromInline
+    internal typealias _Word = ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word
+    @usableFromInline
+    internal var value: Swift::UInt
+    @inlinable internal init(_ value: Swift::UInt) {
+      self.value = value
+    }
+    @inlinable internal init(_ value: Swift::Int) {
+      self.value = UInt(value)
+    }
+    @inlinable internal init(word: Swift::Int, bit: Swift::UInt) {
+      assert(word >= 0 && word <= Int.max / _Word.capacity)
+      assert(bit < _Word.capacity)
+      self.value = UInt(word &* _Word.capacity) &+ bit
+    }
+    @usableFromInline
+    internal var hashValue: Swift::Int {
+      @usableFromInline
+      get
+    }
+  }
+}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::Index {
+  @inlinable internal var word: Swift::Int {
+    get {
+     
+    Int(truncatingIfNeeded: value / UInt(bitPattern: _Word.capacity))
+  }
+  }
+  @inlinable internal var bit: Swift::UInt {
+    get {
+     
+    value % UInt(bitPattern: _Word.capacity)
+  }
+  }
+  @inlinable internal var split: (word: Swift::Int, bit: Swift::UInt) {
+    get {
+    (word, bit)
+  }
+  }
+  @inlinable internal var endSplit: (word: Swift::Int, bit: Swift::UInt) {
+    get {
+    let w = word
+    let b = bit
+    if w > 0, b == 0 { return (w &- 1, UInt(_Word.capacity)) }
+    return (w, b)
+  }
+  }
+  @inlinable internal static func == (left: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index, right: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> Swift::Bool {
+    left.value == right.value
+  }
+  @inlinable internal static func < (left: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index, right: ShaderGraph::_UnsafeBitSet.ShaderGraph::Index) -> Swift::Bool {
+    left.value < right.value
+  }
+  @inlinable internal func hash(into hasher: inout Swift::Hasher) {
+    hasher.combine(value)
+  }
+  @inlinable internal func _successor() -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index {
+    Self(value + 1)
+  }
+  @inlinable internal func _predecessor() -> ShaderGraph::_UnsafeBitSet.ShaderGraph::Index {
+    Self(value - 1)
+  }
+}
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  @inline(__always) internal static var minimumScale: Swift::Int {
+    @_effects(readnone) get
+  }
+  @usableFromInline
+  @inline(__always) internal static var maximumScale: Swift::Int {
+    @_effects(readnone) get
+  }
+  @usableFromInline
+  @inline(__always) internal static var maximumUnhashedCount: Swift::Int {
+    @_effects(readnone) get
+  }
+  @usableFromInline
+  @_effects(readnone) internal static func minimumCapacity(forScale scale: Swift::Int) -> Swift::Int
+  @usableFromInline
+  @_effects(readnone) internal static func maximumCapacity(forScale scale: Swift::Int) -> Swift::Int
+  @usableFromInline
+  @_effects(readnone) internal static func scale(forCapacity capacity: Swift::Int) -> Swift::Int
+}
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  @unsafe internal struct BucketIterator {
+    @usableFromInline
+    internal typealias Bucket = ShaderGraph::_HashTable.ShaderGraph::Bucket
+    @usableFromInline
+    internal var _currentBucket: ShaderGraph::_HashTable.ShaderGraph::BucketIterator.ShaderGraph::Bucket
+    @usableFromInline
+    @_effects(releasenone) internal init(hashTable: ShaderGraph::_UnsafeHashTable, startingAt bucket: ShaderGraph::_HashTable.ShaderGraph::BucketIterator.ShaderGraph::Bucket)
+  }
+}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle {
+  @usableFromInline
+  internal typealias BucketIterator = ShaderGraph::_HashTable.ShaderGraph::BucketIterator
+  @_effects(releasenone) @inlinable @inline(__always) internal func idealBucket(forHashValue hashValue: Swift::Int) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket {
+      return Bucket(offset: hashValue & (bucketCount - 1))
+  }
+  @inlinable @inline(__always) internal func idealBucket<Element>(for element: Element) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket where Element : Swift::Hashable {
+      let hashValue = element._rawHashValue(seed: seed)
+      return idealBucket(forHashValue: hashValue)
+  }
+  @inlinable @inline(__always) internal func bucketIterator<Element>(for element: Element) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::BucketIterator where Element : Swift::Hashable {
+      let bucket = idealBucket(for: element)
+      return bucketIterator(startingAt: bucket)
+  }
+  @inlinable @inline(__always) internal func bucketIterator(startingAt bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::BucketIterator {
+      BucketIterator(hashTable: self, startingAt: bucket)
+  }
+  @usableFromInline
+  @_effects(releasenone) internal func startFind(_ startBucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> (iterator: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::BucketIterator, currentValue: Swift::Int?)
+  @usableFromInline
+  @_effects(readonly) internal func _startIterator(bucket: ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle.ShaderGraph::Bucket) -> (currentBits: Swift::UInt64, nextBits: Swift::UInt64, remainingBitCount: Swift::Int)
+}
+extension ShaderGraph::_HashTable.ShaderGraph::BucketIterator {
+  @inlinable @inline(__always) internal var currentBucket: ShaderGraph::_HashTable.ShaderGraph::BucketIterator.ShaderGraph::Bucket {
+    get { _currentBucket }
+  }
+  @usableFromInline
+  internal var isOccupied: Swift::Bool {
+    @_effects(readonly) @inline(__always) get
+  }
+  @usableFromInline
+  internal var currentValue: Swift::Int? {
+    @inline(__always) @_effects(readonly) get
+    @_effects(releasenone) set
+  }
+  @usableFromInline
+  @_effects(releasenone) internal mutating func advance()
+  @usableFromInline
+  @_effects(releasenone) internal mutating func findNext() -> Swift::Int?
+  @inlinable @_effects(releasenone) internal mutating func advance(until expected: Swift::Int) {
+      while isOccupied && currentValue != expected {
+        advance()
+    }
+  }
+  @inlinable @_effects(releasenone) internal mutating func advanceToNextUnoccupiedBucket() {
+      while isOccupied {
+          advance()
+    }
+  }
+}
+@usableFromInline
+internal func _addressString(for pointer: Swift::UnsafeRawPointer) -> Swift::String
+@usableFromInline
+internal func _addressString(for object: Swift::AnyObject) -> Swift::String
+@usableFromInline
+internal func _addressString<T>(for object: Swift::Unmanaged<T>) -> Swift::String where T : AnyObject
+@inlinable internal func _arrayDescription<C>(for elements: C) -> Swift::String where C : Swift::Collection {
+  var result = "["
+  var first = true
+  for item in elements {
+    if first {
+      first = false
+    } else {
+      result += ", "
+    }
+    debugPrint(item, terminator: "", to: &result)
+  }
+  result += "]"
+  return result
+}
+@inlinable internal func _dictionaryDescription<Key, Value, C>(for elements: C) -> Swift::String where C : Swift::Collection, C.Element == (key: Key, value: Value) {
+  guard !elements.isEmpty else { return "[:]" }
+  var result = "["
+  var first = true
+  for (key, value) in elements {
+    if first {
+      first = false
+    } else {
+      result += ", "
+    }
+    debugPrint(key, terminator: "", to: &result)
+    result += ": "
+    debugPrint(value, terminator: "", to: &result)
+  }
+  result += "]"
+  return result
+}
+@usableFromInline
+@frozen internal struct _HashTable {
+  @usableFromInline
+  internal var _storage: ShaderGraph::_HashTable.ShaderGraph::Storage
+  @inlinable @inline(__always) internal init(_ storage: ShaderGraph::_HashTable.ShaderGraph::Storage) {
+    _storage = storage
+  }
+}
+extension ShaderGraph::_HashTable {
+  @_inheritsConvenienceInitializers @usableFromInline
+  final internal class Storage : Swift::ManagedBuffer<ShaderGraph::_HashTable.ShaderGraph::Header, Swift::UInt64> {
+    @objc @usableFromInline
+    deinit
+  }
+}
+extension ShaderGraph::_HashTable {
+  @usableFromInline
+  @_effects(releasenone) internal init(scale: Swift::Int, reservedScale: Swift::Int = 0)
+  @inlinable @inline(never) @_effects(releasenone) internal static func create<C>(uncheckedUniqueElements elements: C, scale: Swift::Int? = nil, reservedScale: Swift::Int = 0) -> ShaderGraph::_HashTable? where C : Swift::RandomAccessCollection, C.Element : Swift::Hashable {
+    let minScale = Self.scale(forCapacity: elements.count)
+    let scale = Swift.max(Swift.max(scale ?? 0, minScale),
+                          reservedScale)
+    if scale < Self.minimumScale { return nil }
+    let hashTable = Self(scale: scale, reservedScale: reservedScale)
+      hashTable.update { handle in
+          handle.fill(uncheckedUniqueElements: elements)
+    }
+    return hashTable
+  }
+  @inlinable @inline(never) @_effects(releasenone) internal static func create<C>(untilFirstDuplicateIn elements: C, scale: Swift::Int? = nil, reservedScale: Swift::Int = 0) -> (hashTable: ShaderGraph::_HashTable?, end: C.Index) where C : Swift::RandomAccessCollection, C.Element : Swift::Hashable {
+    let minScale = Self.scale(forCapacity: elements.count)
+    let scale = Swift.max(Swift.max(scale ?? 0, minScale),
+                          reservedScale)
+
+    if scale < Self.minimumScale {
+       
+      if elements.count < 2 { return (nil, elements.endIndex) }
+       
+       
+       
+      let firstDuplicateIndexFastPath: Int? = elements.withContiguousStorageIfAvailable { elements in
+        var temp: ContiguousArray<C.Element> = []
+        temp.reserveCapacity(elements.count)
+        for i in elements.indices {
+            let item = elements[i]
+          guard !temp._contains(item) else { return i }
+          temp.append(item)
+        }
+        return elements.endIndex
+      }
+      if let firstDuplicateIndexFastPath {
+        return (nil, elements.index(elements.startIndex, offsetBy: firstDuplicateIndexFastPath))
+      }
+      var temp: ContiguousArray<C.Element> = []
+      temp.reserveCapacity(elements.count)
+      for i in elements.indices {
+        let item = elements[i]
+        guard !temp._contains(item) else { return (nil, i) }
+        temp.append(item)
+      }
+      return (nil, elements.endIndex)
+    }
+    let hashTable = Self(scale: scale, reservedScale: reservedScale)
+      let (_, index) = hashTable.update { handle in
+          handle.fill(untilFirstDuplicateIn: elements)
+    }
+    return (hashTable, index)
+  }
+  @usableFromInline
+  @_effects(releasenone) internal func copy() -> ShaderGraph::_HashTable
+}
+extension Swift::ContiguousArray where Element : Swift::Equatable {
+  @inlinable internal func _contains(_ element: Element) -> Swift::Bool {
+    for index in 0..<count {
+      if element == self[index] {
+        return true
+      }
+    }
+    return false
+  }
+}
+extension ShaderGraph::_HashTable {
+  @inlinable @inline(__always) internal func read<R>(_ body: (ShaderGraph::_UnsafeHashTable) throws -> R) rethrows -> R {
+      try _storage.withUnsafeMutablePointers { header, elements in
+        let handle = _UnsafeHashTable(header: header, buckets: elements, readonly: true)
+        return try body(handle)
+    }
+  }
+  @inlinable @inline(__always) internal func update<R>(_ body: (ShaderGraph::_UnsafeHashTable) throws -> R) rethrows -> R {
+      try _storage.withUnsafeMutablePointers { header, elements in
+        let handle = _UnsafeHashTable(header: header, buckets: elements, readonly: false)
+        return try body(handle)
+    }
+  }
+}
+extension ShaderGraph::_HashTable {
+  @inlinable internal var header: ShaderGraph::_HashTable.ShaderGraph::Header {
+    get { _storage.header }
+    @inline(__always) nonmutating _modify { yield &_storage.header }
+  }
+  @inlinable internal var capacity: Swift::Int {
+    get {
+    _storage.header.capacity
+  }
+  }
+  @inlinable internal var minimumCapacity: Swift::Int {
+    get {
+    if scale == reservedScale { return 0 }
+    return Self.minimumCapacity(forScale: scale)
+  }
+  }
+  @inlinable internal var scale: Swift::Int {
+    get {
+    _storage.header.scale
+  }
+  }
+  @inlinable internal var reservedScale: Swift::Int {
+    get {
+    _storage.header.reservedScale
+  }
+  }
+  @inlinable internal var bias: Swift::Int {
+    get {
+    _storage.header.bias
+  }
+  }
+}
+extension Swift::UInt {
+  @inlinable internal var _reversed: Swift::UInt {
+    get {
+     
+    var shift: UInt = UInt(UInt.bitWidth)
+    var mask: UInt = ~0;
+    var result = self
+    while true {
+      shift &>>= 1
+      guard shift > 0 else { break }
+      mask ^= mask &<< shift
+      result = ((result &>> shift) & mask) | ((result &<< shift) & ~mask)
+    }
+    return result
+  }
+  }
+}
+extension ShaderGraph::MaterialXAvailability : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class MaterialXTarget : Swift::Sendable {
+  final public let name: Swift::String
+  final public let parent: ShaderGraph::MaterialXTarget?
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::MaterialXTarget : Swift::Hashable {
+  final public func hash(into hasher: inout Swift::Hasher)
+  public static func == (lhs: ShaderGraph::MaterialXTarget, rhs: ShaderGraph::MaterialXTarget) -> Swift::Bool
+  final public var hashValue: Swift::Int {
+    get
+  }
+}
+extension ShaderGraph::MaterialXTarget : Swift::CustomStringConvertible {
+  final public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum MaterialXAvailability : Swift::Hashable, Swift::Sendable {
+  case supported
+  case unsupported
+  case deprecated(Swift::String?)
+  case prerelease
+  public static func == (a: ShaderGraph::MaterialXAvailability, b: ShaderGraph::MaterialXAvailability) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+extension ShaderGraph::SGDataType {
+  public var stringValue: Swift::String {
+    get
+  }
+}
+extension ShaderGraph::SGDataType : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph {
+  @_hasMissingDesignatedInitializers final public class NodeLibrary {
+    public struct Version : Swift::Equatable, Swift::Hashable, Swift::Sendable {
+      public static let materialX138: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version
+      public static let materialX139: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version
+      public static let `default`: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version
+      public static func == (a: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version, b: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    final public let version: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version
+    final public var definitions: some Swift::Collection<ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition> {
+      get
+    }
+    final public func makeNode(from definition: ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition) throws -> ShaderGraph::ShaderGraph.ShaderGraph::Node
+    public init(version: ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary.ShaderGraph::Version)
+    @objc deinit
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph.ShaderGraph::NodeLibrary {
+  final public func definition(named name: Swift::String) -> ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition?
+  final public func definitions(function: Swift::String, input type: ShaderGraph::ShaderGraph.ShaderGraph::DataType) -> [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition]
+  final public func definitions(function: Swift::String, output outputType: ShaderGraph::ShaderGraph.ShaderGraph::DataType) -> [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition]
+  final public func definitions(function: Swift::String, inputs inputTypes: ShaderGraph::ShaderGraph.ShaderGraph::DataType...) -> [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition]
+  final public func definitions(function: Swift::String, inputs inputTypes: [ShaderGraph::ShaderGraph.ShaderGraph::DataType]) -> [ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition]
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum _Proto_ShaderGraphValue : Swift::Equatable {
+  case bool(Swift::Bool)
+  case uchar(Swift::UInt8)
+  case int(Swift::Int32)
+  case uint(Swift::UInt32)
+  case half(Swift::UInt16)
+  case float(Swift::Float)
+  case string(Swift::String)
+  case float2(Swift::SIMD2<Swift::Float>)
+  case float3(Swift::SIMD3<Swift::Float>)
+  case float4(Swift::SIMD4<Swift::Float>)
+  case half2(Swift::SIMD2<Swift::UInt16>)
+  case half3(Swift::SIMD3<Swift::UInt16>)
+  case half4(Swift::SIMD4<Swift::UInt16>)
+  case int2(Swift::SIMD2<Swift::Int32>)
+  case int3(Swift::SIMD3<Swift::Int32>)
+  case int4(Swift::SIMD4<Swift::Int32>)
+  case float2x2(Swift::SIMD2<Swift::Float>, Swift::SIMD2<Swift::Float>)
+  case float3x3(Swift::SIMD3<Swift::Float>, Swift::SIMD3<Swift::Float>, Swift::SIMD3<Swift::Float>)
+  case float4x4(Swift::SIMD4<Swift::Float>, Swift::SIMD4<Swift::Float>, Swift::SIMD4<Swift::Float>, Swift::SIMD4<Swift::Float>)
+  case half2x2(Swift::SIMD2<Swift::UInt16>, Swift::SIMD2<Swift::UInt16>)
+  case half3x3(Swift::SIMD3<Swift::UInt16>, Swift::SIMD3<Swift::UInt16>, Swift::SIMD3<Swift::UInt16>)
+  case half4x4(Swift::SIMD4<Swift::UInt16>, Swift::SIMD4<Swift::UInt16>, Swift::SIMD4<Swift::UInt16>, Swift::SIMD4<Swift::UInt16>)
+  case cgColor3(CoreGraphics::CGColor)
+  case cgColor4(CoreGraphics::CGColor)
+  case filename(Swift::String)
+  public var output: ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Output {
+    get
+  }
+  public var shaderDataType: ShaderGraph::_Proto_ShaderDataType {
+    get
+  }
+  public static func == (a: ShaderGraph::_Proto_ShaderGraphValue, b: ShaderGraph::_Proto_ShaderGraphValue) -> Swift::Bool
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum _Proto_ShaderDataType : Swift::Equatable {
+  case invalid
+  case bool
+  case uchar
+  case int
+  case uint
+  case half
+  case float
+  case string
+  case float2
+  case float3
+  case float4
+  case half2
+  case half3
+  case half4
+  case int2
+  case int3
+  case int4
+  case float2x2
+  case float3x3
+  case float4x4
+  case half2x2
+  case half3x3
+  case half4x4
+  case quaternion
+  case surfaceShader
+  case geometryModifier
+  case postLightingShader
+  case cgColor3
+  case cgColor4
+  case filename
+  public static func == (a: ShaderGraph::_Proto_ShaderDataType, b: ShaderGraph::_Proto_ShaderDataType) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum _Proto_TextureCoordinate {
+  case uv0
+  case uv1
+  case uv2
+  case uv3
+  case uv4
+  case uv5
+  case uv6
+  case uv7
+  public static func == (a: ShaderGraph::_Proto_TextureCoordinate, b: ShaderGraph::_Proto_TextureCoordinate) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+extension Swift::Array {
+  public func toDictionary<Key>(with selectKey: (Element) -> Key) -> [Key : Element] where Key : Swift::Hashable
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Platform : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Platform : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::ShaderGraph.ShaderGraph::NodeDefinition.ShaderGraph::Platform : Swift::RawRepresentable {}
+extension ShaderGraph::_UnsafeBitSet : Swift::BitwiseCopyable {}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::Sendable {}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::_Word : Swift::BitwiseCopyable {}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::Iterator : Swift::BitwiseCopyable {}
+extension ShaderGraph::_HashTable.ShaderGraph::Bucket : Swift::Sendable {}
+extension ShaderGraph::_HashTable.ShaderGraph::Bucket : Swift::BitwiseCopyable {}
+extension ShaderGraph::_HashTable.ShaderGraph::UnsafeHandle : Swift::BitwiseCopyable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Platform : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Platform : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderGraphNodeDefinition.ShaderGraph::Platform : Swift::RawRepresentable {}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::Index : Swift::Sendable {}
+extension ShaderGraph::_UnsafeBitSet.ShaderGraph::Index : Swift::BitwiseCopyable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_ShaderDataType : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_TextureCoordinate : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ShaderGraph::_Proto_TextureCoordinate : Swift::Hashable {}

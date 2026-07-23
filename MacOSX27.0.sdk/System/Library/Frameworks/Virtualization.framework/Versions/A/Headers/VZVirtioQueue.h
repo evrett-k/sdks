@@ -1,0 +1,90 @@
+//
+//  VZVirtioQueue.h
+//  Virtualization
+//
+//  Copyright © 2020-2026 Apple Inc. All rights reserved.
+//
+
+#import <Virtualization/VZDefines.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@class VZVirtioQueueElement;
+
+/**
+ A Virtio queue.
+
+ A `VZVirtioQueue` represents a virtqueue (Virtio queue) that belongs to a Virtio device. A virtqueue provides a mechanism for
+ bulk data transport on Virtio devices, that facilitate device operations. For more information about how virtqueues work, see the
+ [Virtio specification](https://docs.oasis-open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html).
+
+ Don't instantiate `VZVirtioQueue` objects directly. Once you have created and configured a ``VZCustomVirtioDevice``,
+ you can access the Virtio queues belonging to that device through the ``VZCustomVirtioDevice/queueAtIndex:`` method.
+
+ When the device receives a notification from the guest, the framework provides the queue with which the framework associates the notification as an
+ argument when the framework calls ``VZCustomVirtioDeviceDelegate/customVirtioDevice:didReceiveNotificationForQueue:``.
+
+ ## See Also
+
+ - ``VZCustomVirtioDevice``
+ - ``VZVirtioQueueElement``
+
+ */
+VZ_EXPORT API_AVAILABLE(macos(27.0))
+@interface VZVirtioQueue : NSObject
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+/**
+ Gets the next element in this queue, if any.
+
+ Use this method to obtain any elements (available buffers), that the Virtualization framework represents as `VZVirtioQueueElement`,
+ in the virtqueue for processing.
+
+ You need to call the ``VZVirtioQueueElement/returnToQueue`` method when you are finished processing the element in order
+ to return the element back to the guest.
+
+ When using this method, the framework disables virtqueue notifications until you have consumed every available element. When calling
+ this method in response to a virtqueue notification, you need to do so repeatedly until it returns `nil` (which indicates there are no more
+ elements available in the queue), typically in a loop like this:
+
+ @TabNavigator(){
+   @Tab("Objective-C"){
+     ```objc
+         VZVirtioQueue *queue = ...
+         while (VZVirtioQueueElement *element = [queue nextElement]) {
+             // Code to process the element.
+         }
+     ```
+   }
+
+   @Tab("Swift"){
+    ```swift
+        let queue: VZVirtioQueue = ...
+        while let element = queue.nextElement() {
+            // Code to process the element.
+    }
+    ```
+   }
+ }
+
+ - Returns: The next available element on this queue, or `nil` if no elements are available or if the device is no longer live.
+ */
+- (nullable VZVirtioQueueElement *)nextElement;
+
+/**
+ The index for this queue.
+ */
+@property (readonly) uint16_t queueIndex;
+
+/**
+ Size of this queue.
+
+ The size of the queue indicates the maximum number of `VZVirtioQueueElement` that can be made available in the queue.
+ */
+@property (readonly) uint16_t queueSize;
+
+@end
+
+NS_ASSUME_NONNULL_END

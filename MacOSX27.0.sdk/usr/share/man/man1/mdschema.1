@@ -1,0 +1,89 @@
+.\" Copyright (c) 2026 Apple Inc.  All Rights Reserved.
+.\"
+.Dd January 13, 2026
+.Dt MDSCHEMA 1
+.Os
+.Sh NAME
+.Nm mdschema
+.Nd compile, query, and display information about a Spotlight metadata attribute schema
+.Sh SYNOPSIS
+.Nm
+.Op Fl h
+.Op Fl a
+.Op Fl A Ar attribute
+.Op Fl t Ar type
+.Op Fl compile Ar path
+.Op Fl path Ar path
+.Sh DESCRIPTION
+The
+.Nm
+utility is used to compile, query, and display information about a Spotlight
+metadata attribute schema.
+Spotlight uses a schema to define metadata attributes that can be associated
+with files and other searchable content.
+This tool allows compilation of a custom schema, along with inspection of the
+schema, including attribute definitions, display names, and content type
+associations.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Fl h
+Display usage information and exit.
+.It Fl a
+Display all metadata attributes defined in the schema.
+This shows a complete list of available attribute names that can be used with
+Spotlight queries and file metadata operations.
+.It Fl A Ar attribute
+Display detailed information about a specific metadata attribute, including
+its type (string, number, date, boolean), whether it is multi-valued, display
+name, description, and other metadata properties.
+The
+.Ar attribute
+should be a valid metadata attribute name such as
+.Ql kMDItemDisplayName
+or
+.Ql com_apple_metadata_modtime .
+.It Fl t Ar type
+Display the metadata attributes associated with a specific Uniform Type
+Identifier (UTI). This shows which attributes are relevant for a particular
+content type, including display attributes, preview attributes, and read-only
+attributes.
+The
+.Ar type
+should be a valid UTI such as
+.Ql public.jpeg
+or
+.Ql com.apple.mail.email .
+.It Fl compile Ar path
+Compile a custom metadata attribute schema cache and write it to the specified
+path.
+This option processes all available schema definition files and generates a
+schema database that can be used by Spotlight.
+This is useful for adding a custom metadata schema to an application resource
+bundle.
+.It Fl path Ar path
+Write the output to the specified file path instead of stdout.
+This option can be used with other query options to save the schema information
+to a file.
+.El
+.Sh EXAMPLES
+Display all available metadata attributes:
+.Pp
+.Dl mdschema -a
+.Pp
+Get information about a specific attribute:
+.Pp
+.Dl mdschema -A kMDItemDisplayName
+.Pp
+Show attributes for JPEG images:
+.Pp
+.Dl mdschema -t public.jpeg
+.Pp
+Compile and build a metadata schema cache:
+.Pp
+.Dl mdschema -compile /path/to/schema.xml -path /path/to/schema.mdplist
+.Sh SEE ALSO
+.Xr mdfind 1 ,
+.Xr mdimport 1 ,
+.Xr mdls 1 ,
+.Xr mdutil 1

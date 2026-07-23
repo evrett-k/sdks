@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SchemaTypesCore.framework/Versions/A/SchemaTypesCore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s15SchemaTypesCore11ProvisionalMp', '_$s15SchemaTypesCore11ProvisionalP21provisionalIdentifierSS_s5Int64VtvgZTj', 
+                       '_$s15SchemaTypesCore11ProvisionalP21provisionalIdentifierSS_s5Int64VtvgZTq', 
+                       '_$s15SchemaTypesCore11ProvisionalPAA16TypeIdentifiableTb', 
+                       '_$s15SchemaTypesCore11ProvisionalPAAE14typeIdentifierAA019InstrumentationTypeF0OvgZ', 
+                       '_$s15SchemaTypesCore11ProvisionalPAAE14typeIdentifierAA019InstrumentationTypeF0OvpZMV', 
+                       '_$s15SchemaTypesCore11ProvisionalTL', '_$s15SchemaTypesCore16TypeIdentifiableMp', 
+                       '_$s15SchemaTypesCore16TypeIdentifiableP14typeIdentifierAA015InstrumentationdG0OvgZTj', 
+                       '_$s15SchemaTypesCore16TypeIdentifiableP14typeIdentifierAA015InstrumentationdG0OvgZTq', 
+                       '_$s15SchemaTypesCore16TypeIdentifiableTL', '_$s15SchemaTypesCore29InstrumentationTypeIdentifierO08anyEventE0yACs5Int32VcACmFWC', 
+                       '_$s15SchemaTypesCore29InstrumentationTypeIdentifierO11provisionalyACSS_s5Int64VtcACmFWC', 
+                       '_$s15SchemaTypesCore29InstrumentationTypeIdentifierOMa', 
+                       '_$s15SchemaTypesCore29InstrumentationTypeIdentifierOMn', 
+                       '_$s15SchemaTypesCore29InstrumentationTypeIdentifierON', '_$s15SchemaTypesCore8AnyEventV03anyE4Types5Int32VvM', 
+                       '_$s15SchemaTypesCore8AnyEventV03anyE4Types5Int32Vvg', '_$s15SchemaTypesCore8AnyEventV03anyE4Types5Int32VvpMV', 
+                       '_$s15SchemaTypesCore8AnyEventV03anyE4Types5Int32Vvs', '_$s15SchemaTypesCore8AnyEventV11boundFieldsSDys6UInt32V8Dendrite0A12BoundKeyPathVyACGGvMZ', 
+                       '_$s15SchemaTypesCore8AnyEventV11boundFieldsSDys6UInt32V8Dendrite0A12BoundKeyPathVyACGGvgZ', 
+                       '_$s15SchemaTypesCore8AnyEventV11boundFieldsSDys6UInt32V8Dendrite0A12BoundKeyPathVyACGGvsZ', 
+                       '_$s15SchemaTypesCore8AnyEventV7payload10Foundation4DataVvM', 
+                       '_$s15SchemaTypesCore8AnyEventV7payload10Foundation4DataVvg', 
+                       '_$s15SchemaTypesCore8AnyEventV7payload10Foundation4DataVvpMV', 
+                       '_$s15SchemaTypesCore8AnyEventV7payload10Foundation4DataVvs', 
+                       '_$s15SchemaTypesCore8AnyEventV8Dendrite0D7BuilderAAMc', '_$s15SchemaTypesCore8AnyEventV8Dendrite12DataReadableAAMc', 
+                       '_$s15SchemaTypesCore8AnyEventV8Dendrite17DataRepresentableAAMc', 
+                       '_$s15SchemaTypesCore8AnyEventV8Dendrite18ProtoMessageReaderAAMc', 
+                       '_$s15SchemaTypesCore8AnyEventV8Dendrite18ProtoMessageWriterAAMc', 
+                       '_$s15SchemaTypesCore8AnyEventV8Dendrite19KeyPathBoundMessageAAMc', 
+                       '_$s15SchemaTypesCore8AnyEventVACycfC', '_$s15SchemaTypesCore8AnyEventVMa', 
+                       '_$s15SchemaTypesCore8AnyEventVMn', '_$s15SchemaTypesCore8AnyEventVN', 
+                       _SchemaTypesCoreVersionNumber, _SchemaTypesCoreVersionString ]
+...

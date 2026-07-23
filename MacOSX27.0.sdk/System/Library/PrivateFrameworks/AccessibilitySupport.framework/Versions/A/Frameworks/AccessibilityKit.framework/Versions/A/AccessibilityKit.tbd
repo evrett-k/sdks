@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
+current-version: 2
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _AXKBundle, _AXKCmyk2rgb, _AXKContrastRatioForColor, _AXKCursorDidCrossScreenNotification, 
+                       _AXKCursorDidTeleportToScreenNotification, _AXKDebugPrintHierarchy, 
+                       _AXKDisableTRMStateIfNeeded, _AXKDisableTRMStateIfNeededWithCompletionBlock, 
+                       _AXKEnumerateEmojiDescriptionsInString, _AXKFullKeyboardAccessAvailableCommands, 
+                       _AXKGrayscale2rgb, _AXKHsv2rgb, _AXKLocalizedString, _AXKLuminanceForColor, 
+                       _AXKRecommendedColorForColors, _AXKRecommendedColorForColorsPreferSystemTextColor, 
+                       _AXKRgb2cmyk, _AXKRgb2grayscale, _AXKRgb2hsv, _AXKScreenCursorNotificationTargetScreenKey, 
+                       _AXKScreenCursorNotificationTargetScreenLocationKey, _AXKShouldAssistiveControlEnterAccessibilityEnhancedUserInterfaceModeForElement, 
+                       _AXKShouldShowDisableTRMDialog, _AXKStringByReplacingEmojiWithDescriptions, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForApp, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsAppQueueForUIElement, 
+                       _AXKThreadingCheckAssertCurrentQueueIsEqual, _AXKThreadingCheckAssertCurrentQueueIsMain, 
+                       _AXKThreadingCheckAssertCurrentQueueNotMain, __AXKChildrenOf, 
+                       __AXKChromeRoles, __AXKHasContentTraits, __AXKInteractiveControlRoles, 
+                       __AXKInteractiveControlSubroles, __AXKIsButtonListContainer, 
+                       __AXKIsChromeElement, __AXKIsInteractiveControlRole, __AXKIsReadableTextRole, 
+                       __AXKIsStructuralContainerRole, __AXKIsTextContainerRole, 
+                       __AXKNonContentStructuralRoles, __AXKReadableTextRoles, __AXKReadableTextSubroles, 
+                       __AXKStructuralContainerRoles, __AXKTableRowCount, __AXKTextContainerRoles, 
+                       __AXKValueStringLength, _kAXKBackgroundColorAttribute, _kAXKFontAttribute, 
+                       _kAXKFontNameAttribute, _kAXKFontSizeAttribute, _kAXKForegroundColorAttribute, 
+                       _kAXKRecommendedColorContrastRatioEnhanced, _kAXKRecommendedColorContrastRatioLight, 
+                       _kAXKRecommendedColorContrastRatioMedium, _kAXKRecommendedColorContrastRatioMinimum ]
+    objc-classes:    [ AXKAlertWindowController, AXKAndAction, AXKApplicationController, 
+                       AXKAttributedStringParser, AXKBaseAction, AXKCandidateFinder, 
+                       AXKCandidateScorer, AXKClickAction, AXKCompositeAction, AXKContentExtractor, 
+                       AXKContentWalker, AXKDelegateDispatcher, AXKElementBasedTextProvider, 
+                       AXKElementController, AXKElementDescriber, AXKElementDescriberConfiguration, 
+                       AXKFetchContext, AXKFocusManager, AXKFoundationAction, AXKImageData, 
+                       AXKImageParser, AXKInputMarkingSessionTracker, AXKKeyboardFocusListenerSharedKeyboardFocusElementInfo, 
+                       AXKKeyboardFocusTracker, AXKOrAction, AXKRemoteSearchManager, 
+                       AXKResourceManager, AXKScoredCandidate, AXKScreenCursorManager, 
+                       AXKScreenDescriber, AXKScreenDescriberReadableContent, AXKScreenReadingElementTraversalStrategy, 
+                       AXKSearchManager, AXKSimpleStringTextProvider, AXKStrictMock, 
+                       AXKStringTokenizer, AXKSystemStatus, AXKTableCell, AXKTableData, 
+                       AXKTableParser, AXKTextElementEditListenerElementInfo, AXKTextElementEditTracker, 
+                       AXKTextNavigator, AXKTreeDeserializer, AXKTreeSerializer, 
+                       AXKUserDefaultsOverrider, AXKWorkspaceManager, _AXKClassRegistrar ]
+...

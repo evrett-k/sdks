@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/Libraries/libtiffxx.dylib'
+current-version: 5.2.5
+compatibility-version: 5
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __Z14TIFFStreamOpenPKcPNSt3__113basic_istreamIcNS1_11char_traitsIcEEEE, 
+                       __Z14TIFFStreamOpenPKcPNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEE ]
+...

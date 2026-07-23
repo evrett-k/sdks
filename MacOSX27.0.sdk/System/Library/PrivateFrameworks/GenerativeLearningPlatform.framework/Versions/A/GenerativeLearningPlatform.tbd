@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/GenerativeLearningPlatform.framework/Versions/A/GenerativeLearningPlatform'
+current-version: 59.0.1
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s26GenerativeLearningPlatform11_OSActivityO12RTLD_DEFAULTSvSgvgZ', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO12RTLD_DEFAULTSvSgvpZMV', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO19OS_ACTIVITY_CURRENTSo0E12_os_activity_pvgZ', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO19OS_ACTIVITY_CURRENTSo0E12_os_activity_pvpZMV', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO24OS_ACTIVITY_FLAG_DEFAULTSo18os_activity_flag_tavgZ', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO24OS_ACTIVITY_FLAG_DEFAULTSo18os_activity_flag_tavpZMV', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO13ifNonePresentyA2EmFWC', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO7defaultyA2EmFWC', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO8detachedyA2EmFWC', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO8rawValueAESgs6UInt32V_tcfC', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO8rawValues6UInt32Vvg', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsO8rawValues6UInt32VvpMV', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsOMa', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsOMn', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsON', '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsOSHAAMc', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsOSQAAMc', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityO5FlagsOSYAAMc', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityOMa', '_$s26GenerativeLearningPlatform11_OSActivityOMn', 
+                       '_$s26GenerativeLearningPlatform11_OSActivityON', '_$s26GenerativeLearningPlatform7LoggingO3xpc2os6LoggerVvgZ', 
+                       '_$s26GenerativeLearningPlatform7LoggingO3xpc2os6LoggerVvpZMV', 
+                       '_$s26GenerativeLearningPlatform7LoggingO6daemon2os6LoggerVvgZ', 
+                       '_$s26GenerativeLearningPlatform7LoggingO6daemon2os6LoggerVvpZMV', 
+                       '_$s26GenerativeLearningPlatform7LoggingO7general2os6LoggerVvgZ', 
+                       '_$s26GenerativeLearningPlatform7LoggingO7general2os6LoggerVvpZMV', 
+                       '_$s26GenerativeLearningPlatform7LoggingO9subsystemSSvgZ', 
+                       '_$s26GenerativeLearningPlatform7LoggingO9subsystemSSvpZMV', 
+                       '_$s26GenerativeLearningPlatform7LoggingOMa', '_$s26GenerativeLearningPlatform7LoggingOMn', 
+                       '_$s26GenerativeLearningPlatform7LoggingON' ]
+...

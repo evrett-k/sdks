@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SiriOrchestrationServices.framework/Versions/A/SiriOrchestrationServices'
+current-version: 3600.13.5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SiriOrchestrationServicesVersionNumber, _SiriOrchestrationServicesVersionString ]
+...

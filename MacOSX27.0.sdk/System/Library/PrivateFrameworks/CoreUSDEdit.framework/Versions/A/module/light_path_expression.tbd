@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/light_path_expression.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN36_ModuleLightPathExpressionCallbacks_12get_lpe_descER8OfObjectR7LpeDesc, 
+                       __ZN36_ModuleLightPathExpressionCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN36_ModuleLightPathExpressionCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN36_ModuleLightPathExpressionCallbacks_18create_module_dataERK8OfObject, 
+                       __ZN36_ModuleLightPathExpressionCallbacks_19destroy_module_dataERK8OfObjectPv, 
+                       __ZN36_ModuleLightPathExpressionCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler ]
+...

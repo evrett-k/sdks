@@ -1,0 +1,56 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreIMS.framework/Versions/A/CoreIMS'
+current-version: 124.0.1
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _CoreIMSVersionNumber, _CoreIMSVersionString, _GetFrameWorkBundle, 
+                       _IMSArchiveReadErrorDomain, _IMSCameraCalibrationErrorDomain, 
+                       _IMSCoreIMSCalibrationGeoRadius, _IMSCoreIMSEnableCacheStatistics, 
+                       _IMSCoreIMSForceResourceCacheSize, _IMSCoreIMSJITLookaheadLoading, 
+                       _IMSCoreIMSJITUpfrontLoadAll, _IMSCoreIMSMaskLoadingThreadPoolSize, 
+                       _IMSCoreIMSMaxMaskCountForVenueDescriptor, _IMSCoreIMSMetadataLog, 
+                       _IMSCustomTextureLoadingErrorDomain, _IMSExperienceBundleAssetErrorDomain, 
+                       _IMSExperienceTypeStereoImage, _IMSExperienceTypeStereoImagePair, 
+                       _IMSExperienceTypeStereoVideo, _IMSGraphicsAssetErrorDomain, 
+                       _IMSHDRCroppingErrorDomain, _IMSImmersiveMediaErrorDomain, 
+                       _IMSLoadIconErrorDomain, _IMSLog, _IMSMeshCalibrationTypeMap, 
+                       _IMSMeshCameraIdToGeometryTypeMap, _IMSMeshCameraIdToSideloadedMask, 
+                       _IMSMeshCameraIdToSideloadedMesh, _IMSMeshDefaultCamIds, _IMSMeshLoadingErrorDomain, 
+                       _IMSPresentationAssetErrorDomain, _IMSSTSAudioLabel, _IMSSideLoadedMaskList, 
+                       _IMSSideLoadedMeshList, _IMSSideloadAssetErrorDomain, _IMSVenueAssetErrorDomain, 
+                       _IMSVenueAssetInfoFileErrorDomain, __ZN8ims_icos24generateIcosphereDodransEiRNSt3__16vectorIDv3_iNS0_9allocatorIS2_EEEERNS1_IDv3_fNS3_IS7_EEEE, 
+                       _ims_generateIcosphereDodransRaw ]
+    objc-classes:    [ CacheStatistics, CoreIMSDefaults, GeoMaskCombo, GeoMeshData, 
+                       IMSAVPlayerItemVideoOutputPlayer, IMSCamCalibrationMeshModel, 
+                       IMSControlPointManager, IMSEnvEntityData, IMSExperienceBundleAsset, 
+                       IMSExperienceBundleAssetBuilder, IMSExperienceBundleAssetLoader, 
+                       IMSExperienceInfo, IMSEyeMeshData, IMSFIFOPolicy, IMSFadeCommandModel, 
+                       IMSFadeEnvironmentCommandModel, IMSFadeEnvironmentTransition, 
+                       IMSFadeTransition, IMSFigAudio, IMSFigVideoPlayer, IMSFileUtility, 
+                       IMSHDRCropping, IMSIconLoader, IMSImageBundleAssetModel, IMSImageBundleAssetModelBuilder, 
+                       IMSImagePairBundleAssetModel, IMSImagePairBundleAssetModelBuilder, 
+                       IMSImmersiveCameraCalibrationGenerator, IMSImmersiveMediaDirectRenderer, 
+                       IMSImmersiveMediaExperience, IMSImmersiveMediaExperienceLoader, 
+                       IMSImmersiveMediaView, IMSImmersiveModeHandler, IMSJITLookaheadEntry, 
+                       IMSJITResourceLoader, IMSJITResult, IMSJSONHelper, IMSLRUPolicy, 
+                       IMSMaskMetadata, IMSMaskTextureData, IMSMathHelper, IMSMeshDataBuffers, 
+                       IMSMeshHelper, IMSMeshLoader, IMSModeHandler, IMSModeHandlerBase, 
+                       IMSParametricImmersiveMeshData, IMSPresentationAsset, IMSPresentationAssetBuilder, 
+                       IMSPresentationAssetLoader, IMSRayCaster, IMSRectilinear, 
+                       IMSRendererHelper, IMSResourceCache, IMSResourceLookaheadHandler, 
+                       IMSResourceManager, IMSResourceManagerConfig, IMSResourceProvider, 
+                       IMSResourceUpfrontLoader, IMSRuntimeMaskRenderer, IMSSetCameraCommandModel, 
+                       IMSSetCameraTransition, IMSShotFlipCommandModel, IMSShotFlipTransition, 
+                       IMSShotFlopCommandModel, IMSShotFlopTransition, IMSSideloadAsset, 
+                       IMSSideloadAssetBuilder, IMSSideloadAssetLoader, IMSSphericalEquirect, 
+                       IMSStereoImagePairViewModel, IMSStereoImageViewModel, IMSStereoVideoViewModel, 
+                       IMSSyntheticCamera, IMSSyntheticCameraRegistry, IMSTextureLoader, 
+                       IMSTransitionBase, IMSTransitionHandler, IMSUSDStageHelper, 
+                       IMSUSDZImportBundle, IMSVenueAsset, IMSVenueAssetBuilder, 
+                       IMSVenueAssetLoader, IMSVenueCameraOverrideModel, IMSVideoBundleAssetModel, 
+                       IMSVideoBundleAssetModelBuilder, IMSVideoPlaybackAnalytics, 
+                       IMSVideoUtility, IMSVideoVenueCamLensAsset, IMSVideoVenueCameraAssetModel, 
+                       IMSVideoVenueMaskAsset, IMSZippedAssetLoader ]
+...

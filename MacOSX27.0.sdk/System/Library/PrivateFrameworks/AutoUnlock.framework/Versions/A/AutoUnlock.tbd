@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AutoUnlock.framework/Versions/A/AutoUnlock'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s10AutoUnlock8AUDeviceVMa', '_$s10AutoUnlock8AUDeviceVMn', 
+                       '_$s10AutoUnlock8AUDeviceVN', '_$s10AutoUnlock8AUStatusO2eeoiySbAC_ACtFZ', 
+                       '_$s10AutoUnlock8AUStatusO4hash4intoys6HasherVz_tF', '_$s10AutoUnlock8AUStatusO7startedyA2CmFWC', 
+                       '_$s10AutoUnlock8AUStatusO7waitingyA2CmFWC', '_$s10AutoUnlock8AUStatusO9hashValueSivg', 
+                       '_$s10AutoUnlock8AUStatusO9hashValueSivpMV', '_$s10AutoUnlock8AUStatusO9succeededyA2CmFWC', 
+                       '_$s10AutoUnlock8AUStatusOMa', '_$s10AutoUnlock8AUStatusOMn', 
+                       '_$s10AutoUnlock8AUStatusON', '_$s10AutoUnlock8AUStatusOSHAAMc', 
+                       '_$s10AutoUnlock8AUStatusOSQAAMc', '_$s10AutoUnlock9AUFeatureO2eeoiySbAC_ACtFZ', 
+                       '_$s10AutoUnlock9AUFeatureO4hash4intoys6HasherVz_tF', '_$s10AutoUnlock9AUFeatureO7unknownyA2CmFWC', 
+                       '_$s10AutoUnlock9AUFeatureO9hashValueSivg', '_$s10AutoUnlock9AUFeatureO9hashValueSivpMV', 
+                       '_$s10AutoUnlock9AUFeatureOMa', '_$s10AutoUnlock9AUFeatureOMn', 
+                       '_$s10AutoUnlock9AUFeatureON', '_$s10AutoUnlock9AUFeatureOSHAAMc', 
+                       '_$s10AutoUnlock9AUFeatureOSQAAMc', '_$s10AutoUnlock9AUManagerC11isSupported3forSbAA9AUFeatureO_tFTj', 
+                       '_$s10AutoUnlock9AUManagerC11isSupported3forSbAA9AUFeatureO_tFTq', 
+                       '_$s10AutoUnlock9AUManagerC12authenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCSgtYaKFTj', 
+                       '_$s10AutoUnlock9AUManagerC12authenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCSgtYaKFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC12authenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCSgtYaKFTq', 
+                       '_$s10AutoUnlock9AUManagerC15canAuthenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCtYaKFTj', 
+                       '_$s10AutoUnlock9AUManagerC15canAuthenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCtYaKFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC15canAuthenticate7feature7options11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_So23SFAuthenticationOptionsCtYaKFTq', 
+                       '_$s10AutoUnlock9AUManagerC15eligibleDevices3forSayAA8AUDeviceVGAA9AUFeatureO_tYaFTj', 
+                       '_$s10AutoUnlock9AUManagerC15eligibleDevices3forSayAA8AUDeviceVGAA9AUFeatureO_tYaFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC15eligibleDevices3forSayAA8AUDeviceVGAA9AUFeatureO_tYaFTq', 
+                       '_$s10AutoUnlock9AUManagerC17requestEnablement3for4with11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_SStYaKFTj', 
+                       '_$s10AutoUnlock9AUManagerC17requestEnablement3for4with11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_SStYaKFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC17requestEnablement3for4with11SharingCore14SFProgressTaskVyAA8AUStatusOAKGAA9AUFeatureO_SStYaKFTq', 
+                       '_$s10AutoUnlock9AUManagerC6enable7feature4with8password11SharingCore14SFProgressTaskVyAA8AUStatusOALGAA9AUFeatureO_SS10Foundation4DataVtYaKFTj', 
+                       '_$s10AutoUnlock9AUManagerC6enable7feature4with8password11SharingCore14SFProgressTaskVyAA8AUStatusOALGAA9AUFeatureO_SS10Foundation4DataVtYaKFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC6enable7feature4with8password11SharingCore14SFProgressTaskVyAA8AUStatusOALGAA9AUFeatureO_SS10Foundation4DataVtYaKFTq', 
+                       '_$s10AutoUnlock9AUManagerC7disable7feature11SharingCore14SFProgressTaskVyAA8AUStatusOAJGAA9AUFeatureO_tYaKFTj', 
+                       '_$s10AutoUnlock9AUManagerC7disable7feature11SharingCore14SFProgressTaskVyAA8AUStatusOAJGAA9AUFeatureO_tYaKFTjTu', 
+                       '_$s10AutoUnlock9AUManagerC7disable7feature11SharingCore14SFProgressTaskVyAA8AUStatusOAJGAA9AUFeatureO_tYaKFTq', 
+                       '_$s10AutoUnlock9AUManagerC9isEnabled3forSbAA9AUFeatureO_tFTj', 
+                       '_$s10AutoUnlock9AUManagerC9isEnabled3forSbAA9AUFeatureO_tFTq', 
+                       '_$s10AutoUnlock9AUManagerCMa', '_$s10AutoUnlock9AUManagerCMm', 
+                       '_$s10AutoUnlock9AUManagerCMn', '_$s10AutoUnlock9AUManagerCMo', 
+                       '_$s10AutoUnlock9AUManagerCMu', '_$s10AutoUnlock9AUManagerCN', 
+                       '_$s10AutoUnlock9AUManagerCfD', '_$s10AutoUnlock9AUManagerCfd', 
+                       _SFAuthenticationEnabledDevicesChanged, _SFAuthenticationErrorCodeDomain, 
+                       _SFAuthenticationErrorCodeToString, _SFAuthenticationTypeToString, 
+                       _SFAutoUnlockDynamicStoreEnabledKey, _SFAutoUnlockDynamicStoreEnabledPath, 
+                       _SFAutoUnlockDynamicStoreInProgressKey, _SFAutoUnlockDynamicStoreInProgressPath, 
+                       _SFAutoUnlockDynamicStoreSharingDomainKey, _SFAutoUnlockManagerErrorBodyKey, 
+                       _SFAutoUnlockManagerErrorTitleKey, _auto_unlock_auth_log ]
+    objc-classes:    [ SFAuthenticationApproveInfo, SFAuthenticationOptions, SFWatchAuthenticationEvent ]
+...

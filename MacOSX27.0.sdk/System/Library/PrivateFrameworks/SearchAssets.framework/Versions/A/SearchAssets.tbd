@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SearchAssets.framework/Versions/A/SearchAssets'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo11SABuildTypeV12SearchAssetsE11descriptionSSvg', '_$sSo11SABuildTypeV12SearchAssetsE11descriptionSSvpMV', 
+                       '_$sSo11SABuildTypeVs23CustomStringConvertible12SearchAssetsMc', 
+                       '_$sSo12SADeviceInfoC12SearchAssetsEABycfC', '_$sSo12SADeviceInfoC12SearchAssetsEABycfc', 
+                       '_$sSo12SADeviceInfoCMa', '_$sSo17SATrialExperimentC12SearchAssetsEABycfC', 
+                       '_$sSo17SATrialExperimentC12SearchAssetsEABycfc', '_$sSo17SATrialExperimentCMa', 
+                       '_$sSo21SAAssetManagerFactoryC12SearchAssetsEABycfC', '_$sSo21SAAssetManagerFactoryC12SearchAssetsEABycfc', 
+                       '_$sSo21SAAssetManagerFactoryCMa', '_$sSo22SATreatmentAllocStatusV12SearchAssetsE11descriptionSSvg', 
+                       '_$sSo22SATreatmentAllocStatusV12SearchAssetsE11descriptionSSvpMV', 
+                       '_$sSo22SATreatmentAllocStatusVs23CustomStringConvertible12SearchAssetsMc', 
+                       _SASafariAssistantAssetManagerErrorDomain, _SearchAssetsVersionNumber, 
+                       _SearchAssetsVersionString ]
+    objc-classes:    [ SAAssetManagerFactory, SADeviceInfo, SATrialExperiment ]
+...

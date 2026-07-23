@@ -1,0 +1,215 @@
+.TH gpucapture 1 "" 300.20
+.SH NAME
+.B gpucapture
+\- CLI tool to produce GPU trace captures
+.SH SYNOPSIS
+ gpucapture [--help] [--version] [--list-devices]
+ gpucapture boundaries [--pid <PID>] [--device <ID>] [--help]
+ gpucapture start [--pid <PID>] [--boundary <BOUNDARY_ID>] [--label <BOUNDARY_LABEL>] 
+                  [--count <BOUNDARY_COUNT>] [--output <FILEPATH>] [--device <ID>] [--until-exit] [--help]
+ gpucapture stop [--pid <PID>] [--device <ID>] [--all] [--help]
+ gpucapture list [--help]
+ gpucapture config [--pid <PID>] [--device <ID>] [--shared-mem-opt <VALUE>] [--help]
+.SH DESCRIPTION
+.PP
+\fBgpucapture\fP is a command line tool for creating GPU Trace files for any App, process or service that can connect to GPU Tools agent/daemon \fBgputoolsserviced\fP. A GPU Trace file contains \fBMetal \fP(\fIhttps://developer.apple.com/metal/\fP) API calls (or other APIs such as \fBMetalFX \fP(\fIhttps://developer.apple.com/documentation/metalfx\fP)) as well as the necessary data to reconstruct any GPU workloads for further analysis via \fBMetal Debugger \fP(\fIhttps://developer.apple.com/documentation/xcode/metal-debugger\fP).
+.PP
+In order to establish a connection the user is responsible to launch their target process with \fBMTL_CAPTURE_ENABLED=1\fP environment variable within. This environment variable is responsible for loading \fBGPUToolsCapture.framework\fP into the process and will attempt to connect to \fBgputoolsserviced\fP if a \fBMTLDevice \fP(\fIhttps://developer.apple.com/documentation/metal/mtldevice\fP) is ever created within the process.
+.SH COMMANDS
+.B  list
+.RS
+.PP
+List all capturable processes. When Xcode 15 or higher is running on the system, it will also display capturable processes of any remote device visible to Xcode.
+.RE
+
+.B  boundaries
+.RS
+.PP
+List all capturable boundaries for a given \fIPID\fP. A boundary is an API call that is used by \fBgpucapture\fP as a trigger to begin/end a GPU Trace.
+.IP \[bu] 2
+if there are more than 1 capturable processes, it will require \fB--pid PID\fP and/or \fB--device ID\fP for disambiguation.
+.PP
+Available boundary types:
+.IP \[bu] 2
+\fBDevice\fP - begins as soon as the next \fBMTLCommandBuffer \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcommandbuffer\fP) creation is traced. It ends once the created command buffer is scheduled.
+.IP \[bu] 2
+\fBQueue\fP - begins as soon as the next \fBMTLCommandBuffer \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcommandbuffer\fP) creation is traced on the target \fBMTLCommandQueue \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcommandqueue\fP). It ends once the created command buffer is scheduled.
+.IP \[bu] 2
+\fBLayer\fP - begins when we hit the next \fB[CAMetalDrawable present] \fP(\fIhttps://developer.apple.com/documentation/metal/mtldrawable\fP) (or derivative present APIs) on the target \fBCAMetalLayer \fP(\fIhttps://developer.apple.com/documentation/quartzcore/cametallayer\fP). It ends on the next present call in the target layer.
+.IP \[bu] 2
+\fBScope\fP - begins as soon as we trace \fB[MTLCaptureScope beginScope] \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcapturescope/2869571-beginscope\fP). It ends once we hit \fB[MTLCaptureScope endScope] \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcapturescope/2869574-endscope\fP) on the same scope.
+.RE
+
+.B  start
+.RS
+.PP
+Begins a GPU trace capture. If no arguments are provided this command will try a default behavior equivalent to \fBgpucapture start --boundary DEFAULT_BOUNDARY_ID --count 1\fP.
+.IP \[bu] 2
+if there are more than 1 capturable processes, it will require \fB--pid PID\fP and/or \fB--device ID\fP for disambiguation.
+.IP \[bu] 2
+\fIDEFAULT_BOUNDARY_ID\fP value will depend on the available boundaries in the target process. If there is a valid \fBCAMetalLayer \fP(\fIhttps://developer.apple.com/documentation/quartzcore/cametallayer\fP) it will attempt a \fBLayer\fP boundary capture unless there are multiple available layers. If multiple layers are available it will fail and ask for boundary disambiguation. If no layer is available, \fIDEFAULT_BOUNDARY_ID\fP will do a \fBDevice\fP boundary capture.
+.IP \[bu] 2
+a gpucapture will end and produce a GPU Trace if either the \fIBOUNDARY_COUNT\fP is reached, there is a \fBgpucapture stop\fP or if the process exits.
+.PP
+Produced GPU Trace is always stored in the local device filesystem.
+.RE
+
+.B  stop
+.RS
+.PP
+Ends a GPU trace capture. Options are used to help decide the scope for applying the stop command.
+.PP
+Any \fBgpucapture\fP in progress can also be stopped at any point in time via \fBCtrl+C\fP
+.RE
+
+.B  config
+.RS
+.PP
+Inspect or change a setting on a running process. Settings persist for the lifetime of the target process.
+.PP
+With no setter flag, prints the current value of every supported setting. When a setter flag is provided, applies the new value.
+.PP
+Target selection mirrors \fBgpucapture start\fP and \fBgpucapture boundary\fP: with a single capturable process available, no target flags are required; with multiple, \fB--pid PID\fP and/or \fB--device ID\fP must be provided.
+.PP
+\fBSupported settings:\fP
+.IP \[bu] 2
+\fB--shared-mem-opt <VALUE>\fP \(em Shared Memory Optimization mode. \fIVALUE\fP is one of \fBdisabled\fP, \fBenabled\fP, \fBautomatic\fP. Default: \fBautomatic\fP on macOS, \fBdisabled\fP elsewhere.
+.RE
+.SH OPTIONS
+
+.B  -h, --help
+.RS
+.PP
+Show contextual help
+.RE
+
+.B  -p, --pid <PID>
+.RS
+.PP
+Capturable process \fIPID\fP for command to execute, if there are multiple \fIPID\fP available \fB--device ID\fP is required for disambiguation
+.RE
+
+.B  -d, --device <ID>
+.RS
+.PP
+Target device \fIID\fP for command to execute at.
+.RE
+
+.B  -b, --boundary <BOUNDARY_ID>
+.RS
+.PP
+\fIBOUNDARY_ID\fP is the identifier of the trigger to use to begin/end a GPU Trace capture.
+.RE
+
+.B  -l, --label <BOUNDARY_LABEL>
+.RS
+.PP
+\fIBOUNDARY_LABEL\fP is used to identify a boundary API object instead of \fIBOUNDARY_ID\fP. If multiple objects share the same \fIBOUNDARY_LABEL\fP, \fBgpucapture\fP will be unable to define the target and will request the user to use \fB--boundary BOUNDARY_ID\fP instead. This option is especially useful for apps that do not have deterministic resource creation (random \fIBOUNDARY_ID\fP) but do label their objects. Only available for \fBQueue\fP, \fBLayer\fP or \fBScope\fP.
+.RE
+
+.B  -c, --count <BOUNDARY_COUNT>
+.RS
+.PP
+\fIBOUNDARY_COUNT\fP is the amount of trigger ends that should be hit by the GPU trace capture before actually stopping it. 
+.IP \[bu] 2
+when applied to a \fBDevice\fP or \fBQueue\fP this count is the number of complete \fBMTLCommandBuffers \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcommandbuffer\fP) captured.
+.IP \[bu] 2
+when applied to a \fBLayer\fP this count is equivalent to the number of frames.
+.IP \[bu] 2
+when applied to a \fBScope\fP this count is equivalent to the number of \fB[MTLCaptureScope endScope] \fP(\fIhttps://developer.apple.com/documentation/metal/mtlcapturescope/2869574-endscope\fP) seen after the begin trigger was reached.
+.RE
+
+.B  -u, --until-exit
+.RS
+.PP
+This option is equivalent to \fB--count UINT_MAX\fP. Useful for capturing CLI workloads where the amount of CommandBuffers is not known as this allows the capture to progress until the process exits. Additionally, if you aim to control the \fBgpucapture start\fP of the process you should launch your target with \fBMTLCAPTURE_WAIT_FOR_SIGNAL=1\fP, this environment variable will halt the process on \fBMTLDevice \fP(\fIhttps://developer.apple.com/documentation/metal/mtldevice\fP) creation until a \fBgpucapture start\fP signal is registered.
+.RE
+
+.B  -o, --output <FILEPATH>
+.RS
+.PP
+\fIFILEPATH\fP on the host machine's file system, to where the recorded \fB.gputrace\fP will be stored.
+.IP \[bu] 2
+must be a directory, or a filepath ending in \fB.gputrace\fP
+.IP \[bu] 2
+if no \fB--output\fP is provided, \fBgpucapture\fP will default to saving the \fB.gputrace\fP archive in the current working directory it was launched in
+.RE
+
+.B     , --version
+.RS
+.PP
+Show tool version
+.RE
+
+.B     , --list-devices
+.RS
+.PP
+List available devices and exit. Shows an \fIID\fP column that can be passed to \fB--device\fP, along with the device name, model, and OS version.
+.RE
+
+.B     , --shared-mem-opt <VALUE>
+.RS
+.PP
+Used with \fBconfig\fP. Sets Shared Memory Optimization mode on the target process. \fIVALUE\fP is one of \fBdisabled\fP, \fBenabled\fP, \fBautomatic\fP. The new value persists for the lifetime of the target process.
+.RE
+.SH EXAMPLES
+.PP
+ Retrieve a list of potential targets to capture.
+
+.RS
+$ gpucapture list
+.RE
+.PP
+ Retrieve a list of boundaries available for the PID 12345. 
+
+.RS
+$ gpucapture boundaries --pid 12345
+.RE
+.PP
+ Quick command to produce single frame/MTLCommandBuffer capture if there is a single process available in `gpucapture list`.
+
+.RS
+$ gpucapture start
+.RE
+.PP
+ Capture 5 times the boundary ID 3 in the process 12345
+
+.RS
+$ gpucapture start --pid 12345 --boundary 3 --count 5
+.RE
+.PP
+ Captures 100000 times the default boundary ID in the process 12345. Default boundary ID will be either a Layer or a Device.
+
+.RS
+$ gpucapture start --pid 12345 --count 100000
+.RE
+.PP
+ Stops any active capture in the process 12345.
+
+.RS
+$ gpucapture stop --pid 12345
+.RE
+.PP
+ Stops any active capture in any capturable process visible by `gpucapture list`.
+
+.RS
+$ gpucapture stop --all
+.RE
+.PP
+ Show all current settings on the only running capturable process.
+
+.RS
+$ gpucapture config
+.RE
+.PP
+ Show all current settings on PID 12345.
+
+.RS
+$ gpucapture config --pid 12345
+.RE
+.PP
+ Set Shared Memory Optimization to disabled on PID 12345.
+
+.RS
+$ gpucapture config --pid 12345 --shared-mem-opt disabled
+.RE

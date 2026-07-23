@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/angie_renderer.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __Z17on_modules_loadedR5OfAppRKN11EventObject9EventInfoEPv, 
+                       __ZN13AngieRenderer11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN13AngieRenderer21on_preferences_loadedER5OfAppRKN11EventObject9EventInfoEPv, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_18on_pre_deserializeER8OfObjectRK11CoreVersionR11ParserGroup, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_20get_supported_lightsER8OfObject, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_21get_attr_preset_hintsERK8OfObjectRK6OfAttrR9CoreArrayIbE, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_21get_supported_camerasER8OfObject, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_23get_supported_materialsER8OfObject, 
+                       __ZN33_ModuleModuleRendererNgCallbacks_24get_supported_geometriesER8OfObject, 
+                       _on_angie_default_hw_device_change, _on_angie_default_texture_changed, 
+                       _on_angie_gpu_texture_cache_changed, _on_angie_previz_config_change, 
+                       _on_app_preferences_loaded, _on_clear_gpu_texture_cache, _on_register_module ]
+    weak-symbols:    [ __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZGVZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZGVZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZGVZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info, 
+                       __ZN11ImageSampleIdEC1ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC1Ev, 
+                       __ZN11ImageSampleIdEC2ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC2Ev, 
+                       __ZN11ImageSampleIfEC1ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC1Ev, 
+                       __ZN11ImageSampleIfEC2ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC2Ev, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info ]
+...

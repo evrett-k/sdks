@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantPane.framework/Versions/A/SetupAssistantPane'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s18SetupAssistantPane0abC11FeatureFlagO0D5Flags0dF3KeyAAMc', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO13bundleLoadingyA2CmFWC', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO20dataAndPrivacyBundleyA2CmFWC', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO2eeoiySbAC_ACtFZ', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO4hash4intoys6HasherVz_tF', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO6domains12StaticStringVvg', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO6domains12StaticStringVvpMV', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO7features12StaticStringVvg', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO7features12StaticStringVvpMV', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO9hashValueSivg', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagO9hashValueSivpMV', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagOMa', '_$s18SetupAssistantPane0abC11FeatureFlagOMn', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagON', '_$s18SetupAssistantPane0abC11FeatureFlagOSHAAMc', 
+                       '_$s18SetupAssistantPane0abC11FeatureFlagOSQAAMc', '_$s18SetupAssistantPane19FeatureFlagProviderC6sharedAA0deF4Type_pvgZ', 
+                       '_$s18SetupAssistantPane19FeatureFlagProviderC6sharedAA0deF4Type_pvpZMV', 
+                       '_$s18SetupAssistantPane19FeatureFlagProviderCMa', '_$s18SetupAssistantPane19FeatureFlagProviderCMm', 
+                       '_$s18SetupAssistantPane19FeatureFlagProviderCMn', '_$s18SetupAssistantPane19FeatureFlagProviderCMo', 
+                       '_$s18SetupAssistantPane19FeatureFlagProviderCMu', '_$s18SetupAssistantPane19FeatureFlagProviderCN', 
+                       '_$s18SetupAssistantPane19FeatureFlagProviderCfD', '_$s18SetupAssistantPane19FeatureFlagProviderCfd', 
+                       '_$s18SetupAssistantPane23FeatureFlagProviderTypeMp', '_$s18SetupAssistantPane23FeatureFlagProviderTypeP9isEnabledySbAA0abcdE0OFTj', 
+                       '_$s18SetupAssistantPane23FeatureFlagProviderTypeP9isEnabledySbAA0abcdE0OFTq', 
+                       '_$s18SetupAssistantPane23FeatureFlagProviderTypeTL', '_$sSo15SAPBundleLoaderC18SetupAssistantPaneE14sharedInstanceABXDyFZ', 
+                       '_$sSo15SAPBundleLoaderC18SetupAssistantPaneE29allAvailableBundleIdentifiers10filteredBySaySSGSo0aB6FilterV_tF', 
+                       '_$sSo15SAPBundleLoaderCMa', '_$sSo21SAPExperienceProviderC18SetupAssistantPaneEABycfC', 
+                       '_$sSo21SAPExperienceProviderC18SetupAssistantPaneEABycfc', 
+                       '_$sSo21SAPExperienceProviderCMa', '_$sSo31SAPSetupCompatibilityPreferenceC18SetupAssistantPaneEABycfC', 
+                       '_$sSo31SAPSetupCompatibilityPreferenceC18SetupAssistantPaneEABycfc', 
+                       '_$sSo31SAPSetupCompatibilityPreferenceCMa', '_$sSo37SAPFeatureUserDefaultsDataSourceEntryC18SetupAssistantPaneEABycfC', 
+                       '_$sSo37SAPFeatureUserDefaultsDataSourceEntryC18SetupAssistantPaneEABycfc', 
+                       '_$sSo37SAPFeatureUserDefaultsDataSourceEntryCMa' ]
+    objc-classes:    [ SAPBundleLoader, SAPExperienceProvider, SAPFeatureUserDefaultsDataSourceEntry, 
+                       SAPSetupCompatibilityPreference ]
+...

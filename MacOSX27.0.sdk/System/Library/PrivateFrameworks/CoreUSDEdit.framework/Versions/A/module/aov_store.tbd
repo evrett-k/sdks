@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/aov_store.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __Z24add_dirtiness_event_infoRK11OfAttrEventR8OfObjectRN25_ModuleAovStoreCallbacks_10ModuleDataEN21AovDirtinessEventInfo13EventInfoTypeE, 
+                       __ZN25_ModuleAovStoreCallbacks_10ModuleData15update_channelsERK8OfObject, 
+                       __ZN25_ModuleAovStoreCallbacks_12get_aov_descER8OfObjectR12AovStoreDesc, 
+                       __ZN25_ModuleAovStoreCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN25_ModuleAovStoreCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN25_ModuleAovStoreCallbacks_16create_eval_dataERK8OfObjectRK7CtxEval, 
+                       __ZN25_ModuleAovStoreCallbacks_16on_layer_changedER16OfChannelManagerRKN11EventObject9EventInfoEPv, 
+                       __ZN25_ModuleAovStoreCallbacks_17destroy_eval_dataERK8OfObjectRK7CtxEvalPv, 
+                       __ZN25_ModuleAovStoreCallbacks_18create_module_dataERK8OfObject, 
+                       __ZN25_ModuleAovStoreCallbacks_19destroy_module_dataERK8OfObjectPv, 
+                       __ZN25_ModuleAovStoreCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN25_ModuleAovStoreCallbacks_21deserialize_user_dataERK8OfObjectRK11ParserGroup, 
+                       __ZN25_ModuleAovStoreCallbacks_25on_pre_deserialize_objectERK11CoreVersionR11ParserGroup, 
+                       __ZN25_ModuleAovStoreCallbacks_5storeER8OfObjectRK7CtxEvalR9CtxShaderR14CoreBasicArrayIfERK9GMathVec3IfE, 
+                       __ZN25_ModuleAovStoreCallbacks_9pre_storeER8OfObjectRK7CtxEvalR9CtxShader, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler ]
+...

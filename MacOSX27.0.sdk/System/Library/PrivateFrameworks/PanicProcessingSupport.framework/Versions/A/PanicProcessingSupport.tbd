@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PanicProcessingSupport.framework/Versions/A/PanicProcessingSupport'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s22PanicProcessingSupport0aB8InternalC011setOriginalA10ReportPathyySSFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC011setOriginalA10ReportPathyySSFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC013isIntentionalA0SbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC013isIntentionalA0SbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC08generateA11SaveOptions12forDirectory4time6prefixSo19NSMutableDictionaryC10Foundation3URLVSg_SdSSSgtFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC08generateA11SaveOptions12forDirectory4time6prefixSo19NSMutableDictionaryC10Foundation3URLVSg_SdSSSgtFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC10isDevFusedSbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC10isDevFusedSbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC10testPlanIDs6UInt64VyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC10testPlanIDs6UInt64VyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC11mountVolume8withRole0E4PathSbs6UInt32V_SAySo8NSStringCSgGtFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC11mountVolume8withRole0E4PathSbs6UInt32V_SAySo8NSStringCSgGtFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC12uniqueChipIDSSSgyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC12uniqueChipIDSSSgyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC14getValueFromDT7forNode3keySo8NSNumberCSgSS_SStFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC14getValueFromDT7forNode3keySo8NSNumberCSgSS_SStFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC15isResearchFusedSbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC15isResearchFusedSbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC15isTagCheckFaultySbSSFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC15isTagCheckFaultySbSSFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC19panicMedicTelemetrySayypGSgyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC19panicMedicTelemetrySayypGSgyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC21getAuxiliaryNVRAMDataSSSgyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC21getAuxiliaryNVRAMDataSSSgyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC22deleteBootArgDumppanicSbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC22deleteBootArgDumppanicSbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC22isTestAutomationDeviceSbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC22isTestAutomationDeviceSbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC25bootIsRecoveryEnvironmentSbyFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC25bootIsRecoveryEnvironmentSbyFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC27getSterilizedStringFromData_4sizeSSSgSPys4Int8VG_SutFTj', 
+                       '_$s22PanicProcessingSupport0aB8InternalC27getSterilizedStringFromData_4sizeSSSgSPys4Int8VG_SutFTq', 
+                       '_$s22PanicProcessingSupport0aB8InternalC6sharedACvgZ', '_$s22PanicProcessingSupport0aB8InternalC6sharedACvpZMV', 
+                       '_$s22PanicProcessingSupport0aB8InternalCMa', '_$s22PanicProcessingSupport0aB8InternalCMn', 
+                       '_$s22PanicProcessingSupport0aB8InternalCMo', '_$s22PanicProcessingSupport0aB8InternalCMu', 
+                       '_$s22PanicProcessingSupport0aB8InternalCN', '_$s22PanicProcessingSupport0aB8InternalCfD', 
+                       '_$sSo11PanicReportC0A17ProcessingSupportE05writeaB4Body13sectionWriteryySDys11AnyHashableVypGSgXE_tF', 
+                       _PanicProcessingSupportVersionNumber, _PanicProcessingSupportVersionString, 
+                       _panicProcessingSupportLogger ]
+    objc-classes:    [ EmbeddedPanicDataDecoder, EmbeddedPanicDataDecoderV5, EmbeddedPanicDataDecoderV6, 
+                       EmbeddedPanicDataDecoderV7, EmbeddedPanicDataDecoderV8, EmbeddedPanicDataDecoderV9, 
+                       PanicReport, _TtC22PanicProcessingSupport23PanicProcessingInternal ]
+...

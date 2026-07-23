@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FindMySecureEnvironment.framework/Versions/A/FindMySecureEnvironment'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ FMFCore, FMIPCore, FindMySecureEnvironmentXPCService, GreenTorch, 
+                       searchpartyd, searchpartyuseragent, sptool ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s23FindMySecureEnvironment0cD5ErrorO10invalidURLyA2CmFWC', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO18serviceUnavailableyA2CmFWC', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO19missingSessionTokenyA2CmFWC', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO2eeoiySbAC_ACtFZ', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO30cannotImportAppleConnectClientyA2CmFWC', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO4hash4intoys6HasherVz_tF', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorO9hashValueSivg', '_$s23FindMySecureEnvironment0cD5ErrorO9hashValueSivpMV', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorOMa', '_$s23FindMySecureEnvironment0cD5ErrorOMn', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorON', '_$s23FindMySecureEnvironment0cD5ErrorOSHAAMc', 
+                       '_$s23FindMySecureEnvironment0cD5ErrorOSQAAMc', '_$s23FindMySecureEnvironment0cD5ErrorOs0E0AAMc', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO11serviceNameSSvgZ', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO11serviceNameSSvpZMV', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceC10fetchTokenSSyYaKF', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceC10fetchTokenSSyYaKFTu', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceC14performRequestyAA0cD8ResponseV10Foundation10URLRequestVYaKF', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceC14performRequestyAA0cD8ResponseV10Foundation10URLRequestVYaKFTu', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCAEycfC', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCAEycfCTj', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCAEycfCTq', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCAEycfc', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCMa', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCMm', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCMn', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCMo', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCMu', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCN', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCfD', 
+                       '_$s23FindMySecureEnvironment0cD6ClientO13LiveInterfaceCfd', 
+                       '_$s23FindMySecureEnvironment0cD6ClientOMa', '_$s23FindMySecureEnvironment0cD6ClientOMn', 
+                       '_$s23FindMySecureEnvironment0cD6ClientON', '_$s23FindMySecureEnvironment0cD8ResponseV03urlE0So13NSURLResponseCvg', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseV03urlE0So13NSURLResponseCvpMV', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseV4data03urlE0AC10Foundation4DataV_So13NSURLResponseCtcfC', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseV4data10Foundation4DataVvg', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseV4data10Foundation4DataVvpMV', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseVMa', '_$s23FindMySecureEnvironment0cD8ResponseVMn', 
+                       '_$s23FindMySecureEnvironment0cD8ResponseVN' ]
+...

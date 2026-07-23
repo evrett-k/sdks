@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/Versions/A/AutomaticAssessmentConfiguration'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSC21AEAssessmentErrorCodeLeV32AutomaticAssessmentConfigurationE24notInstalledParticipantsSaySSGSgvg', 
+                       '_$sSC21AEAssessmentErrorCodeLeV32AutomaticAssessmentConfigurationE24notInstalledParticipantsSaySSGSgvpMV', 
+                       '_$sSC21AEAssessmentErrorCodeLeV32AutomaticAssessmentConfigurationE28restrictedSystemParticipantsSaySSGSgvg', 
+                       '_$sSC21AEAssessmentErrorCodeLeV32AutomaticAssessmentConfigurationE28restrictedSystemParticipantsSaySSGSgvpMV', 
+                       '_$sSo13AEMenuBarItema32AutomaticAssessmentConfigurationE04menuB5Extra16bundleIdentifierABSS_tFZ', 
+                       '_$sSo36AEAssessmentParticipantConfigurationC019AutomaticAssessmentC0E16allowedMenuItems3forShySSGSg10Foundation6LocaleV8LanguageV_tF', 
+                       '_$sSo36AEAssessmentParticipantConfigurationC019AutomaticAssessmentC0E19setAllowedMenuItems_3foryShySSGSg_10Foundation6LocaleV8LanguageVtF', 
+                       '_$sSo36AEAssessmentParticipantConfigurationC019AutomaticAssessmentC0E24allowedMenuItemLanguagesShy10Foundation6LocaleV8LanguageVGvg', 
+                       '_$sSo36AEAssessmentParticipantConfigurationC019AutomaticAssessmentC0E24allowedMenuItemLanguagesShy10Foundation6LocaleV8LanguageVGvpMV', 
+                       _AEAppleMenuItemAboutThisMac, _AEAppleMenuItemAppStore, _AEAppleMenuItemForceQuit, 
+                       _AEAppleMenuItemLocation, _AEAppleMenuItemLockScreen, _AEAppleMenuItemLogout, 
+                       _AEAppleMenuItemRecent, _AEAppleMenuItemRestart, _AEAppleMenuItemShutDown, 
+                       _AEAppleMenuItemSleep, _AEAppleMenuItemSystemInformation, 
+                       _AEAppleMenuItemSystemSettings, _AEAssessmentErrorDomain, 
+                       _AEMenuBarItemBattery, _AEMenuBarItemBluetooth, _AEMenuBarItemClock, 
+                       _AEMenuBarItemControlCenter, _AEMenuBarItemDisplays, _AEMenuBarItemKeyboard, 
+                       _AEMenuBarItemScreenMirroring, _AEMenuBarItemVolume, _AEMenuBarItemWifi, 
+                       _AENotInstalledParticipantsKey, _AERestrictedSystemParticipantsKey ]
+    objc-classes:    [ AEAssessmentApplication, AEAssessmentConfiguration, AEAssessmentParticipantConfiguration, 
+                       AEAssessmentSession ]
+...

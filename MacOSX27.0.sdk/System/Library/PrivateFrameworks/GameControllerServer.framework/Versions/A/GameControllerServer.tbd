@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GameControllerServer.framework/Versions/A/GameControllerServer'
+current-version: 14.0.19
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _GCXApplicationServicesErrorDomain ]
+    objc-classes:    [ GCSettingsServer, GCXApplicationServicesApplicationInstanceTarget, 
+                       GCXApplicationServicesApplicationTarget, GCXApplicationServicesNotificationListener, 
+                       _GCHapticServerManager ]
+...

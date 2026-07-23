@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/Libraries/libOpenImageDenoise.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ _oidnCommitDevice, _oidnCommitFilter, _oidnExecuteFilter, 
+                       _oidnExecuteFilterAsync, _oidnExecuteSYCLFilterAsync, _oidnGetBufferData, 
+                       _oidnGetBufferSize, _oidnGetBufferStorage, _oidnGetDeviceBool, 
+                       _oidnGetDeviceError, _oidnGetDeviceInt, _oidnGetFilterBool, 
+                       _oidnGetFilterFloat, _oidnGetFilterInt, _oidnGetNumPhysicalDevices, 
+                       _oidnGetPhysicalDeviceBool, _oidnGetPhysicalDeviceData, _oidnGetPhysicalDeviceInt, 
+                       _oidnGetPhysicalDeviceString, _oidnIsCPUDeviceSupported, _oidnIsCUDADeviceSupported, 
+                       _oidnIsHIPDeviceSupported, _oidnIsMetalDeviceSupported, _oidnIsSYCLDeviceSupported, 
+                       _oidnNewBuffer, _oidnNewBufferWithStorage, _oidnNewCUDADevice, 
+                       _oidnNewDevice, _oidnNewDeviceByID, _oidnNewDeviceByLUID, 
+                       _oidnNewDeviceByPCIAddress, _oidnNewDeviceByUUID, _oidnNewFilter, 
+                       _oidnNewHIPDevice, _oidnNewMetalDevice, _oidnNewSYCLDevice, 
+                       _oidnNewSharedBuffer, _oidnNewSharedBufferFromFD, _oidnNewSharedBufferFromMetal, 
+                       _oidnNewSharedBufferFromWin32Handle, _oidnReadBuffer, _oidnReadBufferAsync, 
+                       _oidnReleaseBuffer, _oidnReleaseDevice, _oidnReleaseFilter, 
+                       _oidnRetainBuffer, _oidnRetainDevice, _oidnRetainFilter, _oidnSetDeviceBool, 
+                       _oidnSetDeviceErrorFunction, _oidnSetDeviceInt, _oidnSetFilterBool, 
+                       _oidnSetFilterFloat, _oidnSetFilterImage, _oidnSetFilterInt, 
+                       _oidnSetFilterProgressMonitorFunction, _oidnSetSharedFilterData, 
+                       _oidnSetSharedFilterImage, _oidnSyncDevice, _oidnUnsetFilterData, 
+                       _oidnUnsetFilterImage, _oidnUpdateFilterData, _oidnWriteBuffer, 
+                       _oidnWriteBufferAsync ]
+...

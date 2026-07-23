@@ -1,0 +1,51 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/ArchetypeFoundation.framework/Versions/A/ArchetypeFoundation'
+current-version: 41.6
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s19ArchetypeFoundation16BundleIdentifierO10localFilesyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO11descriptionSSvg', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO11descriptionSSvpMV', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO13searchIndexeryA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO16iCloudDriveFilesyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO17spotlightCalendaryA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO2eeoiySbAC_ACtFZ', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4hash4intoys6HasherVz_tF', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4homeyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4mailyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4mapsyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4newsyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO4siriyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO5musicyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO5notesyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO5phoneyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO6camerayA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO6healthyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO6photosyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO6safariyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO6walletyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO7fitnessyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO8calendaryA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO8contactsyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO8faceTimeyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO8messagesyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO8podcastsyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO9hashValueSivg', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO9hashValueSivpMV', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierO9remindersyA2CmFWC', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierOMa', '_$s19ArchetypeFoundation16BundleIdentifierOMn', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierON', '_$s19ArchetypeFoundation16BundleIdentifierOSHAAMc', 
+                       '_$s19ArchetypeFoundation16BundleIdentifierOSQAAMc', '_$s19ArchetypeFoundation16BundleIdentifierOs23CustomStringConvertibleAAMc', 
+                       '_$s19ArchetypeFoundation7LoggingO12userProfiles2os6LoggerVvgZ', 
+                       '_$s19ArchetypeFoundation7LoggingO12userProfiles2os6LoggerVvpZMV', 
+                       '_$s19ArchetypeFoundation7LoggingO7general2os6LoggerVvgZ', 
+                       '_$s19ArchetypeFoundation7LoggingO7general2os6LoggerVvpZMV', 
+                       '_$s19ArchetypeFoundation7LoggingO8autoFill2os6LoggerVvgZ', 
+                       '_$s19ArchetypeFoundation7LoggingO8autoFill2os6LoggerVvpZMV', 
+                       '_$s19ArchetypeFoundation7LoggingO9subsystemSSvgZ', '_$s19ArchetypeFoundation7LoggingO9subsystemSSvpZMV', 
+                       '_$s19ArchetypeFoundation7LoggingOMa', '_$s19ArchetypeFoundation7LoggingOMn', 
+                       '_$s19ArchetypeFoundation7LoggingON' ]
+...

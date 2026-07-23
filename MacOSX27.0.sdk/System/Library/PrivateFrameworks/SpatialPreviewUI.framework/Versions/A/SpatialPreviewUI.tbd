@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpatialPreviewUI.framework/Versions/A/SpatialPreviewUI'
+current-version: 34.0.3
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo11RSPEndpointC16SpatialPreviewUIE18defaultIfAvailableABSgyYaKFZ', 
+                       '_$sSo11RSPEndpointC16SpatialPreviewUIE18defaultIfAvailableABSgyYaKFZTu', 
+                       '_$sSo14RSPFileSupportC16SpatialPreviewUIE18previewRecommended15forDocumentTypeSb07UniformJ11Identifiers6UTTypeV_tFZ', 
+                       '_$sSo14RSPFileSupportC16SpatialPreviewUIEABycfC', '_$sSo14RSPFileSupportC16SpatialPreviewUIEABycfc', 
+                       '_$sSo14RSPFileSupportCMa', '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE5coderABSgSo7NSCoderC_tcfC', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE5coderABSgSo7NSCoderC_tcfc', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE5frameABSo6CGRectV_tcfC', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE5frameABSo6CGRectV_tcfc', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE6layoutyyF', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE8delegateSo0abC8Delegate_pSgvg', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE8delegateSo0abC8Delegate_pSgvpMV', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE8delegateSo0abC8Delegate_pSgvpWvd', 
+                       '_$sSo19RSPDevicePickerViewC16SpatialPreviewUIE8delegateSo0abC8Delegate_pSgvs', 
+                       '_$sSo19RSPDevicePickerViewCMa' ]
+    objc-classes:    [ RSPDevicePickerView, RSPEndpoint, RSPFileSupport ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/HomeKitFeatures.framework/Versions/A/HomeKitFeatures'
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo18HomeKitFeatureFlagV0C5Flags0cE3Key0aB8FeaturesMc', 
+                       '_$sSo18HomeKitFeatureFlagV0aB8FeaturesE6domains12StaticStringVvg', 
+                       '_$sSo18HomeKitFeatureFlagV0aB8FeaturesE6domains12StaticStringVvpMV', 
+                       '_$sSo18HomeKitFeatureFlagV0aB8FeaturesE7features12StaticStringVvg', 
+                       '_$sSo18HomeKitFeatureFlagV0aB8FeaturesE7features12StaticStringVvpMV', 
+                       '_$sSo19HomeKitFeatureFlagsC0aB8FeaturesEABycfC', '_$sSo19HomeKitFeatureFlagsC0aB8FeaturesEABycfc', 
+                       '_$sSo19HomeKitFeatureFlagsCMa', '_$sSo25HomeKitFeaturesDataSourceP0abC0EySbSo0aB11FeatureFlagVcig', 
+                       '_$sSo25HomeKitFeaturesDataSourceP0abC0EySbSo0aB11FeatureFlagVcipMV' ]
+    objc-classes:    [ HomeKitFeatureFlags ]
+...

@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TextInputCore.framework/Support/StickersSearchCore.framework/Versions/A/StickersSearchCore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s18StickersSearchCore07StickerB7ManagerC10flushCacheyyF', 
+                       '_$s18StickersSearchCore07StickerB7ManagerC18stickerIdentifiers8matchingSay10Foundation4UUIDVGAA0D5QueryC_tYaKF', 
+                       '_$s18StickersSearchCore07StickerB7ManagerC18stickerIdentifiers8matchingSay10Foundation4UUIDVGAA0D5QueryC_tYaKFTu', 
+                       '_$s18StickersSearchCore07StickerB7ManagerC8stickers3forSay0A011_STKStickerCGSay10Foundation4UUIDVG_tYaKF', 
+                       '_$s18StickersSearchCore07StickerB7ManagerC8stickers3forSay0A011_STKStickerCGSay10Foundation4UUIDVG_tYaKFTu', 
+                       '_$s18StickersSearchCore07StickerB7ManagerCACycfC', '_$s18StickersSearchCore07StickerB7ManagerCACycfc', 
+                       '_$s18StickersSearchCore07StickerB7ManagerCMa', '_$s18StickersSearchCore07StickerB7ManagerCMn', 
+                       '_$s18StickersSearchCore07StickerB7ManagerCMo', '_$s18StickersSearchCore07StickerB7ManagerCN', 
+                       '_$s18StickersSearchCore07StickerB7ManagerCfD', '_$s18StickersSearchCore12StickerQueryC015shouldNormalizeE0Sbvg', 
+                       '_$s18StickersSearchCore12StickerQueryC015shouldNormalizeE0SbvpMV', 
+                       '_$s18StickersSearchCore12StickerQueryC03rawE0015shouldNormalizeE013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfC', 
+                       '_$s18StickersSearchCore12StickerQueryC03rawE0015shouldNormalizeE013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfCTj', 
+                       '_$s18StickersSearchCore12StickerQueryC03rawE0015shouldNormalizeE013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfCTq', 
+                       '_$s18StickersSearchCore12StickerQueryC03rawE0015shouldNormalizeE013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfc', 
+                       '_$s18StickersSearchCore12StickerQueryC03rawE0SSvg', '_$s18StickersSearchCore12StickerQueryC03rawE0SSvpMV', 
+                       '_$s18StickersSearchCore12StickerQueryC13searchLocalesSay10Foundation6LocaleVGvg', 
+                       '_$s18StickersSearchCore12StickerQueryC13searchLocalesSay10Foundation6LocaleVGvpMV', 
+                       '_$s18StickersSearchCore12StickerQueryCACycfC', '_$s18StickersSearchCore12StickerQueryCACycfc', 
+                       '_$s18StickersSearchCore12StickerQueryCMa', '_$s18StickersSearchCore12StickerQueryCMn', 
+                       '_$s18StickersSearchCore12StickerQueryCMo', '_$s18StickersSearchCore12StickerQueryCMu', 
+                       '_$s18StickersSearchCore12StickerQueryCN', '_$s18StickersSearchCore12StickerQueryCfD', 
+                       _StickersSearchCoreVersionNumber, _StickersSearchCoreVersionString ]
+    objc-classes:    [ SSCStickerQuery, SSCStickerSearchManager ]
+...

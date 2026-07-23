@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CoreRoutineDiagnostics.framework/Versions/A/CoreRoutineDiagnostics'
+current-version: 1117
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _CRDMemoryFootprint, _RTBugCaptureCategoryString, _RTCommonCalculateBoundingBox, 
+                       _RTCommonCalculateDistance, _RTCommonCalculateDistanceHighPrecision, 
+                       _RTCommonConvertGeodeticToLocalFrame, _RTCommonConvertLocalFrameToGeodetic, 
+                       _RTCommonGetDestinationCoordinate, _RTCommonIsCoordinateValid, 
+                       _RTCommonRandomDouble, _RTCommonRandomFlip, _RTCommonRandomInt, 
+                       _RTCommonSafeLog, _RTCommonValidConfidence, _kRTBugCaptureMetricKeyCaptureAttempts, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsBackgroundTaskHighFailureRate, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsBackgroundTaskSchedulingViolation, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsCombinedPerformanceViolation, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsDataIntegrityViolation, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsExceptionCaught, _kRTBugCaptureMetricKeyCategoryAttemptsHighCPUDetected, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsHighLatencyDetected, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsIpsDetected, _kRTBugCaptureMetricKeyCategoryAttemptsLOIUUIDStabilityIssueDetected, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsLongProcessInit, _kRTBugCaptureMetricKeyCategoryAttemptsMemoryThresholdExceeded, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsSemaphoreHangDetected, 
+                       _kRTBugCaptureMetricKeyCategoryAttemptsVisitGapDetected, _kRTBugCaptureMetricKeyRadarsFiled, 
+                       _kRTBugCaptureMetricKeySuppressedBackoff, _kRTBugCaptureMetricKeySuppressedDisabled, 
+                       _kRTBugCaptureMetricKeySuppressedDownsampling, _kRTBugCaptureMetricKeySuppressedInvalidParameters, 
+                       _kRTBugCaptureMetricKeySuppressedNoStorageDelegate, _kRTBugCaptureMetricKeySuppressedNotInternalInstall, 
+                       _kRTBugCaptureMetricKeySuppressedProfileNotAllowed, _kRTBugCaptureMetricKeySuppressedPromptingDisabled, 
+                       _kRTBugCaptureMetricKeySuppressedUserDeclined, _kRTBugCaptureMetricKeySuppressedUserOptOut, 
+                       _kRTBugCaptureMetricKeyUserProfile, _kRTBugCaptureRadarFiledMetricKeyCategory, 
+                       _kRTBugCaptureRadarFiledMetricKeyDayOfWeek, _kRTBugCaptureRadarFiledMetricKeyDiagnosticsMask, 
+                       _kRTBugCaptureRadarFiledMetricKeyHour, _kRTBugCaptureRadarFiledMetricKeyModule, 
+                       _kRTBugCaptureRadarFiledMetricKeyProfile, _kRTBugCaptureRadarFiledMetricKeyReason, 
+                       _kRTRadarUtilitiesRadarTitlePrefix, _kRTTransactionMetricsKeyActiveTransactions, 
+                       _kRTTransactionMetricsKeyDuration, _kRTTransactionMetricsKeyMemoryFootprintDelta, 
+                       _kRTTransactionMetricsKeyMemoryFootprintEnd, _kRTTransactionMetricsKeyMemoryFootprintStart, 
+                       _kRTTransactionMetricsKeyName, _kRTTransactionMetricsKeyOnBehalfOf, 
+                       _kRTTransactionMetricsKeyProcess, _kRTTransactionMetricsKeyState ]
+    objc-classes:    [ RTBugCaptureConfiguration, RTBugCaptureManager, RTBugCaptureMetricsManager, 
+                       RTHangsMetrics, RTRadarUtilities, RTTransaction, RTTransactionExpectations, 
+                       RTTransactionManager, RTTransactionMetricsManager, RTTransactionOptions, 
+                       RTTransactionProfileData ]
+...

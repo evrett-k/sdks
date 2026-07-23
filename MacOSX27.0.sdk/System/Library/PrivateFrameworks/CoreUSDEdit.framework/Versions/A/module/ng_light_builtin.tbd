@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/ng_light_builtin.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN2Ng21on_register_light_iesER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng23on_register_light_planeER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng24on_register_light_sphereER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng26on_register_light_cylinderER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng26on_register_light_geometryER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng29on_register_light_directionalER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN2Ng29on_register_light_environmentER5OfAppR10CoreVectorIP7OfClassE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZGVZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT, 
+                       __ZN11ImageSampleIdEC1ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC1Ev, 
+                       __ZN11ImageSampleIdEC2ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC2Ev, 
+                       __ZN11ImageSampleIfEC1ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC1Ev, 
+                       __ZN11ImageSampleIfEC2ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC2Ev, 
+                       __ZN16NgIESRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN16NgIESRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN16NgIESRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN16NgIESRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN18NgPlaneRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN18NgPlaneRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN18NgPlaneRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN18NgPlaneRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN19NgSphereRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN19NgSphereRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN19NgSphereRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN19NgSphereRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN21NgCylinderRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN21NgCylinderRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN21NgCylinderRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN21NgCylinderRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN24NgDirectionalRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN24NgDirectionalRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN24NgDirectionalRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN24NgDirectionalRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN24NgEnvironmentRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN24NgEnvironmentRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN24NgEnvironmentRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN24NgEnvironmentRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZN24NgSasGeometryRenderLight33copy_render_light_to_gpu_callbackEPK8OfObjectPK13NgRenderLightPPS3_PKv, 
+                       __ZN24NgSasGeometryRenderLight33destroy_gpu_render_light_callbackEP13NgRenderLight, 
+                       __ZN24NgSasGeometryRenderLight6sampleEPK13NgRenderLightRK8NgCpuCtxRKfS7_R19NgLightSampleOutput, 
+                       __ZN24NgSasGeometryRenderLight8evaluateEPK13NgRenderLightRK8NgCpuCtxRKN3OSL4DualIN9Imath_3_14Vec3IfEELi2EEERKSA_P17NgLightEvalOutput, 
+                       __ZZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT ]
+...

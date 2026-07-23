@@ -1,0 +1,460 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target x86_64-apple-macos27.0 -target-variant x86_64-apple-ios27.0-macabi -enable-objc-interop -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Lifetimes -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 3350.67.2 -module-name VideoToolbox
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreFoundation
+public import CoreVideo
+public import Darwin
+public import Foundation
+public import Swift
+@_exported public import VideoToolbox
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTFrameProcessorFrame {
+  public struct ReadOnlyFrame : Swift::Sendable {
+    public var frame: CoreVideo::CVReadOnlyPixelBuffer
+    public var timeStamp: CoreMedia::CMTime
+    public init(frame: CoreVideo::CVReadOnlyPixelBuffer, timeStamp: CoreMedia::CMTime)
+  }
+}
+@available(macOS 15.4, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTOpticalFlowConfiguration {
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(iOS, unavailable)
+  @available(macOS, introduced: 15.4, deprecated: 15.4, message: "use supportedPixelFormats: [OSType] instead")
+  public var frameSupportedPixelFormats: [Foundation::NSNumber] {
+    get
+  }
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTFrameProcessor {
+  public func process(parameters: any VideoToolbox::VTFrameProcessorParameters) -> some _Concurrency::AsyncSequence<VideoToolbox::VTFrameProcessorFrame.VideoToolbox::ReadOnlyFrame, any Swift::Error>
+  
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTFrameProcessorConfiguration {
+  public var nextFrameCount: Swift::Int? {
+    get
+  }
+  public var previousFrameCount: Swift::Int? {
+    get
+  }
+  public static var maximumDimensions: CoreMedia::CMVideoDimensions? {
+    get
+  }
+  public static var minimumDimensions: CoreMedia::CMVideoDimensions? {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTFrameProcessorParameters {
+  public var destinationFrame: VideoToolbox::VTFrameProcessorFrame? {
+    get
+  }
+  public var destinationFrames: [VideoToolbox::VTFrameProcessorFrame]? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionCreate(allocator: CoreFoundation::CFAllocator?, formatDescription videoFormatDescription: CoreMedia::CMVideoFormatDescription, decoderSpecification videoDecoderSpecification: CoreFoundation::CFDictionary?, imageBufferAttributes destinationImageBufferAttributes: CoreFoundation::CFDictionary?, decompressionSessionOut: Swift::UnsafeMutablePointer<VideoToolbox::VTDecompressionSession?>) -> Darwin::OSStatus
+@available(macOS 14.0, iOS 17.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionDecodeFrame(_ session: VideoToolbox::VTDecompressionSession, sampleBuffer: CoreMedia::CMSampleBuffer, flags decodeFlags: VideoToolbox::VTDecodeFrameFlags, infoFlagsOut: Swift::UnsafeMutablePointer<VideoToolbox::VTDecodeInfoFlags>?, completionHandler: @escaping @Sendable (_ status: Darwin::OSStatus, _ infoFlags: VideoToolbox::VTDecodeInfoFlags, _ imageBuffer: CoreVideo::CVImageBuffer?, _ taggedBuffers: [CoreMedia::CMTaggedBuffer]?, _ presentationTimeStamp: CoreMedia::CMTime, _ presentationDuration: CoreMedia::CMTime) -> Swift::Void) -> Darwin::OSStatus
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+public class VTHDRPerFrameMetadataGenerationSession {
+  public enum HDRFormat : Swift::Int, Swift::Sendable {
+    case dolbyVision
+    public init?(rawValue: Swift::Int)
+    @available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  public init(framesPerSecond: Swift::Float, hdrFormats: [VideoToolbox::VTHDRPerFrameMetadataGenerationSession.VideoToolbox::HDRFormat]? = nil) throws
+  public func attachMetadata(to: CoreVideo::CVPixelBuffer, sceneChange: Swift::Bool = false) throws
+  @objc deinit
+}
+@available(*, unavailable)
+extension VideoToolbox::VTHDRPerFrameMetadataGenerationSession : Swift::Sendable {
+}
+@available(macOS 15.4, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTFrameRateConversionConfiguration {
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(iOS, unavailable)
+  @available(macOS, introduced: 15.4, deprecated: 15.4, message: "use supportedPixelFormats: [OSType] instead")
+  public var frameSupportedPixelFormats: [Foundation::NSNumber] {
+    get
+  }
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 15.4, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTFrameRateConversionParameters {
+  convenience public init?(sourceFrame: VideoToolbox::VTFrameProcessorFrame, nextFrame: VideoToolbox::VTFrameProcessorFrame, opticalFlow: VideoToolbox::VTFrameProcessorOpticalFlow?, interpolationPhase: [Swift::Float], submissionMode: VideoToolbox::VTFrameRateConversionParameters.VideoToolbox::SubmissionMode, destinationFrames: [VideoToolbox::VTFrameProcessorFrame])
+  public var interpolationPhase: [Swift::Float] {
+    get
+  }
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTRAWProcessingSession {
+  public enum Parameter : Swift::Equatable, Swift::Sendable {
+    case bool(VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::BooleanParameter)
+    case int(VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::IntegerParameter)
+    case float(VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::FloatParameter)
+    case list(VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter)
+    case subgroup(details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details, elements: [VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter])
+    public struct Details : Swift::Equatable, Swift::Sendable {
+      public var name: Swift::String {
+        get
+      }
+      public var description: Swift::String {
+        get
+      }
+      public var isEnabled: Swift::Bool {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details) -> Swift::Bool
+    }
+    public struct Values<Value> : Swift::Equatable, Swift::Sendable where Value : Swift::Equatable, Value : Swift::Sendable {
+      public var initial: Value {
+        get
+      }
+      public var current: Value {
+        get
+      }
+      public var neutral: Value? {
+        get
+      }
+      public var camera: Value? {
+        get
+      }
+      public var minimum: Value? {
+        get
+      }
+      public var maximum: Value? {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Value>, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Value>) -> Swift::Bool
+    }
+    public struct BooleanParameter : Swift::Equatable, Swift::Sendable {
+      public var details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details {
+        get
+      }
+      public var values: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Swift::Bool> {
+        get
+      }
+      public var key: Swift::String {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::BooleanParameter, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::BooleanParameter) -> Swift::Bool
+    }
+    public struct IntegerParameter : Swift::Equatable, Swift::Sendable {
+      public var details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details {
+        get
+      }
+      public var values: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Swift::Int> {
+        get
+      }
+      public var key: Swift::String {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::IntegerParameter, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::IntegerParameter) -> Swift::Bool
+    }
+    public struct FloatParameter : Swift::Equatable, Swift::Sendable {
+      public var details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details {
+        get
+      }
+      public var values: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Swift::Float> {
+        get
+      }
+      public var key: Swift::String {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::FloatParameter, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::FloatParameter) -> Swift::Bool
+    }
+    public struct ListParameter : Swift::Equatable, Swift::Sendable {
+      public struct Element : Swift::Equatable, Swift::Sendable {
+        public var id: Swift::Int {
+          get
+        }
+        public var details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details {
+          get
+        }
+        public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter.VideoToolbox::Element, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter.VideoToolbox::Element) -> Swift::Bool
+      }
+      public var details: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Details {
+        get
+      }
+      public var values: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::Values<Swift::Int> {
+        get
+      }
+      public var elements: [VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter.VideoToolbox::Element] {
+        get
+      }
+      public var key: Swift::String {
+        get
+      }
+      public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter.VideoToolbox::ListParameter) -> Swift::Bool
+    }
+    public static func == (a: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter, b: VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter) -> Swift::Bool
+  }
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+public protocol _VTRAWProcessingSessionInitTrampoline : VideoToolbox::_VTInitTrampoline where Self.T == VideoToolbox::VTRAWProcessingSession {
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::_VTRAWProcessingSessionInitTrampoline {
+  @available(macOS 15.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(iOS, unavailable)
+  @available(visionOS, unavailable)
+  public init(formatDescription: CoreMedia::CMFormatDescription, outputPixelBufferAttributes: [Swift::String : any Swift::Sendable]) throws
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTRAWProcessingSession : VideoToolbox::_VTRAWProcessingSessionInitTrampoline {
+  @available(macOS 15.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias T = VideoToolbox::VTRAWProcessingSession
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTRAWProcessingSession : @unchecked Swift::Sendable {
+  public var processingParameters: [VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter] {
+    get throws
+  }
+  public func parameters() -> any _Concurrency::AsyncSequence<[VideoToolbox::VTRAWProcessingSession.VideoToolbox::Parameter], Swift::Never>
+  public func updateParameter(values: [Swift::String : Any]) throws
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTRAWProcessingSession {
+  @available(macOS 15.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(iOS, unavailable)
+  @available(visionOS, unavailable)
+  public func process(frame: CoreVideo::CVPixelBuffer) async throws -> CoreVideo::CVPixelBuffer
+}
+@available(macOS 15.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTRAWProcessingSession {
+  @available(macOS 15.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(iOS, unavailable)
+  @available(visionOS, unavailable)
+  public var metalDevice: (any Metal::MTLDevice)? {
+    get
+    set(newValue)
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTLowLatencyFrameInterpolationConfiguration {
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTLowLatencyFrameInterpolationParameters {
+  convenience public init?(sourceFrame: VideoToolbox::VTFrameProcessorFrame, previousFrame: VideoToolbox::VTFrameProcessorFrame, interpolationPhase: [Swift::Float], destinationFrames: [VideoToolbox::VTFrameProcessorFrame])
+  public var interpolationPhase: [Swift::Float] {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTCompressionSessionEncodeMultiImageFrame(_ session: VideoToolbox::VTCompressionSession, taggedBuffers: [CoreMedia::CMTaggedBuffer], presentationTimeStamp: CoreMedia::CMTime, duration: CoreMedia::CMTime, frameProperties: CoreFoundation::CFDictionary?, infoFlagsOut: Swift::UnsafeMutablePointer<VideoToolbox::VTEncodeInfoFlags>?, outputHandler: @escaping VideoToolbox::VTCompressionOutputHandler) -> Darwin::OSStatus
+@available(macOS 15.4, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTMotionBlurConfiguration {
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(iOS, unavailable)
+  @available(macOS, introduced: 15.4, deprecated: 15.4, message: "use supportedPixelFormats: [OSType] instead")
+  public var frameSupportedPixelFormats: [Foundation::NSNumber] {
+    get
+  }
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTTemporalNoiseFilterConfiguration {
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+  public class var supportedSourcePixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTLowLatencySuperResolutionScalerConfiguration {
+  public class func supportedScaleFactors(frameWidth: Swift::Int, frameHeight: Swift::Int) -> [Swift::Float]
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, visionOS 1.0, *)
+public protocol _VTInitTrampoline<T> {
+  associatedtype T : AnyObject
+  init(referencing: Self.T)
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public func VTVideoDecoderExtensionProperties(_ formatDesc: CoreMedia::CMFormatDescription) throws -> [VideoToolbox::VTExtensionPropertiesKey : Any]
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public func VTRAWProcessorExtensionProperties(_ formatDesc: CoreMedia::CMFormatDescription) throws -> [VideoToolbox::VTExtensionPropertiesKey : Any]
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+final public class VTMotionEstimationSession : Swift::Sendable {
+  public enum BlockSize : Swift::Int, Swift::Sendable {
+    case blockSize16x16
+    case blockSize4x4
+    public init?(rawValue: Swift::Int)
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  public struct FrameFlags : Swift::OptionSet, Swift::Sendable {
+    public var rawValue: Swift::UInt32
+    public init(rawValue: Swift::UInt32)
+    public static let currentBufferWillBeNextReferenceBuffer: VideoToolbox::VTMotionEstimationSession.VideoToolbox::FrameFlags
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+    @available(watchOS, unavailable)
+    public typealias ArrayLiteralElement = VideoToolbox::VTMotionEstimationSession.VideoToolbox::FrameFlags
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+    @available(watchOS, unavailable)
+    public typealias Element = VideoToolbox::VTMotionEstimationSession.VideoToolbox::FrameFlags
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::UInt32
+  }
+  public init(width: Swift::UInt32, height: Swift::UInt32, motionVectorSize: VideoToolbox::VTMotionEstimationSession.VideoToolbox::BlockSize = .blockSize16x16, useMultiPassSearch: Swift::Bool = false, label: Swift::String? = nil) throws
+  public struct Motion : Swift::Sendable {
+    public var _motionVector: CoreVideo::CVReadOnlyPixelBuffer
+    public var motionVector: CoreVideo::CVReadOnlyPixelBuffer {
+      get
+    }
+  }
+  final public var label: Swift::String? {
+    get
+  }
+  final public var motionVectorSize: VideoToolbox::VTMotionEstimationSession.VideoToolbox::BlockSize {
+    get throws
+  }
+  final public var useMultiPassSearch: Swift::Bool {
+    get
+  }
+  final public var sourcePixelBufferAttributes: [Swift::String : any Swift::Sendable] {
+    get
+  }
+  final public func motion(of currentImage: CoreVideo::CVReadOnlyPixelBuffer, comparedTo referenceImage: CoreVideo::CVReadOnlyPixelBuffer, flags: VideoToolbox::VTMotionEstimationSession.VideoToolbox::FrameFlags = .init(rawValue:0)) async throws -> VideoToolbox::VTMotionEstimationSession.VideoToolbox::Motion
+  @objc deinit
+}
+@available(macOS 26.0, iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension VideoToolbox::VTSuperResolutionScalerConfiguration {
+  public class var supportedScaleFactors: [Swift::Int] {
+    get
+  }
+  public var supportedPixelFormats: [Darwin::OSType] {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTHDRPerFrameMetadataGenerationSession.VideoToolbox::HDRFormat : Swift::Equatable {}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTHDRPerFrameMetadataGenerationSession.VideoToolbox::HDRFormat : Swift::Hashable {}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTHDRPerFrameMetadataGenerationSession.VideoToolbox::HDRFormat : Swift::RawRepresentable {}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTMotionEstimationSession.VideoToolbox::BlockSize : Swift::Equatable {}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTMotionEstimationSession.VideoToolbox::BlockSize : Swift::Hashable {}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox::VTMotionEstimationSession.VideoToolbox::BlockSize : Swift::RawRepresentable {}

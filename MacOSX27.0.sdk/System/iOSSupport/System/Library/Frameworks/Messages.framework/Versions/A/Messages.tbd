@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-maccatalyst, arm64e-maccatalyst ]
+install-name:    '/System/iOSSupport/System/Library/Frameworks/Messages.framework/Versions/A/Messages'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-maccatalyst, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo12MSUPIRequestC8MessagesE10recipientsSaySSGvg', '_$sSo12MSUPIRequestC8MessagesE10recipientsSaySSGvpMV', 
+                       '_$sSo12MSUPIRequestC8MessagesE10recipientsSaySSGvpWvd', '_$sSo12MSUPIRequestC8MessagesE15validationToken10recipientsABSS_SaySSGtcfC', 
+                       '_$sSo12MSUPIRequestC8MessagesE15validationToken10recipientsABSS_SaySSGtcfc', 
+                       '_$sSo12MSUPIRequestC8MessagesE15validationTokenSSvg', '_$sSo12MSUPIRequestC8MessagesE15validationTokenSSvpMV', 
+                       '_$sSo12MSUPIRequestC8MessagesE15validationTokenSSvpWvd', 
+                       '_$sSo12MSUPIRequestC8MessagesE4sendSbyYaF', '_$sSo12MSUPIRequestC8MessagesE4sendSbyYaFTu', 
+                       '_$sSo12MSUPIRequestC8MessagesEABycfC', '_$sSo12MSUPIRequestC8MessagesEABycfc', 
+                       '_$sSo12MSUPIRequestCMa', _MSMessagesErrorDomain, _MSStickersErrorDomain, 
+                       _MSStickersErrorStickerInfoKey, __MSExtensionContextIsPrimary, 
+                       __MSExtensionItemContextIsMessagesCameraKey, __MSExtensionItemContextIsUserGeneratedStickerKey, 
+                       __MSExtensionItemConversationStateKey, __MSExtensionItemHostViewBoundsKey, 
+                       __MSExtensionItemWantsLiveViewKey, __MSMessageMediaPayloadDecodeErrorCode, 
+                       __kAppearanceWantsInsetsForGrabberDisabled, _ms_defaultLog, 
+                       _ms_traceLog ]
+    objc-classes:    [ MSConversation, MSConversationContextItem, MSMessage, MSMessageLayout, 
+                       MSMessageLiveLayout, MSMessageRichLinkLayout, MSMessageTemplateLayout, 
+                       MSMessagesAppViewController, MSRichLink, MSSession, MSSticker, 
+                       MSStickerBrowserView, MSStickerBrowserViewController, MSStickerView, 
+                       MSUPIRequest, _MSAvatarImage, _MSConversationState, _MSMessageAppBundleContext, 
+                       _MSMessageAppBundleHostContext, _MSMessageAppContext, _MSMessageAppExtensionContext, 
+                       _MSMessageAppExtensionHostContext, _MSMessageCustomAcknowledgement, 
+                       _MSMessageExtensionRemoteViewController, _MSMessageMediaPayload, 
+                       _MSPresentationState, _MSStickerDragPreviewContainerView, 
+                       _MSStickerPackCollectionViewDataSource, _MSStickerSendManager, 
+                       _MSTempFileManager, _MSTempURL ]
+...

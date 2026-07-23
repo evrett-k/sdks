@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/DynamicPrefetching.framework/Versions/A/DynamicPrefetching'
+current-version: 3.5.8
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst ]
+    weak-symbols:    [ __ZTISt11logic_error, __ZTISt12length_error, __ZTISt12out_of_range, 
+                       __ZTISt20bad_array_new_length, __ZTISt9bad_alloc, __ZTISt9exception, 
+                       __ZTSSt11logic_error, __ZTSSt12length_error, __ZTSSt12out_of_range, 
+                       __ZTSSt20bad_array_new_length, __ZTSSt9bad_alloc, __ZTSSt9exception ]
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DP_end_scenario, _DP_start_scenario, _DP_step_scenario_partition, 
+                       __ZN11Prefetching13fast_defaultsE, __ZN11Prefetching19kDefaultsDomainFastE, 
+                       __ZN11Prefetching19kPrefetchingEnabledE, __ZN11Prefetching20kPrefetchingSettingsE, 
+                       __ZN11Prefetching21kLastSeenBuildVersionE, __ZN11Prefetching2V118read_profile_statsERNS0_7ProfileE, 
+                       __ZN11Prefetching2V120print_profile_detailERNS0_7ProfileE, 
+                       __ZN11Prefetching32get_prefetching_enablement_stateEv, __ZN11Prefetching32set_prefetching_enablement_stateENS_19prefetching_state_tE, 
+                       __ZN11Prefetching34clear_prefetching_enablement_stateEv, _end_scenario, 
+                       _start_scenario ]
+...

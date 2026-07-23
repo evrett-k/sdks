@@ -1,0 +1,266 @@
+/*
+ * Copyright (c) 2026 Apple Inc. All rights reserved.
+ *
+ * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
+ *
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. The rights granted to you under the License
+ * may not be used to create, or enable the creation or redistribution of,
+ * unlawful or unlicensed copies of an Apple operating system, or to
+ * circumvent, violate, or enable the circumvention or violation of, any
+ * terms of an Apple operating system software license agreement.
+ *
+ * Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this file.
+ *
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ *
+ * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
+ */
+#ifndef _IPSEC_OFFLOAD_H_
+#define _IPSEC_OFFLOAD_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <stdint.h>
+
+/* Increase if ABI-breaking changes are added */
+#define IPSEC_OFFLOAD_KPI_VERSION       1
+
+/* Protocol / mode */
+typedef enum ipsec_offload_proto {
+	IPSEC_OFFLOAD_PROTO_ESP = 50,
+	IPSEC_OFFLOAD_PROTO_AH  = 51
+} ipsec_offload_proto_t;
+
+typedef enum ipsec_offload_mode {
+	IPSEC_OFFLOAD_MODE_TRANSPORT = 0,
+	IPSEC_OFFLOAD_MODE_TUNNEL    = 1
+} ipsec_offload_mode_t;
+
+/* Direction type for SA and policy */
+typedef enum ipsec_offload_dir {
+	IPSEC_OFFLOAD_DIR_IN  = 1,      /* inbound/receive */
+	IPSEC_OFFLOAD_DIR_OUT = 2,      /* outbound/transmit */
+	IPSEC_OFFLOAD_DIR_FWD = 3       /* forward (optional) */
+} ipsec_offload_dir_t;
+
+/* Algorithm definitions taken from <net/pfkeyv2.h> */
+/* RFC2367 numbers - meets RFC2407 */
+#define IPSEC_OFFLOAD_AALG_NONE          0
+#define IPSEC_OFFLOAD_AALG_MD5HMAC       1       /*2*/
+#define IPSEC_OFFLOAD_AALG_SHA1HMAC      2       /*3*/
+#define IPSEC_OFFLOAD_AALG_MAX           8
+/* private allocations - based on RFC2407/IANA assignment */
+#define IPSEC_OFFLOAD_X_AALG_SHA2_256    6       /*5*/
+#define IPSEC_OFFLOAD_X_AALG_SHA2_384    7       /*6*/
+#define IPSEC_OFFLOAD_X_AALG_SHA2_512    8       /*7*/
+/* private allocations should use 249-255 (RFC2407) */
+#define IPSEC_OFFLOAD_X_AALG_MD5         3       /*249*/ /* Keyed MD5, not implemented */
+#define IPSEC_OFFLOAD_X_AALG_SHA         4       /*250*/ /* Keyed SHA, not implemented */
+#define IPSEC_OFFLOAD_X_AALG_NULL        5       /*251*/ /* null authentication */
+
+/* RFC2367 numbers - meets RFC2407 */
+#define IPSEC_OFFLOAD_EALG_NONE          0
+#define IPSEC_OFFLOAD_EALG_DESCBC        1       /*2*/
+#define IPSEC_OFFLOAD_EALG_3DESCBC       2       /*3*/
+#define IPSEC_OFFLOAD_EALG_NULL          3       /*11*/
+#define IPSEC_OFFLOAD_EALG_MAX           12
+/* private allocations - based on RFC2407/IANA assignment */
+#define IPSEC_OFFLOAD_X_EALG_CAST128CBC  5       /*6*/
+#define IPSEC_OFFLOAD_X_EALG_BLOWFISHCBC 4       /*7*/
+#define IPSEC_OFFLOAD_X_EALG_RIJNDAELCBC 12
+#define IPSEC_OFFLOAD_X_EALG_AESCBC      12
+#define IPSEC_OFFLOAD_X_EALG_AES         12
+#define IPSEC_OFFLOAD_X_EALG_AES_GCM     13
+#define IPSEC_OFFLOAD_X_EALG_CHACHA20POLY1305 14
+#define IPSEC_OFFLOAD_X_EALG_AES_GMAC    15
+/* private allocations should use 249-255 (RFC2407) */
+
+/*
+ * Keying material
+ *
+ * AEAD:
+ *   aead_alg != 0;
+ *   enc_alg = auth_alg = 0;
+ *   enc_key/enc_key_len = AEAD key; auth_key/auth_key_len = 0;
+ *   salt = per-SA AEAD salt; icv_len = AEAD tag length (bytes).
+ *
+ * Non-AEAD:
+ *   aead_alg = 0;
+ *   enc_alg  = IPSEC_OFFLOAD_EALG_* or IPSEC_OFFLOAD_X_EALG_* (0 if AH-only);
+ *   auth_alg = IPSEC_OFFLOAD_AALG_* or IPSEC_OFFLOAD_X_AALG_* (0 if none);
+ *   enc_key/auth_key provided as applicable; salt typically 0;
+ *   icv_len = MAC/ICV truncation length (0 = algorithm default).
+ */
+typedef struct ipsec_offload_keymat {
+	uint16_t        key_aead_alg;
+	uint16_t        key_enc_alg;
+	uint16_t        key_auth_alg;
+	const void      *__sized_by(key_enc_key_len) key_enc_key;
+	uint16_t        key_enc_key_len;
+	const void      *__sized_by(key_auth_key_len) key_auth_key;
+	uint16_t        key_auth_key_len;
+	uint32_t        key_salt;
+	uint16_t        key_icv_len;
+} ipsec_offload_keymat_t;
+
+/* IP version */
+typedef enum ipsec_offload_ip_version {
+	IPSEC_OFFLOAD_IPV4 = 4,
+	IPSEC_OFFLOAD_IPV6 = 6
+} ipsec_offload_ip_version_t;
+
+/*
+ * L4 protocol values for ipsec_offload_selector.sel_transport
+ * 0 means "wildcard / no L4 match".
+ */
+typedef enum ipsec_offload_transport {
+	IPSEC_OFFLOAD_L4_ANY = 0,   /* no L4 match */
+	IPSEC_OFFLOAD_L4_TCP = 6,   /* TCP */
+	IPSEC_OFFLOAD_L4_UDP = 17,  /* UDP */
+} ipsec_offload_transport_t;
+
+/* Selector for packet offload classification (inner flow) */
+typedef struct ipsec_offload_selector {
+	ipsec_offload_ip_version_t sel_ip_version; /* IP version */
+	uint8_t                    sel_src[16];    /* source address, network order */
+	uint8_t                    sel_dst[16];    /* destination address, network order */
+	uint8_t                    sel_src_prefix; /* 32/128 for exact */
+	uint8_t                    sel_dst_prefix; /* 32/128 for exact */
+	ipsec_offload_transport_t  sel_transport;  /* transport proto */
+	uint16_t                   sel_src_port;   /* source port, network order */
+	uint16_t                   sel_dst_port;   /* destination port, network order */
+} ipsec_offload_selector_t;
+
+/* Optional outer tunnel endpoints (used if mode == TUNNEL) */
+typedef struct ipsec_offload_tunnel {
+	ipsec_offload_ip_version_t tun_ip_version; /* IP version */
+	uint8_t                    tun_src[16];    /* outer source IP, network order */
+	uint8_t                    tun_dst[16];    /* outer destination IP, network order */
+	uint8_t                    tun_hop_limit;  /* 0 = stack default */
+} ipsec_offload_tunnel_t;
+
+/* SA flags (bitfield) */
+typedef enum ipsec_offload_sa_flags {
+	IPSEC_OFFLOAD_SA_F_ESN = 1u << 0           /* Extended Sequence Numbers */
+} ipsec_offload_sa_flags_t;
+
+/* SA programming (used by crypto + packet offload) */
+typedef struct ipsec_offload_sa {
+	uint32_t                   sa_flags;       /* ipsec_offload_sa_flags_t */
+	uint32_t                   sa_spi;         /* SPI (network order) */
+	ipsec_offload_proto_t      sa_proto;       /* ESP / AH */
+	ipsec_offload_mode_t       sa_mode;        /* Transport / Tunnel */
+	ipsec_offload_ip_version_t sa_ip_version;  /* IP version */
+	ipsec_offload_dir_t        sa_dir;         /* IN / OUT / FWD */
+	ipsec_offload_keymat_t     sa_keys;        /* Keying material */
+	uint32_t                   sa_replay_win;  /* 0 = default */
+	uint32_t                   sa_reqid;       /* Optional binding hint, 0 = unused */
+	ipsec_offload_tunnel_t     sa_tunnel;      /* valid if mode == TUNNEL */
+} ipsec_offload_sa_t;
+
+/* Policy classifier (packet offload) */
+typedef struct ipsec_offload_policy {
+	ipsec_offload_dir_t        pol_dir;        /* IN / OUT / FWD */
+	ipsec_offload_selector_t   pol_sel;        /* flow match */
+
+	/* Optional binding choices (driver may use either if provided): */
+	uint32_t                   pol_reqid;      /* binding hint; 0 = unused */
+	uint64_t                   pol_sa_handle;  /* direct SA cookie; 0 = resolve via reqid/SPI/etc. */
+} ipsec_offload_policy_t;
+
+/*
+ * These are intended to be used within xnu or by IOSkywalkFamily.
+ *
+ * All calls are invoked with a driver_ctx that is bound to a single interface
+ * registered by the driver at attach time. The kernel selects the target interface
+ * before invoking these ops. Multi-interface installs are achieved by the kernel
+ * calling the same add/delete operation for each device.
+ *
+ * Conventions:
+ *  - Return 0 on success; errno on failure.
+ *  - Keys in the input structs point to call-scope buffers; drivers must copy.
+ */
+
+/*
+ * ipsec_offload_sa_add
+ * Program (or update) an SA on the target interface represented by driver_ctx.
+ * IN : driver_ctx, sa (SA parameters)
+ * OUT: *handle_out set to an opaque driver cookie for this SA on success
+ * RET: 0 on success; errno on failure
+ */
+typedef errno_t (*ipsec_offload_sa_add_t)(
+	void *driver_ctx,
+	ipsec_offload_sa_t *sa,
+	uint64_t *handle_out);
+
+/*
+ * ipsec_offload_sa_delete
+ * Remove an SA from hardware.
+ * IN : driver_ctx, handle (opaque cookie previously returned by add)
+ * OUT: none
+ * RET: 0 on success; errno on failure
+ */
+typedef errno_t (*ipsec_offload_sa_delete_t)(
+	void *driver_ctx,
+	uint64_t handle);
+
+/*
+ * ipsec_offload_sa_advance_esn
+ * Notify the driver that the ESN high bits advanced (if required by HW).
+ * IN : driver_ctx, handle (SA cookie), new_seq (monotonic 64-bit)
+ * OUT: none
+ * RET: 0 on success; errno on failure
+ */
+typedef errno_t (*ipsec_offload_sa_advance_esn_t)(
+	void *driver_ctx,
+	uint64_t handle,
+	uint64_t new_seq);
+
+/*
+ * ipsec_offload_policy_add
+ * Install a classifier rule on this interface and bind it to an SA.
+ * IN : driver_ctx, pol (selector + either sa_handle or reqid/identity)
+ * OUT: *handle_out set to an opaque driver cookie for this policy on success
+ * RET: 0 on success; errno on failure
+ */
+typedef errno_t (*ipsec_offload_policy_add_t)(
+	void *driver_ctx,
+	ipsec_offload_policy_t *pol,
+	uint64_t *handle_out);
+
+/*
+ * ipsec_offload_policy_delete
+ * Remove a classifier rule.
+ * IN : driver_ctx, handle (policy cookie previously returned by add)
+ * OUT: none
+ * RET: 0 on success; errno on failure
+ */
+typedef errno_t (*ipsec_offload_policy_delete_t)(
+	void *driver_ctx,
+	uint64_t handle);
+
+/* OPs table */
+typedef struct ipsec_offload_ops {
+	ipsec_offload_sa_add_t          ops_sa_add;
+	ipsec_offload_sa_delete_t       ops_sa_delete;
+	ipsec_offload_sa_advance_esn_t  ops_sa_advance_esn;
+	ipsec_offload_policy_add_t      ops_policy_add;
+	ipsec_offload_policy_delete_t   ops_policy_delete;
+} ipsec_offload_ops_t;
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* _IPSEC_OFFLOAD_H_ */

@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/scene_item.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN26_ModuleSceneItemCallbacks_10init_classER7OfClass, __ZN26_ModuleSceneItemCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN26_ModuleSceneItemCallbacks_18module_constructorER8OfObjectP8OfModule, 
+                       __ZN26_ModuleSceneItemCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN26_ModuleSceneItemCallbacks_22update_visibility_modeER8OfObject, 
+                       __ZN26_ModuleSceneItemCallbacks_25on_pre_deserialize_objectERK11CoreVersionR11ParserGroup, 
+                       __ZN26_ModuleSceneItemCallbacks_43on_project_geometry_visibility_mode_changedER5OfAppRKN11EventObject9EventInfoEPv, 
+                       __ZN26_ModuleSceneItemCallbacks_47on_project_geometry_visibility_mode_object_liveER8OfObjectRKN11EventObject9EventInfoEPv, 
+                       __ZN26_ModuleSceneItemCallbacks_8paint_glER8OfObjectR10GlUtilsCtx, 
+                       _on_register_module ]
+    weak-symbols:    [ __Z14create_commandI12SetParentCmdLj3EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZGVZN16OfBaseAttrHandleILb1EE10class_infoEvE10class_info, 
+                       __ZGVZN16OfBasePlugHandleILb1EE10class_infoEvE10class_info, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN16OfBaseAttrHandleILb1EE10class_infoEvE10class_info, 
+                       __ZZN16OfBasePlugHandleILb1EE10class_infoEvE10class_info ]
+...

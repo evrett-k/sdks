@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/IntelligenceTasksEngine.framework/Versions/A/IntelligenceTasksEngine'
+current-version: 243
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ IntelligenceTasksEngineTests, intelligencetasksd ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s23IntelligenceTasksEngine010BackgroundB0O5startyyFZ', 
+                       '_$s23IntelligenceTasksEngine010BackgroundB0OMa', '_$s23IntelligenceTasksEngine010BackgroundB0OMn', 
+                       '_$s23IntelligenceTasksEngine010BackgroundB0ON', '_$s23IntelligenceTasksEngine10XPCServersO5startyyFZ', 
+                       '_$s23IntelligenceTasksEngine10XPCServersOMa', '_$s23IntelligenceTasksEngine10XPCServersOMn', 
+                       '_$s23IntelligenceTasksEngine10XPCServersON', '_$s23IntelligenceTasksEngine6DaemonMp', 
+                       '_$s23IntelligenceTasksEngine6DaemonP5startyyFZTj', '_$s23IntelligenceTasksEngine6DaemonP5startyyFZTq', 
+                       '_$s23IntelligenceTasksEngine6DaemonPAAE12enterSandbox10identifierySS_tFZ', 
+                       '_$s23IntelligenceTasksEngine6DaemonPAAE19withArrayOfCStringsyqd__SaySSG_qd__SaySPys4Int8VGSgGXEtlFZ', 
+                       '_$s23IntelligenceTasksEngine6DaemonPAAE7confstrySSSgs5Int32VFZ', 
+                       '_$s23IntelligenceTasksEngine6DaemonPAAE7flattenySaySSGSDyS2SGFZ', 
+                       '_$s23IntelligenceTasksEngine6DaemonTL', '_$s23IntelligenceTasksEngine9XPCEventsO5startyyFZ', 
+                       '_$s23IntelligenceTasksEngine9XPCEventsOMa', '_$s23IntelligenceTasksEngine9XPCEventsOMn', 
+                       '_$s23IntelligenceTasksEngine9XPCEventsON' ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ALSKit.framework/Versions/A/ALSKit'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s6ALSKit10ALSManagerCACycfC', '_$s6ALSKit10ALSManagerCACycfCTj', 
+                       '_$s6ALSKit10ALSManagerCACycfCTq', '_$s6ALSKit10ALSManagerCACycfc', 
+                       '_$s6ALSKit10ALSManagerCMa', '_$s6ALSKit10ALSManagerCMm', 
+                       '_$s6ALSKit10ALSManagerCMn', '_$s6ALSKit10ALSManagerCMo', 
+                       '_$s6ALSKit10ALSManagerCMu', '_$s6ALSKit10ALSManagerCN', '_$s6ALSKit10ALSManagerCfD', 
+                       '_$s6ALSKit10ALSManagerCfd', _ALSKitVersionNumber, _ALSKitVersionString ]
+...

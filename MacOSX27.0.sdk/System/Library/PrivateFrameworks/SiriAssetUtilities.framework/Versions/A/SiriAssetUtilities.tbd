@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SiriAssetUtilities.framework/Versions/A/SiriAssetUtilities'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _SAUGetLogCategory, _SAULogContextAssetUtilities, _SAULogContextClient, 
+                       _SAULogContextSubscription, _SAULogContextXPCService, _SiriAssetUtilitiesVersionNumber, 
+                       _SiriAssetUtilitiesVersionString, _kDefaultUAFServiceName, 
+                       _kSAUAssistantAssistantEngineLanguageUsageAlias, _kSAUAssistantHybridLanguageUsageAlias, 
+                       _kSAUAssistantLanguageUsageAlias, _kSAUAssistantLegacyLanguageUsageAlias, 
+                       _kSAUErrorDomain, _kSAUMorphunAssetSet, _kSAUMorphunFactorPrefix, 
+                       _kSAUMorphunLanguageUsageType, _kSAUMorphunSubscriber, _kSAUMorphunSystemLocaleSubscription, 
+                       _kSAUNLSubscriber, _kSAUNLSystemLanguageSubscription, _kSAUNLSystemLanguageUsageAlias, 
+                       _kSAUSQPSubscriber, _kSAUSQPSystemLanguageSubscription, _kSAUSQPSystemLanguageUsageAlias, 
+                       _kUAFAssistantSubscriber, _kUAFAssistantSubscription, _kUAFGMSSiriSubscriber, 
+                       _kUAFGMSSiriSubscription, _kUAFStartedNotification, _kUAFSummarizationKitAssetSet, 
+                       _kUAFSummarizationKitSubscriber, _kUAFSummarizationKitSubscription ]
+    objc-classes:    [ SAUAssetUtilities, SAUAssetUtilitiesService, SAUCommonUtilities, 
+                       SAUManagedSubscriptions, SAUXPCConnection, SAUXPCProxyServiceInterface, 
+                       SAUXPCService ]
+...

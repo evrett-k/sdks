@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/angie_renderer_aov.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN16AngieRendererAov11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN36_ModuleModuleRendererAovNgCallbacks_10init_classER7OfClass, 
+                       __ZN36_ModuleModuleRendererAovNgCallbacks_13on_new_presetER8OfObject, 
+                       __ZN36_ModuleModuleRendererAovNgCallbacks_18module_constructorER8OfObjectP8OfModule, 
+                       __ZN36_ModuleModuleRendererAovNgCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN36_ModuleModuleRendererAovNgCallbacks_21ng_renderer_aov_countE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZN11ImageSampleIdEC1ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC1Ev, 
+                       __ZN11ImageSampleIdEC2ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC2Ev, 
+                       __ZN11ImageSampleIfEC1ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC1Ev, 
+                       __ZN11ImageSampleIfEC2ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC2Ev ]
+...

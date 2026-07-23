@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/EnhancedLinkSecurityStore.framework/Versions/A/EnhancedLinkSecurityStore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s25EnhancedLinkSecurityStore0abcD8ListenerC5startyyFTj', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerC5startyyFTq', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerC6sharedACvgZ', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerC6sharedACvpZMV', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerC8listener_25shouldAcceptNewConnectionSbSo13NSXPCListenerC_So15NSXPCConnectionCtF', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerCACycfC', '_$s25EnhancedLinkSecurityStore0abcD8ListenerCACycfc', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerCMa', '_$s25EnhancedLinkSecurityStore0abcD8ListenerCMn', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerCMo', '_$s25EnhancedLinkSecurityStore0abcD8ListenerCMu', 
+                       '_$s25EnhancedLinkSecurityStore0abcD8ListenerCN', '_$s25EnhancedLinkSecurityStore0abcD8ListenerCfD' ]
+    objc-classes:    [ _TtC25EnhancedLinkSecurityStore33EnhancedLinkSecurityStoreListener ]
+...

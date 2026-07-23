@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/EnhancedLinkSecurity.framework/Versions/A/EnhancedLinkSecurity'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E016hasURLsRequiringeC0Sbvg', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E016hasURLsRequiringeC0SbvpMV', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E07requesteC03fory10Foundation3URLV_tF', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E07requesteC03forySay10Foundation3URLVG_tF', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E09shouldUseeC03forSb10Foundation3URLV_tF', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E09shouldUseeC03forSb10Foundation3URLV_tYaF', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E09shouldUseeC03forSb10Foundation3URLV_tYaFTu', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E6sharedABvgZ', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0E6sharedABvpZMV', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0EABycfC', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerC08EnhancedbC0EABycfc', 
+                       '_$sSo29IMEnhancedLinkSecurityManagerCMa' ]
+    objc-classes:    [ IMEnhancedLinkSecurityManager ]
+...

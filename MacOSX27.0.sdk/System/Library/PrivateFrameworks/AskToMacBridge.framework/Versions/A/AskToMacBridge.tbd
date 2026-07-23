@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AskToMacBridge.framework/Versions/A/AskToMacBridge'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s14AskToMacBridge0abcD6HelperC24presentResponseExtension16bundleIdentifier16extensionPointID05sceneM011contextData6window10completionySS_S2S10Foundation0P0VyXlyAMSg_SSSgtctFTj', 
+                       '_$s14AskToMacBridge0abcD6HelperC24presentResponseExtension16bundleIdentifier16extensionPointID05sceneM011contextData6window10completionySS_S2S10Foundation0P0VyXlyAMSg_SSSgtctFTq', 
+                       '_$s14AskToMacBridge0abcD6HelperC7dismissyyFTj', '_$s14AskToMacBridge0abcD6HelperC7dismissyyFTq', 
+                       '_$s14AskToMacBridge0abcD6HelperCACycfC', '_$s14AskToMacBridge0abcD6HelperCACycfc', 
+                       '_$s14AskToMacBridge0abcD6HelperCMa', '_$s14AskToMacBridge0abcD6HelperCMn', 
+                       '_$s14AskToMacBridge0abcD6HelperCMo', '_$s14AskToMacBridge0abcD6HelperCMu', 
+                       '_$s14AskToMacBridge0abcD6HelperCN', '_$s14AskToMacBridge0abcD6HelperCfD', 
+                       _AskToMacBridgeVersionNumber, _AskToMacBridgeVersionString, 
+                       _AskToNSWindowFromUIWindow ]
+    objc-classes:    [ _TtC14AskToMacBridge20AskToMacBridgeHelper ]
+...

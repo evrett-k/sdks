@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/_AppUserEvents_AppAnalytics.framework/Versions/A/_AppUserEvents_AppAnalytics'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ AppUserEventsDemo, AppUserEventsTests, NewsInternalExtras, 
+                       NewsPersonalization, NewsPersonalizationTests, StocksPersonalization, 
+                       StocksPersonalizationTests, StocksUI, _AppUserEvents_AppAnalytics, 
+                       news_personalization_tool ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC04userE7History10translatorACyxG0abC00beH0CyxG_AA0bE10TranslatorVyxGtcfC', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC04userE7History10translatorACyxG0abC00beH0CyxG_AA0bE10TranslatorVyxGtcfCTj', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC04userE7History10translatorACyxG0abC00beH0CyxG_AA0bE10TranslatorVyxGtcfCTq', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC04userE7History10translatorACyxG0abC00beH0CyxG_AA0bE10TranslatorVyxGtcfc', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC13didEndSession_7endDatey0aD00I0V_10Foundation0K0VtF', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC15didStartSessionyy0aD00I0VF', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC5flush13callbackQueue10completiony0aD006AccessI0C_yycSgtF', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorC7process0gE0y0aD007ProcessE0Vyqd__G_tAF0E4TypeRd__lF', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCMa', '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCMn', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCMo', '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCMu', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCfD', '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCfd', 
+                       '_$s015_AppUserEvents_A9Analytics0B14EventProcessorCyxG0aD00eF4TypeAAMc', 
+                       '_$s015_AppUserEvents_A9Analytics0B15EventTranslatorVMa', 
+                       '_$s015_AppUserEvents_A9Analytics0B15EventTranslatorVMn', 
+                       '_$s015_AppUserEvents_A9Analytics0B15EventTranslatorVyACyxGSayAA0bE11TranslationVyxGGyXEcfC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV05asyncF0ACyxGxSg0aD007ProcessE0Vyqd__GYaYbKc_tcAG0E4TypeRd__lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV11translationACyxGxSg0aD007ProcessE0Vyqd__GYbKc_tcAG0E4TypeRd__lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationVMa', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationVMn', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV_2as05asyncF0ACyxGqd__m_qd_0_mxSgqd_0_YaYbKctc0aD00E4TypeRd__SeRd_0_SERd_0_r0_lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV_2as11translationACyxGqd__m_qd_0_mxSgqd_0_YbKctc0aD00E4TypeRd__SeRd_0_SERd_0_r0_lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV_2as4with05asyncF0ACyxGqd__m_qd_0_mqd_1_mxSgqd_0__qd_1_SgtYaYbKctc0aD00E4TypeRd__SeRd_0_SERd_0_r1_lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B16EventTranslationV_2as4with11translationACyxGqd__m_qd_0_mqd_1_mxSgqd_0__qd_1_SgtYbKctc0aD00E4TypeRd__SeRd_0_SERd_0_r1_lufC', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV10buildArrayySayAA0bE11TranslationVyxGGSayAHGFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV10buildBlockySayAA0bE11TranslationVyxGGAGd_tFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV11buildEither5firstSayAA0bE11TranslationVyxGGAI_tFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV11buildEither6secondSayAA0bE11TranslationVyxGGAI_tFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV13buildOptionalySayAA0bE11TranslationVyxGGAHSgFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderV15buildExpressionyAA0bE11TranslationVyxGAGFZ', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderVMa', 
+                       '_$s015_AppUserEvents_A9Analytics0B22EventTranslatorBuilderVMn', 
+                       '_$s015_AppUserEvents_A9Analytics9translate11translationAA0B16EventTranslationVyq_Gq_Sg0aD007ProcessG0VyxGYbKc_tAH0G4TypeRz0abC00bG0R_r0_lF', 
+                       '_$s015_AppUserEvents_A9Analytics9translate16asyncTranslationAA0b5EventG0Vyq_Gq_Sg0aD007ProcessH0VyxGYaYbKc_tAH0H4TypeRz0abC00bH0R_r0_lF', 
+                       '_$s015_AppUserEvents_A9Analytics9translate_2as11translationAA0B16EventTranslationVyq0_Gxm_q_mq0_Sgq_YbKct0aD00H4TypeRzSeR_SER_0abC00bH0R0_r1_lF', 
+                       '_$s015_AppUserEvents_A9Analytics9translate_2as16asyncTranslationAA0b5EventH0Vyq0_Gxm_q_mq0_Sgq_YaYbKct0aD00I4TypeRzSeR_SER_0abC00bI0R0_r1_lF', 
+                       '_$s015_AppUserEvents_A9Analytics9translate_2as4with11translationAA0B16EventTranslationVyq1_Gxm_q_mq0_mq1_Sgq__q0_SgtYbKct0aD00I4TypeRzSeR_SER_0abC00bI0R1_r2_lF', 
+                       '_$s015_AppUserEvents_A9Analytics9translate_2as4with16asyncTranslationAA0b5EventI0Vyq1_Gxm_q_mq0_mq1_Sgq__q0_SgtYaYbKct0aD00J4TypeRzSeR_SER_0abC00bJ0R1_r2_lF', 
+                       __AppUserEvents_AppAnalyticsVersionNumber, __AppUserEvents_AppAnalyticsVersionString ]
+...

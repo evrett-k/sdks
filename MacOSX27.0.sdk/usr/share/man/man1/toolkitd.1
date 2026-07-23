@@ -1,0 +1,21 @@
+.Dd October 28, 2025
+.Dt toolkitd 8
+.Os "macOS"
+.Sh NAME
+.Nm toolkitd
+.Nd Daemon for indexing various actions types across the system into the ToolKit database
+.Sh SYNOPSIS
+.Nm toolkitd
+.Sh DESCRIPTION
+The
+.Nm
+daemon indexes App Intents, SiriKit intents, shortcuts bundled actions and more into the ToolKit database. This database is used by various clients to discover and run available tools and actions.
+.Pp
+The daemon is launched on-demand via XPC when an indexing request is received.
+.Sh XPC SERVICE
+.Nm
+registers the Mach service
+.Em com.apple.toolkitd.xpc
+and listens for
+.Em ToolKitIndexingRequest
+messages. Upon receiving a request, it executes a pipeline of indexing steps to populate the tool database.

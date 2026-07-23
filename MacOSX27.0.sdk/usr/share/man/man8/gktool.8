@@ -1,0 +1,39 @@
+.Dd April 19th, 2023
+.Dt GKTOOL 8
+.Os
+.Sh NAME
+.Nm gktool
+.Nd utility for assessing Gatekeeper policy on applications
+.Sh SYNOPSIS
+.Nm
+.Ar scan
+.Ar path
+.Nm
+.Ar help
+.Ar scan
+      
+.Sh DESCRIPTION
+.Nm
+is used assessing Gatekeeper policy on applications. This is useful for pre-warming the cache so users do not see
+the 'Verifying...' dialog on first launch of an application.
+
+.Pp
+.Nm
+requires exactly one
+.Ar subcommand
+option to determine what action is to be performed.
+
+.Sh SUBCOMMANDS
+The subcommands are as follows:
+.Bl -tag -width indent
+.It Sy scan
+Performs a Gatekeeper scan of the specified path.
+
+.It Sy help
+Print help for the particular subcommand.
+
+.Sh SEE ALSO
+.Xr codesign 1 ,
+.Xr spctl 8 ,
+.Xr stapler 1 ,
+.Xr syspolicy_check 1

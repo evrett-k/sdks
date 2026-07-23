@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/GPUToolsCaptureCoreAI.framework/Versions/A/GPUToolsCaptureCoreAI'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s21GPUToolsCaptureCoreAI20CreateDebugMLCaptureySvs6UInt64VF', 
+                       _CreateDebugMLCapture, _GTCoreLogInit, _GTCoreLogTagEnabled, 
+                       _GTCoreLogUseOsLog, _GTCoreLogUseStandardOutputStreams, _g_signpostLog, 
+                       _gt_tagged_log ]
+    objc-classes:    [ GTCaptureCoreAIBridge ]
+...

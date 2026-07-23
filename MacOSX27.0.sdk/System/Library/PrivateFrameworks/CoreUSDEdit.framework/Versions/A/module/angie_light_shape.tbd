@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/angie_light_shape.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN29_ModuleNgLightShapeCallbacks_11frustum_hitER8OfObjectRK7CtxEvalR9CtxShaderR18GeometryFrustumCtx, 
+                       __ZN29_ModuleNgLightShapeCallbacks_13create_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN29_ModuleNgLightShapeCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN29_ModuleNgLightShapeCallbacks_15build_clip_mapsER8OfObjectR9CoreArrayIP13ModuleTextureE, 
+                       __ZN29_ModuleNgLightShapeCallbacks_15build_materialsER8OfObjectR9CoreArrayIP14ModuleMaterialE, 
+                       __ZN29_ModuleNgLightShapeCallbacks_15ray_frustum_hitER8OfObjectRK7CtxEvalR9CtxShaderR21GeometryRayFrustumCtx, 
+                       __ZN29_ModuleNgLightShapeCallbacks_19build_displacementsER8OfObjectR9CoreArrayIP18ModuleDisplacementE, 
+                       __ZN29_ModuleNgLightShapeCallbacks_20build_shading_groupsER8OfObjectR9CoreArrayI10CoreStringE, 
+                       __ZN29_ModuleNgLightShapeCallbacks_23build_shading_variablesER8OfObjectR9CoreArrayIP19ShadingVariablesCtxE, 
+                       __ZN29_ModuleNgLightShapeCallbacks_7ray_hitER8OfObjectRK7CtxEvalR9CtxShaderR19GeometryRaytraceCtx, 
+                       __ZN2Ng23on_register_light_shapeER5OfAppR10CoreVectorIP7OfClassE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZN29_ModuleNgLightShapeCallbacks_15ray_hit_nearestER8OfObjectRK7CtxEvalR9CtxShaderR19GeometryRaytraceCtx ]
+...

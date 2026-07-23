@@ -1,0 +1,7 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/VFXBase.framework/Versions/A/VFXBase'
+current-version: 233.0.4
+swift-abi-version: 7
+...

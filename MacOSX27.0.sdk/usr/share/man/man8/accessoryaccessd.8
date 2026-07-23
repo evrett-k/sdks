@@ -1,0 +1,17 @@
+.Dd April 21, 2026
+.Dt ACCESSORYACCESSD 8
+.Os Darwin
+.Sh NAME
+.Nm accessoryaccessd
+.Nd Accessory exclusive access management
+.Sh DESCRIPTION
+The
+.Nm
+daemon is responsible for managing exclusive access to accessories on behalf of users.
+.Pp
+.Nm
+is launched on-demand by
+.Xr launchd 8
+and must not be invoked directly. Interaction with
+.Nm
+is done via the AccessoryAccess framework.

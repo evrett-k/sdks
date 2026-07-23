@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/materialx.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __Z19mx_import_materialsR5OfAppRK14CoreBasicArrayI10CoreStringE, 
+                       __Z19register_texture_mxR5OfAppR10CoreVectorIP7OfClassE, __Z20register_material_mxR5OfAppR10CoreVectorIP7OfClassE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN8MxModule20CUSTOM_DATA_IMPORTEDEvE21_CUSTOM_DATA_IMPORTED, 
+                       __ZZN8MxModule20CUSTOM_DATA_IMPORTEDEvE21_CUSTOM_DATA_IMPORTED ]
+...

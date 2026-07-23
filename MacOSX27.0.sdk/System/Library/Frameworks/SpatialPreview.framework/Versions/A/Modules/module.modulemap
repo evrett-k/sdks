@@ -1,0 +1,12 @@
+//
+//  RemoteSpatialPreview.swift
+//  RemoteSpatialPreview
+//
+//  Created by Justin Meiners on 9/15/25.
+//
+
+framework module SpatialPreview [system] {
+    umbrella header "SpatialPreview.h"
+    export *
+    module * {export *}
+}

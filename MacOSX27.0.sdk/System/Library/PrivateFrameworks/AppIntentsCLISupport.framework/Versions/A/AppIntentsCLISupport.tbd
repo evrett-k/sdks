@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AppIntentsCLISupport.framework/Versions/A/AppIntentsCLISupport'
+current-version: 301.0.43
+compatibility-version: 0
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ LinkCLITests, linkcli ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s10Foundation4DateV20AppIntentsCLISupportE4fromyACSgSSSgFZ', 
+                       '_$s20AppIntentsCLISupport12CommandErrorV10Foundation09LocalizedE0AAMc', 
+                       '_$s20AppIntentsCLISupport12CommandErrorV16errorDescriptionSSSgvg', 
+                       '_$s20AppIntentsCLISupport12CommandErrorV16errorDescriptionSSSgvpMV', 
+                       '_$s20AppIntentsCLISupport12CommandErrorV7messageSSvg', '_$s20AppIntentsCLISupport12CommandErrorV7messageSSvpMV', 
+                       '_$s20AppIntentsCLISupport12CommandErrorVMa', '_$s20AppIntentsCLISupport12CommandErrorVMn', 
+                       '_$s20AppIntentsCLISupport12CommandErrorVN', '_$s20AppIntentsCLISupport12CommandErrorVs0E0AAMc', 
+                       '_$s20AppIntentsCLISupport12CommandErrorVyACSScfC', '_$sSS20AppIntentsCLISupportE11toValueTypeSo07LNValueF0CSgvg', 
+                       '_$sSS20AppIntentsCLISupportE11toValueTypeSo07LNValueF0CSgvpMV', 
+                       '_$sSS20AppIntentsCLISupportE14convertToValue9valueTypeSo7LNValueCSgSo0iH0C_tKF', 
+                       '_$sSS20AppIntentsCLISupportE17toValue_newSyntaxSo7LNValueCyKF', 
+                       '_$sSS20AppIntentsCLISupportE18trimmingWhitespaceSSvg', '_$sSS20AppIntentsCLISupportE18trimmingWhitespaceSSvpMV', 
+                       '_$sSS20AppIntentsCLISupportE20asLNEntityIdentifierSo0eF0CSgvg', 
+                       '_$sSS20AppIntentsCLISupportE20asLNEntityIdentifierSo0eF0CSgvpMV', 
+                       '_$sSo11NSPredicateC20AppIntentsCLISupportE15asPropertyQuery8metadataSo010LNPropertyG0CSo15LNQueryMetadataC_tKF', 
+                       '_$sSo18LNEntityIdentifierC20AppIntentsCLISupportE5value19unsanitizedTypeNameABSS_SStcfC' ]
+...

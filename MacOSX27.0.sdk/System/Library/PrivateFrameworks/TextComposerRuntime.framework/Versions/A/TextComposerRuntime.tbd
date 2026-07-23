@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/TextComposerRuntime.framework/Versions/A/TextComposerRuntime'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s19TextComposerRuntime017TCTextCompositionC6DaemonV09ProactiveF7Support0F0AAMc', 
+                       '_$s19TextComposerRuntime017TCTextCompositionC6DaemonVMa', 
+                       '_$s19TextComposerRuntime017TCTextCompositionC6DaemonVMn', 
+                       '_$s19TextComposerRuntime017TCTextCompositionC6DaemonVN' ]
+...

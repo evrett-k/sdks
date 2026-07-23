@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/ODIEDelegates.framework/Versions/A/ODIEDelegates'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s13ODIEDelegates11AneDelegateC4nameSSvgZ', '_$s13ODIEDelegates11AneDelegateC4nameSSvpZMV', 
+                       '_$s13ODIEDelegates11AneDelegateC5ErrorO15modelLoadFailedyAESScAEmFWC', 
+                       '_$s13ODIEDelegates11AneDelegateC5ErrorOMa', '_$s13ODIEDelegates11AneDelegateC5ErrorOMn', 
+                       '_$s13ODIEDelegates11AneDelegateC5ErrorON', '_$s13ODIEDelegates11AneDelegateC5ErrorOsAdAMc', 
+                       '_$s13ODIEDelegates11AneDelegateC7baseURLACSS_tKcfC', '_$s13ODIEDelegates11AneDelegateC7baseURLACSS_tKcfCTj', 
+                       '_$s13ODIEDelegates11AneDelegateC7baseURLACSS_tKcfCTq', '_$s13ODIEDelegates11AneDelegateC7baseURLACSS_tKcfc', 
+                       '_$s13ODIEDelegates11AneDelegateC7resolve7context4ODIE13KernelBindingVSgAF0G17ResolutionContextV_tF', 
+                       '_$s13ODIEDelegates11AneDelegateCMa', '_$s13ODIEDelegates11AneDelegateCMm', 
+                       '_$s13ODIEDelegates11AneDelegateCMn', '_$s13ODIEDelegates11AneDelegateCMo', 
+                       '_$s13ODIEDelegates11AneDelegateCMu', '_$s13ODIEDelegates11AneDelegateCN', 
+                       '_$s13ODIEDelegates11AneDelegateCfD', '_$s13ODIEDelegates11AneDelegateCfd', 
+                       '_$s4ODIE13CompiledGraphV13ODIEDelegatesE21makeManagedExecutable11fastKernelsAC0fG0VSb_tKF', 
+                       '_$s4ODIE13CompiledGraphV13ODIEDelegatesE21makeManagedExecutableAC0fG0VyKF', 
+                       '_$s4ODIE15CompiledLibraryV13ODIEDelegatesE10contentsOf7cpuOnlyAC10Foundation3URLV_SbtYaKcfC', 
+                       '_$s4ODIE15CompiledLibraryV13ODIEDelegatesE10contentsOf7cpuOnlyAC10Foundation3URLV_SbtYaKcfCTu', 
+                       '_$s4ODIE8CompilerC13ODIEDelegatesE12compileModel2at2to7cpuOnlyy10Foundation3URLV_AKSbtYaKFZ', 
+                       '_$s4ODIE8CompilerC13ODIEDelegatesE12compileModel2at2to7cpuOnlyy10Foundation3URLV_AKSbtYaKFZTu', 
+                       '_$s4ODIE8CompilerC13ODIEDelegatesE12compileModel2at2to7optionsy10Foundation3URLV_AkC7OptionsVtYaKFZ', 
+                       '_$s4ODIE8CompilerC13ODIEDelegatesE12compileModel2at2to7optionsy10Foundation3URLV_AkC7OptionsVtYaKFZTu', 
+                       '_$s4ODIE8CompilerC7OptionsV13ODIEDelegatesE07defaultC03for7cpuOnly03aneC3URLAESSSg_Sb10Foundation0J0VSgtKFZ', 
+                       '_$s4ODIE8CompilerC7OptionsV13ODIEDelegatesE07defaultC07cpuOnlyAESb_tKFZ' ]
+...

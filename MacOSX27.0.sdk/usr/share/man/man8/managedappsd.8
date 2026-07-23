@@ -1,0 +1,16 @@
+.Dd $Mdocdate: December 3 2025 $
+.Dt managedappsd 8
+.Os macOS
+.Sh NAME
+.Nm managedappsd
+.Nd Managed apps daemon
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+.Nm
+handles requests from managed apps for administrator-provisioned configuration and secrets.
+.Sh FILES
+.Pa /System/Library/LaunchDaemons/com.apple.managedappsd.plist
+.Sh DIAGNOSTICS
+Logging can be viewed via:
+log stream -—predicate 'senderImagePath contains "managedappsd"'

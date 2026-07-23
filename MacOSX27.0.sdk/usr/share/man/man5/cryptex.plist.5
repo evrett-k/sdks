@@ -1,0 +1,233 @@
+.Dd August 1, 2025
+.Dt cryptex.plist 5
+.Os Darwin
+.Sh NAME
+.Nm cryptex.plist
+.Nd Property list keys used in cryptex Info.plist
+.Sh DESCRIPTION
+This manual describes the property list (plist) keys used by the cryptex
+framework.
+.Sh CRYPTEX INFO.PLIST KEYS
+These keys are used in the main Info.plist file of a cryptex and are processed
+by cryptexd during cryptex installation and mounting.
+.Ss Basic Identity Keys
+.Bl -tag -width "CFBundleIdentifier"
+.It Sy CFBundleIdentifier Pq Em string, required
+The unique identifier for the cryptex bundle.
+This follows reverse DNS notation (e.g., "com.example.mycryptex").
+.It Sy CFBundleVersion Pq Em string, required
+The version string of the cryptex.
+Used for dependency resolution and upgrade management.
+.It Sy Name Pq Em string, optional
+Human-readable name of the cryptex package.
+.It Sy Version Pq Em string, optional
+Package version identifier (may differ from CFBundleVersion).
+.It Sy Publisher Pq Em string, optional
+The entity responsible for publishing the cryptex.
+.El
+.Ss Mount Configuration Keys
+.Bl -tag -width "RequiredMountPath"
+.It Sy NoCode Pq Em boolean, optional
+When set to true, indicates the cryptex contains no executable code.
+Such cryptexes have restricted mount paths and cannot bootstrap any content.
+.It Sy RequiredMountPath Pq Em string, optional
+Specifies a custom absolute path where the cryptex must be mounted.
+If not specified, the system will generate a temporary mount point.
+For NoCode cryptexes, only specific paths are permitted:
+.Bl -bullet -compact
+.It
+/private/var/MLModels/
+.It
+/private/var/run/com.apple.security.cryptexd/
+.El
+.El
+.Ss Bootstrap Configuration Keys
+.Bl -tag -width "DeveloperModeRequired"
+.It Sy BootstrapContents Pq Em array of strings, optional
+Specifies which types of content should be bootstrapped from the cryptex.
+.Pp
+.Sy Important:
+This key serves as a selective override mechanism rather than a comprehensive
+specification.
+Many content types are automatically enabled based on cryptex type and
+installation context.
+.Pp
+.Sy Default Behavior:
+.Bl -bullet -compact
+.It
+.Sy Always enabled:
+"Service" and "Jetsam Properties" are automatically included for all cryptexes.
+.It
+.Sy System cryptex defaults:
+"Log Profile" and "Feature Flags" are automatically enabled for system
+cryptexes.
+.It
+.Sy Session cryptex restrictions:
+"Library", "Executable", "Factory", and "Log Profile" are disabled for session
+cryptexes.
+.It
+.Sy NoCode cryptex restrictions:
+All bootstrap content is disabled for cryptexes marked with NoCode=true.
+.El
+.Pp
+.Sy "Valid content type strings:"
+.Bl -bullet -compact
+.It
+"Service" - Bootstrap launchd services from Library/LaunchDaemons/ and
+Library/LaunchAgents/.
+.It
+"Library" - Create symlinks from cryptex libraries to system library paths
+(/usr/local/lib, etc.).
+.It
+"Executable" - Create binary "trampolines" that redirect system calls to
+cryptex executables.
+.It
+"Factory" - Bootstrap diagnostic content (creates APFS Diags volume, enables
+LuaCore, Python, Astro content).
+.It
+"Log Profile" - Bootstrap logging configuration files from
+Library/Preferences/Logging/Subsystems/.
+.It
+"Feature Flags" - Copy feature flag domain files from
+Library/Preferences/FeatureFlags/Domain/.
+.It
+"Jetsam Properties" - Load Jetsam memory management properties.
+.El
+.It Sy DeveloperModeRequired Pq Em boolean, optional
+When set to true, the cryptex can only be installed when the system is in
+developer mode.
+.El
+.Ss Command Execution Keys
+.Bl -tag -width "OSCryptexExecEnvironmentVariables"
+.It Sy OSCryptexExecCommand Pq Em string, optional
+The main command to execute by cryptexctl exec.
+.It Sy OSCryptexExecCommandArguments Pq Em array of strings, optional
+Command-line arguments to pass to the main command.
+This does not include
+.Ql argv[0] .
+.It Sy OSCryptexExecEnvironmentVariables Pq Em dictionary, optional
+Environment variables to set when executing the main command.
+.El
+.Ss Dependencies and Security Keys
+.Bl -tag -width "LimitInstallToApps"
+.It Sy Dependencies Pq Em array of dictionaries, optional
+Specifies cryptexes that this cryptex depends on.
+Each dependency is a dictionary containing:
+.Bl -bullet -compact
+.It
+CFBundleIdentifier (string, required) - Bundle ID of the dependency.
+.It
+CFBundleVersion (string, optional) - Minimum required version.
+.El
+Maximum of 8 dependencies allowed.
+.It Sy LimitInstallToApps Pq Em array of dictionaries, optional
+Restricts installation to specific applications.
+Each entry contains CFBundleIdentifier of an allowed app.
+Requires SecureConfigDB support and matching configuration.
+Maximum of 256 entries allowed.
+.El
+.Sh WATCHDOG CONFIGURATION KEYS
+These keys are defined in the cryptex Info.plist but reference services that
+will be loaded from launchd plists within the cryptex.
+.Bl -tag -width "Watchdog"
+.It Sy Watchdog Pq Em array of dictionaries, optional
+Configuration for service watchdog monitoring.
+Each dictionary contains:
+.Bl -tag -width "WatchdogMachService"
+.It Sy Label Pq Em string, required
+Service label that matches a launchd service within the cryptex.
+.It Sy ProcessName Pq Em string, required
+Name of the process to monitor.
+.It Sy WatchdogMachService Pq Em string, required
+Mach service name used for watchdog communication.
+.It Sy LateFirstCheckin Pq Em boolean, optional
+Allow the service to check in late on first startup.
+.It Sy PanicOnFirstTimeout Pq Em boolean, optional
+Trigger a system panic if the service times out on first startup.
+.It Sy CaptureDdtOnTimeout Pq Em boolean, optional
+Capture diagnostic data (DDT) when the service times out.
+.El
+.El
+.Sh EXAMPLES
+.Ss Basic Info.plist
+.Bd -literal -offset indent
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.mycryptex</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>BootstrapContents</key>
+    <array>
+        <string>Service</string>
+        <string>Library</string>
+    </array>
+    <key>DeveloperModeRequired</key>
+    <true/>
+</dict>
+</plist>
+.Ed
+.Ss Info.plist with Dependencies
+.Bd -literal -offset indent
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.dependent</string>
+    <key>CFBundleVersion</key>
+    <string>2.0.0</string>
+    <key>Dependencies</key>
+    <array>
+        <dict>
+            <key>CFBundleIdentifier</key>
+            <string>com.example.base</string>
+            <key>CFBundleVersion</key>
+            <string>1.5.0</string>
+        </dict>
+    </array>
+</dict>
+.Ed
+.Ss Info.plist with Watchdog
+.Bd -literal -offset indent
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.monitored</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>Watchdog</key>
+    <array>
+        <dict>
+            <key>Label</key>
+            <string>com.example.myservice</string>
+            <key>ProcessName</key>
+            <string>myservice</string>
+            <key>WatchdogMachService</key>
+            <string>com.example.myservice.watchdog</string>
+            <key>LateFirstCheckin</key>
+            <false/>
+            <key>PanicOnFirstTimeout</key>
+            <true/>
+        </dict>
+    </array>
+</dict>
+.Ed
+.Sh ERRORS
+Common errors when processing plist keys:
+.Bl -tag -width "CRYPTEX_ERR_INVALID_INPUT"
+.It Sy EBADPLIST_NP
+Missing required keys (CFBundleIdentifier or CFBundleVersion).
+.It Sy EINVAL
+Invalid dependency specifications or install limit configurations.
+.It Sy ETOOMANYREFS
+Too many dependencies (>8) or install limit entries (>256).
+.It Sy CRYPTEX_ERR_INVALID_INPUT
+Malformed watchdog configurations or invalid content type specifications.
+.El
+.Sh SEE ALSO
+.Xr cryptex 5 ,
+.Xr cryptexctl 1 ,
+.Xr plist 5
+.Sh HISTORY
+The cryptex plist key system was introduced as part of the libcryptex framework
+for secure, authenticated filesystem extensions in Darwin-based systems.

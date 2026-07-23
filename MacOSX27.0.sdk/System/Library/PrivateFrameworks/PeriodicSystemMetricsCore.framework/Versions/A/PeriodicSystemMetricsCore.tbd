@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PeriodicSystemMetricsCore.framework/Versions/A/PeriodicSystemMetricsCore'
+current-version: 8
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _PSMCRunMetricsLoop, __PSMCHighCadenceBuffer, __PSMCMediumCadenceBuffer, 
+                       _kPSMANEEstimatedEnergy, _kPSMAccumulatorsSubGroup, _kPSMBucketsSubGroup, 
+                       _kPSMCPUCyclesByClusterChannel, _kPSMCPUEstimatedEnergy, _kPSMCPUGPUSplitChannel, 
+                       _kPSMCPUInstrByClusterChannel, _kPSMDCSEstimatedEnergy, _kPSMDRAMEstimatedEnergy, 
+                       _kPSMECPUUtilizationControllerEngagedTime, _kPSMGPUEstimatedEnergy, 
+                       _kPSMGPUPHChannel, _kPSMGPUPerfStateSubGroup, _kPSMGPUPowerControllerChannel, 
+                       _kPSMGPUPowerControllerStatsSubGroup, _kPSMGPUSWChannel, _kPSMGPUSWPerfStateSubGroup, 
+                       _kPSMLostPerfReasonChannelPrefix, _kPSMLostPerfSubGroup, _kPSMPackageEstimatedEnergy, 
+                       _kPSMPerClusterQoSChannelPrefix ]
+    objc-classes:    [ PSMCMetricsLoop ]
+...

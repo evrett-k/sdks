@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CinematicUtil.framework/Versions/A/CinematicUtil'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _CNUDefaultsFlush, _CNUDefaultsGetDictionary, _CNUDefaultsPublicGetBool, 
+                       _CNUDefaultsPublicGetDictionary, _CNUImageBufferTransferFunction_Linear_1_6, 
+                       _CNUKTraceInit, _CinematicUtilVersionNumber, _CinematicUtilVersionString, 
+                       _NSStringFromFourCharCode, __CNULogSystem, __CNUSwapBigAssignFloat, 
+                       __CNUSwapBigGetFloat ]
+    objc-classes:    [ CNUBoxFilter, CNUColorConversion, CNUCommandQueueProxy, CNUGraphRenderer, 
+                       CNUGuidedFilter, CNUImageblockConfig, CNUInference, CNUInferenceANEConfig, 
+                       CNUMSRResize, CNUMSRResizeAdditionalOutput, CNUMSRResizeSharedEvent, 
+                       CNUMetalContext, CNUMetalTextureUtil, CNUMovWriter, CNUParameterPairSerialization, 
+                       CNUPerfLogging, CNUPixelBufferSize, CNUPixelBufferUtil, CNUPyramid, 
+                       CNURandom, CNUShaderPrewarm, CNUTexture, CNUUtil ]
+...

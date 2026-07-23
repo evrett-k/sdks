@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SystemIntentsSupport.framework/Versions/A/SystemIntentsSupport'
+current-version: 16
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$ss5ErrorP20SystemIntentsSupportE011asAppIntentA00fC00fgA0VyF' ]
+...

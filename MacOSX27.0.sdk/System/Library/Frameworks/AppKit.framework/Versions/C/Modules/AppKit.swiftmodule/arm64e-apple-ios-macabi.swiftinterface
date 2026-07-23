@@ -1,0 +1,252 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target arm64e-apple-ios27.0-macabi -enable-objc-interop -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2765.5 -module-name AppKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import Accessibility
+@_exported import AppKit
+@_exported import CoreGraphics
+import CoreText
+import DataDetection
+@_exported import DeveloperToolsSupport
+import Foundation
+import IOKit
+import OSLog
+import OpenGL
+import Swift
+import SwiftUICore
+import UniformTypeIdentifiers.UTType
+import UniformTypeIdentifiers
+@_exported import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macCatalyst 18.0, macOS 15.0, *)
+@frozen public enum NSHorizontalDirection : Swift::Int8, Swift::CaseIterable, Swift::Codable {
+  case left
+  case right
+  @frozen public struct Set : Swift::OptionSet, Swift::Equatable, Swift::Hashable {
+    public typealias Element = AppKit::NSHorizontalDirection.AppKit::Set
+    public typealias RawValue = Swift::Int8
+    public let rawValue: AppKit::NSHorizontalDirection.AppKit::Set.AppKit::RawValue
+    public init(rawValue: AppKit::NSHorizontalDirection.AppKit::Set.AppKit::RawValue)
+    public static let left: AppKit::NSHorizontalDirection.AppKit::Set
+    public static let right: AppKit::NSHorizontalDirection.AppKit::Set
+    public static let all: AppKit::NSHorizontalDirection.AppKit::Set
+    public init(_ direction: AppKit::NSHorizontalDirection)
+    @available(macOS 15.0, macCatalyst 18.0, *)
+    public typealias ArrayLiteralElement = AppKit::NSHorizontalDirection.AppKit::Set.AppKit::Element
+  }
+  public init?(rawValue: Swift::Int8)
+  @available(macOS 15.0, macCatalyst 18.0, *)
+  public typealias AllCases = [AppKit::NSHorizontalDirection]
+  @available(macOS 15.0, macCatalyst 18.0, *)
+  public typealias RawValue = Swift::Int8
+  nonisolated public static var allCases: [AppKit::NSHorizontalDirection] {
+    get
+  }
+  public var rawValue: Swift::Int8 {
+    get
+  }
+}
+extension AppKit::NSHorizontalDirection.AppKit::Set {
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  public func contains(_ member: AppKit::NSHorizontalDirection) -> Swift::Bool
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func insert(_ newMember: __owned AppKit::NSHorizontalDirection) -> (inserted: Swift::Bool, memberAfterInsert: AppKit::NSHorizontalDirection)
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func remove(_ member: AppKit::NSHorizontalDirection) -> AppKit::NSHorizontalDirection?
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func update(with newMember: __owned AppKit::NSHorizontalDirection) -> AppKit::NSHorizontalDirection?
+}
+@available(macCatalyst 18.0, macOS 15.0, *)
+@frozen public enum NSVerticalDirection : Swift::Int8, Swift::CaseIterable, Swift::Codable {
+  case up
+  case down
+  @frozen public struct Set : Swift::OptionSet, Swift::Equatable, Swift::Hashable {
+    public typealias Element = AppKit::NSVerticalDirection.AppKit::Set
+    public typealias RawValue = Swift::Int8
+    public let rawValue: AppKit::NSVerticalDirection.AppKit::Set.AppKit::RawValue
+    public init(rawValue: AppKit::NSVerticalDirection.AppKit::Set.AppKit::RawValue)
+    public static let up: AppKit::NSVerticalDirection.AppKit::Set
+    public static let down: AppKit::NSVerticalDirection.AppKit::Set
+    public static let all: AppKit::NSVerticalDirection.AppKit::Set
+    public init(_ direction: AppKit::NSVerticalDirection)
+    @available(macOS 15.0, macCatalyst 18.0, *)
+    public typealias ArrayLiteralElement = AppKit::NSVerticalDirection.AppKit::Set.AppKit::Element
+  }
+  public init?(rawValue: Swift::Int8)
+  @available(macOS 15.0, macCatalyst 18.0, *)
+  public typealias AllCases = [AppKit::NSVerticalDirection]
+  @available(macOS 15.0, macCatalyst 18.0, *)
+  public typealias RawValue = Swift::Int8
+  nonisolated public static var allCases: [AppKit::NSVerticalDirection] {
+    get
+  }
+  public var rawValue: Swift::Int8 {
+    get
+  }
+}
+extension AppKit::NSVerticalDirection.AppKit::Set {
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  public func contains(_ member: AppKit::NSVerticalDirection) -> Swift::Bool
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func insert(_ newMember: __owned AppKit::NSVerticalDirection) -> (inserted: Swift::Bool, memberAfterInsert: AppKit::NSVerticalDirection)
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func remove(_ member: AppKit::NSVerticalDirection) -> AppKit::NSVerticalDirection?
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func update(with newMember: __owned AppKit::NSVerticalDirection) -> AppKit::NSVerticalDirection?
+}
+@available(macOS 26.0, *)
+public struct NSItemBadge : Swift::Equatable {
+  @available(macOS 26.0, *)
+  public static func count(_ count: Swift::Int) -> AppKit::NSItemBadge
+  @available(macOS 26.0, *)
+  public static func text(_ text: Swift::String) -> AppKit::NSItemBadge
+  @available(macOS 26.0, *)
+  public static var indicator: AppKit::NSItemBadge
+  @available(macOS 26.0, *)
+  public var text: Swift::String {
+    get
+  }
+  @available(macOS 26.0, *)
+  public static func == (lhs: AppKit::NSItemBadge, rhs: AppKit::NSItemBadge) -> Swift::Bool
+}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSCursor {
+  public class func columnResize(directions: AppKit::NSHorizontalDirection.AppKit::Set) -> AppKit::NSCursor
+  public class func rowResize(directions: AppKit::NSVerticalDirection.AppKit::Set) -> AppKit::NSCursor
+  public enum FrameResizeDirection : Swift::Int8, Swift::CaseIterable {
+    case inward
+    case outward
+    public struct Set : Swift::OptionSet, Swift::Equatable, Swift::Hashable {
+      public typealias Element = AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set
+      public typealias RawValue = Swift::Int8
+      public let rawValue: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set.AppKit::RawValue
+      public init(rawValue: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set.AppKit::RawValue)
+      public static let inward: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set
+      public static let outward: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set
+      public static let all: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set
+      public init(_ direction: AppKit::NSCursor.AppKit::FrameResizeDirection)
+      @available(macOS 15.0, iOS 13.0, macCatalyst 18.0, *)
+      public typealias ArrayLiteralElement = AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set.AppKit::Element
+    }
+    public init?(rawValue: Swift::Int8)
+    @available(macOS 15.0, iOS 13.0, macCatalyst 18.0, *)
+    public typealias AllCases = [AppKit::NSCursor.AppKit::FrameResizeDirection]
+    @available(macOS 15.0, iOS 13.0, macCatalyst 18.0, *)
+    public typealias RawValue = Swift::Int8
+    nonisolated public static var allCases: [AppKit::NSCursor.AppKit::FrameResizeDirection] {
+      get
+    }
+    public var rawValue: Swift::Int8 {
+      get
+    }
+  }
+  public class func frameResize(position: AppKit::NSCursor.AppKit::FrameResizePosition, directions: AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set) -> AppKit::NSCursor
+}
+extension AppKit::NSCursor.AppKit::FrameResizeDirection.AppKit::Set {
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  public func contains(_ member: AppKit::NSCursor.AppKit::FrameResizeDirection) -> Swift::Bool
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func insert(_ newMember: __owned AppKit::NSCursor.AppKit::FrameResizeDirection) -> (inserted: Swift::Bool, memberAfterInsert: AppKit::NSCursor.AppKit::FrameResizeDirection)
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func remove(_ member: AppKit::NSCursor.AppKit::FrameResizeDirection) -> AppKit::NSCursor.AppKit::FrameResizeDirection?
+  @available(macCatalyst 18.0, macOS 15.0, *)
+  @discardableResult
+  public mutating func update(with newMember: __owned AppKit::NSCursor.AppKit::FrameResizeDirection) -> AppKit::NSCursor.AppKit::FrameResizeDirection?
+}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSCursor.AppKit::FrameResizePosition : Swift::CaseIterable {
+  public static var allCases: [AppKit::NSCursor.AppKit::FrameResizePosition] {
+    get
+  }
+  @available(macOS 15.0, macCatalyst 18.0, *)
+  public typealias AllCases = [AppKit::NSCursor.AppKit::FrameResizePosition]
+}
+@available(macOS 27.0, macCatalyst 27.0, *)
+extension AppKit::NSToolbar {
+  public struct WillAddItemMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = AppKit::NSToolbar
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public var toolbar: AppKit::NSToolbar
+    public var item: AppKit::NSToolbarItem
+    public var newIndex: Swift::Int
+    public init(toolbar: AppKit::NSToolbar, item: AppKit::NSToolbarItem, newIndex: Swift::Int)
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> AppKit::NSToolbar.AppKit::WillAddItemMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: AppKit::NSToolbar.AppKit::WillAddItemMessage) -> Foundation::Notification
+  }
+  public struct DidRemoveItemMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = AppKit::NSToolbar
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public var toolbar: AppKit::NSToolbar
+    public var item: AppKit::NSToolbarItem
+    public init(toolbar: AppKit::NSToolbar, item: AppKit::NSToolbarItem)
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> AppKit::NSToolbar.AppKit::DidRemoveItemMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: AppKit::NSToolbar.AppKit::DidRemoveItemMessage) -> Foundation::Notification
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AppKit::NSToolbar.AppKit::WillAddItemMessage> {
+  @_alwaysEmitIntoClient public static var willAddItem: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AppKit::NSToolbar.AppKit::WillAddItemMessage> {
+    get { .init() }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AppKit::NSToolbar.AppKit::DidRemoveItemMessage> {
+  @_alwaysEmitIntoClient public static var didRemoveItem: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AppKit::NSToolbar.AppKit::DidRemoveItemMessage> {
+    get { .init() }
+  }
+}
+@available(macOS 26.0, *)
+extension AppKit::NSToolbarItem {
+  @available(macOS 26.0, *)
+  @_Concurrency::MainActor @preconcurrency public var badge: AppKit::NSItemBadge? {
+    get
+    set
+  }
+}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection : Swift::Equatable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection : Swift::Hashable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection : Swift::RawRepresentable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection : Swift::Sendable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection : Swift::BitwiseCopyable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection.AppKit::Set : Swift::Sendable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSHorizontalDirection.AppKit::Set : Swift::BitwiseCopyable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection : Swift::Equatable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection : Swift::Hashable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection : Swift::RawRepresentable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection : Swift::Sendable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection : Swift::BitwiseCopyable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection.AppKit::Set : Swift::Sendable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSVerticalDirection.AppKit::Set : Swift::BitwiseCopyable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSCursor.AppKit::FrameResizeDirection : Swift::Equatable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSCursor.AppKit::FrameResizeDirection : Swift::Hashable {}
+@available(macCatalyst 18.0, macOS 15.0, *)
+extension AppKit::NSCursor.AppKit::FrameResizeDirection : Swift::RawRepresentable {}

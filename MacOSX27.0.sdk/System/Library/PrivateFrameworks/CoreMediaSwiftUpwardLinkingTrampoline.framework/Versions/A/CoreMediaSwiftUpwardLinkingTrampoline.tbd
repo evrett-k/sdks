@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreMediaSwiftUpwardLinkingTrampoline.framework/Versions/A/CoreMediaSwiftUpwardLinkingTrampoline'
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC12detectorType11audioFormatAcA0ghi8DetectorK0O_So07AVAudioM0CtKcfC', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC12detectorType11audioFormatAcA0ghi8DetectorK0O_So07AVAudioM0CtKcfCTj', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC12detectorType11audioFormatAcA0ghi8DetectorK0O_So07AVAudioM0CtKcfCTq', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC12detectorType11audioFormatAcA0ghi8DetectorK0O_So07AVAudioM0CtKcfc', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC16yieldAudioSampleyySo16AVAudioPCMBufferCF', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC17containsDetection2inSbSo11CMTimeRangea_tF', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisC6finishyyF', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCMa', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCMm', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCMn', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCMo', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCMu', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCN', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCfD', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline16FigSoundAnalysisCfd', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO2eeoiySbAC_ACtFZ', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO4hash4intoys6HasherVz_tF', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO5musicyA2CmFWC', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO6speechyA2CmFWC', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO9hashValueSivg', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeO9hashValueSivpMV', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeOMa', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeOMn', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeON', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeOSHAAMc', 
+                       '_$s37CoreMediaSwiftUpwardLinkingTrampoline28FigSoundAnalysisDetectorTypeOSQAAMc', 
+                       '_$sSo27FigSoundAnalysisSwiftBridgeC09CoreMediaD23UpwardLinkingTrampolineE12detectorType11audioFormatABSo0abc8DetectorL0V_So27AudioStreamBasicDescriptionVtKcfC', 
+                       '_$sSo27FigSoundAnalysisSwiftBridgeC09CoreMediaD23UpwardLinkingTrampolineE12detectorType11audioFormatABSo0abc8DetectorL0V_So27AudioStreamBasicDescriptionVtKcfc', 
+                       '_$sSo27FigSoundAnalysisSwiftBridgeC09CoreMediaD23UpwardLinkingTrampolineEABycfC', 
+                       '_$sSo27FigSoundAnalysisSwiftBridgeC09CoreMediaD23UpwardLinkingTrampolineEABycfc', 
+                       '_$sSo27FigSoundAnalysisSwiftBridgeCMa', '_$sSo31FigSpeechSwiftTranscriberBridgeC09CoreMediaC23UpwardLinkingTrampolineE8delegateABSgSo0abdE8Delegate_p_tcfC', 
+                       '_$sSo31FigSpeechSwiftTranscriberBridgeC09CoreMediaC23UpwardLinkingTrampolineE8delegateABSgSo0abdE8Delegate_p_tcfc', 
+                       '_$sSo31FigSpeechSwiftTranscriberBridgeC09CoreMediaC23UpwardLinkingTrampolineEABycfC', 
+                       '_$sSo31FigSpeechSwiftTranscriberBridgeC09CoreMediaC23UpwardLinkingTrampolineEABycfc', 
+                       '_$sSo31FigSpeechSwiftTranscriberBridgeCMa' ]
+    objc-classes:    [ FigSoundAnalysisSwiftBridge, FigSpeechSwiftTranscriberBridge ]
+...

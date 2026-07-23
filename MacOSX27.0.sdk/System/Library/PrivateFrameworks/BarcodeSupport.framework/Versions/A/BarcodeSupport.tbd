@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/BarcodeSupport.framework/Versions/A/BarcodeSupport'
+current-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s2os6LoggerV14BarcodeSupportE6intentACvgZ', _BCSActionError, 
+                       _BCSActionErrorDomain, _BCSDetectedCodeErrorDomain, _BCSDidLaunchFromControlNotification, 
+                       _BCSErrorDomain, __BCSLocalizedString, __bcs_deviceIsPad ]
+    objc-classes:    [ BCSAWDLogger, BCSAction, BCSActionPickerItem, BCSAnalyticsLogger, 
+                       BCSAppRanker, BCSDetectedCode, BCSNotificationServiceConnection, 
+                       BCSParser, BCSQRCodeParser ]
+...

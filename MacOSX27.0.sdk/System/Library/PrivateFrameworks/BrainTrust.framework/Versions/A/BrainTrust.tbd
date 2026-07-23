@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/BrainTrust.framework/Versions/A/BrainTrust'
+current-version: 2718.0.5
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _BrainTrustErrorDomain, _amfi_check_dyld_policy_for_pid, _amfi_check_dyld_policy_self, 
+                       _amfi_load_trust_cache, _amfi_unload_trust_cache ]
+    objc-classes:    [ BrainTrust, BrainTrustBuilder, BrainTrustOverrides ]
+...

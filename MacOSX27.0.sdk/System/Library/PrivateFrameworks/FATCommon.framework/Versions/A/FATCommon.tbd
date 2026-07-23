@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/FATCommon.framework/Versions/A/FATCommon'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _FATCommonVersionNumber, _FATCommonVersionString, _calculatedOffset, 
+                       _gmtOffset ]
+    objc-classes:    [ Allocator, BlockmapRequest, DNCPoolEntry, DirBlock, DirEntryData, 
+                       DirItem, DirNameCache, DirNameCachePool, EncodingConverter, 
+                       FATBlock, FATItem, FATManager, FATVolume, FileItem, ItemCache, 
+                       NameCacheBucket, SymLinkItem, Utilities ]
+    objc-ivars:      [ NameCacheBucket.elements ]
+...

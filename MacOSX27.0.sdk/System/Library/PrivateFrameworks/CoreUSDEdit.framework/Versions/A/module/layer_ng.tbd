@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/layer_ng.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN7LayerNg11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZGVZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info, 
+                       __ZN11ImageSampleIdEC1ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC1Ev, 
+                       __ZN11ImageSampleIdEC2ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC2Ev, 
+                       __ZN11ImageSampleIfEC1ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC1Ev, 
+                       __ZN11ImageSampleIfEC2ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC2Ev, 
+                       __ZN7LayerNg10ModuleData16on_object_renameER15OfObjectFactoryRKN11EventObject9EventInfoEPv, 
+                       __ZZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info ]
+...

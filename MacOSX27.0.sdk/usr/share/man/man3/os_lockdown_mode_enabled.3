@@ -1,0 +1,69 @@
+.\" Copyright (c) 2026 Apple Inc. All rights reserved.
+.\"
+.\" @APPLE_LICENSE_HEADER_START@
+.\"
+.\" This file contains Original Code and/or Modifications of Original Code
+.\" as defined in and that are subject to the Apple Public Source License
+.\" Version 2.0 (the 'License'). You may not use this file except in
+.\" compliance with the License. Please obtain a copy of the License at
+.\" http://www.opensource.apple.com/apsl/ and read it before using this
+.\" file.
+.\"
+.\" The Original Code and all software distributed under the License are
+.\" distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+.\" EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+.\" INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+.\" FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+.\" Please see the License for the specific language governing rights and
+.\" limitations under the License.
+.\"
+.\" @APPLE_LICENSE_HEADER_END@
+.\"
+.Dd January 12, 2026
+.Dt OS_LOCKDOWN_MODE_ENABLED 3
+.Os
+.Sh NAME
+.Nm os_lockdown_mode_enabled
+.Nd query the Lockdown Mode state
+.Sh LIBRARY
+.Lb libc
+.Sh SYNOPSIS
+.In os/lockdown_mode.h
+.Ft bool
+.Fn os_lockdown_mode_enabled "void"
+.Sh DESCRIPTION
+The
+.Fn os_lockdown_mode_enabled
+function returns a cached value indicating whether Lockdown Mode is
+currently enabled on the system.
+.Pp
+Lockdown Mode is an optional security feature that provides enhanced
+protections by reducing attack surface.
+This API allows applications to query whether Lockdown Mode is currently
+enabled on the system.
+.Pp
+The value returned by this function is cached and initialized once per process.
+The first call to
+.Fn os_lockdown_mode_enabled
+queries the system state via the
+.Xr sysctl 3
+interface, and subsequent calls return the cached value.
+.Pp
+This function will abort the process if an unexpected error occurs while
+querying the Lockdown Mode state.
+.Sh RETURN VALUES
+The
+.Fn os_lockdown_mode_enabled
+function returns
+.Dv true
+if Lockdown Mode is enabled.
+It returns
+.Dv false
+if Lockdown Mode is disabled or not supported on the platform.
+.Sh SEE ALSO
+.Xr sysctl 3
+.Sh HISTORY
+The
+.Fn os_lockdown_mode_enabled
+function first appeared in macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0,
+and visionOS 27.0.

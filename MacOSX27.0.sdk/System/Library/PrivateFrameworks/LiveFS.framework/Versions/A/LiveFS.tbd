@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/LiveFS.framework/Versions/A/LiveFS'
+reexported-libraries:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    libraries:       [ '/System/Library/Frameworks/FSKit.framework/Versions/A/FSKit' ]
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _LISearchFileContentsInclude, _LISearchFileNameContains, _LISearchFileNameEndsWith, 
+                       _LISearchObjModifiedAfter, _LISearchObjTypeReturnAll, _LISearchObjTypeReturnDirs, 
+                       _LISearchObjTypeReturnFiles, _LISearchObjTypeReturnLinks, 
+                       _LISearchObjXattrsInclude, _LISearchObjXattrsToReturn, _LIUpdateNSFileProviderRootContainerItemIdentifier, 
+                       _LIUpdateNSFileProviderWorkingSetContainerItemIdentifier, 
+                       _LiveFSAuthCredPasswordKey, _LiveFSAuthCredUsernameKey, _LiveFSFileSystemTypeName, 
+                       _LiveFSMounterDisplayNameKey, _LiveFSMounterDomainErasable, 
+                       _LiveFSMounterDomainErrorKey, _LiveFSMounterDomainHidden, 
+                       _LiveFSMounterDomainStorageKey, _LiveFSMounterMountIDKey, 
+                       _LiveFSMounterMountStateKey, _LiveFSMounterMountedOnKey, _LiveFSMounterVolumeNameKey, 
+                       _LiveFSMounterVolumeProviderNameKey, _LiveFSVersionNumber, 
+                       _LiveFSVersionString, _getBootUUID, _getNSErrorFromLiveFSErrno, 
+                       _livefs_std_log ]
+    objc-classes:    [ FSKitDiskArbHelper, LiveFSAppleDouble, LiveFSAppleDoubleManager, 
+                       LiveFSClient, LiveFSDiskUnlock, LiveFSGatedWork, LiveFSIDHelper, 
+                       LiveFSItemPair, LiveFSLRUCache, LiveFSMountClient, LiveFSRBTree, 
+                       LiveFSServiceClient, LiveFSServiceConnection, LiveFSServiceUserClient, 
+                       LiveFSUserClient, LiveFSVolume, LiveFSVolumeClient, LiveFSVolumeManager, 
+                       LiveFSVolumeSearchResultConnector, LiveFSXattrCache, LiveFSXattrCacheEntry ]
+    objc-ivars:      [ LiveFSClient.conn, LiveFSMountClient.conn, LiveFSMountClient.helper, 
+                       LiveFSMountClient.provider, LiveFSServiceConnection._ourID, 
+                       LiveFSServiceConnection.mount, LiveFSServiceConnection.ourConnection, 
+                       LiveFSServiceConnection.setUpdateInterestQueue, LiveFSVolume._currentConnections, 
+                       LiveFSVolume._hasPersistentFileIDs, LiveFSVolume._renameChangesFileID, 
+                       LiveFSVolume.connectionCount, LiveFSVolume.validConnections, 
+                       LiveFSXattrCache._cacheEntries, LiveFSXattrCache._entryCount, 
+                       LiveFSXattrCache._entryLifetime, LiveFSXattrCache._maxItemSize, 
+                       LiveFSXattrCache._maxItems, LiveFSXattrCache._noXattrsPresent, 
+                       LiveFSXattrCache._noXattrsPresentSetTime ]
+...

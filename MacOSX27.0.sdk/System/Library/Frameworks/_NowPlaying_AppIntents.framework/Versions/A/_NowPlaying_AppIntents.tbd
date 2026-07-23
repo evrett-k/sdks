@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/_NowPlaying_AppIntents.framework/Versions/A/_NowPlaying_AppIntents'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s10NowPlaying25MediaContentRepresentableP01_aB11_AppIntentsE20appEntityIdentifiersSay0fG00I10IdentifierVGvM', 
+                       '_$s10NowPlaying25MediaContentRepresentableP01_aB11_AppIntentsE20appEntityIdentifiersSay0fG00I10IdentifierVGvg', 
+                       '_$s10NowPlaying25MediaContentRepresentableP01_aB11_AppIntentsE20appEntityIdentifiersSay0fG00I10IdentifierVGvpMV', 
+                       '_$s10NowPlaying25MediaContentRepresentableP01_aB11_AppIntentsE20appEntityIdentifiersSay0fG00I10IdentifierVGvs' ]
+...

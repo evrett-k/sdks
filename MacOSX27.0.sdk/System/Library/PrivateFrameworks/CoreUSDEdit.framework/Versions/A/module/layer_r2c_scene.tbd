@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/layer_r2c_scene.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN13LayerR2cScene11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN36_ModuleModuleLayerR2CSceneCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN36_ModuleModuleLayerR2CSceneCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN36_ModuleModuleLayerR2CSceneCallbacks_18module_constructorER8OfObjectP8OfModule, 
+                       __ZN36_ModuleModuleLayerR2CSceneCallbacks_9get_imageER8OfObjectRKN18ModuleImageQuality5LevelEPK9GMathVec4IfE, 
+                       _on_register_module ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MacinTalk.framework/Versions/A/MacinTalk'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s9MacinTalk07MTMacinB13AUSPAudioUnitC20componentDescription7optionsACSo014AudioComponentG0V_So0iJ20InstantiationOptionsVtKcfC', 
+                       '_$s9MacinTalk07MTMacinB13AUSPAudioUnitC20componentDescription7optionsACSo014AudioComponentG0V_So0iJ20InstantiationOptionsVtKcfc', 
+                       '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCMa', '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCMn', 
+                       '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCMo', '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCMs', 
+                       '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCMu', '_$s9MacinTalk07MTMacinB13AUSPAudioUnitCfD', 
+                       '_$sSS9MacinTalkE6osTypes6UInt32VyF', _MacinTalkVersionNumber, 
+                       _MacinTalkVersionString, '_OBJC_METACLASS_$__TtC9MacinTalk24MTMacinTalkAUSPAudioUnit' ]
+...

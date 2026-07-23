@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/Versions/A/SafariSafeBrowsing'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo16BatchTimingStatsC18SafariSafeBrowsingEABycfC', '_$sSo16BatchTimingStatsC18SafariSafeBrowsingEABycfc', 
+                       '_$sSo16BatchTimingStatsCMa', '_$sSo16LLMConfigurationC18SafariSafeBrowsingEABycfC', 
+                       '_$sSo16LLMConfigurationC18SafariSafeBrowsingEABycfc', '_$sSo16LLMConfigurationCMa', 
+                       '_$sSo16LLMSafetyCheckerC18SafariSafeBrowsingEABycfC', '_$sSo16LLMSafetyCheckerC18SafariSafeBrowsingEABycfc', 
+                       '_$sSo16LLMSafetyCheckerCMa', '_$sSo19URLEvaluationResultC18SafariSafeBrowsingEABycfC', 
+                       '_$sSo19URLEvaluationResultC18SafariSafeBrowsingEABycfc', 
+                       '_$sSo19URLEvaluationResultCMa', '_$sSo24BatchURLEvaluationResultC18SafariSafeBrowsingEABycfC', 
+                       '_$sSo24BatchURLEvaluationResultC18SafariSafeBrowsingEABycfc', 
+                       '_$sSo24BatchURLEvaluationResultCMa', _SSBLookupContextDatabasesDidUpdateNotification, 
+                       _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey, 
+                       _SSBProviderApple, _SSBProviderGoogle, _SSBProviderTencent, 
+                       _SSBSafeBrowsingEnabledDefaultsKey, _SSBSafeBrowsingEnabledStateDidChangeNotification, 
+                       _SSBSafeBrowsingEnabledStateDidChangeNotificationUserInfoEnabledStateKey, 
+                       __ZN12SafeBrowsing7Service4mainEv ]
+    objc-classes:    [ BatchTimingStats, BatchURLEvaluationResult, LLMConfiguration, 
+                       LLMSafetyChecker, SSBAvailability, SSBDatabaseUpdaterStatus, 
+                       SSBLookupContext, SSBLookupResult, SSBServiceLookupResult, 
+                       URLEvaluationResult, _SSBDatabaseStatus, _SSBServiceStatus ]
+...

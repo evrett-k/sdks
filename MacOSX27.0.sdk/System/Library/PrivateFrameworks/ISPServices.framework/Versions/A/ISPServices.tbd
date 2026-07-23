@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ISPServices.framework/Versions/A/ISPServices'
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN3ISP23CreateFormattedMetadataERK19sCIspMetaDataShared, 
+                       __ZN3ISP30ISPAppendNamedValuesToCFStringEP10__CFStringiPK9__CFArrayb, 
+                       __ZN3ISP32ISPCreateFrameMetaDataAsCFStringEPK19sCIspMetaDataSharedb, 
+                       __ZN3ISP33ISPCreateEXIFDictFromMetadataDictEPK14__CFDictionaryjj, 
+                       __ZN3ISP36ISPCreateFrameMetaDataAsCFDictionaryEPK19sCIspMetaDataShared ]
+...

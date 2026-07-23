@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MapsBlastDoorSupport.framework/Versions/A/MapsBlastDoorSupport'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s20MapsBlastDoorSupport0abC6ClientC10directModeACSb_tcfC', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientC13unpackCommand4from0bC016SharedETASessionVSS_tKF', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientC13unpackMessage4from10dictionary0bC013SharedETATripV10Foundation4DataV_SDySSypGtKF', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientC17unpackMessageData4from10dictionary0bC016ShareETAGeoStateVSg010minimalGeoM0_Su11chunkNumberSu0P5IndexSS9messageIDSS05groupT0t10Foundation0H0V_SDySSypGtKF', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientC19unpackCommandString4fromS2S_tKF', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientCACycfC', '_$s20MapsBlastDoorSupport0abC6ClientCMa', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientCMm', '_$s20MapsBlastDoorSupport0abC6ClientCMn', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientCMo', '_$s20MapsBlastDoorSupport0abC6ClientCMu', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientCN', '_$s20MapsBlastDoorSupport0abC6ClientCfD', 
+                       '_$s20MapsBlastDoorSupport0abC6ClientCfd', '_$s20MapsBlastDoorSupport21SharedETATripUnpackerV0bC007MessageG0AAMc', 
+                       '_$s20MapsBlastDoorSupport21SharedETATripUnpackerV6unpack4from0bC00eF0V10Foundation4DataV_tKF', 
+                       '_$s20MapsBlastDoorSupport21SharedETATripUnpackerVACycfC', 
+                       '_$s20MapsBlastDoorSupport21SharedETATripUnpackerVMa', '_$s20MapsBlastDoorSupport21SharedETATripUnpackerVMn', 
+                       '_$s20MapsBlastDoorSupport21SharedETATripUnpackerVN', '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerV0bC007MessageG0AAMc', 
+                       '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerV6unpack4from0bC00E10ETASessionV10Foundation4DataV_tKF', 
+                       '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerVACycfC', 
+                       '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerVMa', 
+                       '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerVMn', 
+                       '_$s20MapsBlastDoorSupport24SharedETACommandUnpackerVN', _MapsBlastDoorSupportVersionNumber, 
+                       _MapsBlastDoorSupportVersionString ]
+...

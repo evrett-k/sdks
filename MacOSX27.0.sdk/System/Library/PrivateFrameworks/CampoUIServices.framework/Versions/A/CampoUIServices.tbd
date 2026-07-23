@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CampoUIServices.framework/Versions/A/CampoUIServices'
+current-version: 73.0.5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s15CampoUIServices5CPLogV10attachment2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV10attachment2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV10chatClient2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV10chatClient2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV12cameraPicker2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV12cameraPicker2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV13thinkingState2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV13thinkingState2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV14campoUIService2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV14campoUIService2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV14popoverHosting2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV14popoverHosting2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV15assistantIsland2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV15assistantIsland2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV15textSuggestions2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV15textSuggestions2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV16campoTestService2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV16campoTestService2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV16promptSubmission2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV16promptSubmission2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV17significantChange2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV17significantChange2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV21lightweightFloatingUI2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV21lightweightFloatingUI2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV22campoActivationService2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV22campoActivationService2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV29campoActivationServiceHandler2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV29campoActivationServiceHandler2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV38campoActivationServiceAssertionHandler2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV38campoActivationServiceAssertionHandler2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV41campoActivationServicePresentationHandler2os6LoggerVvgZ', 
+                       '_$s15CampoUIServices5CPLogV41campoActivationServicePresentationHandler2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV4uufr2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV4uufr2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV7campoUI2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV7campoUI2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV8afmQuery2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV8afmQuery2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV8captures2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV8captures2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV8sessions2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV8sessions2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV9siriQuery2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV9siriQuery2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogV9streaming2os6LoggerVvgZ', '_$s15CampoUIServices5CPLogV9streaming2os6LoggerVvpZMV', 
+                       '_$s15CampoUIServices5CPLogVMa', '_$s15CampoUIServices5CPLogVMn', 
+                       '_$s15CampoUIServices5CPLogVN', '_$s2os6LoggerV15CampoUIServicesE7campoUI8categoryACSS_tFZ' ]
+...

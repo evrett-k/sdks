@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUtilsUI.framework/Versions/A/CoreUtilsUI'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s11CoreUtilsUI08CUQRCodeB0O13generateImage7message4size5scale10symbolName11forceLegacy13dispatchQueueSo10CGImageRefaSS_So6CGSizeV0A8Graphics7CGFloatVSSSgSbSgSo03OS_N6_queueCSgtYaKFZ', 
+                       '_$s11CoreUtilsUI08CUQRCodeB0O13generateImage7message4size5scale10symbolName11forceLegacy13dispatchQueueSo10CGImageRefaSS_So6CGSizeV0A8Graphics7CGFloatVSSSgSbSgSo03OS_N6_queueCSgtYaKFZTu', 
+                       '_$s11CoreUtilsUI08CUQRCodeB0O13generateImage7message4size5scale10symbolName11forceLegacySo10CGImageRefaSS_So6CGSizeV0A8Graphics7CGFloatVSSSgSbSgtKFZ', 
+                       '_$s11CoreUtilsUI08CUQRCodeB0O9supportedSbyFZ', '_$s11CoreUtilsUI08CUQRCodeB0OMa', 
+                       '_$s11CoreUtilsUI08CUQRCodeB0OMn', '_$s11CoreUtilsUI08CUQRCodeB0ON', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV05SwiftC00F0AAMc', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV12eventHandlerACyAC5EventOc_tcfC', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV4bodyQrvg', '_$s11CoreUtilsUI19CUQRCodeScannerViewV4bodyQrvpMV', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV4bodyQrvpQOMQ', '_$s11CoreUtilsUI19CUQRCodeScannerViewV5EventO11codeScannedyAESScAEmFWC', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5EventO12stateUpdatedyAeC5StateOcAEmFWC', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5EventOMa', '_$s11CoreUtilsUI19CUQRCodeScannerViewV5EventOMn', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5EventON', '_$s11CoreUtilsUI19CUQRCodeScannerViewV5StateO11unavailableyAEs5Error_p_tcAEmFWC', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5StateO7runningyA2EmFWC', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5StateOMa', '_$s11CoreUtilsUI19CUQRCodeScannerViewV5StateOMn', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewV5StateON', '_$s11CoreUtilsUI19CUQRCodeScannerViewV9supportedSbyFZ', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewVMa', '_$s11CoreUtilsUI19CUQRCodeScannerViewVMn', 
+                       '_$s11CoreUtilsUI19CUQRCodeScannerViewVN', '_$s7SwiftUI4ViewP09CoreUtilsB0E15cuOnFirstAppearyQryycF', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E15cuOnFirstAppearyQryycFQOMQ', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E33cuTextSelectionEnabledIfSupportedQryF', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E33cuTextSelectionEnabledIfSupportedQryFQOMQ', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E48cuNavigationBarTitleDisplayModeInlineIfSupportedQryF', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E48cuNavigationBarTitleDisplayModeInlineIfSupportedQryFQOMQ', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E48cuTextInputAutocapitalizationDisabledIfSupportedQryF', 
+                       '_$s7SwiftUI4ViewP09CoreUtilsB0E48cuTextInputAutocapitalizationDisabledIfSupportedQryFQOMQ' ]
+...

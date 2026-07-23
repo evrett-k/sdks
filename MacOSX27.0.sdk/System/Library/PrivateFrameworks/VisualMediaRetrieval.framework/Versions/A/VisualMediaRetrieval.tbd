@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/VisualMediaRetrieval.framework/Versions/A/VisualMediaRetrieval'
+current-version: 910.28.103
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ GenerativeSearch, PhotosIntelligence, PhotosTests, photosctl ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/DataDetectorsActions.framework/Versions/A/DataDetectorsActions'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s20DataDetectorsActions023parameterizedActionFromE0_4urls7matches7options09AssistantE17SuggestionSupport0E0VAH_Say10Foundation3URLVGSay0A9Detection0A8DetectorO5MatchVGAO7OptionsVSgtYaKF', 
+                       '_$s20DataDetectorsActions023parameterizedActionFromE0_4urls7matches7options09AssistantE17SuggestionSupport0E0VAH_Say10Foundation3URLVGSay0A9Detection0A8DetectorO5MatchVGAO7OptionsVSgtYaKFTu', 
+                       '_$s20DataDetectorsActions023parameterizedActionFromE0_7results7matches7options09AssistantE17SuggestionSupport0E0VAH_Say0A9Detection0A8DetectorO5MatchVGAnK7OptionsVSgtYaKF', 
+                       '_$s20DataDetectorsActions023parameterizedActionFromE0_7results7matches7options09AssistantE17SuggestionSupport0E0VAH_Say0A9Detection0A8DetectorO5MatchVGAnK7OptionsVSgtYaKFTu', 
+                       '_$s20DataDetectorsActions13actionFromURL4urls7matches7optionsSay32AssistantActionSuggestionSupport0K0VGSay10Foundation0F0VG_Say0A9Detection0A8DetectorO5MatchVGAP7OptionsVSgtYaKF', 
+                       '_$s20DataDetectorsActions13actionFromURL4urls7matches7optionsSay32AssistantActionSuggestionSupport0K0VGSay10Foundation0F0VG_Say0A9Detection0A8DetectorO5MatchVGAP7OptionsVSgtYaKFTu', 
+                       '_$s20DataDetectorsActions17actionFromResults7results7matches7optionsSay32AssistantActionSuggestionSupport0K0VGSay0A9Detection0A8DetectorO5MatchVG_AoL7OptionsVSgtYaKF', 
+                       '_$s20DataDetectorsActions17actionFromResults7results7matches7optionsSay32AssistantActionSuggestionSupport0K0VGSay0A9Detection0A8DetectorO5MatchVG_AoL7OptionsVSgtYaKFTu', 
+                       '_$s20DataDetectorsActions24actionFromURLsAndMatches4urls7matches7optionsSay32AssistantActionSuggestionSupport0M0VGSay10Foundation3URLVG_Say0A9Detection0A8DetectorO5MatchVGAP7OptionsVSgtYaKF', 
+                       '_$s20DataDetectorsActions24actionFromURLsAndMatches4urls7matches7optionsSay32AssistantActionSuggestionSupport0M0VGSay10Foundation3URLVG_Say0A9Detection0A8DetectorO5MatchVGAP7OptionsVSgtYaKFTu' ]
+...

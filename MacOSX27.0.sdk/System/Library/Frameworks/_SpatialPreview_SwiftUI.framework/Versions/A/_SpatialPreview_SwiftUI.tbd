@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/_SpatialPreview_SwiftUI.framework/Versions/A/_SpatialPreview_SwiftUI'
+current-version: 34.0.3
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerV0cD04ViewAAMc', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerV11isPresented8onSelectAC0cD07BindingVySbG_y0aB00aB8EndpointVctcfC', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerV4bodyQrvg', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerV4bodyQrvpMV', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerV4bodyQrvpQOMQ', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerVMa', '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerVMn', 
+                       '_$s23_SpatialPreview_SwiftUI0aB12DevicePickerVN' ]
+...

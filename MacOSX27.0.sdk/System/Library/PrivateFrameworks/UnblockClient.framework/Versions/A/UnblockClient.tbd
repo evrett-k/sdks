@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/UnblockClient.framework/Versions/A/UnblockClient'
+current-version: 17
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo15UBUnblockClientC07UnblockB0E7recover13stuckServices13stackshotDataSaySo28UBStuckServiceRecoveryResultCGSaySo0iJ0CG_10Foundation0H0VSgtYaKF', 
+                       '_$sSo15UBUnblockClientC07UnblockB0E7recover13stuckServices13stackshotDataSaySo28UBStuckServiceRecoveryResultCGSaySo0iJ0CG_10Foundation0H0VSgtYaKFTu', 
+                       _UBIssueTypeCopyDescription, _UBRecoveryConfidenceCopyDescription, 
+                       _UBRecoveryEffectivenessCopyDescription, _UBRecoveryStatusCopyDescription, 
+                       _UBUnblockErrorDomain ]
+    objc-classes:    [ UBProcessInfo, UBProcessThreadInfo, UBStuckService, UBStuckServiceRecoveryResult, 
+                       UBThreadInfo, UBUnblockClient ]
+...

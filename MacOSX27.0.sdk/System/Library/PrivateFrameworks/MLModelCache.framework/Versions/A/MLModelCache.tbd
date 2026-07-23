@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MLModelCache.framework/Versions/A/MLModelCache'
+current-version: 0
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s12MLModelCache0B5ErrorO010fileSystemC0yACSScACmFWC', '_$s12MLModelCache0B5ErrorO019invalidAssetSessionC0yACSScACmFWC', 
+                       '_$s12MLModelCache0B5ErrorO2eeoiySbAC_ACtFZ', '_$s12MLModelCache0B5ErrorOMa', 
+                       '_$s12MLModelCache0B5ErrorOMn', '_$s12MLModelCache0B5ErrorON', 
+                       '_$s12MLModelCache0B5ErrorOSQAAMc', '_$s12MLModelCache0B5ErrorOs0C0AAMc', 
+                       '_$s12MLModelCache0B7ManagerC10purgeAsset2atySS_tKF', '_$s12MLModelCache0B7ManagerC11createAsset2atAA0E7SessionVSS_tKF', 
+                       '_$s12MLModelCache0B7ManagerC12hashFunction14purgeProtocolsACS2SYbc_SayAA13PurgeProtocol_pGtcfC', 
+                       '_$s12MLModelCache0B7ManagerC5asset2at10Foundation3URLVSgSS_tKF', 
+                       '_$s12MLModelCache0B7ManagerCMa', '_$s12MLModelCache0B7ManagerCMm', 
+                       '_$s12MLModelCache0B7ManagerCMn', '_$s12MLModelCache0B7ManagerCMo', 
+                       '_$s12MLModelCache0B7ManagerCMu', '_$s12MLModelCache0B7ManagerCN', 
+                       '_$s12MLModelCache0B7ManagerCfD', '_$s12MLModelCache0B7ManagerCfd', 
+                       '_$s12MLModelCache12AssetSessionV08compiledC10StagingURL10Foundation0G0Vvg', 
+                       '_$s12MLModelCache12AssetSessionV6commityyKF', '_$s12MLModelCache12AssetSessionVMa', 
+                       '_$s12MLModelCache12AssetSessionVMn', '_$s12MLModelCache12AssetSessionVN', 
+                       '_$s12MLModelCache12AssetSessionVfD', '_$s12MLModelCache13PurgeProtocolMp', 
+                       '_$s12MLModelCache13PurgeProtocolP5purge12cacheRootURLy10Foundation0H0V_tKFTj', 
+                       '_$s12MLModelCache13PurgeProtocolP5purge12cacheRootURLy10Foundation0H0V_tKFTq', 
+                       '_$s12MLModelCache13PurgeProtocolTL', '_$s12MLModelCache28OldBuildVersionPurgeProtocolV5purge12cacheRootURLy10Foundation0K0V_tKF', 
+                       '_$s12MLModelCache28OldBuildVersionPurgeProtocolVAA0fG0AAMc', 
+                       '_$s12MLModelCache28OldBuildVersionPurgeProtocolVAA0fG0AAWP', 
+                       '_$s12MLModelCache28OldBuildVersionPurgeProtocolVACycfC', 
+                       '_$s12MLModelCache28OldBuildVersionPurgeProtocolVMa', '_$s12MLModelCache28OldBuildVersionPurgeProtocolVMn', 
+                       '_$s12MLModelCache28OldBuildVersionPurgeProtocolVN', '_$s12MLModelCache28OrphanedStagingPurgeProtocolV5purge12cacheRootURLy10Foundation0J0V_tKF', 
+                       '_$s12MLModelCache28OrphanedStagingPurgeProtocolVAA0eF0AAMc', 
+                       '_$s12MLModelCache28OrphanedStagingPurgeProtocolVAA0eF0AAWP', 
+                       '_$s12MLModelCache28OrphanedStagingPurgeProtocolVACycfC', 
+                       '_$s12MLModelCache28OrphanedStagingPurgeProtocolVMa', '_$s12MLModelCache28OrphanedStagingPurgeProtocolVMn', 
+                       '_$s12MLModelCache28OrphanedStagingPurgeProtocolVN' ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/osl_shader_builtin.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN16OslShaderBuiltin23on_register_shader_fileER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN16OslShaderBuiltin25on_register_shader_scriptER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN16OslShaderBuiltin31on_scripted_shader_state_changeER8OfObjectRKN11EventObject9EventInfoEPv, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZGVZN16OslShaderManager19OSL_SHADER_TYPE_KEYEvE20_OSL_SHADER_TYPE_KEY, 
+                       __ZGVZN16OslShaderManager21OSL_SHADER_INPUTS_KEYEvE22_OSL_SHADER_INPUTS_KEY, 
+                       __ZGVZN16OslShaderManager22OSL_SHADER_OUTPUTS_KEYEvE23_OSL_SHADER_OUTPUTS_KEY, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN16OslShaderManager19OSL_SHADER_TYPE_KEYEvE20_OSL_SHADER_TYPE_KEY, 
+                       __ZZN16OslShaderManager21OSL_SHADER_INPUTS_KEYEvE22_OSL_SHADER_INPUTS_KEY, 
+                       __ZZN16OslShaderManager22OSL_SHADER_OUTPUTS_KEYEvE23_OSL_SHADER_OUTPUTS_KEY ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/DeepVideoProcessingCore.framework/Versions/A/DeepVideoProcessingCore'
+current-version: 3.6
+exports:
+  - targets:         [ arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DeepVideoProcessingCoreErrorDomain, _DeepVideoProcessingCoreVersionNumber, 
+                       _DeepVideoProcessingCoreVersionString ]
+    objc-classes:    [ BaseProcessor, DVPDenseUpscalerConfiguration, DVPDenseUpscalerParameters, 
+                       DVPFrame, DVPFrameOpticalFlow, DVPFrameRateConversionConfiguration, 
+                       DVPFrameRateConversionParameters, DVPLensFlareMitigationConfiguration, 
+                       DVPLensFlareMitigationParameters, DVPMotionBlurConfiguration, 
+                       DVPMotionBlurParameters, DVPOpticalFlowConfiguration, DVPOpticalFlowParameters, 
+                       DVPSuperResolutionConfiguration, DVPSuperResolutionParameters, 
+                       DenseUpscalerProcessor, FRCProcessor, OpticalFlowProcessor, 
+                       VDGProcessor, VSAProcessor, VSRProcessor ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/FlowTools.framework/Versions/A/FlowTools'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s9FlowTools0aB14ServiceManagerCACycfC', '_$s9FlowTools0aB14ServiceManagerCACycfc', 
+                       '_$s9FlowTools0aB14ServiceManagerCMa', '_$s9FlowTools0aB14ServiceManagerCMn', 
+                       '_$s9FlowTools0aB14ServiceManagerCMo', '_$s9FlowTools0aB14ServiceManagerCN', 
+                       '_$s9FlowTools0aB14ServiceManagerCfD', _FlowToolsVersionNumber, 
+                       _FlowToolsVersionString ]
+    objc-classes:    [ FTServicesManager, _TtC9FlowTools23FlowToolsServiceManager ]
+...

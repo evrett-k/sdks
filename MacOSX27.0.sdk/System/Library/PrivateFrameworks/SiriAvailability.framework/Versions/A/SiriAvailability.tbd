@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/SiriAvailability.framework/Versions/A/SiriAvailability'
+current-version: 3600.13.5
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _NSStringFromSOSiriLinwoodCapabilities, _NSStringFromSOSiriMissingAssets, 
+                       _NSStringFromSOSiriOrchestrationMode, _NSStringFromSOSiriSystemAssistantExperienceCapabilities, 
+                       _NSStringFromSOSiriUnavailabilityReasons, _NSStringFromSOSiriXFullUnderstandingOnDeviceCapabilities, 
+                       _NSStringFromSOSiriXHybridUnderstandingOnDeviceCapabilities, 
+                       _SOFetchLinwoodAvailabilityStatus, _SOFetchSiriAvailability, 
+                       _SOSetLinwoodAvailabilityStatus, _SOSiriUnavailabiltiyReasonsFromSOSiriMissingAssets, 
+                       _SiriAvailabilityVersionNumber, _SiriAvailabilityVersionString, 
+                       _kSOSiriActivationDismissedDueToToolboxUnavailableNotification, 
+                       _kSOSiriCapabilitiesDidChangeNotification, _kSOSiriCapabilitiesServiceClientEntitlement, 
+                       _kSOSiriCapabilitiesServiceClientMachServiceName, _kSOSiriCapabilitiesServiceErrorDomain ]
+    objc-classes:    [ SOSiriActivationDismissalInfo, SOSiriAvailability, SOSiriCapabilities, 
+                       SOSiriCapabilitiesServiceClient ]
+...

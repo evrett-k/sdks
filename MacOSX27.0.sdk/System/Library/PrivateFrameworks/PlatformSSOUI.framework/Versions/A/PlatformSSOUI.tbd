@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PlatformSSOUI.framework/Versions/A/PlatformSSOUI'
+current-version: 643.0.21
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo35POBuddyAuthenticationViewControllerC13PlatformSSOUIE011requestUserB011forUsername8inWindowSo13POLoginResultV6result_10Foundation4DataVSg6tokensSo9LAContextCSg17credentialContexttSS_So8NSWindowCtYaF', 
+                       '_$sSo35POBuddyAuthenticationViewControllerC13PlatformSSOUIE011requestUserB011forUsername8inWindowSo13POLoginResultV6result_10Foundation4DataVSg6tokensSo9LAContextCSg17credentialContexttSS_So8NSWindowCtYaFTu' ]
+    objc-classes:    [ POAgentWindow, POAgentWindowController, POBuddyAuthenticationViewController, 
+                       POBuddyCreateUserManager, POBuddyDeviceRegistrationManager, 
+                       POBuddyManager, POBuddyRegistrationContext, POBuddyUserRegistrationManager, 
+                       POUIAccessKeyDialog, POUIAccessKeyViewController, POUIAlert, 
+                       POUIAuthenticationDialog, POUIAuthenticationViewController, 
+                       POUIPasswordSyncPrompt, POUIRegistrationWindow, POUISmartCardDialog, 
+                       POUISmartCardViewController, POWindowController ]
+...

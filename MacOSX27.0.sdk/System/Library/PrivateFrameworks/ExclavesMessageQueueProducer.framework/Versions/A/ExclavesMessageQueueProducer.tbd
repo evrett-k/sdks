@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ExclavesMessageQueueProducer.framework/Versions/A/ExclavesMessageQueueProducer'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s28ExclavesMessageQueueProducer0abD4SyncC14messageEnqueue11destination6source4datay0abC5Types9ServiceIdV_AH06SourceM0VSgAH0aB0VtKF', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncC4fromAC9Tightbeam0G8EndpointO_tcfC', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncC4fromAC9Tightbeam0G8EndpointO_tcfCTj', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncC4fromAC9Tightbeam0G8EndpointO_tcfCTq', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncC4fromAC9Tightbeam0G8EndpointO_tcfc', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncC9Tightbeam0F17EndpointDecodableAAMc', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncCMa', '_$s28ExclavesMessageQueueProducer0abD4SyncCMm', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncCMn', '_$s28ExclavesMessageQueueProducer0abD4SyncCMo', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncCMu', '_$s28ExclavesMessageQueueProducer0abD4SyncCN', 
+                       '_$s28ExclavesMessageQueueProducer0abD4SyncCfD', '_$s28ExclavesMessageQueueProducer0abD4SyncCfd', 
+                       _ExclavesMessageQueueProducerVersionNumber, _ExclavesMessageQueueProducerVersionString ]
+...

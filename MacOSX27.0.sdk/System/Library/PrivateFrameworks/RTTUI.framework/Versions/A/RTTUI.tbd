@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/RTTUI.framework/Versions/A/RTTUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo18RTTUIUtteranceCellC5RTTUIE21populateConfiguration11useVibrancyySb_tF', 
+                       _RTTUIVersionNumber, _RTTUIVersionString, _ttyImageNamed ]
+    objc-classes:    [ RTTUIConversationControllerCoordinator, RTTUIConversationViewController, 
+                       RTTUIServiceUpdateCell, RTTUIUtilities, RTTUIUtteranceCell, 
+                       RTTUtteranceRequest, TTYStretchImageView ]
+...

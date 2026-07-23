@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpotlightDiagnostics.framework/Versions/A/SpotlightDiagnostics'
+current-version: 2451.1.255
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _SDDiagnosticDefaultPrivacyLevel, _SDDiagnosticGateIsInternal, 
+                       _SDDiagnosticGateIsSeedBuild, _SDError, _SDGetActiveUID, _SDLogCategoryClient, 
+                       _SDLogCategoryExtension, _SDLogCategoryGeneral, _SDLogCategoryHelper, 
+                       _SDLogCategoryUserHelper, _SDSearchDirectory, _SpotlightDiagnosticErrorDomain, 
+                       _SpotlightDiagnosticsVersionNumber, _SpotlightDiagnosticsVersionString ]
+    objc-classes:    [ SDCoreSpotlightDiagnosticClient, SDDiagnosticClient, SDDiagnosticClientSet, 
+                       SDMetadataDiagnosticClient ]
+...

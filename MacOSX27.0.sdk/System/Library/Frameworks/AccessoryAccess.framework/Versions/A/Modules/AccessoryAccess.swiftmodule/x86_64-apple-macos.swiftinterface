@@ -1,0 +1,50 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target x86_64-apple-macos27.0 -enable-objc-interop -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 306.0.1 -module-name AccessoryAccess
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import AccessoryAccess
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension AccessoryAccess::AAUSBAccessory {
+  @available(macOS 27.0, *)
+  public enum Event : Swift::Sendable {
+    case didConnect(AccessoryAccess::AAUSBAccessory)
+    case didDisconnect(AccessoryAccess::AAUSBAccessory)
+  }
+}
+extension AccessoryAccess::AAUSBAccessoryManager {
+  @available(macOS 27.0, *)
+  public func events(matching criteria: [AccessoryAccess::AAUSBAccessoryMatchingCriteria]) async throws -> some _Concurrency::AsyncSequence<AccessoryAccess::AAUSBAccessory.AccessoryAccess::Event, Swift::Never>
+  
+}
+extension AccessoryAccess::AAUSBAccessoryMatchingCriteria {
+  @available(macOS 27.0, *)
+  public struct DeviceMatchingCriteria : Swift::Sendable {
+    public var vendorID: Swift::Int?
+    public var productID: Swift::Int?
+    public var deviceClass: Swift::Int?
+    public var deviceSubClass: Swift::Int?
+    public var deviceProtocol: Swift::Int?
+    public var speed: Swift::Int?
+    public init(vendorID: Swift::Int? = nil, productID: Swift::Int? = nil, deviceClass: Swift::Int? = nil, deviceSubClass: Swift::Int? = nil, deviceProtocol: Swift::Int? = nil, speed: Swift::Int? = nil)
+  }
+  @available(macOS 27.0, *)
+  public struct InterfaceMatchingCriteria : Swift::Sendable {
+    public var vendorID: Swift::Int?
+    public var productID: Swift::Int?
+    public var bcdDevice: Swift::Int?
+    public var interfaceNumber: Swift::Int?
+    public var configurationValue: Swift::Int?
+    public var interfaceClass: Swift::Int?
+    public var interfaceSubClass: Swift::Int?
+    public var interfaceProtocol: Swift::Int?
+    public var speed: Swift::Int?
+    public init(vendorID: Swift::Int? = nil, productID: Swift::Int? = nil, bcdDevice: Swift::Int? = nil, interfaceNumber: Swift::Int? = nil, configurationValue: Swift::Int? = nil, interfaceClass: Swift::Int? = nil, interfaceSubClass: Swift::Int? = nil, interfaceProtocol: Swift::Int? = nil, speed: Swift::Int? = nil)
+  }
+  @available(macOS 27.0, *)
+  convenience public init(deviceMatchingCriteria: AccessoryAccess::AAUSBAccessoryMatchingCriteria.AccessoryAccess::DeviceMatchingCriteria)
+  @available(macOS 27.0, *)
+  convenience public init(deviceMatchingCriteria: AccessoryAccess::AAUSBAccessoryMatchingCriteria.AccessoryAccess::DeviceMatchingCriteria?, interfaceMatchingCriteria: [AccessoryAccess::AAUSBAccessoryMatchingCriteria.AccessoryAccess::InterfaceMatchingCriteria], interfaceMatchingOption: AccessoryAccess::AAUSBAccessoryMatchingCriteria.AccessoryAccess::InterfaceMatchingOption)
+}

@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/StoreKitUIMac.framework/Versions/A/StoreKitUIMac'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE04loadB0yyF', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE06remotebC033_3BC4DC0EB3A57C820637DD2187C9BC84LLAC0a6RemotebC0AELLCSgvpfi', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE24presentEngagementRequesty10Foundation4DataVAGYaKF', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE24presentEngagementRequesty10Foundation4DataVAGYaKFTu', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE5coderABSgSo7NSCoderC_tcfC', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE5coderABSgSo7NSCoderC_tcfc', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE7nibName6bundleABSSSg_So8NSBundleCSgtcfC', 
+                       '_$sSo28SKUIEngagementViewControllerC13StoreKitUIMacE7nibName6bundleABSSSg_So8NSBundleCSgtcfc', 
+                       '_$sSo28SKUIEngagementViewControllerCMa', '_$sSo38SKUIPrivateMerchandisingViewControllerC13StoreKitUIMacE04loadC0yyF', 
+                       '_$sSo38SKUIPrivateMerchandisingViewControllerC13StoreKitUIMacE06remoteD033_D23C138FEB5E3B40A23E4F1E6262E08ALLAC0ab6RemotecD0CSgvpfi', 
+                       '_$sSo38SKUIPrivateMerchandisingViewControllerC13StoreKitUIMacE12continuation33_D23C138FEB5E3B40A23E4F1E6262E08ALLSccy10Foundation4DataVs5Error_pGSgvpfi', 
+                       '_$sSo38SKUIPrivateMerchandisingViewControllerC13StoreKitUIMacE5coderABSgSo7NSCoderC_tcfC', 
+                       '_$sSo38SKUIPrivateMerchandisingViewControllerC13StoreKitUIMacE5coderABSgSo7NSCoderC_tcfc', 
+                       '_$sSo38SKUIPrivateMerchandisingViewControllerCMa', _SKUIErrorDomain ]
+    objc-classes:    [ SKUIEngagementViewController, SKUIPaymentSheetController, 
+                       SKUIPrivateMerchandisingViewController, SKUIRemoteEngagementRemoteViewController, 
+                       SKUIRemoteEngagementViewController, SKUIStoreProductViewController ]
+...
