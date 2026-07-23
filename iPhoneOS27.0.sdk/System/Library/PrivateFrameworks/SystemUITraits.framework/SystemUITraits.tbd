@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemUITraits.framework/SystemUITraits
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SUIDisplayStyleString, _SystemUITraitsVersionNumber,
+                            _SystemUITraitsVersionString ]
+    objc-classes:         [ SUIDisplayStyleSceneExtension, SUIDisplayStyleTrait,
+                            _TtC14SystemUITraits30DisplayStyleSceneHostComponent,
+                            _TtC14SystemUITraits32DisplayStyleSceneClientComponent,
+                            _TtC14SystemUITraits32DisplayStyleWindowSceneComponent,
+                            _TtC14SystemUITraits37IdealizedDateComponentsSceneExtension,
+                            _TtC14SystemUITraits41IdealizedDateComponentsSceneHostComponent,
+                            _TtC14SystemUITraits43IdealizedDateComponentsSceneClientComponent,
+                            _TtC14SystemUITraits43IdealizedDateComponentsWindowSceneComponent,
+                            _TtC14SystemUITraits44IdealizedDateComponentsHostSettingsExtension,
+                            _TtC14SystemUITraits46IdealizedDateComponentsClientSettingsExtension,
+                            _TtC14SystemUITraits46IdealizedDateComponentsSceneSettingsDiffAction,
+                            _TtC14SystemUITraits49UpdateIdealizedDateComponentsWithTodaysDateAction ]
+...

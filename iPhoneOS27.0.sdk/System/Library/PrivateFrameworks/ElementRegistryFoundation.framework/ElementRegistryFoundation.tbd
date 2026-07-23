@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ElementRegistryFoundation.framework/ElementRegistryFoundation
+current-version:       18
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ERFSharedCatalystClientUtilities ]
+    objc-classes:         [ _TtC25ElementRegistryFoundation15SimpleAssertion,
+                            _TtC25ElementRegistryFoundation25ElementSceneSpecification,
+                            _TtC25ElementRegistryFoundation27ElementRegistryLaunchAction,
+                            _TtC25ElementRegistryFoundation29ElementRegistrySceneExtension,
+                            _TtCC25ElementRegistryFoundation29ElementRegistrySceneExtension15SettingsWrapper,
+                            _TtCC25ElementRegistryFoundation29ElementRegistrySceneExtension21ClientSettingsWrapper ]
+...

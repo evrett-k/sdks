@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BTCSEngine.framework/BTCSEngine
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ CSEAggregatedData, CSEConfiguration, CSEInstance,
+                            CSERangeOutput, CSESingleTone ]
+    objc-ivars:           [ CSEAggregatedData._antennaID,
+                            CSEAggregatedData._initGroupDelay,
+                            CSEAggregatedData._refGroupDelay,
+                            CSEAggregatedData._toneArr, CSEConfiguration._band,
+                            CSEConfiguration._hw_cal_2_4_MHz,
+                            CSEConfiguration._leThreshold,
+                            CSEConfiguration._mode, CSEConfiguration._phy,
+                            CSEConfiguration._smoothingEnabled,
+                            CSEInstance._conf, CSEInstance.engine,
+                            CSERangeOutput._errorCode, CSERangeOutput._maxFFT,
+                            CSERangeOutput._range, CSERangeOutput._rawRange,
+                            CSERangeOutput._uncertainty, CSESingleTone._freq,
+                            CSESingleTone._i, CSESingleTone._mctTimestamp,
+                            CSESingleTone._q, CSESingleTone._snr,
+                            CSESingleTone._tqi ]
+...

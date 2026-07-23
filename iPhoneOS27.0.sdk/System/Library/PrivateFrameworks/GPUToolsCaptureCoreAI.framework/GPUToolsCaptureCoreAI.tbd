@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GPUToolsCaptureCoreAI.framework/GPUToolsCaptureCoreAI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CreateDebugMLCapture, _GTCoreLogInit,
+                            _GTCoreLogTagEnabled, _GTCoreLogUseOsLog,
+                            _GTCoreLogUseStandardOutputStreams, _g_signpostLog,
+                            _gt_tagged_log ]
+    objc-classes:         [ GTCaptureCoreAIBridge, GTCoreAICaptureServiceImpl ]
+    objc-ivars:           [ GTCaptureCoreAIBridge._connection,
+                            GTCaptureCoreAIBridge._service,
+                            GTCoreAICaptureServiceImpl._connection,
+                            GTCoreAICaptureServiceImpl._didAcquireSecurityScope,
+                            GTCoreAICaptureServiceImpl._observers,
+                            GTCoreAICaptureServiceImpl._session,
+                            GTCoreAICaptureServiceImpl._stashService ]
+...

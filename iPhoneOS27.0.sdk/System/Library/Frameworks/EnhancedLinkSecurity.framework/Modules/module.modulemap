@@ -1,0 +1,5 @@
+framework module EnhancedLinkSecurity [system] {
+    umbrella header "EnhancedLinkSecurity.h"
+    export *
+    module * { export * }
+}

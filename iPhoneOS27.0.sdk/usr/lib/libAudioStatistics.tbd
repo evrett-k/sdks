@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libAudioStatistics.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioAnalyticsRetainMessage,
+                            _CAReportingApplicationName,
+                            _CAReportingAriadneInputFilePath,
+                            _CAReportingAriadneOutputFileDirectory,
+                            _CAReportingAriadneOutputFileName,
+                            _CAReportingAriadnePlistFilePath,
+                            _CAReportingAriadnePlistFilePaths,
+                            _CAReportingClientCopyConfiguration,
+                            _CAReportingClientCreateReporterID,
+                            _CAReportingClientCreateReporterIDFromSessionID,
+                            _CAReportingClientDestroyReporterID,
+                            _CAReportingClientGetAudioServiceType,
+                            _CAReportingClientRequestMessage,
+                            _CAReportingClientSendMessage,
+                            _CAReportingClientSendSingleMessage,
+                            _CAReportingClientSetAudioServiceType,
+                            _CAReportingClientSetConfiguration,
+                            _CAReportingClientStartReporter,
+                            _CAReportingClientStopReporter,
+                            _CAReportingDelayPerfEndSnapShot,
+                            _CAReportingPerfAggregateMetrics,
+                            _CAReportingPerfProcesses, _CAReportingTestName,
+                            _CAReportingTraceType, _CAReportingTraceTypeArtrace,
+                            _CAReportingTraceTypeArtraceProfile,
+                            _CAReportingTraceTypeKtrace,
+                            _CAReportingUtilityGenerateServiceNameFromServiceType,
+                            _CAReportingUtilityGenerateServiceTypeFromServiceName,
+                            _CreateSharedCAReportingClient ]
+    objc-classes:         [ CAReporter, CATestReporter ]
+    objc-ivars:           [ CAReporter._configuration, CAReporter._reporterID,
+                            CAReporter._serviceType, CAReporter._swiftReporter ]
+...

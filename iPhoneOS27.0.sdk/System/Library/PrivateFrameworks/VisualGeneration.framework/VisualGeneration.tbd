@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VisualGeneration.framework/VisualGeneration
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _VisualGenerationVersionNumber,
+                            _VisualGenerationVersionString ]
+    objc-classes:         [ VGMADCaptionResult, VGMADImageCaptionRequest,
+                            VGMADImageEmbeddingRequest,
+                            VGMADImageEmbeddingResult, VGMADMLScalingRequest,
+                            VGMADMLScalingResult,
+                            VGMADRichLabelClassificationRequest,
+                            VGMADRichLabelClassificationResult,
+                            VGMADRichLabelClassificationResultItem, VGMADService,
+                            VisualGenerationQueryParser,
+                            VisualGenerationQueryParserManager,
+                            WrappedCMPhotoCompressionSession,
+                            WrappedCMPhotoDecompressionContainer,
+                            WrappedCMPhotoDecompressionSession ]
+    objc-ivars:           [ VGMADCaptionResult._result,
+                            VGMADImageCaptionRequest._request,
+                            VGMADImageEmbeddingRequest._request,
+                            VGMADImageEmbeddingResult._result,
+                            VGMADMLScalingRequest._request,
+                            VGMADMLScalingResult._result,
+                            VGMADRichLabelClassificationRequest._request,
+                            VGMADRichLabelClassificationResult._result,
+                            VGMADRichLabelClassificationResultItem._item,
+                            VGMADService._service,
+                            VisualGenerationQueryParserManager._queryParser,
+                            WrappedCMPhotoCompressionSession._session,
+                            WrappedCMPhotoCompressionSession._status,
+                            WrappedCMPhotoDecompressionContainer._container,
+                            WrappedCMPhotoDecompressionContainer._containerFormat,
+                            WrappedCMPhotoDecompressionContainer._status,
+                            WrappedCMPhotoDecompressionSession._session,
+                            WrappedCMPhotoDecompressionSession._status ]
+...

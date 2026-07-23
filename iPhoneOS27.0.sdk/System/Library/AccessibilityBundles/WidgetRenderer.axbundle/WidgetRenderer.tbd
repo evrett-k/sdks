@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WidgetRenderer.axbundle/WidgetRenderer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXWidgetRendererGlue,
+                            AccessibilityNodeAccessibility__WidgetRenderer__SwiftUI,
+                            SystemApertureElementViewControllerAccessibility,
+                            TouchPassThroughViewAccessibility,
+                            WidgetSceneContentViewControllerAccessibility,
+                            __AccessibilityNodeAccessibility__WidgetRenderer__SwiftUI_super,
+                            __SystemApertureElementViewControllerAccessibility_super,
+                            __TouchPassThroughViewAccessibility_super,
+                            __WidgetSceneContentViewControllerAccessibility_super ]
+...

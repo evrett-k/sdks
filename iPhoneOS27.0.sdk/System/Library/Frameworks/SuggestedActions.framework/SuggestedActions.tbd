@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/SuggestedActions.framework/SuggestedActions
+current-version:       20
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _TtC16SuggestedActions15RemoteModalHost,
+                            _TtC16SuggestedActions17RemoteButtonsHost,
+                            _TtCV16SuggestedActions13EventEditView11Coordinator,
+                            _TtCV16SuggestedActions16EventDetailsView11Coordinator,
+                            _TtCV16SuggestedActions17ContactPickerView11Coordinator,
+                            _TtCV16SuggestedActions19ContactCreationView11Coordinator,
+                            _TtCV16SuggestedActions20ReminderCreationView11Coordinator ]
+...

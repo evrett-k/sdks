@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EnhancedLogging.framework/EnhancedLogging
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ELAEAEncryptionConfiguration,
+                            ELBugSessionStatusProvider,
+                            ELEncryptionConfiguration, ELFileUploader,
+                            ELHealthWrapEncryptionConfiguration,
+                            ELMockUploadConfiguration, ELProcessingConfiguration,
+                            ELSessionConfigurationOptions,
+                            ELSessionConfigurationResponse,
+                            ELSessionConfigurator, ELSessionStatusProvider,
+                            ELTimberLorryUploadConfiguration ]
+    objc-ivars:           [ ELAEAEncryptionConfiguration._publicKey,
+                            ELHealthWrapEncryptionConfiguration._channel,
+                            ELHealthWrapEncryptionConfiguration._payloadType,
+                            ELHealthWrapEncryptionConfiguration._publicKey,
+                            ELHealthWrapEncryptionConfiguration._studyID,
+                            ELMockUploadConfiguration._duration,
+                            ELMockUploadConfiguration._forceFail,
+                            ELProcessingConfiguration._compressionMode,
+                            ELProcessingConfiguration._encryptionConfiguration,
+                            ELSessionConfigurationOptions._consentActionLabel,
+                            ELSessionConfigurationOptions._coreFollowUpSettingsBody,
+                            ELSessionConfigurationOptions._coreFollowUpSettingsTitle,
+                            ELSessionConfigurationOptions._declineActionLabel,
+                            ELSessionConfigurationOptions._headlessPolicy,
+                            ELSessionConfigurationOptions._notificationBody,
+                            ELSessionConfigurationOptions._notificationStyle,
+                            ELSessionConfigurationOptions._notificationTitle,
+                            ELSessionConfigurationOptions._notificationUserString,
+                            ELSessionConfigurationResponse._data,
+                            ELSessionConfigurationResponse._statusCode,
+                            ELTimberLorryUploadConfiguration._cloudKitContainerID,
+                            ELTimberLorryUploadConfiguration._logFileProcessingConfigurations,
+                            ELTimberLorryUploadConfiguration._mockConfiguration,
+                            ELTimberLorryUploadConfiguration._sessionFileProcessingConfigurations,
+                            ELTimberLorryUploadConfiguration._sessionMetadata,
+                            ELTimberLorryUploadConfiguration._sessionTicketID,
+                            ELTimberLorryUploadConfiguration._uploadToken ]
+...

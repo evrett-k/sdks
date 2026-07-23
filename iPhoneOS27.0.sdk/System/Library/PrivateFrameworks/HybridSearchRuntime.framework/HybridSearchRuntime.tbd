@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HybridSearchRuntime.framework/HybridSearchRuntime
+current-version:       62.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ HSTapToRadarBridge,
+                            _TtCC19HybridSearchRuntime12SearchServer6Server,
+                            _TtCC19HybridSearchRuntime14IndexingServer6Server ]
+...

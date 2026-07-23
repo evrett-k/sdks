@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosSwiftUICore.framework/PhotosSwiftUICore
+current-version:       910.33.102
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ PUOneUpCaptionsMenu,
+                            PXPhotosSelectionStatusViewModel,
+                            _TtC17PhotosSwiftUICore18MockViewController,
+                            _TtC17PhotosSwiftUICore19DetailScanRootLayer,
+                            _TtC17PhotosSwiftUICore20CleanupMaskRootLayer,
+                            _TtC17PhotosSwiftUICore21ShimmerEffectAnimator,
+                            _TtC17PhotosSwiftUICore22PhotosImageEffectLayer,
+                            _TtC17PhotosSwiftUICore22ScanWaveEffectAnimator,
+                            _TtC17PhotosSwiftUICore22ShimmerImageEffectView,
+                            _TtC17PhotosSwiftUICore23ScanWaveImageEffectView,
+                            _TtC17PhotosSwiftUICore24DetailScanEffectAnimator,
+                            _TtC17PhotosSwiftUICore24GenEditOverlayEffectView,
+                            _TtC17PhotosSwiftUICore24GenerativeEditEffectView,
+                            _TtC17PhotosSwiftUICore25DetailScanImageEffectView,
+                            _TtC17PhotosSwiftUICore25PhotosImageEffectAnimator,
+                            _TtC17PhotosSwiftUICore26CleanupMaskImageEffectView,
+                            _TtC17PhotosSwiftUICore28GenEditOverlayEffectAnimator,
+                            _TtC17PhotosSwiftUICore28PhotosScenePhasePlatformView,
+                            _TtCV17PhotosSwiftUICore14OneUpBarButton17OneUpMenuUIButton,
+                            _TtCV17PhotosSwiftUICore8EDRImage9ImageView ]
+...

@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoDecoders/AVD.videodecoder
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVDRegister ]
+    objc-classes:         [ AVDBufferFillMetal, AVDCommonMetal, AVDDeblockMetal,
+                            AVDScaleMetal, MetalContextManager ]
+    objc-ivars:           [ AVDBufferFillMetal._preFillChroma,
+                            AVDBufferFillMetal._preFillLuma,
+                            AVDBufferFillMetal._supportsNonuniformThreadgroups,
+                            AVDBufferFillMetal._textureCacheChromaPreFill,
+                            AVDBufferFillMetal._textureCacheLumaPreFill,
+                            AVDCommonMetal._commandQueue, AVDCommonMetal._device,
+                            AVDCommonMetal._library, AVDCommonMetal._manager,
+                            AVDCommonMetal._readAttributes,
+                            AVDCommonMetal._readWriteAttributes,
+                            AVDCommonMetal._writeAttributes,
+                            AVDDeblockMetal._horizontalOffset,
+                            AVDDeblockMetal._inloopDeblockH,
+                            AVDDeblockMetal._inloopDeblockV,
+                            AVDDeblockMetal._textureCacheChromaIn,
+                            AVDDeblockMetal._textureCacheChromaOutV,
+                            AVDDeblockMetal._verticalOffset,
+                            AVDScaleMetal._bilinearScale,
+                            AVDScaleMetal._supportsNonuniformThreadgroups,
+                            AVDScaleMetal._textureCacheChromaScale,
+                            AVDScaleMetal._textureCacheLumaScale,
+                            MetalContextManager._sharedCommandQueue,
+                            MetalContextManager._sharedDevice,
+                            MetalContextManager._sharedLibrary,
+                            MetalContextManager._sharedReadAttributes,
+                            MetalContextManager._sharedReadWriteAttributes,
+                            MetalContextManager._sharedWriteAttributes ]
+...

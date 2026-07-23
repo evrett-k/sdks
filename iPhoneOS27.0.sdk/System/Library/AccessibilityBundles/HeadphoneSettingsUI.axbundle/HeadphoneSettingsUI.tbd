@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/HeadphoneSettingsUI.axbundle/HeadphoneSettingsUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXHeadphoneSettingsUIGlue,
+                            AnimationViewAccessibility,
+                            GradientSliderAccessibility,
+                            HPCUIListeningModeControlAccessibility,
+                            HPSUISpatialProfileEnrollmentControllerAccessibility,
+                            __AnimationViewAccessibility_super,
+                            __GradientSliderAccessibility_super,
+                            __HPCUIListeningModeControlAccessibility_super,
+                            __HPSUISpatialProfileEnrollmentControllerAccessibility_super ]
+...

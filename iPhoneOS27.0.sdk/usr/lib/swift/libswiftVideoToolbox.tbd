@@ -1,0 +1,9 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios ]
+install-name:    '/usr/lib/swift/libswiftVideoToolbox.dylib'
+current-version: 3350.67.2
+reexported-libraries:
+  - targets:         [ arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/VideoToolbox.framework/VideoToolbox' ]
+...

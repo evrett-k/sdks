@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppManagedFeaturesUI.framework/AppManagedFeaturesUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppManagedFeaturesUIVersionNumber,
+                            _AppManagedFeaturesUIVersionString ]
+    objc-classes:         [ _TtC20AppManagedFeaturesUI19ErrorViewController,
+                            _TtC20AppManagedFeaturesUI21MissPaymentController,
+                            _TtC20AppManagedFeaturesUI24DeviceContractController,
+                            _TtC20AppManagedFeaturesUI25ProviderPrivacyController,
+                            _TtC20AppManagedFeaturesUI28EnrollmentControllerProvider,
+                            _TtCV20AppManagedFeaturesUI13AppLockupView11Coordinator ]
+...

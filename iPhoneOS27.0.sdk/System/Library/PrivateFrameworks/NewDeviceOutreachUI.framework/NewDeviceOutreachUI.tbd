@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewDeviceOutreachUI.framework/NewDeviceOutreachUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NewDeviceOutreachUIVersionNumber,
+                            _NewDeviceOutreachUIVersionString ]
+    objc-classes:         [ NDOACController, NDOAMSUIComposition,
+                            NDOAMSUILoadingViewController,
+                            NDOAppleCareAMSUIViewController,
+                            NDOAppleCareViewController,
+                            NDOCoverageCentralViewController,
+                            NDODeviceCoverageDetailsUI,
+                            NDODeviceDetailsViewController,
+                            NDOSpecifierDataSource ]
+    objc-ivars:           [ NDOACController._isDefaultDevice,
+                            NDOACController._ndoSpecifierDataSource,
+                            NDOACController._parentViewController,
+                            NDOACController._specifierIDToInsertAfter,
+                            NDOAppleCareAMSUIViewController._amsUIRequest,
+                            NDOAppleCareAMSUIViewController._isLoaded,
+                            NDOAppleCareAMSUIViewController._navController,
+                            NDOAppleCareAMSUIViewController._presenter ]
+...

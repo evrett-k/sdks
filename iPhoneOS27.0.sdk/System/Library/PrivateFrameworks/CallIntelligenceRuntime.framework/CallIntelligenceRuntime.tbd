@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CallIntelligenceRuntime.framework/CallIntelligenceRuntime
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CallIntelligenceRuntimeVersionNumber,
+                            _CallIntelligenceRuntimeVersionString ]
+    objc-classes:         [ _TtC23CallIntelligenceRuntime15CaptionProvider,
+                            _TtC23CallIntelligenceRuntime34SoundClassificationResultsProvider,
+                            _TtC23CallIntelligenceRuntime34WrappedAVCAnsweringMachineDelegate ]
+...

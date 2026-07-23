@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/DMCEnrollmentProvider.axbundle/DMCEnrollmentProvider
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXDMCEnrollmentProviderGlue,
+                            DMCEnrollmentTableViewIconCellAccessibility,
+                            DMCEnrollmentTableViewTitleCellAccessibility,
+                            DMCEnrollmentTemplateTableViewControllerAccessibility,
+                            __DMCEnrollmentTableViewIconCellAccessibility_super,
+                            __DMCEnrollmentTableViewTitleCellAccessibility_super,
+                            __DMCEnrollmentTemplateTableViewControllerAccessibility_super ]
+...

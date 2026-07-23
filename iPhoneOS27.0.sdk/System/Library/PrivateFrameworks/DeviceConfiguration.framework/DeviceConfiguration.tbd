@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceConfiguration.framework/DeviceConfiguration
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DCProviderClassEducation,
+                            _DCProviderClassEnterprise,
+                            _DCProviderClassFamilyControls,
+                            _DCProviderClassRegulatory,
+                            _DCProviderClassUnspecified,
+                            _DeviceConfigurationVersionNumber,
+                            _DeviceConfigurationVersionString ]
+    objc-classes:         [ DCClassifiedConfigurationItem, DCSubscriptionToken,
+                            DCSystemConsumer, DCUserConsumer,
+                            _TtC19DeviceConfiguration15ConsumerService,
+                            _TtC19DeviceConfiguration15ProviderService,
+                            _TtC19DeviceConfiguration15StoreDescriptor,
+                            _TtC19DeviceConfiguration15StoreIdentifier,
+                            _TtC19DeviceConfiguration16PublisherService,
+                            _TtC19DeviceConfiguration16SandboxExtension,
+                            _TtC19DeviceConfiguration7Service ]
+...

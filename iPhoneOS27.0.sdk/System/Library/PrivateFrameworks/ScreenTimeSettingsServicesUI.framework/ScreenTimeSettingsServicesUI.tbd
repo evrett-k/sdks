@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ScreenTimeSettingsServicesUI.framework/ScreenTimeSettingsServicesUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ STSAgeVerificationPrompt, STSAskToBuyController,
+                            STSParentLoginCoordinator, STSParentLoginPrompt,
+                            STSParentSignInValidator,
+                            _TtC28ScreenTimeSettingsServicesUI19HiddenTextEntryView,
+                            _TtC28ScreenTimeSettingsServicesUI29ConnectToFamilyHostController,
+                            _TtCC28ScreenTimeSettingsServicesUI18STSContactsManager8Delegate,
+                            _TtCV28ScreenTimeSettingsServicesUI24ContentInsettableWebView11Coordinator ]
+    objc-ivars:           [ STSAgeVerificationPrompt._completion,
+                            STSAgeVerificationPrompt._flowPresenter,
+                            STSAskToBuyController._completion,
+                            STSAskToBuyController._stateController,
+                            STSParentLoginCoordinator._appleIDSetupPresenter,
+                            STSParentLoginCoordinator._completion,
+                            STSParentLoginPrompt._coordinator,
+                            STSParentLoginPrompt._processingRequestId ]
+...

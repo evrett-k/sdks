@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceSelectionEmergencyFlow.framework/DeviceSelectionEmergencyFlow
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ WiProxAdapterBase, WiProxAdvertiserAdapter,
+                            WiProxDeviceInfo, WiProxDiscoveryAdapter ]
+    objc-ivars:           [ WiProxAdapterBase._activationCompletionHandler,
+                            WiProxAdapterBase._bluetoothStateChangedHandler,
+                            WiProxAdapterBase._heySiri, WiProxAdapterBase._queue,
+                            WiProxDeviceInfo._deviceAddress,
+                            WiProxDeviceInfo._deviceUUID,
+                            WiProxDeviceInfo._heySiriConfidence,
+                            WiProxDeviceInfo._heySiriDeviceClass,
+                            WiProxDeviceInfo._heySiriDeviceGroup,
+                            WiProxDeviceInfo._heySiriPerceptualHash,
+                            WiProxDeviceInfo._heySiriProductType,
+                            WiProxDeviceInfo._heySiriRandom,
+                            WiProxDeviceInfo._heySiriSNR,
+                            WiProxDiscoveryAdapter._deviceFoundBlock ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/SubFrameworks/CoreAIDelegates.framework/CoreAIDelegates
+current-version:       3600.79.1
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/SubFrameworks/CoreAIAsset.framework/CoreAIAsset,
+                            /System/Library/SubFrameworks/CoreAICache.framework/CoreAICache,
+                            /System/Library/SubFrameworks/CoreAICommon.framework/CoreAICommon,
+                            /System/Library/SubFrameworks/CoreAICompiler.framework/CoreAICompiler,
+                            /System/Library/SubFrameworks/CoreAIRuntime.framework/CoreAIRuntime ]
+...

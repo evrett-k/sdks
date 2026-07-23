@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosGenerativeServices.framework/PhotosGenerativeServices
+current-version:       910.33.102
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ PGSDiagnostics, PGSDivideGainMapFilter,
+                            PGSMultiplyGainMapFilter,
+                            _TtC24PhotosGenerativeServices16ApplyDeltaFilter,
+                            _TtC24PhotosGenerativeServices16FastInfillFilter,
+                            _TtC24PhotosGenerativeServices17TileCropProcessor,
+                            _TtC24PhotosGenerativeServices18ComputeDeltaFilter,
+                            _TtC24PhotosGenerativeServices19FastInfillProcessor,
+                            _TtC24PhotosGenerativeServices20InpaintMaskProcessor,
+                            _TtC24PhotosGenerativeServices20OutfillMaskProcessor,
+                            _TtC24PhotosGenerativeServices21OutfillUVMapProcessor,
+                            _TtC24PhotosGenerativeServices21OutpaintingMaskFilter,
+                            _TtC24PhotosGenerativeServices22DivideGainMapProcessor,
+                            _TtC24PhotosGenerativeServices22SeamlessBlendingFilter,
+                            _TtC24PhotosGenerativeServices22TileCompositeProcessor,
+                            _TtC24PhotosGenerativeServices24MultiplyGainMapProcessor,
+                            _TtC24PhotosGenerativeServices25SeamlessBlendingProcessor,
+                            _TtC24PhotosGenerativeServices27ReframeUVMapRenderProcessor,
+                            _TtC24PhotosGenerativeServices29ReframeGainMapSwitchProcessor,
+                            _TtC24PhotosGenerativeServices33ReframeHomographyComputeProcessor ]
+...

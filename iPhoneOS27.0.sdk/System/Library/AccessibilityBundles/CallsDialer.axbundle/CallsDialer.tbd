@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/CallsDialer.axbundle/CallsDialer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString,
+                            _accessibilityMobilePhoneLocalizedString ]
+    objc-classes:         [ AXCallsDialerGlue, DialerControllerAccessibility,
+                            PHAbstractDialerViewAccessibility,
+                            PHBottomBarButtonAccessibility,
+                            PHDialerResultButtonViewAccessibility,
+                            PHHandsetDialerDeleteButtonAccessibility,
+                            PHHandsetDialerLCDViewAccessibility,
+                            PHHandsetDialerResizableButtonAccessibility,
+                            PHHandsetDialerViewAccessibility,
+                            PHLCDViewTextFieldAccessibility,
+                            PHTextCycleLabelAccessibility,
+                            __DialerControllerAccessibility_super,
+                            __PHAbstractDialerViewAccessibility_super,
+                            __PHBottomBarButtonAccessibility_super,
+                            __PHDialerResultButtonViewAccessibility_super,
+                            __PHHandsetDialerDeleteButtonAccessibility_super,
+                            __PHHandsetDialerLCDViewAccessibility_super,
+                            __PHHandsetDialerResizableButtonAccessibility_super,
+                            __PHHandsetDialerViewAccessibility_super,
+                            __PHLCDViewTextFieldAccessibility_super,
+                            __PHTextCycleLabelAccessibility_super ]
+...
