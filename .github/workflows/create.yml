@@ -80,7 +80,6 @@ jobs:
           PLATFORM_PATH="$(xcrun --sdk "${XC_SDK_NAME}" --show-sdk-platform-path)"
           BASE_SDK_PATH="$(xcrun --sdk "${XC_SDK_NAME}" --show-sdk-path)"
 
-          SYMBOLS_DIR="$(mktemp -d -t symbols)"
           IPSW_DOWNLOAD_DIR="$(mktemp -d -t ipsw)"
           DYLD_EXTRACT_DIR="$(mktemp -d -t dyld)"
 
@@ -113,11 +112,9 @@ jobs:
 
           IPSW_FILE="$(find "${IPSW_DOWNLOAD_DIR}" -name '*.ipsw' | head -n1)"
 
-          # ipsw handles locating the SystemOS DMG, AEA1 decryption (fetching
-          # FCS keys automatically if needed), and dyld_shared_cache extraction.
           ipsw extract --dyld --dyld-arch "${DSC_ARCH}" --flat --output "${DYLD_EXTRACT_DIR}" "${IPSW_FILE}"
 
-          DYLD_CACHE_PATH="$(find "${DYLD_EXTRACT_DIR}" -maxdepth 1 -name "${DSC_BASENAME}" | head -n1)"
+          DYLD_CACHE_PATH="$(find "${DYLD_EXTRACT_DIR}" -name "${DSC_BASENAME}" | head -n1)"
 
           echo "Found dyld_shared_cache: ${DYLD_CACHE_PATH}"
 
