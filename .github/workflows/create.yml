@@ -32,7 +32,7 @@ on:
 
 jobs:
   create:
-    runs-on: macos-latest
+    runs-on: xcode-27
     permissions:
       contents: write
 
