@@ -122,6 +122,11 @@ jobs:
             echo "Failed to find ${DSC_BASENAME} in IPSW"
             exit 1
           fi
+          
+          chmod +x ./create_patched_sdk_image.sh
+          ./create_patched_sdk_image.sh "${DYLD_CACHE_PATH}" "${SDK_OUTPUT_PATH}" "${BASE_SDK_PATH}" "${PLATFORM_PATH}" "${TBD_TOOL_PATH}"
+
+          echo "sdk-path=${SDK_OUTPUT_PATH}" >> "${GITHUB_OUTPUT}"
 
           ./create_patched_sdk_image.sh "${DYLD_CACHE_PATH}" "${SDK_OUTPUT_PATH}" "${BASE_SDK_PATH}" "${PLATFORM_PATH}" "${TBD_TOOL_PATH}"
 
