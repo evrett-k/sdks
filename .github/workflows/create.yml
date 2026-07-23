@@ -54,6 +54,9 @@ jobs:
           cd tbd
           make bin/tbd
 
+      - name: Trust blacktop/ipsw
+        run: brew trust blacktop/tap
+
       - name: Install blacktop/ipsw
         run: brew install blacktop/tap/ipsw
 
