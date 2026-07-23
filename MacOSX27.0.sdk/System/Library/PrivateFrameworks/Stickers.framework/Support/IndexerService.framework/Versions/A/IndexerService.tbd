@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/Stickers.framework/Support/IndexerService.framework/Versions/A/IndexerService'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s14IndexerService08StarmojiA6ClientC15unownedExecutorScevg', 
+                       '_$s14IndexerService08StarmojiA6ClientC15unownedExecutorScevpMV', 
+                       '_$s14IndexerService08StarmojiA6ClientC23notifyStickerWasCreatedSSyYaKF', 
+                       '_$s14IndexerService08StarmojiA6ClientC23notifyStickerWasCreatedSSyYaKFTu', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO17noValidXpcSessionyA2EmFWC', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO20responseNotDecodableyA2EmFWC', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO2eeoiySbAE_AEtFZ', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO4hash4intoys6HasherVz_tF', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO9hashValueSivg', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorO9hashValueSivpMV', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorOMa', '_$s14IndexerService08StarmojiA6ClientC5ErrorOMn', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorON', '_$s14IndexerService08StarmojiA6ClientC5ErrorOSHAAMc', 
+                       '_$s14IndexerService08StarmojiA6ClientC5ErrorOSQAAMc', '_$s14IndexerService08StarmojiA6ClientC5ErrorOsAdAMc', 
+                       '_$s14IndexerService08StarmojiA6ClientCACycfC', '_$s14IndexerService08StarmojiA6ClientCACycfCTj', 
+                       '_$s14IndexerService08StarmojiA6ClientCACycfCTq', '_$s14IndexerService08StarmojiA6ClientCACycfc', 
+                       '_$s14IndexerService08StarmojiA6ClientCMa', '_$s14IndexerService08StarmojiA6ClientCMm', 
+                       '_$s14IndexerService08StarmojiA6ClientCMn', '_$s14IndexerService08StarmojiA6ClientCMo', 
+                       '_$s14IndexerService08StarmojiA6ClientCMu', '_$s14IndexerService08StarmojiA6ClientCN', 
+                       '_$s14IndexerService08StarmojiA6ClientCScAAAMc', '_$s14IndexerService08StarmojiA6ClientCfD', 
+                       '_$s14IndexerService08StarmojiA6ClientCfd', '_$s14IndexerService08StarmojiaB0C0B6Shared08StickersB0AAMc', 
+                       '_$s14IndexerService08StarmojiaB0C11serviceNameSSvgZ', '_$s14IndexerService08StarmojiaB0C11serviceNameSSvpZMV', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorO07unknownE0yA2EmFWC', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorO08internalE0yAESSSg_tcAEmFWC', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorO4fromAEs7Decoder_p_tKcfC', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorO6encode2toys7Encoder_p_tKF', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorOMa', '_$s14IndexerService08StarmojiaB0C13ResponseErrorOMn', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorON', '_$s14IndexerService08StarmojiaB0C13ResponseErrorOSEAAMc', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorOSeAAMc', 
+                       '_$s14IndexerService08StarmojiaB0C13ResponseErrorOs0E0AAMc', 
+                       '_$s14IndexerService08StarmojiaB0C15unownedExecutorScevg', 
+                       '_$s14IndexerService08StarmojiaB0C15unownedExecutorScevpMV', 
+                       '_$s14IndexerService08StarmojiaB0C5startSbyF', '_$s14IndexerService08StarmojiaB0C5startSbyYaF', 
+                       '_$s14IndexerService08StarmojiaB0C5startSbyYaFTu', '_$s14IndexerService08StarmojiaB0CACycfC', 
+                       '_$s14IndexerService08StarmojiaB0CACycfCTj', '_$s14IndexerService08StarmojiaB0CACycfCTq', 
+                       '_$s14IndexerService08StarmojiaB0CACycfc', '_$s14IndexerService08StarmojiaB0CMa', 
+                       '_$s14IndexerService08StarmojiaB0CMm', '_$s14IndexerService08StarmojiaB0CMn', 
+                       '_$s14IndexerService08StarmojiaB0CMo', '_$s14IndexerService08StarmojiaB0CMu', 
+                       '_$s14IndexerService08StarmojiaB0CN', '_$s14IndexerService08StarmojiaB0CScAAAMc', 
+                       '_$s14IndexerService08StarmojiaB0CfD', '_$s14IndexerService08StarmojiaB0Cfd', 
+                       _IndexerServiceVersionNumber, _IndexerServiceVersionString ]
+...

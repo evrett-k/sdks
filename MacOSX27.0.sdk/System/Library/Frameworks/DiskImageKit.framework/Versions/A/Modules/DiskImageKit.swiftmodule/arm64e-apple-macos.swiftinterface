@@ -1,0 +1,269 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target arm64e-apple-macos27.0 -enable-objc-interop -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 596 -module-name DiskImageKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ASIFCreationConfiguration : DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration {
+  public static func layer(url: Foundation::URL, type: DiskImageKit::DiskImage.DiskImageKit::LayerType) -> DiskImageKit::ASIFLayerCreationConfiguration
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ASIFLayerCreationConfiguration : DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration, DiskImageKit::DiskImage.DiskImageKit::StackableLayer {
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct RAWCreationConfiguration : DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration {
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol OpenConfigurationProtocol {
+  var url: Foundation::URL { get }
+  var mode: DiskImageKit::OpenConfiguration.DiskImageKit::Mode { get }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct OpenConfiguration : DiskImageKit::OpenConfigurationProtocol {
+  public enum Mode {
+    case automatic
+    case readOnly
+    case readWrite
+    public static func == (a: DiskImageKit::OpenConfiguration.DiskImageKit::Mode, b: DiskImageKit::OpenConfiguration.DiskImageKit::Mode) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let url: Foundation::URL
+  public let mode: DiskImageKit::OpenConfiguration.DiskImageKit::Mode
+  public init(url: Foundation::URL, mode: DiskImageKit::OpenConfiguration.DiskImageKit::Mode = .automatic)
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration where Self == DiskImageKit::ASIFCreationConfiguration {
+  public static func asif(url: Foundation::URL, blockCount: Swift::Int, blockSize: DiskImageKit::DiskImage.DiskImageKit::BlockSize) -> Self
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration where Self == DiskImageKit::ASIFLayerCreationConfiguration {
+  @_alwaysEmitIntoClient public static func asifLayer(url: Foundation::URL, type: DiskImageKit::DiskImage.DiskImageKit::LayerType) -> Self {
+        ASIFCreationConfiguration.layer(url: url, type: type)
+    }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration where Self == DiskImageKit::RAWCreationConfiguration {
+  public static func raw(url: Foundation::URL, blockCount: Swift::Int) -> Self
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::OpenConfigurationProtocol where Self == DiskImageKit::OpenConfiguration {
+  public static func open(url: Foundation::URL, mode: DiskImageKit::OpenConfiguration.DiskImageKit::Mode = .automatic) -> Self
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public class DiskImage {
+  public enum Format {
+    case asif
+    case raw
+    case stack
+    public static func == (a: DiskImageKit::DiskImage.DiskImageKit::Format, b: DiskImageKit::DiskImage.DiskImageKit::Format) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct LayerType : Swift::Equatable, Swift::Sendable {
+    public static let cache: DiskImageKit::DiskImage.DiskImageKit::LayerType
+    public static let overlay: DiskImageKit::DiskImage.DiskImageKit::LayerType
+    public static func overlay(blockCount: Swift::Int) -> DiskImageKit::DiskImage.DiskImageKit::LayerType
+    public static func == (lhs: DiskImageKit::DiskImage.DiskImageKit::LayerType, rhs: DiskImageKit::DiskImage.DiskImageKit::LayerType) -> Swift::Bool
+  }
+  public enum BlockSize : Swift::Int, Swift::CaseIterable, Swift::Sendable {
+    case bytes512
+    case bytes4096
+    public init?(rawValue: Swift::Int)
+    @available(macOS 27.0, *)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [DiskImageKit::DiskImage.DiskImageKit::BlockSize]
+    @available(macOS 27.0, *)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+    nonisolated public static var allCases: [DiskImageKit::DiskImage.DiskImageKit::BlockSize] {
+      get
+    }
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  public protocol CreationConfiguration {
+  }
+  public protocol StackableLayer {
+  }
+  public var blockCount: Swift::Int {
+    get
+  }
+  public var blockSize: DiskImageKit::DiskImage.DiskImageKit::BlockSize {
+    get
+  }
+  public var size: Swift::Int {
+    get
+  }
+  public var layerType: DiskImageKit::DiskImage.DiskImageKit::LayerType? {
+    get
+  }
+  public var layerUUID: Foundation::UUID? {
+    get
+  }
+  public var parentUUID: Foundation::UUID? {
+    get
+  }
+  public var format: DiskImageKit::DiskImage.DiskImageKit::Format {
+    get
+  }
+  public var openMode: DiskImageKit::OpenConfiguration.DiskImageKit::Mode {
+    get
+  }
+  final public let url: Foundation::URL
+  convenience public init(creating configuration: some CreationConfiguration) throws
+  convenience public init(opening configuration: some OpenConfigurationProtocol) throws
+  public consuming func appending(_ layer: consuming DiskImageKit::DiskImage) throws -> any DiskImageKit::StackedImage
+  public consuming func appending(_ configuration: any DiskImageKit::DiskImage.DiskImageKit::CreationConfiguration & DiskImageKit::DiskImage.DiskImageKit::StackableLayer) throws -> any DiskImageKit::StackedImage
+  public func truncate(blockCount: Swift::Int) throws
+  @objc deinit
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct IncompatibleStackingError : Swift::Error, Foundation::LocalizedError {
+  public let reason: Swift::String
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct InvalidBlockCountError : Swift::Error, Foundation::LocalizedError {
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CorruptedImageError : Swift::Error, Foundation::LocalizedError {
+  public let underlyingError: any Swift::Error
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct UnsupportedFormatError : Swift::Error, Foundation::LocalizedError {
+  public let underlyingError: any Swift::Error
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol StackedImage : DiskImageKit::DiskImage {
+  var layers: [DiskImageKit::DiskImage] { get }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::OpenConfiguration.DiskImageKit::Mode : Swift::Equatable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::OpenConfiguration.DiskImageKit::Mode : Swift::Hashable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::Format : Swift::Equatable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::Format : Swift::Hashable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::BlockSize : Swift::Equatable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::BlockSize : Swift::Hashable {}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension DiskImageKit::DiskImage.DiskImageKit::BlockSize : Swift::RawRepresentable {}

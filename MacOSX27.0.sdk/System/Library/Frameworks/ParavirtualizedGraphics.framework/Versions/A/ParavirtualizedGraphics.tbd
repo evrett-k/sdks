@@ -1,0 +1,11 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/ParavirtualizedGraphics.framework/Versions/A/ParavirtualizedGraphics'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _PGCopyOptionROMURL, _PGCreateDeviceWithDescriptor, _PGMaxDisplayPortCount, 
+                       _PGResumeErrorDomain, _PGResumeErrorStringKey ]
+    objc-classes:    [ PGDeviceDescriptor, PGDisplayDescriptor, PGDisplayMode, PGIOSurfaceHostDevice, 
+                       PGIOSurfaceHostDeviceDescriptor, PGMemoryMapDescriptor ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/camera.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN23_ModuleCameraCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN23_ModuleCameraCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN23_ModuleCameraCallbacks_8paint_glER8OfObjectR10GlUtilsCtx, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler ]
+...

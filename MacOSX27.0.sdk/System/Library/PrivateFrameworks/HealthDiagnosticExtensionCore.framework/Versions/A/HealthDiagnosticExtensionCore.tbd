@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/HealthDiagnosticExtensionCore.framework/Versions/A/HealthDiagnosticExtensionCore'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationC14reportFilenameSSvg', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationC22attachmentDirectoryURLAC10Foundation0I0V_tcfC', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationC22attachmentDirectoryURLAC10Foundation0I0V_tcfc', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationC3runyyF', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationCMa', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationCMn', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationCMo', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationCN', 
+                       '_$s29HealthDiagnosticExtensionCore0a5TypesB9OperationCfD' ]
+    objc-classes:    [ HDDiagnosticExtension, HDDiagnosticOperation, _TtC29HealthDiagnosticExtensionCore30HealthTypesDiagnosticOperation ]
+...

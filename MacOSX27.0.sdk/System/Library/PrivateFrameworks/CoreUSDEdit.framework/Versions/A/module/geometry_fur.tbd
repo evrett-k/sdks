@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/geometry_fur.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN28_ModuleGeometryFurCallbacks_10create_gasER8OfObjectPK14GeometryObjectS4_PK24GeometryResourceOverride, 
+                       __ZN28_ModuleGeometryFurCallbacks_10init_classER7OfClass, 
+                       __ZN28_ModuleGeometryFurCallbacks_12get_clustersERK17ModuleSceneObjectP16GeometryOverrideR10CoreVectorIPvERKjRKf, 
+                       __ZN28_ModuleGeometryFurCallbacks_13create_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN28_ModuleGeometryFurCallbacks_14create_surfaceER8OfObjectP9CurveMeshPK24GeometryResourceOverride, 
+                       __ZN28_ModuleGeometryFurCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN28_ModuleGeometryFurCallbacks_15create_resourceER8OfObjectRKiPv, 
+                       __ZN28_ModuleGeometryFurCallbacks_15ray_hit_nearestER8OfObjectRK7CtxEvalR9CtxShaderR19GeometryRaytraceCtx, 
+                       __ZN28_ModuleGeometryFurCallbacks_18create_thread_dataERK8OfObjectRK7CtxEval, 
+                       __ZN28_ModuleGeometryFurCallbacks_18module_constructorER8OfObjectP8OfModule, 
+                       __ZN28_ModuleGeometryFurCallbacks_18on_resource_updateER8OfObjectRKiPK12ResourceData, 
+                       __ZN28_ModuleGeometryFurCallbacks_19destroy_thread_dataERK8OfObjectRK7CtxEvalPv, 
+                       __ZN28_ModuleGeometryFurCallbacks_19get_clusters_bboxesERK17ModuleSceneObjectP16GeometryOverrideRK14CoreBasicArrayIPvEP10GMathBbox3IfE, 
+                       __ZN28_ModuleGeometryFurCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN28_ModuleGeometryFurCallbacks_20get_clusters_weightsERK17ModuleSceneObjectP16GeometryOverrideRK14CoreBasicArrayIPvEPf, 
+                       __ZN28_ModuleGeometryFurCallbacks_21on_deserialize_objectER8OfObjectRK11CoreVersionRK11ParserGroupRK15OfSerialOptions, 
+                       __ZN28_ModuleGeometryFurCallbacks_22get_clusters_bboxes_atERK17ModuleSceneObjectP16GeometryOverrideRK7CtxEvalRKdRK14CoreBasicArrayIPvEP10GMathBbox3IfE, 
+                       __ZN28_ModuleGeometryFurCallbacks_24create_resource_overrideER8OfObjectRKiR16GeometryOverridePv, 
+                       __ZN28_ModuleGeometryFurCallbacks_25create_surface_propertiesER8OfObjectPK26GeometryPropertyCollectionPK8TubeMesh, 
+                       __ZN28_ModuleGeometryFurCallbacks_7ray_hitER8OfObjectRK7CtxEvalR9CtxShaderR19GeometryRaytraceCtx, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14ModuleGeometry15RESOURCE_ID_GASEvE16_RESOURCE_ID_GAS, 
+                       __ZGVZN14ModuleGeometry19RESOURCE_ID_SURFACEEvE20_RESOURCE_ID_SURFACE, 
+                       __ZGVZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZGVZN14ModuleGeometry28RESOURCE_ID_SURFACE_DEFORMEDEvE29_RESOURCE_ID_SURFACE_DEFORMED, 
+                       __ZGVZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_ANIMATEDEvE30_RESOURCE_ID_GEOMETRY_ANIMATED, 
+                       __ZGVZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_DEFORMEDEvE30_RESOURCE_ID_GEOMETRY_DEFORMED, 
+                       __ZGVZN14ModuleGeometry30RESOURCE_ID_SURFACE_PROPERTIESEvE31_RESOURCE_ID_SURFACE_PROPERTIES, 
+                       __ZGVZN14ModuleGeometry31RESOURCE_ID_GEOMETRY_PROPERTIESEvE32_RESOURCE_ID_GEOMETRY_PROPERTIES, 
+                       __ZGVZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT, 
+                       __ZZN14ModuleGeometry15RESOURCE_ID_GASEvE16_RESOURCE_ID_GAS, 
+                       __ZZN14ModuleGeometry19RESOURCE_ID_SURFACEEvE20_RESOURCE_ID_SURFACE, 
+                       __ZZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZZN14ModuleGeometry28RESOURCE_ID_SURFACE_DEFORMEDEvE29_RESOURCE_ID_SURFACE_DEFORMED, 
+                       __ZZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_ANIMATEDEvE30_RESOURCE_ID_GEOMETRY_ANIMATED, 
+                       __ZZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_DEFORMEDEvE30_RESOURCE_ID_GEOMETRY_DEFORMED, 
+                       __ZZN14ModuleGeometry30RESOURCE_ID_SURFACE_PROPERTIESEvE31_RESOURCE_ID_SURFACE_PROPERTIES, 
+                       __ZZN14ModuleGeometry31RESOURCE_ID_GEOMETRY_PROPERTIESEvE32_RESOURCE_ID_GEOMETRY_PROPERTIES, 
+                       __ZZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT ]
+...

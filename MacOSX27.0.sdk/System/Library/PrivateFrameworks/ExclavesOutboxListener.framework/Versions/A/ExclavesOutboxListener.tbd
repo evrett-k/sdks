@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ExclavesOutboxListener.framework/Versions/A/ExclavesOutboxListener'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s22ExclavesOutboxListener0C0C9serviceId5queue7handler9notifName08consumerI0ACSg0A17MessageQueueTypes0b7ServiceE0V_So012OS_dispatch_F0CyAL_AJ0aK0VtcS2StKcfC', 
+                       '_$s22ExclavesOutboxListener0C0C9serviceId5queue7handler9notifName08consumerI0ACSg0A17MessageQueueTypes0b7ServiceE0V_So012OS_dispatch_F0CyAL_AJ0aK0VtcS2StKcfCTj', 
+                       '_$s22ExclavesOutboxListener0C0C9serviceId5queue7handler9notifName08consumerI0ACSg0A17MessageQueueTypes0b7ServiceE0V_So012OS_dispatch_F0CyAL_AJ0aK0VtcS2StKcfCTq', 
+                       '_$s22ExclavesOutboxListener0C0C9serviceId5queue7handler9notifName08consumerI0ACSg0A17MessageQueueTypes0b7ServiceE0V_So012OS_dispatch_F0CyAL_AJ0aK0VtcS2StKcfc', 
+                       '_$s22ExclavesOutboxListener0C0CMa', '_$s22ExclavesOutboxListener0C0CMm', 
+                       '_$s22ExclavesOutboxListener0C0CMn', '_$s22ExclavesOutboxListener0C0CMo', 
+                       '_$s22ExclavesOutboxListener0C0CMu', '_$s22ExclavesOutboxListener0C0CN', 
+                       '_$s22ExclavesOutboxListener0C0CfD', '_$s22ExclavesOutboxListener0C0Cfd', 
+                       '_$s22ExclavesOutboxListener0C9InitErrorO5erroryACSScACmFWC', 
+                       '_$s22ExclavesOutboxListener0C9InitErrorOMa', '_$s22ExclavesOutboxListener0C9InitErrorOMn', 
+                       '_$s22ExclavesOutboxListener0C9InitErrorON', '_$s22ExclavesOutboxListener0C9InitErrorOs0E0AAMc', 
+                       _ExclavesOutboxListenerVersionNumber, _ExclavesOutboxListenerVersionString, 
+                       __cancel_exclaves_notification_source, __create_exclaves_notification_source, 
+                       __exclaves_nofitication_source_activate_with_handler ]
+...

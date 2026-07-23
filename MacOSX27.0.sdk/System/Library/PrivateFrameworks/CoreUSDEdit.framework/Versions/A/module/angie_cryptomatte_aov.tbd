@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/angie_cryptomatte_aov.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN19AngieCryptomatteAov11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN36_ModuleAngieCryptomatteAovCallbacks_11update_aovsER8OfObject, 
+                       __ZN36_ModuleAngieCryptomatteAovCallbacks_18module_constructorER8OfObjectP8OfModule, 
+                       __ZN36_ModuleAngieCryptomatteAovCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZN11ImageSampleIdEC1ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC1Ev, 
+                       __ZN11ImageSampleIdEC2ERKjS2_RKdS4_S4_S4_, __ZN11ImageSampleIdEC2Ev, 
+                       __ZN11ImageSampleIfEC1ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC1Ev, 
+                       __ZN11ImageSampleIfEC2ERKjS2_RKfS4_S4_S4_, __ZN11ImageSampleIfEC2Ev ]
+...

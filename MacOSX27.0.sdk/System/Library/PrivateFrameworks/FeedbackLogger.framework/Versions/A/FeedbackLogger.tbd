@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/FeedbackLogger.framework/Versions/A/FeedbackLogger'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo15FLAutoBugHelperC14FeedbackLoggerEABycfC', '_$sSo15FLAutoBugHelperC14FeedbackLoggerEABycfc', 
+                       '_$sSo15FLAutoBugHelperCMa', '_$sSo16FLAutoBugCaptureCMa', 
+                       '_$sSo17FLDPGBatchFactoryC14FeedbackLoggerEABycfC', '_$sSo17FLDPGBatchFactoryC14FeedbackLoggerEABycfc', 
+                       '_$sSo17FLDPGBatchFactoryCMa', '_$sSo23FeedbackLoggerFBFClientC0aB0EABycfC', 
+                       '_$sSo23FeedbackLoggerFBFClientC0aB0EABycfc', '_$sSo23FeedbackLoggerFBFClientCMa', 
+                       _FLErrorDomain, _FLGetBootSessionUUID, _FLIgnoreQuotaFilename, 
+                       _FLSignpostLoggingInit, _FLUploadHeadersKey, _FLUploadImmediately, 
+                       _FL_LOG_SIGNPOSTS, _FeedbackLoggerVersionNumber, _FeedbackLoggerVersionString, 
+                       _convertBatchStatusToCAOutcome, _convertUploadStatusToCAOutcome, 
+                       _flAnnotatedLogForObject, _flLogForObject, _kMaxBatchContinuesDuration, 
+                       _tryGetDataProperty, _tryGetDateProperty, _tryGetTextProperty ]
+    objc-classes:    [ BatchMetadata, FLAutoBugCapture, FLAutoBugHelper, FLContainerStorePathManager, 
+                       FLDPGBatch, FLDPGBatchFactory, FLLogger, FLLoggingContext, 
+                       FLSQLiteDatabaseConnection, FLSQLitePersistence, FLWriteTransaction, 
+                       FeedbackLoggerFBFClient, UploadRecord ]
+...

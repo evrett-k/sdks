@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/LocalSpeechRecognitionBridge.framework/Versions/A/LocalSpeechRecognitionBridge'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _LBAttendingStatesServiceDelegateGetXPCInterface, _LBAttendingStatesServiceGetXPCInterface, 
+                       _LBAttendingStatesServiceName, _LBAudibleExperienceErrorDomain, 
+                       _LBAudioStreamConsumerServiceDelegateGetXPCInterface, _LBAudioStreamConsumerServiceGetXPCInterface, 
+                       _LBAudioStreamConsumerServiceName, _LBAudioStreamProviderServiceDelegateGetXPCInterface, 
+                       _LBAudioStreamProviderServiceGetXPCInterface, _LBAudioStreamProviderServiceName, 
+                       _LBErrorDomain, _LBLocalSpeechServiceDelegateGetXPCInterface, 
+                       _LBLocalSpeechServiceGetXPCInterface, _LBLocalSpeechServiceName, 
+                       _LBLogContextFacilityLocalSRBridge, _LBLogInitIfNeeded, _LBLoggingSubsystem, 
+                       _LBOutputStreamPlayerServiceGetXPCInterface, _LBOutputStreamPlayerServiceName, 
+                       _LBSpeechRecognitionModeDescription, _LBTurnInformationConsumerServiceDelegateGetXPCInterface, 
+                       _LBTurnInformationConsumerServiceGetXPCInterface, _LBTurnInformationConsumerServiceName, 
+                       _kLBLocalSpeechRecognizerMaximumLocalRecognitionDuration, 
+                       _kLBLoggingContextFramework ]
+    objc-classes:    [ LBAttendingStatesServiceClient, LBAudibleExperienceClient, 
+                       LBAudibleExperienceError, LBAudioCapture, LBAudioChunk, LBAudioPacket, 
+                       LBAudioRecordingAccessor, LBAudioSessionInformEvent, LBAudioSessionMediaControlEvent, 
+                       LBAudioSessionPhoneCallEvent, LBAudioSessionRecordingEvent, 
+                       LBAudioStreamConfiguration, LBAudioStreamConsumer, LBAudioStreamConsumerConfiguration, 
+                       LBAudioStreamInfo, LBAudioStreamProvider, LBConversationalInteraction, 
+                       LBConversationalInteractionService, LBLocalSpeechDetectionUpdates, 
+                       LBLocalSpeechDetectionUpdatesBuilder, LBLocalSpeechRecognitionSettings, 
+                       LBLocalSpeechRecognizerClient, LBLocalSpeechRecognizerTurnEndContext, 
+                       LBLocalSpeechRecognizerTurnFinalizedContext, LBLocalSpeechRecognizerTurnStartContext, 
+                       LBOutputStream, LBOutputStreamConsumerConfiguration, LBSpeakerChangeEvent ]
+...

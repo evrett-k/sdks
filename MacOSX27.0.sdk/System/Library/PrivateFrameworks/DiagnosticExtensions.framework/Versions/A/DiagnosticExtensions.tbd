@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _DEAppleArchiveErrorDomain, _DEExtensionClientEntitlementHostKey, 
+                       _DEExtensionClientEntitlementKey, _DEExtensionTrackerEarliestExpirationDateKey, 
+                       _DEExtensionTrackerExpirationDateKey, _DEExtensionTrackerSessionsKey, 
+                       _DEExtensionTrackerUserDefaultsKey, _DEExtensionTrackerXPCActivityDateKey, 
+                       _DEExtensionTrackerXPCActivityKey, _DEUtilsConnectionHasEntitlement, 
+                       _DEUtilsValidateConnection, _DEUtilsValidateDestination, _DiagnosticExtensionsVersionNumber, 
+                       _DiagnosticExtensionsVersionString, _pgrep, _signal_USR2 ]
+    objc-classes:    [ DEAnnotatedGroup, DEAnnotation, DEAppleArchiveReader, DEAppleArchiver, 
+                       DEArchive, DEArchiveReader, DEArchiver, DEAttachmentGroup, 
+                       DEAttachmentItem, DEAttachmentItemSandboxExtensionHandle, 
+                       DECollectionProgress, DEDaemonHelper, DEExtension, DEExtensionContext, 
+                       DEExtensionHostContext, DEExtensionManager, DEExtensionProvider, 
+                       DEExtensionTracker, DELogMover, DELogging, DELoggingPreferences, 
+                       DEUtils, DiagnosticExtensions_Subsystem ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/r2c_aov_item.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN10R2cAovItem11on_registerER5OfAppR10CoreVectorIP7OfClassE, 
+                       __ZN33_ModuleModuleR2cAovItemCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN33_ModuleModuleR2cAovItemCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       _on_register_module ]
+...

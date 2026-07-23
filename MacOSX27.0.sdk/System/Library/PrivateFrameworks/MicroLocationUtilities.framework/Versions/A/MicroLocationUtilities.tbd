@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/MicroLocationUtilities.framework/Versions/A/MicroLocationUtilities'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _ULEnterSandbox, _ULLeftBudYawFromQuaternion, _ULQuaternionFromTransform, 
+                       _ULQuaternionFromYaw, _ULRightBudYawFromQuaternion, _ULRotationNotAvailable, 
+                       _ULYawFromQuaternion, _ULYawNotAvailable ]
+    objc-classes:    [ ULBidirectionalDictionary, ULDarwinNotificationHelper, ULEvent, 
+                       ULEventMonitor, ULFeatureFlags, ULFuture, ULMemoryLoadHelper, 
+                       ULNumericUtilities, ULObjectCacheNSString, ULPair, ULPlatform, 
+                       ULPromise, ULRotationMatrixUtils, ULSameSpaceUtilities, ULScheduler, 
+                       ULTapToRadar, ULTimer, ULTimerFactory, ULUserNotification, 
+                       ULWeakProxy ]
+...

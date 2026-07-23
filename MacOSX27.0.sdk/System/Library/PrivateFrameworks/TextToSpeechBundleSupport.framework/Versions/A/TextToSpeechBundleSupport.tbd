@@ -1,0 +1,68 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/TextToSpeechBundleSupport.framework/Versions/A/TextToSpeechBundleSupport'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst ]
+    weak-symbols:    [ __ZTINSt3__110__function6__baseIFiN14TTSSynthesizer15CallbackMessageEEEE, 
+                       __ZTSNSt3__110__function6__baseIFiN14TTSSynthesizer15CallbackMessageEEEE ]
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC0abC00gH0AAMc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC0abC019TestableSynthesizerAAMc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersV11neuralStyleAESS_tcfC', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersV2eeoiySbAE_AEtFZ', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersV4hash4intoys6HasherVz_tF', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersV9hashValueSivg', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersV9hashValueSivpMV', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersVMa', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersVMn', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersVN', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersVSHAAMc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10ParametersVSQAAMc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10synthesize6speech8toStreamy0abC09TTSMarkupO0C8DocumentV_AG012BackPressureL0CyAG0G6BufferVGtFTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC10synthesize6speech8toStreamy0abC09TTSMarkupO0C8DocumentV_AG012BackPressureL0CyAG0G6BufferVGtFTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC13setParametersyyAC0J0VYaKFTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC13setParametersyyAC0J0VYaKFTjTu', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC13setParametersyyAC0J0VYaKFTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15availableStylesSaySo20TTSSiriSpeakingStyleCGvgTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15availableStylesSaySo20TTSSiriSpeakingStyleCGvgTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15availableStylesSaySo20TTSSiriSpeakingStyleCGvpMV', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15setResourcePathyySSSgFTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15setResourcePathyySSSgFTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15unownedExecutorScevg', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC15unownedExecutorScevpMV', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC6formatSo27AudioStreamBasicDescriptionVvgZ', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC6formatSo27AudioStreamBasicDescriptionVvpZMV', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8defaults8forVoiceAC10ParametersV0abC00K8WithPathV_tYaKFTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8defaults8forVoiceAC10ParametersV0abC00K8WithPathV_tYaKFTjTu', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8defaults8forVoiceAC10ParametersV0abC00K8WithPathV_tYaKFTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8setVoiceyy0abC00J8WithPathVYaKFTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8setVoiceyy0abC00J8WithPathVYaKFTjTu', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineC8setVoiceyy0abC00J8WithPathVYaKFTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCACycfC', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCACycfCTj', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCACycfCTq', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCACycfc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCMa', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCMm', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCMn', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCMo', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCMu', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCN', '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCScAAAMc', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCfD', 
+                       '_$s25TextToSpeechBundleSupport19SiriSynthesisEngineCfd', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitC20componentDescription7optionsACSo0h9ComponentK0V_So0hM20InstantiationOptionsVtKcfC', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitC20componentDescription7optionsACSo0h9ComponentK0V_So0hM20InstantiationOptionsVtKcfc', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCMa', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCMn', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCMo', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCMs', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCMu', 
+                       '_$s25TextToSpeechBundleSupport21TTSSiriSynthAudioUnitCfD', 
+                       '_$sSS25TextToSpeechBundleSupportE6osTypes6UInt32VyF', '_OBJC_METACLASS_$__TtC25TextToSpeechBundleSupport21TTSSiriSynthAudioUnit', 
+                       _TextToSpeechBundleSupportVersionNumber, _TextToSpeechBundleSupportVersionString, 
+                       __TTSSystemFocusedPid ]
+    objc-classes:    [ TTSNeuralStyle, TTSSiriDynamicPrompts, TTSSiriMarker, TTSSiriSpeakingStyle, 
+                       TTSSiriSynthWrapper, TTSSiriVoiceResource, TTSSynthesizerWrapper ]
+...

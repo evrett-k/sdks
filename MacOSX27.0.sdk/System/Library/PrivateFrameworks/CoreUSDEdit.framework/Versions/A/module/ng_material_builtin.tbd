@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/ng_material_builtin.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN17NgMaterialBuiltin26on_register_shadow_catcherER5OfAppR10CoreVectorIP7OfClassE, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN16OslShaderManager19OSL_SHADER_TYPE_KEYEvE20_OSL_SHADER_TYPE_KEY, 
+                       __ZGVZN16OslShaderManager21OSL_SHADER_INPUTS_KEYEvE22_OSL_SHADER_INPUTS_KEY, 
+                       __ZGVZN16OslShaderManager22OSL_SHADER_OUTPUTS_KEYEvE23_OSL_SHADER_OUTPUTS_KEY, 
+                       __ZZN16OslShaderManager19OSL_SHADER_TYPE_KEYEvE20_OSL_SHADER_TYPE_KEY, 
+                       __ZZN16OslShaderManager21OSL_SHADER_INPUTS_KEYEvE22_OSL_SHADER_INPUTS_KEY, 
+                       __ZZN16OslShaderManager22OSL_SHADER_OUTPUTS_KEYEvE23_OSL_SHADER_OUTPUTS_KEY ]
+...

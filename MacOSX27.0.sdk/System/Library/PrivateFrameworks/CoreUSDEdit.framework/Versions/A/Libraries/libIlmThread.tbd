@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/Libraries/libIlmThread.dylib'
+current-version: 30.11.1
+compatibility-version: 30
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN13IlmThread_3_110ThreadPool13addGlobalTaskEPNS_4TaskE, 
+                       __ZN13IlmThread_3_110ThreadPool13setNumThreadsEi, __ZN13IlmThread_3_110ThreadPool16globalThreadPoolEv, 
+                       __ZN13IlmThread_3_110ThreadPool17setThreadProviderEPNS_18ThreadPoolProviderE, 
+                       __ZN13IlmThread_3_110ThreadPool28estimateThreadCountForFileIOEv, 
+                       __ZN13IlmThread_3_110ThreadPool7addTaskEPNS_4TaskE, __ZN13IlmThread_3_110ThreadPoolC1Ej, 
+                       __ZN13IlmThread_3_110ThreadPoolC2Ej, __ZN13IlmThread_3_110ThreadPoolD0Ev, 
+                       __ZN13IlmThread_3_110ThreadPoolD1Ev, __ZN13IlmThread_3_110ThreadPoolD2Ev, 
+                       __ZN13IlmThread_3_115supportsThreadsEv, __ZN13IlmThread_3_118ThreadPoolProviderC2Ev, 
+                       __ZN13IlmThread_3_118ThreadPoolProviderD0Ev, __ZN13IlmThread_3_118ThreadPoolProviderD1Ev, 
+                       __ZN13IlmThread_3_118ThreadPoolProviderD2Ev, __ZN13IlmThread_3_14Task5groupEv, 
+                       __ZN13IlmThread_3_14TaskC2EPNS_9TaskGroupE, __ZN13IlmThread_3_14TaskD0Ev, 
+                       __ZN13IlmThread_3_14TaskD1Ev, __ZN13IlmThread_3_14TaskD2Ev, 
+                       __ZN13IlmThread_3_16Thread4joinEv, __ZN13IlmThread_3_16Thread5startEv, 
+                       __ZN13IlmThread_3_16ThreadC2Ev, __ZN13IlmThread_3_16ThreadD0Ev, 
+                       __ZN13IlmThread_3_16ThreadD1Ev, __ZN13IlmThread_3_16ThreadD2Ev, 
+                       __ZN13IlmThread_3_19Semaphore4postEv, __ZN13IlmThread_3_19Semaphore4waitEv, 
+                       __ZN13IlmThread_3_19Semaphore7tryWaitEv, __ZN13IlmThread_3_19SemaphoreC1Ej, 
+                       __ZN13IlmThread_3_19SemaphoreC2Ej, __ZN13IlmThread_3_19SemaphoreD0Ev, 
+                       __ZN13IlmThread_3_19SemaphoreD1Ev, __ZN13IlmThread_3_19SemaphoreD2Ev, 
+                       __ZN13IlmThread_3_19TaskGroup13finishOneTaskEv, __ZN13IlmThread_3_19TaskGroupC1Ev, 
+                       __ZN13IlmThread_3_19TaskGroupC2Ev, __ZN13IlmThread_3_19TaskGroupD1Ev, 
+                       __ZN13IlmThread_3_19TaskGroupD2Ev, __ZNK13IlmThread_3_110ThreadPool10numThreadsEv, 
+                       __ZNK13IlmThread_3_16Thread8joinableEv, __ZNK13IlmThread_3_19Semaphore5valueEv, 
+                       __ZTIN13IlmThread_3_110ThreadPoolE, __ZTIN13IlmThread_3_118ThreadPoolProviderE, 
+                       __ZTIN13IlmThread_3_14TaskE, __ZTIN13IlmThread_3_16ThreadE, 
+                       __ZTIN13IlmThread_3_19SemaphoreE, __ZTSN13IlmThread_3_110ThreadPoolE, 
+                       __ZTSN13IlmThread_3_118ThreadPoolProviderE, __ZTSN13IlmThread_3_14TaskE, 
+                       __ZTSN13IlmThread_3_16ThreadE, __ZTSN13IlmThread_3_19SemaphoreE, 
+                       __ZTVN13IlmThread_3_110ThreadPoolE, __ZTVN13IlmThread_3_118ThreadPoolProviderE, 
+                       __ZTVN13IlmThread_3_14TaskE, __ZTVN13IlmThread_3_16ThreadE, 
+                       __ZTVN13IlmThread_3_19SemaphoreE ]
+...

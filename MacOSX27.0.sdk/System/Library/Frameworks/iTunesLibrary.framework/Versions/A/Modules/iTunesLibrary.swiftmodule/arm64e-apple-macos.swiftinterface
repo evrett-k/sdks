@@ -1,0 +1,25 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target arm64e-apple-macos27.0 -enable-objc-interop -enable-library-evolution -language-mode 6 -Osize -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 13.7.0.137 -module-name iTunesLibrary
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import iTunesLibrary
+@available(macOS 26.0, *)
+public struct DidChangeLibraryMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+  public typealias Subject = iTunesLibrary::ITLibrary
+  public static var name: Foundation::Notification.Foundation::Name {
+    get
+  }
+  @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> iTunesLibrary::DidChangeLibraryMessage?
+  @_Concurrency::MainActor public static func makeNotification(_ message: iTunesLibrary::DidChangeLibraryMessage) -> Foundation::Notification
+}
+@available(macOS 26.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<iTunesLibrary::DidChangeLibraryMessage> {
+  public static var didChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<iTunesLibrary::DidChangeLibraryMessage> {
+    get
+  }
+}

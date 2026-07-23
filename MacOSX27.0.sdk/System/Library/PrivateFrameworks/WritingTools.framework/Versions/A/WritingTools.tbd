@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/WritingTools.framework/Versions/A/WritingTools'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s12WritingTools21CodableTextSuggestionC08asWTTextE0So0gE0CyFTj', 
+                       '_$s12WritingTools21CodableTextSuggestionC08asWTTextE0So0gE0CyFTq', 
+                       '_$s12WritingTools21CodableTextSuggestionC11grammarUUIDSSSgvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC11grammarUUIDSSSgvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC11replacementSSvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC11replacementSSvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC14originalStringSSSgvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC14originalStringSSSgvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC14suggestionTypeSivg', 
+                       '_$s12WritingTools21CodableTextSuggestionC14suggestionTypeSivpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC18suggestionCategorySSSgvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC18suggestionCategorySSSgvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC19originalRangeLengthSivg', 
+                       '_$s12WritingTools21CodableTextSuggestionC19originalRangeLengthSivpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC21originalRangeLocationSivg', 
+                       '_$s12WritingTools21CodableTextSuggestionC21originalRangeLocationSivpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC21suggestionDescriptionSSSgvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC21suggestionDescriptionSSSgvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC4UUID13originalRange11replacement18suggestionCategory0J11Description5state0J4Type0G6String07grammarF0AC10FoundationADV_So8_NSRangeVS2SSgAQS2iA2QtcfC', 
+                       '_$s12WritingTools21CodableTextSuggestionC4UUID13originalRange11replacement18suggestionCategory0J11Description5state0J4Type0G6String07grammarF0AC10FoundationADV_So8_NSRangeVS2SSgAQS2iA2QtcfCTj', 
+                       '_$s12WritingTools21CodableTextSuggestionC4UUID13originalRange11replacement18suggestionCategory0J11Description5state0J4Type0G6String07grammarF0AC10FoundationADV_So8_NSRangeVS2SSgAQS2iA2QtcfCTq', 
+                       '_$s12WritingTools21CodableTextSuggestionC4UUID13originalRange11replacement18suggestionCategory0J11Description5state0J4Type0G6String07grammarF0AC10FoundationADV_So8_NSRangeVS2SSgAQS2iA2Qtcfc', 
+                       '_$s12WritingTools21CodableTextSuggestionC4fromACs7Decoder_p_tKcfC', 
+                       '_$s12WritingTools21CodableTextSuggestionC4fromACs7Decoder_p_tKcfCTj', 
+                       '_$s12WritingTools21CodableTextSuggestionC4fromACs7Decoder_p_tKcfCTq', 
+                       '_$s12WritingTools21CodableTextSuggestionC4fromACs7Decoder_p_tKcfc', 
+                       '_$s12WritingTools21CodableTextSuggestionC4uuid10Foundation4UUIDVvg', 
+                       '_$s12WritingTools21CodableTextSuggestionC4uuid10Foundation4UUIDVvpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC5stateSivg', '_$s12WritingTools21CodableTextSuggestionC5stateSivpMV', 
+                       '_$s12WritingTools21CodableTextSuggestionC6encode2toys7Encoder_p_tKFTj', 
+                       '_$s12WritingTools21CodableTextSuggestionC6encode2toys7Encoder_p_tKFTq', 
+                       '_$s12WritingTools21CodableTextSuggestionCACycfC', '_$s12WritingTools21CodableTextSuggestionCACycfc', 
+                       '_$s12WritingTools21CodableTextSuggestionCMa', '_$s12WritingTools21CodableTextSuggestionCMn', 
+                       '_$s12WritingTools21CodableTextSuggestionCMo', '_$s12WritingTools21CodableTextSuggestionCMu', 
+                       '_$s12WritingTools21CodableTextSuggestionCN', '_$s12WritingTools21CodableTextSuggestionCSEAAMc', 
+                       '_$s12WritingTools21CodableTextSuggestionCSeAAMc', '_$s12WritingTools21CodableTextSuggestionCfD', 
+                       _BaseResponseKey, _InputContextHistoryKey, _NSStringFromWTTextSuggestionState, 
+                       _SelectedEntryKey, _WTFollowUpStoreErrorDomain, _WTWritingToolsPreservedAttributeName, 
+                       _WritingToolsVersionNumber, _WritingToolsVersionString ]
+    objc-classes:    [ WTAlwaysOnProofreadingPopoverAnchor, WTAvailability, WTBSCompatibleAttributedString, 
+                       WTCodableTextSuggestion, WTContext, WTFollowUpEntry, WTFollowUpQueryOptions, 
+                       WTFollowUpStore, WTSession, WTSmartReplyConfiguration, WTTextSuggestion ]
+...

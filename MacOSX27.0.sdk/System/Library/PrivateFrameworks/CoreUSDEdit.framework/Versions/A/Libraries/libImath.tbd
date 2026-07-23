@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/Libraries/libImath.dylib'
+current-version: 29.8
+compatibility-version: 29
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __Z9printBitsPcN9Imath_3_14halfE, __Z9printBitsPcf, __Z9printBitsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEEN9Imath_3_14halfE, 
+                       __Z9printBitsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEEf, 
+                       __ZN9Imath_3_111identity22dE, __ZN9Imath_3_111identity22fE, 
+                       __ZN9Imath_3_111identity33dE, __ZN9Imath_3_111identity33fE, 
+                       __ZN9Imath_3_111identity44dE, __ZN9Imath_3_111identity44fE, 
+                       __ZN9Imath_3_15preddEd, __ZN9Imath_3_15predfEf, __ZN9Imath_3_15succdEd, 
+                       __ZN9Imath_3_15succfEf, __ZN9Imath_3_16Rand325nextfEv, __ZN9Imath_3_17drand48Ev, 
+                       __ZN9Imath_3_17erand48EPt, __ZN9Imath_3_17lrand48Ev, __ZN9Imath_3_17nrand48EPt, 
+                       __ZN9Imath_3_17srand48El, __ZN9Imath_3_19hsv2rgb_dERKNS_4Vec3IdEE, 
+                       __ZN9Imath_3_19hsv2rgb_dERKNS_6Color4IdEE, __ZN9Imath_3_19rgb2hsv_dERKNS_4Vec3IdEE, 
+                       __ZN9Imath_3_19rgb2hsv_dERKNS_6Color4IdEE, __ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEEN9Imath_3_14halfE, 
+                       __ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEERN9Imath_3_14halfE, 
+                       _imath_half_to_float_table ]
+    weak-symbols:    [ __ZN9Imath_3_114maxEigenVectorINS_8Matrix33IdEENS_4Vec3IdEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114maxEigenVectorINS_8Matrix33IfEENS_4Vec3IfEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114maxEigenVectorINS_8Matrix44IdEENS_4Vec4IdEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114maxEigenVectorINS_8Matrix44IfEENS_4Vec4IfEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114minEigenVectorINS_8Matrix33IdEENS_4Vec3IdEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114minEigenVectorINS_8Matrix33IfEENS_4Vec3IfEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114minEigenVectorINS_8Matrix44IdEENS_4Vec4IdEEEEvRT_RT0_, 
+                       __ZN9Imath_3_114minEigenVectorINS_8Matrix44IfEENS_4Vec4IfEEEEvRT_RT0_, 
+                       __ZN9Imath_3_117jacobiEigenSolverIdEEvRNS_8Matrix33IT_EERNS_4Vec3IS2_EES4_S2_, 
+                       __ZN9Imath_3_117jacobiEigenSolverIdEEvRNS_8Matrix44IT_EERNS_4Vec4IS2_EES4_S2_, 
+                       __ZN9Imath_3_117jacobiEigenSolverIfEEvRNS_8Matrix33IT_EERNS_4Vec3IS2_EES4_S2_, 
+                       __ZN9Imath_3_117jacobiEigenSolverIfEEvRNS_8Matrix44IT_EERNS_4Vec4IS2_EES4_S2_, 
+                       __ZN9Imath_3_132procrustesRotationAndTranslationIdEENS_8Matrix44IdEEPKNS_4Vec3IT_EES7_PKS4_mb, 
+                       __ZN9Imath_3_132procrustesRotationAndTranslationIdEENS_8Matrix44IdEEPKNS_4Vec3IT_EES7_mb, 
+                       __ZN9Imath_3_132procrustesRotationAndTranslationIfEENS_8Matrix44IdEEPKNS_4Vec3IT_EES7_PKS4_mb, 
+                       __ZN9Imath_3_132procrustesRotationAndTranslationIfEENS_8Matrix44IdEEPKNS_4Vec3IT_EES7_mb, 
+                       __ZN9Imath_3_19jacobiSVDIdEEvRKNS_8Matrix33IT_EERS3_RNS_4Vec3IS2_EES6_S2_b, 
+                       __ZN9Imath_3_19jacobiSVDIdEEvRKNS_8Matrix44IT_EERS3_RNS_4Vec4IS2_EES6_S2_b, 
+                       __ZN9Imath_3_19jacobiSVDIfEEvRKNS_8Matrix33IT_EERS3_RNS_4Vec3IS2_EES6_S2_b, 
+                       __ZN9Imath_3_19jacobiSVDIfEEvRKNS_8Matrix44IT_EERS3_RNS_4Vec4IS2_EES6_S2_b ]
+...

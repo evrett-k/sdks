@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AccessoryServices.framework/Versions/A/AccessoryServices'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s17AccessoryServices0A7ManagerC10invalidateyyYaFTj', '_$s17AccessoryServices0A7ManagerC10invalidateyyYaFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC10invalidateyyYaFTq', '_$s17AccessoryServices0A7ManagerC11accessories6filterSay0A5Types0A0VGAF18SubscriptionFilterVSg_tYaKFTj', 
+                       '_$s17AccessoryServices0A7ManagerC11accessories6filterSay0A5Types0A0VGAF18SubscriptionFilterVSg_tYaKFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC11accessories6filterSay0A5Types0A0VGAF18SubscriptionFilterVSg_tYaKFTq', 
+                       '_$s17AccessoryServices0A7ManagerC16sendDeviceConfig6config10identifiery0A5Types0aF0V_SStYaKFTj', 
+                       '_$s17AccessoryServices0A7ManagerC16sendDeviceConfig6config10identifiery0A5Types0aF0V_SStYaKFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC16sendDeviceConfig6config10identifiery0A5Types0aF0V_SStYaKFTq', 
+                       '_$s17AccessoryServices0A7ManagerC8activateyyYaKFTj', '_$s17AccessoryServices0A7ManagerC8activateyyYaKFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC8activateyyYaKFTq', '_$s17AccessoryServices0A7ManagerC9accessory2id0A5Types0A0VSgSS_tYaKFTj', 
+                       '_$s17AccessoryServices0A7ManagerC9accessory2id0A5Types0A0VSgSS_tYaKFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC9accessory2id0A5Types0A0VSgSS_tYaKFTq', 
+                       '_$s17AccessoryServices0A7ManagerC9subscribe10properties6filterScSy0A5Types0A5EventOGSayAG11PropertyKeyOGSg_AG18SubscriptionFilterVSgtYaKFTj', 
+                       '_$s17AccessoryServices0A7ManagerC9subscribe10properties6filterScSy0A5Types0A5EventOGSayAG11PropertyKeyOGSg_AG18SubscriptionFilterVSgtYaKFTjTu', 
+                       '_$s17AccessoryServices0A7ManagerC9subscribe10properties6filterScSy0A5Types0A5EventOGSayAG11PropertyKeyOGSg_AG18SubscriptionFilterVSgtYaKFTq', 
+                       '_$s17AccessoryServices0A7ManagerCACycfC', '_$s17AccessoryServices0A7ManagerCACycfCTj', 
+                       '_$s17AccessoryServices0A7ManagerCACycfCTq', '_$s17AccessoryServices0A7ManagerCACycfc', 
+                       '_$s17AccessoryServices0A7ManagerCMa', '_$s17AccessoryServices0A7ManagerCMm', 
+                       '_$s17AccessoryServices0A7ManagerCMn', '_$s17AccessoryServices0A7ManagerCMo', 
+                       '_$s17AccessoryServices0A7ManagerCMu', '_$s17AccessoryServices0A7ManagerCN', 
+                       '_$s17AccessoryServices0A7ManagerCfD', '_$s17AccessoryServices0A7ManagerCfd' ]
+...

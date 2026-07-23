@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AccelerateOpt.framework/Versions/A/AccelerateOpt'
+current-version: 0
+compatibility-version: 0
+reexported-libraries:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    libraries:       [ '/System/Library/PrivateFrameworks/AccelerateOpt.framework/Versions/A/libipopt.dylib' ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ __AccelerateOptDummyFunction ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AccelerateOpt.framework/Versions/A/libipopt.dylib'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _AddIpoptIntOption, _AddIpoptNumOption, _AddIpoptStrOption, 
+                       _CreateIpoptProblem, _FreeIpoptProblem, _GetIpoptCurrentIterate, 
+                       _GetIpoptCurrentViolations, _GetIpoptVersion, _IpoptSolve, 
+                       _OpenIpoptOutputFile, _SetIntermediateCallback, _SetIpoptProblemScaling ]
+...

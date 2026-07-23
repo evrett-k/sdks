@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/FileDerivativeDaemon.framework/Versions/A/FileDerivativeDaemon'
+current-version: 58
+compatibility-version: 0
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s20FileDerivativeDaemon15ImporterManagerC15unownedExecutorScevg', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC15unownedExecutorScevpMV', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC6sharedACvgZ', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC6sharedACvpZMV', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC8importer3forAA09SpotlightD0_pSg22UniformTypeIdentifiers6UTTypeV_tYaKFTj', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC8importer3forAA09SpotlightD0_pSg22UniformTypeIdentifiers6UTTypeV_tYaKFTjTu', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC8importer3forAA09SpotlightD0_pSg22UniformTypeIdentifiers6UTTypeV_tYaKFTq', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC9importersSayAA09SpotlightD0_pGvgTj', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC9importersSayAA09SpotlightD0_pGvgTjTu', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC9importersSayAA09SpotlightD0_pGvgTq', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerC9importersSayAA09SpotlightD0_pGvpMV', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerCMa', '_$s20FileDerivativeDaemon15ImporterManagerCMm', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerCMn', '_$s20FileDerivativeDaemon15ImporterManagerCMo', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerCMu', '_$s20FileDerivativeDaemon15ImporterManagerCN', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerCScAAAMc', '_$s20FileDerivativeDaemon15ImporterManagerCfD', 
+                       '_$s20FileDerivativeDaemon15ImporterManagerCfd', '_$s20FileDerivativeDaemon17SpotlightImporterMp', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP10identifierSSvgTj', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP10identifierSSvgTq', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTj', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTjTu', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTq', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP21supportedContentTypesSay22UniformTypeIdentifiers6UTTypeVGvgTj', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP21supportedContentTypesSay22UniformTypeIdentifiers6UTTypeVGvgTq', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP7versionSSvgTj', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterP7versionSSvgTq', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterPs23CustomStringConvertibleTb', 
+                       '_$s20FileDerivativeDaemon17SpotlightImporterTL', '_$s20FileDerivativeDaemon18DelegatingImporterC03allD9ImportersSayAA09SpotlightE0_pGvgZ', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC03allD9ImportersSayAA09SpotlightE0_pGvgZTu', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC03allD9ImportersSayAA09SpotlightE0_pGvpZMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC10identifierSSvg', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC10identifierSSvpMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC11descriptionSSvg', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC11descriptionSSvpMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC15unownedExecutorScevg', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC15unownedExecutorScevpMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTj', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTjTu', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC17extractAttributes3for7options10Foundation4DataV0A11Derivatives9URLAccessC_AJ13ImportOptionsCtYaKFTq', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC21supportedContentTypesSay22UniformTypeIdentifiers6UTTypeVGvg', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC21supportedContentTypesSay22UniformTypeIdentifiers6UTTypeVGvpMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC7versionSSvg', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterC7versionSSvpMV', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCAA09SpotlightE0AAMc', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCAA09SpotlightE0AAWP', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCMa', '_$s20FileDerivativeDaemon18DelegatingImporterCMm', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCMn', '_$s20FileDerivativeDaemon18DelegatingImporterCMo', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCMu', '_$s20FileDerivativeDaemon18DelegatingImporterCN', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCScAAAMc', '_$s20FileDerivativeDaemon18DelegatingImporterCfD', 
+                       '_$s20FileDerivativeDaemon18DelegatingImporterCfd', '_$s20FileDerivativeDaemon18DelegatingImporterCs23CustomStringConvertibleAAMc' ]
+...

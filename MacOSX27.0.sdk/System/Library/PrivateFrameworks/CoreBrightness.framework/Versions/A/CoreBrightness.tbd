@@ -1,0 +1,66 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo11CBCoexStateVs23CustomStringConvertible14CoreBrightnessMc', 
+                       '_$sSo11CBCoexStateVs23CustomStringConvertible14CoreBrightnesssACP11descriptionSSvgTW', 
+                       '_$sSo12CBCoexUpdateC14CoreBrightnessEABycfC', '_$sSo12CBCoexUpdateC14CoreBrightnessEABycfc', 
+                       '_$sSo12CBCoexUpdateCMa', '_$sSo12CBRTPLCStateVs23CustomStringConvertible14CoreBrightnessMc', 
+                       '_$sSo12CBRTPLCStateVs23CustomStringConvertible14CoreBrightnesssACP11descriptionSSvgTW', 
+                       '_$sSo13CBCoexTrackerC14CoreBrightnessEABycfC', '_$sSo13CBCoexTrackerC14CoreBrightnessEABycfc', 
+                       '_$sSo13CBCoexTrackerCMa', '_$sSo13CBRTPLCModuleC14CoreBrightnessEABycfC', 
+                       '_$sSo13CBRTPLCModuleC14CoreBrightnessEABycfc', '_$sSo13CBRTPLCModuleCMa', 
+                       '_$sSo21CBBrightDotMitigationC14CoreBrightnessE18handleNotification6forKey12withPropertyyyp_yptF', 
+                       '_$sSo21CBBrightDotMitigationC14CoreBrightnessE5queueABSgSo012OS_dispatch_F0CSg_tcfC', 
+                       '_$sSo21CBBrightDotMitigationC14CoreBrightnessE5queueABSgSo012OS_dispatch_F0CSg_tcfc', 
+                       '_$sSo21CBBrightDotMitigationC14CoreBrightnessEABycfC', '_$sSo21CBBrightDotMitigationC14CoreBrightnessEABycfc', 
+                       '_$sSo21CBBrightDotMitigationCMa', '_$sSo22CBThreeSegmentAABCurveC14CoreBrightnessEABycfC', 
+                       '_$sSo22CBThreeSegmentAABCurveC14CoreBrightnessEABycfc', '_$sSo22CBThreeSegmentAABCurveCMa', 
+                       '_$sSo24CBDynamicSliderUniversalC14CoreBrightnessEABycfC', 
+                       '_$sSo24CBDynamicSliderUniversalC14CoreBrightnessEABycfc', 
+                       '_$sSo24CBDynamicSliderUniversalCMa', _CBALCALSCopyALSServiceClient, 
+                       _CBALCDisplayFeatureAvailable, _CBALCGetBoolPreferenceForKey, 
+                       _CBALCGetDictPreferenceForKey, _CBALCGetDisplayAutoBrightnessEnabled, 
+                       _CBALCGetFloatPreferenceForKey, _CBALCGetIntPreferenceForKey, 
+                       _CBALCGetKeyboardAutoBrightnessEnabled, _CBALCGetKeyboardDimTime, 
+                       _CBALCKeyboardFeatureAvailable, _CBALCLGPVersion, _CBALCRegisterALSPluginCallback, 
+                       _CBALCSetBoolPreferenceForKey, _CBALCSetDictPreferenceForKey, 
+                       _CBALCSetDictionary, _CBALCSetDisplayAutoBrightnessEnabled, 
+                       _CBALCSetFloatPreferenceForKey, _CBALCSetIntPreferenceForKey, 
+                       _CBALCSetKeyboardAutoBrightnessEnabled, _CBALCSetKeyboardDimTime, 
+                       _CBALCUnregisterALSPluginCallback, _kKBIDBuiltIn, _kKBIDDefault, 
+                       _kKBIDPrimary, _kKBIDSecondary ]
+    objc-classes:    [ BrightnessSystem, BrightnessSystemClient, BrightnessSystemClientInternal, 
+                       CBAdaptationClient, CBBlueLightClient, CBBrightDotMitigation, 
+                       CBBrightnessTransaction, CBClient, CBCoexTracker, CBCoexUpdate, 
+                       CBDisplayBrightnessClient, CBDisplayClient, CBDisplayHandle, 
+                       CBDynamicSliderUniversal, CBHandle, CBKeyboardPreferencesManager, 
+                       CBRTPLCModule, CBThreeSegmentAABCurve, CBTrueToneClient, DisplayServicesClient, 
+                       KeyboardBrightnessClient ]
+  - targets:         [ arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo10ALSManagerCMa', '_$sSo12CBPMClientIDVs23CustomStringConvertible14CoreBrightnessMc', 
+                       '_$sSo12CBPMClientIDVs23CustomStringConvertible14CoreBrightnesssACP11descriptionSSvgTW', 
+                       '_$sSo14ALSClientStateVs23CustomStringConvertible14CoreBrightnessMc', 
+                       '_$sSo14ALSClientStateVs23CustomStringConvertible14CoreBrightnesssACP11descriptionSSvgTW', 
+                       '_$sSo14CBPMBudgetTypeas12CaseIterable14CoreBrightnessMc', 
+                       '_$sSo14CBPMBudgetTypeas12CaseIterable14CoreBrightnesssACP8allCases03AllH0QzvgZTW', 
+                       '_$sSo14CBPMBudgetTypeas23CustomStringConvertible14CoreBrightnessMc', 
+                       '_$sSo14CBPMBudgetTypeas23CustomStringConvertible14CoreBrightnesssACP11descriptionSSvgTW', 
+                       '_$sSo15CBPMPlatformMacC14CoreBrightnessEABycfC', '_$sSo15CBPMPlatformMacC14CoreBrightnessEABycfc', 
+                       '_$sSo15CBPMPlatformMacCMa', '_$sSo16ALSAsyncExecutorC14CoreBrightnessEABycfC', 
+                       '_$sSo16ALSAsyncExecutorC14CoreBrightnessEABycfc', '_$sSo16ALSAsyncExecutorCMa', 
+                       '_$sSo16ALSClientContextC14CoreBrightnessEABycfC', '_$sSo16ALSClientContextC14CoreBrightnessEABycfc', 
+                       '_$sSo16ALSClientContextCMa', '_$sSo17CBBrightnessBoostC14CoreBrightnessEABycfC', 
+                       '_$sSo17CBBrightnessBoostC14CoreBrightnessEABycfc', '_$sSo17CBBrightnessBoostCMa', 
+                       '_$sSo21ALSDefaultRateManagerC14CoreBrightnessEABycfC', '_$sSo21ALSDefaultRateManagerC14CoreBrightnessEABycfc', 
+                       '_$sSo21ALSDefaultRateManagerCMa', '_$sSo22ALSSynchronousExecutorCMa', 
+                       '_$sSo23CBPowerManagementModuleC14CoreBrightnessEABycfC', 
+                       '_$sSo23CBPowerManagementModuleC14CoreBrightnessEABycfc', 
+                       '_$sSo23CBPowerManagementModuleCMa' ]
+    objc-classes:    [ ALSAsyncExecutor, ALSClientContext, ALSDefaultRateManager, 
+                       ALSManager, ALSSynchronousExecutor, CBBrightnessBoost, CBPMPlatformMac, 
+                       CBPowerManagementModule ]
+...

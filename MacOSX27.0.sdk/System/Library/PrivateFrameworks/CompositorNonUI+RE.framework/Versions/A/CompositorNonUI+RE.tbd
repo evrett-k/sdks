@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CompositorNonUI+RE.framework/Versions/A/CompositorNonUI+RE'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _CompositorNonUI_REVersionNumber, _CompositorNonUI_REVersionString, 
+                       _cp_compositor_services_re_component_get_component_for_layer_id, 
+                       _cp_compositor_services_re_component_get_custom_component_type, 
+                       _cp_compositor_services_re_component_get_immersive_environment_immersion_params, 
+                       _cp_compositor_services_re_component_get_immersive_environment_render_params, 
+                       _cp_compositor_services_re_component_get_layer_id, _cp_compositor_services_re_component_get_newest_tracking_areas_presented_frame, 
+                       _cp_compositor_services_re_component_set_gaze_ray_for_crop, 
+                       _cp_compositor_services_re_component_set_hit_tracking_area_identifier, 
+                       _cp_compositor_services_re_component_set_immersive_environment_immersion_params, 
+                       _cp_compositor_services_re_component_set_immersive_environment_render_params, 
+                       _cp_compositor_services_re_component_set_layer_id, _cp_compositor_services_re_component_system_add_to_ecs, 
+                       _cp_compositor_services_re_component_system_add_to_ecs_for_scene ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/UARPKit.framework/Versions/A/UARPKit'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _UARPAssetPersonalizationCompleteProtocolSetupInterface, _UARPDeviceTransportStringToType, 
+                       _UARPDeviceTransportToString, _UARPEndpointControllerDelegateProtocolSetupInterface, 
+                       _UARPEndpointControllerProtocolSetupInterface, _UARPHostEndpointDelegateProtocolSetupInterface, 
+                       _UARPHostEndpointProtocolSetupInterface, _UARPKitVersionNumber, 
+                       _UARPKitVersionString, _UARPManagedDeviceFirmwareApplyStatusToString, 
+                       _UARPManagedDeviceFirmwareStagingStatusToString, _kUarpAssetPersonalizationCompleteXpcServiceName, 
+                       _kUarpDeviceControlXpcServiceName, _kUarpDeviceTransportXpcServiceName, 
+                       _kUarpHostEndpointTransportXpcServiceName ]
+    objc-classes:    [ UARPDevice, UARPDeviceAsset, UARPDeviceComponentConfiguration, 
+                       UARPDeviceConfiguration, UARPDeviceEndpoint, UARPDeviceEndpointConfiguration, 
+                       UARPDeviceFirmwareVersion, UARPDeviceManager, UARPDeviceTatsuTicket, 
+                       UARPHostEndpointProperties, UARPManagedDevice ]
+    objc-ivars:      [ UARPDevice._delegateQueue, UARPDevice._endpointConfiguration, 
+                       UARPDevice._firmwareVersion, UARPDevice._log, UARPDevice._stagedFirmwareVersion ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/usr/lib/updaters/libNVMeUpdater.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _NVMeRestoreInfoCopyFirmware, _NVMeRestoreInfoCreateRequest, 
+                       _NVMeRestoreInfoGetTags, _NVMeUpdaterCreate, _NVMeUpdaterExecCommand, 
+                       _NVMeUpdaterIsDone ]
+...

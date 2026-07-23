@@ -1,0 +1,121 @@
+.\"
+.\"	filename: assetutil.1
+.\"	created : Fri Jan 30 10:50:36 2015
+.\"
+.\"
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd Apr 19, 2026              \" DATE
+.Dt assetutil 1      \" Program name and manual section number
+.Os Darwin
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm assetutil
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.\" Use .Nm macro to designate other names for the documented program.
+.Nm process asset catalog .car files
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op Fl VIiotsuphgkMcrTLUnZ
+.Ar inputfile            \" Underlined argument - use .Ar anywhere to underline
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm
+processes a .car file generated from a image catalog. It can thin a
+\&.car file removing unrequested scale factors, device idioms, subtypes,
+performance and memory classes. It can also produce a JSON description
+of the contents of a .car file
+.Pq Fl I ,
+compare thinning attributes to determine if two sets of thinning
+parameters would produce the same result
+.Pq Fl T ,
+or validate the structural integrity of a .car file
+.Pq Fl Z .
+.Pp
+When thinning scale, idiom, subtype, performance,
+memory, and graphicsclassfallbacks can be given multiple times, the
+resulting file will contain all of the assets that match all of the
+parameters given. If scale, idiom, subtype and graphics class are
+given in one set, the same parameters must all be present in the
+subsequent set of parmeters. (IE the count must match)
+.Sh THINNING PARAMETERS
+Generate a resulting car file based on these parameters.
+.Bl -tag -width -indent
+.It Fl i , Fl -idiom Ar idiom
+Keep all assets that have idiom that is given on the command
+line. Can be one of universal/phone/pad/tv/car/watch/vision.
+.It Fl t , Fl -subtype Ar integer
+Subtype to keep (integer).
+.It Fl u , Fl -subtypefallbacks Ar subtypes
+Subtype fallbacks, specified as subtypes separated by ':'.
+.It Fl s , Fl -scale Ar integer
+Keep all assets that have scale factor that is given on the command
+line, present scale factors will not be removed if there is no
+fallback available.
+.It Fl p , Fl -display-gamut Ar gamut
+Keep all assets that have the display gamut that is given on the
+command line, present display gamuts will not be removed if there is no
+fall back available. Can be one of srgb/p3/all.
+.It Fl h , Fl -hostedidioms Ar idiomlist
+Process the hosted idioms list, this is a list of the idioms that must
+always be preserved in the car file. This list cannot contain
+universal, and the different idioms should be given in a comma separated list.
+.It Fl g , Fl -graphicsclass Ar class
+Keep all assets that have graphics class that is given on the command
+line. The present graphics class will not be removed if there is no fallback available.
+.It Fl k , Fl -graphicsclassfallbacks Ar classes
+Graphics class fallbacks, specified as graphics classes separated by ':'.
+.It Fl M , Fl -memory Ar integer
+Keep all assets that have memory class that is given on the command
+line, present memory class will not be removed if there is no fallback available.
+.It Fl r , Fl -deployment-target Ar target
+Set the deployment target for thinning.
+.El
+.Sh OUTPUT PARAMETERS
+No thinning is performed when these parameters are given.
+The thinning parameters can be passed here to narrow down the output.
+.Bl -tag -width -indent
+.It Fl I , Fl -info Op Ar name
+Produce a JSON description of the asset catalog object with the given name to
+--output directory if given or to stdout if no output path given. If no name is provided,
+report on the contents of the entire car file.
+.It Fl c , Fl -main-contents Ar path
+Main Assets.car file used to supply the names of the assets to the -I
+(--info) and the dump options -d (--dump) and -D (--dump-stack).
+.It Fl T , Fl -compare-thinning Ar parameters
+Compare thinning attributes. The parameters are given as
+\'scale=2:idiom=phone:hostedidioms=watch,car:memory=2:graphicsclass=MTL1,2/scale=2:idiom=phone:memory=1:graphicsclass=MTL2,2\'.
+Will print to stdout if the file was thinned with the above thinning
+attributes, would the same Asset file result in both cases.
+.It Fl L , Fl -compare-thinning-batch Ar path
+Compare thinning attributes specified in a JSON file in batch.
+.El
+.Sh GENERAL PARAMETERS
+.Bl -tag -width -indent
+.It Fl o , Fl -output Ar path
+Output file name, if no output file is given then input file is
+overwritten.
+.It Fl V , Fl -version
+Version information for
+.Nm .
+.It Fl U , Fl -update-bitmap
+Update the bitmap index of inputfile.
+.It Fl n , Fl -preserve-assets-named Ar names
+Given a comma separated list of names, any assets in the car file that
+match one of the given names are preserved. Names are compared case
+insensitively. Uses the -o --output file to save the
+resulting .car file.
+.It Fl Z , Fl -validate-file
+Validate that the file is valid (structurally/renditions are accessible and loadable)
+(exit 2 if bad, 0 if okay).
+.El
+.Pp
+.\" .Sh ENVIRONMENT      \" May not be needed
+.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+.\" .It Ev ENV_VAR_1
+.\" Description of ENV_VAR_1
+.\" .It Ev ENV_VAR_2
+.\" Description of ENV_VAR_2
+.\" .El

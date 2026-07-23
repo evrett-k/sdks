@@ -1,0 +1,163 @@
+//
+//  authorization.h
+//  ARKit
+//
+//  Copyright © 2025 Apple Inc. All rights reserved.
+//
+
+#ifndef authorization_h
+#define authorization_h
+
+#import <ARKitCore/object.h>
+
+AR_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Authorization Result
+
+/**
+ Status of an authorization for ARKit data.
+ */
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+OS_ENUM(ar_authorization_status, intptr_t,
+        // The user has not yet granted permission.
+        ar_authorization_status_not_determined,
+        // The user has explicitly granted permission.
+        ar_authorization_status_allowed,
+        // The user has explicitly denied permission.
+        ar_authorization_status_denied)
+AR_REFINED_FOR_SWIFT;
+
+/**
+ Types of authorization for ARKit data.
+ */
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+OS_OPTIONS(ar_authorization_type, uintptr_t,
+           ar_authorization_type_none = 0,
+           /**
+            Authorization type used when requesting hand tracking.
+            @see `ar_hand_tracking_provider_t`
+            */
+           ar_authorization_type_hand_tracking = (1 << 0),
+           /** Authorization type used when requesting:
+                - Image tracking
+                    @see `ar_image_tracking_provider_t`
+                - Plane detection
+                    @see `ar_plane_detection_provider_t`
+                - Scene reconstruction
+                    @see `ar_scene_reconstruction_provider_t`
+            */
+           ar_authorization_type_world_sensing = (1 << 1),
+           /** Authorization type used when requesting:
+                - Camera access
+                    @see `ar_camera_frame_provider_t`
+            */
+           ar_authorization_type_camera_access API_AVAILABLE(visionos(2.0)) = (1 << 3),
+
+           /** Authorization type used when requesting:
+                - Accessory tracking
+                    @see `ar_accessory_tracking_provider_t`
+            */
+           ar_authorization_type_accessory_tracking = (1 << 5),
+           )
+AR_REFINED_FOR_SWIFT;
+
+/**
+ Result of an authorization request.
+ */
+AR_OBJECT_DECL(ar_authorization_result)
+AR_REFINED_FOR_SWIFT
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0));
+
+/**
+ Get the authorization type associated with an authorization result.
+
+ - Parameter authorization_result: The authorization result.
+
+ - Returns: The authorization type.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+AR_EXTERN ar_authorization_type_t ar_authorization_result_get_authorization_type(ar_authorization_result_t authorization_result) AR_REFINED_FOR_SWIFT;
+
+/**
+ Get the authorization status associated with an authorization result.
+
+ - Parameter authorization_result: The authorization result.
+
+ - Returns: The authorization status.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+AR_EXTERN ar_authorization_status_t ar_authorization_result_get_status(ar_authorization_result_t authorization_result) AR_REFINED_FOR_SWIFT;
+
+#pragma mark - Authorization Results
+
+/**
+ A collection of authorization results.
+ */
+AR_OBJECT_DECL(ar_authorization_results)
+AR_REFINED_FOR_SWIFT
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0));
+
+/**
+ Get the count of authorization results in a collection.
+
+ - Parameter authorization_results: The collection of authorization results.
+
+ - Returns: The number of authorization results in the collection.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+AR_EXTERN size_t ar_authorization_results_get_count(ar_authorization_results_t authorization_results) AR_REFINED_FOR_SWIFT;
+
+#ifdef __BLOCKS__
+/**
+ Handler for enumerating a collection of authorization results.
+
+ - Parameter authorization_result: The authorization result.
+
+ - Returns: `true` to continue enumerating, or `false` to stop enumerating.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+typedef bool (^ar_authorization_results_enumerator_t)(ar_authorization_result_t authorization_result) AR_REFINED_FOR_SWIFT;
+
+/**
+ Enumerate a collection of authorization results.
+
+ - Parameters:
+   - authorization_results: The collection of authorization results.
+   - authorization_results_enumerator: The enumerator handler.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+AR_EXTERN void
+ar_authorization_results_enumerate_results(ar_authorization_results_t authorization_results,
+                                           ar_authorization_results_enumerator_t authorization_results_enumerator) AR_REFINED_FOR_SWIFT;
+#endif // __BLOCKS__
+
+/**
+ Function for enumerating a collection of authorization results.
+
+ - Parameters:
+   - context: The application-defined context.
+   - authorization_result: The authorization result.
+
+ - Returns: `true` to continue enumerating, or `false` to stop enumerating.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+typedef bool (*ar_authorization_results_enumerator_function_t)(void *_Nullable context,
+                                                               ar_authorization_result_t authorization_result) AR_REFINED_FOR_SWIFT;
+
+/**
+ Enumerate a collection of authorization results using a function.
+
+ - Parameters:
+   - authorization_results: The collection of authorization results.
+   - context: The application-defined context parameter to pass to the function.
+   - authorization_results_enumerator_function: The enumerator function.
+*/
+API_AVAILABLE(visionos(1.0), macos(26.0), macCatalyst(26.0))
+AR_EXTERN void ar_authorization_results_enumerate_results_f(ar_authorization_results_t authorization_results,
+                                                            void *_Nullable context,
+                                                            ar_authorization_results_enumerator_function_t authorization_results_enumerator_function)
+    AR_REFINED_FOR_SWIFT;
+
+AR_ASSUME_NONNULL_END
+
+#endif // authorization_h

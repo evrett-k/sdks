@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/texture.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN24_ModuleTextureCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN24_ModuleTextureCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN24_ModuleTextureCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN24_ModuleTextureCallbacks_31get_master_input_tag_candidatesERK8OfObjectRK6OfAttrR10CoreVectorI10CoreStringE, 
+                       _on_register_module ]
+...

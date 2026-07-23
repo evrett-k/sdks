@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/usr/lib/libLaunchServicesSupport.dylib'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ __LSApplicationHasAVisibleWindowOrContext, __LSForceQuitApplication, 
+                       __LSRegisterAsQuitReallyHelperClient, __LSSysdiagnoseStatus, 
+                       __kLSForceQuitApplicationASNsToIgnoreArrayKey, __kLSForceQuitApplicationDoNotInformLibQuitKey, 
+                       __kLSForceQuitApplicationPresentFirstForceQuitDialogKey, __kLSForceQuitApplicationSendQUITAppleEventForApplicationsKey, 
+                       __kLSForceQuitApplicationSynchronousOperationKey ]
+...

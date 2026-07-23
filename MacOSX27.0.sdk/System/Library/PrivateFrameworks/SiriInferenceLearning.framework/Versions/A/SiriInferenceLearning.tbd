@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriInferenceLearning.framework/Versions/A/SiriInferenceLearning'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s21SiriInferenceLearning20IFTranscriptListenerC4stopyyFZ', 
+                       '_$s21SiriInferenceLearning20IFTranscriptListenerC5startyyFZ', 
+                       '_$s21SiriInferenceLearning20IFTranscriptListenerCMa', '_$s21SiriInferenceLearning20IFTranscriptListenerCMm', 
+                       '_$s21SiriInferenceLearning20IFTranscriptListenerCMn', '_$s21SiriInferenceLearning20IFTranscriptListenerCMo', 
+                       '_$s21SiriInferenceLearning20IFTranscriptListenerCMu', '_$s21SiriInferenceLearning20IFTranscriptListenerCN', 
+                       '_$s21SiriInferenceLearning20IFTranscriptListenerCfD', '_$s21SiriInferenceLearning20IFTranscriptListenerCfd' ]
+...

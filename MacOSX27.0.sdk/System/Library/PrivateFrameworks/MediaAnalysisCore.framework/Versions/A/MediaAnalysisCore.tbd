@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/MediaAnalysisCore.framework/Versions/A/MediaAnalysisCore'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _MediaAnalysisCoreVersionNumber, _MediaAnalysisCoreVersionString ]
+    objc-classes:    [ MADAVAssetResourceLoaderDelegate, MADFrameBatchOptions, MADFramePreprocessOptions, 
+                       MADPreprocessingNode, MADSubsamplingNode, MADSubsamplingOptions, 
+                       MADVideoAssetProcessor, MADVideoAssetProcessorConfigurations, 
+                       MADVideoProcessorConfigurations, MADVideoProcessorInput, MADVideoProcessorLeafNode, 
+                       MADVideoProcessorNode, MADVideoProcessorSession, MADVideoTrackDecoder ]
+...

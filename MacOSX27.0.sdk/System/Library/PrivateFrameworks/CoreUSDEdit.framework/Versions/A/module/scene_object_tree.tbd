@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/scene_object_tree.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN32_ModuleSceneObjectTreeCallbacks_10init_classER7OfClass, 
+                       __ZN32_ModuleSceneObjectTreeCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN32_ModuleSceneObjectTreeCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN32_ModuleSceneObjectTreeCallbacks_15create_resourceER8OfObjectRKiPv, 
+                       __ZN32_ModuleSceneObjectTreeCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       _on_register_module ]
+    weak-symbols:    [ __ZGVZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZGVZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT, 
+                       __ZGVZN14ModuleGeometry36RESOURCE_ID_HARPE_GEOMETRY_DISPLACEDEvE37_RESOURCE_ID_HARPE_GEOMETRY_DISPLACED, 
+                       __ZZN14ModuleGeometry26RESOURCE_ID_HARPE_GEOMETRYEvE27_RESOURCE_ID_HARPE_GEOMETRY, 
+                       __ZZN14ModuleGeometry28RESOURCE_ID_HARPE_GAS_OPAQUEEvE29_RESOURCE_ID_HARPE_GAS_OPAQUE, 
+                       __ZZN14ModuleGeometry33RESOURCE_ID_HARPE_GAS_TRANSPARENTEvE34_RESOURCE_ID_HARPE_GAS_TRANSPARENT, 
+                       __ZZN14ModuleGeometry36RESOURCE_ID_HARPE_GEOMETRY_DISPLACEDEvE37_RESOURCE_ID_HARPE_GEOMETRY_DISPLACED ]
+...

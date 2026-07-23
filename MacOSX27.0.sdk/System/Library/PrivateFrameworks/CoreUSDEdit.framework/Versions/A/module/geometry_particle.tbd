@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/geometry_particle.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN33_ModuleGeometryParticleCallbacks_10init_classER7OfClass, 
+                       __ZN33_ModuleGeometryParticleCallbacks_15create_resourceER8OfObjectRKiPv, 
+                       __ZN33_ModuleGeometryParticleCallbacks_17set_resource_dataER8OfObjectRKiPvRKmRK10CoreString, 
+                       _on_register_module ]
+    weak-symbols:    [ __Z14create_commandI14AddParticleCmdLj2EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI14AddParticleCmdLj3EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI14AddParticleCmdLj4EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI15MoveParticleCmdLj3EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI15MoveParticleCmdLj4EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI15MoveParticleCmdLj5EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI17RemoveParticleCmdLj2EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI24AddSerializedParticleCmdLj3EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI24EditParticlesPropertyCmdLj5EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI26CreateParticlesPropertyCmdLj5EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI26RenameParticlesPropertyCmdLj3EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __Z14create_commandI28DeleteParticlesPropertiesCmdLj2EEP9OfCommandPvRK14CoreBasicArrayI17OfCommandArgumentE, 
+                       __ZGVZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZGVZN14ModuleGeometry15RESOURCE_ID_GASEvE16_RESOURCE_ID_GAS, 
+                       __ZGVZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZGVZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_DEFORMEDEvE30_RESOURCE_ID_GEOMETRY_DEFORMED, 
+                       __ZGVZN14ModuleGeometry31RESOURCE_ID_GEOMETRY_PROPERTIESEvE32_RESOURCE_ID_GEOMETRY_PROPERTIES, 
+                       __ZGVZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZGVZN16OfBaseItemHandleILb1EE10class_infoEvE10class_info, 
+                       __ZGVZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info, 
+                       __ZGVZN18OfBaseObjectHandleILb1EE10class_infoEvE10class_info, 
+                       __ZN14AddParticleCmd9delay_jobEP13OfCommandData, __ZN15MoveParticleCmd9delay_jobEP13OfCommandData, 
+                       __ZN17RemoveParticleCmd9delay_jobEP13OfCommandData, __ZN24EditParticlesPropertyCmd9delay_jobEP13OfCommandData, 
+                       __ZN26CreateParticlesPropertyCmd9delay_jobEP13OfCommandData, 
+                       __ZN28DeleteParticlesPropertiesCmd9delay_jobEP13OfCommandData, 
+                       __ZZN14CoreLogHandler12main_handlerEvE18s_main_log_handler, 
+                       __ZZN14ModuleGeometry15RESOURCE_ID_GASEvE16_RESOURCE_ID_GAS, 
+                       __ZZN14ModuleGeometry20RESOURCE_ID_GEOMETRYEvE21_RESOURCE_ID_GEOMETRY, 
+                       __ZZN14ModuleGeometry29RESOURCE_ID_GEOMETRY_DEFORMEDEvE30_RESOURCE_ID_GEOMETRY_DEFORMED, 
+                       __ZZN14ModuleGeometry31RESOURCE_ID_GEOMETRY_PROPERTIESEvE32_RESOURCE_ID_GEOMETRY_PROPERTIES, 
+                       __ZZN16OfBaseItemHandleILb0EE10class_infoEvE10class_info, 
+                       __ZZN16OfBaseItemHandleILb1EE10class_infoEvE10class_info, 
+                       __ZZN18OfBaseObjectHandleILb0EE10class_infoEvE10class_info, 
+                       __ZZN18OfBaseObjectHandleILb1EE10class_infoEvE10class_info ]
+...

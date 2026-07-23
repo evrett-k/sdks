@@ -1,0 +1,319 @@
+.\" metalperftrace.1
+.Dd May 7, 2026
+.Dt METALPERFTRACE 1
+.Os
+.Sh NAME
+.Nm metalperftrace
+.Nd collect and inspect Metal GPU performance data
+.Sh SYNOPSIS
+.Nm
+.Ar subcommand
+.Op options
+.Pp
+.Nm
+.Cm collect
+.Op Fl \-last Ar duration | Fl \-start Ar date Fl \-end Ar date
+.Op Fl \-prefix Ar prefix
+.Op Fl \-json
+.Ar output_dir
+.Pp
+.Nm
+.Cm overview
+.Op Fl \-json
+.Op Fl \-json-include-timeline
+.Op Fl \-include-state-transitions
+.Op Fl \-predicate Ar expr
+.Op Fl \-aggregate
+.Op Fl \-start Ar offset
+.Op Fl \-end Ar offset
+.Op Fl \-domain Ar domain
+.Op Fl \-state-label Ar label
+.Ar trace_file
+.Pp
+.Nm
+.Cm listen
+.Op Fl \-json
+.Op Fl \-interval Ar sec
+.Op Fl \-output Ar file
+.Op Fl \-process Ar name
+.Op Fl \-pid Ar pid
+.Op Fl \-predicate Ar expr
+.Pp
+.Nm
+.Cm setup
+.Fl \-enable Ar feature |
+.Fl \-disable Ar feature
+.Op Fl \-pid Ar pid
+.Sh DESCRIPTION
+.Nm
+collects and inspects always-on recorded Metal graphics performance data.
+The system continuously records frame timing and related statistics for all Metal layers.
+This tool retrieves that data and either stores it into a trace file that can be opened by
+tools such as Instruments, or streams it live as human-readable text or JSON.
+.Pp
+The following subcommands are available:
+.Bl -tag -width "overview"
+.It Cm collect
+Retrieve always-on recorded Metal performance metrics for a given time range and write them as
+.Pa .atrc
+files into
+.Ar output_dir
+(created if it does not exist).
+Re-running the same command with the same directory skips files that
+were already collected.
+.It Cm overview
+Print a performance summary from a previously collected
+.Pa .atrc
+trace file.
+By default, prints an aggregation over the entire trace duration.
+.It Cm listen
+Stream live Metal performance statistics as data arrives from the
+system, refreshing on a configurable interval.
+.It Cm setup
+Dynamically enable or disable a Metal performance trace feature in a running Metal process.
+.El
+.Sh SUBCOMMAND: COLLECT
+.Ss Synopsis
+.Nm
+.Cm collect
+.Op Fl \-last Ar duration | Fl \-start Ar date Fl \-end Ar date
+.Op Fl \-prefix Ar prefix
+.Op Fl \-json
+.Ar output_dir
+.Ss Options
+.Bl -tag -width "-start date"
+.It Fl \-last Ar duration
+Collect trace data from the last
+.Ar duration .
+The suffix determines the unit:
+.Sq s
+(seconds, default),
+.Sq m
+(minutes),
+.Sq h
+(hours),
+.Sq d
+(days).
+A bare number without a suffix is treated as seconds.
+Examples:
+.Li 30s ,
+.Li 5m ,
+.Li 2h ,
+.Li 1d .
+Mutually exclusive with
+.Fl \-start .
+.It Fl \-start Ar date
+Start of the collection window (absolute date).
+Accepted formats:
+.Li yyyy-MM-dd ,
+.Li yyyy-MM-ddTHH:mm:ss ,
+.Li yyyy-MM-ddTHH:mm:ssZ ,
+.Li @unix_timestamp .
+Dates in the future are not allowed.
+.It Fl \-end Ar date
+End of the collection window.
+Same format as
+.Fl \-start .
+Defaults to the current time when omitted.
+.It Fl \-prefix Ar prefix
+File name prefix for the collected trace files.
+Defaults to
+.Li MetalPerfTrace .
+.It Fl \-json
+Output collected file paths as a JSON dictionary with a
+.Li traces
+key.
+Enabled by default when stdout is not a terminal.
+.El
+.Sh SUBCOMMAND: OVERVIEW
+.Ss Synopsis
+.Nm
+.Cm overview
+.Op Fl \-json
+.Op Fl \-json-include-timeline
+.Op Fl \-include-state-transitions
+.Op Fl \-predicate Ar expr
+.Op Fl \-aggregate
+.Op Fl \-start Ar offset
+.Op Fl \-end Ar offset
+.Op Fl \-domain Ar domain
+.Op Fl \-state-label Ar label
+.Ar trace_file
+.Ss Description
+Print per-process, per-layer performance metrics from a collected trace.
+By default, prints an aggregation over the entire trace duration with
+full detail for all metric sections.
+.Ss Options
+.Bl -tag -width "-include-state-transitions"
+.It Fl \-json
+Emit output as a JSON object instead of human-readable text.
+Contains aggregated summary statistics for each layer session.
+.It Fl \-json-include-timeline
+Include the full per-frame timeline data in JSON output.
+Implies
+.Fl \-json .
+.It Fl \-include-state-transitions
+Show detailed StateReporter state transition history, including
+labels, time ranges, and stable state values for each domain.
+.It Fl \-predicate Ar expr
+An NSPredicate expression used to filter the layers shown.
+The expression is evaluated against a dictionary with keys:
+.Li processName
+(string),
+.Li pid
+(integer),
+.Li layerName
+(string).
+.It Fl \-aggregate
+Enable aggregation mode.
+Groups metrics by state transitions.
+Without additional options, aggregates over all
+.Li {domain, label, stableState}
+keys across all domains.
+.It Fl \-start Ar offset
+Start offset from trace start (used with
+.Fl \-aggregate ) .
+Duration format, e.g.\&
+.Li 5s ,
+.Li 2m ,
+.Li 1h .
+.It Fl \-end Ar offset
+End offset from trace start (used with
+.Fl \-aggregate ) .
+Defaults to trace end when omitted.
+.It Fl \-domain Ar domain
+Restrict aggregation to a single state domain (used with
+.Fl \-aggregate ) .
+.It Fl \-state-label Ar label
+With
+.Fl \-domain ,
+group by
+.Li {domain, label}
+only, ignoring stableState differences.
+Requires
+.Fl \-domain .
+.El
+.Sh SUBCOMMAND: LISTEN
+.Ss Synopsis
+.Nm
+.Cm listen
+.Op Fl \-json
+.Op Fl \-interval Ar sec
+.Op Fl \-output Ar file
+.Op Fl \-process Ar name
+.Op Fl \-pid Ar pid
+.Op Fl \-predicate Ar expr
+.Ss Description
+Stream live Metal performance statistics as data arrives from the system.
+Always prints full detail for all metric sections.
+.Ss Options
+.Bl -tag -width "-process name"
+.It Fl \-json
+Emit each update as a compact JSON object on a single line (NDJSON).
+When the session ends (via SIGINT, SIGTERM, or SIGHUP), the output file,
+if any, is rewritten as a single pretty-printed JSON array.
+.It Fl \-interval Ar sec , Fl i Ar sec
+Update interval in seconds.
+Minimum:
+.Li 1.0 .
+Default:
+.Li 1.0 .
+.It Fl \-output Ar file , Fl o Ar file
+Tee all output to
+.Ar file
+in addition to the terminal.
+The file must not already exist.
+.It Fl \-process Ar name , Fl p Ar name
+Restrict output to the named process.
+May be repeated.
+.It Fl \-pid Ar pid
+Restrict output to the given process ID.
+May be repeated.
+.It Fl \-predicate Ar expr
+Same as for the
+.Cm overview
+subcommand.
+.El
+.Sh SUBCOMMAND: SETUP
+.Ss Synopsis
+.Nm
+.Cm setup
+.Fl \-enable Ar feature |
+.Fl \-disable Ar feature
+.Op Fl \-pid Ar pid
+.Ss Description
+Enable or disable a Metal performance trace feature in one or more running Metal processes.
+At least one
+.Fl \-pid
+option is required.
+Exactly one of
+.Fl \-enable
+or
+.Fl \-disable
+must be specified.
+.Ss Features
+.Bl -tag -width "shader-compiler-metrics"
+.It Li per-frame-metrics
+Per-frame signpost collection (per-drawable signposting).
+Equivalent to setting
+.Ev METAL_PERFORMANCE_PER_FRAME_SIGNPOSTS=1
+at launch.
+.It Li shader-compiler-metrics
+Shader compiler statistics signpost collection.
+Equivalent to setting
+.Ev METAL_PERFORMANCE_SHADER_COMPILER_STATS_SIGNPOSTS=1
+at launch.
+.It Li hud
+Metal performance HUD overlay.
+.El
+.Ss Options
+.Bl -tag -width "-pid PID"
+.It Fl \-enable Ar feature
+Enable the named feature.
+.It Fl \-disable Ar feature
+Disable the named feature.
+.It Fl \-pid Ar pid
+Target the process with the given PID.
+May be repeated.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+Collect the last 30 minutes of trace data:
+.Pp
+.Dl metalperftrace collect --last 30m /tmp/traces
+.Pp
+Print a text overview from a collected trace:
+.Pp
+.Dl "metalperftrace overview /tmp/traces/trace.atrc"
+.Pp
+Export a JSON summary:
+.Pp
+.Dl "metalperftrace overview --json /tmp/traces/trace.atrc"
+.Pp
+Export JSON with full per-frame timeline:
+.Pp
+.Dl "metalperftrace overview --json-include-timeline /tmp/traces/trace.atrc"
+.Pp
+Aggregate metrics by state domain:
+.Pp
+.Dl "metalperftrace overview --aggregate --domain com.example.App /tmp/traces/trace.atrc"
+.Pp
+Aggregate for a specific time window:
+.Pp
+.Dl "metalperftrace overview --aggregate --start 5m --end 10m /tmp/traces/trace.atrc"
+.Pp
+Stream live stats filtered to one process:
+.Pp
+.Dl "metalperftrace listen --process MyGame --interval 2"
+.Pp
+Stream live stats in JSON mode with file logging:
+.Pp
+.Dl "metalperftrace listen --json --output /tmp/session.json"
+.Pp
+Enable per-frame metrics in a running process:
+.Pp
+.Dl "metalperftrace setup --enable per-frame-metrics --pid 1234"
+.Sh SEE ALSO
+.Xr trace 1 ,
+.Xr xctrace 1

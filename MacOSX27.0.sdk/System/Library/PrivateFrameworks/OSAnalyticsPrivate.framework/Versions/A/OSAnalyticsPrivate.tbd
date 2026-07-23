@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/OSAnalyticsPrivate.framework/Versions/A/OSAnalyticsPrivate'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$sSo17OSAEventPublisherC18OSAnalyticsPrivateE21generateSensorDataLogAByFZ', 
+                       '_$sSo17OSAEventPublisherC18OSAnalyticsPrivateE22sendEventToSubscribers_14waitForRepliess5Int32VSo13OS_xpc_object_p_SbtF', 
+                       '_$sSo17OSAEventPublisherC18OSAnalyticsPrivateEABycfC', '_$sSo17OSAEventPublisherC18OSAnalyticsPrivateEABycfc', 
+                       '_$sSo17OSAEventPublisherCMa', _OSAStabilityMonitorEvaluateStabilityForBundleID, 
+                       _OSAStabilityMonitorLoadParameters, _OSAStabilityMonitorLogDomain, 
+                       _OSAnalyticsPrivateVersionNumber, _OSAnalyticsPrivateVersionString ]
+    objc-classes:    [ OSADeviceRecoveryEnvHelper, OSAEphemeralLog, OSAEventPublisher, 
+                       OSAHttpSubmitter, OSAStreamDeflater, OSASubmissionPolicy, 
+                       OSASubmitter, OverrideMountPathRequest, PCCBridgeEndpoint, 
+                       PCCEndpoint, PCCGroupJob, PCCJob, PCCProxiedDevice, PCCProxyingDevice, 
+                       PCCRequest ]
+    objc-ivars:      [ OSASubmitter._dryRun, OSASubmitter._requestURL, OSASubmitter._responseCode, 
+                       OSASubmitter._responseData, OSASubmitter._responseError, OSASubmitter._responseHeaders, 
+                       PCCEndpoint._delegate, PCCJob._errObj, PCCJob._package ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantPaneUI.framework/Versions/A/SetupAssistantPaneUI'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderMp', '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderP4view05SwiftD04View_pSgyFTj', 
+                       '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderP4view05SwiftD04View_pSgyFTq', 
+                       '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderPAAE2eeoiySbx_xtFZ', 
+                       '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderPAAE4hash4intoys6HasherVz_tF', 
+                       '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderPSHTb', 
+                       '_$s20SetupAssistantPaneUI24SAPUISwiftUIViewProviderTL', '_$sSo23SAPUIExperienceProviderC20SetupAssistantPaneUIEABycfC', 
+                       '_$sSo23SAPUIExperienceProviderC20SetupAssistantPaneUIEABycfc', 
+                       '_$sSo23SAPUIExperienceProviderCMa', '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIE5title8subtitle9stateText10symbolName11featureTypeABSS_S3SSo0a7FeatureP0VtcfC', 
+                       '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIE5title8subtitle9stateText10symbolName11featureTypeABSS_S3SSo0a7FeatureP0Vtcfc', 
+                       '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIE5title8subtitle9stateText21iconServicesIconNamed11featureTypeABSS_S3SSo0a7FeatureR0VtcfC', 
+                       '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIE5title8subtitle9stateText21iconServicesIconNamed11featureTypeABSS_S3SSo0a7FeatureR0Vtcfc', 
+                       '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIEABycfC', 
+                       '_$sSo28SAPUIExpressSettingViewModelC20SetupAssistantPaneUIEABycfc', 
+                       '_$sSo28SAPUIExpressSettingViewModelCMa', '_$sSo33SAPUIExpressSettingIconSymbolTypeC20SetupAssistantPaneUIEABycfC', 
+                       '_$sSo33SAPUIExpressSettingIconSymbolTypeC20SetupAssistantPaneUIEABycfc', 
+                       '_$sSo33SAPUIExpressSettingIconSymbolTypeCMa', '_$sSo35SAPUIExpressSettingIconServicesTypeC20SetupAssistantPaneUIEABycfC', 
+                       '_$sSo35SAPUIExpressSettingIconServicesTypeC20SetupAssistantPaneUIEABycfc', 
+                       '_$sSo35SAPUIExpressSettingIconServicesTypeCMa', '_$sSo37SAPUIMacHostedPaneButtonConfigurationC014SetupAssistantC2UIEABycfC', 
+                       '_$sSo37SAPUIMacHostedPaneButtonConfigurationC014SetupAssistantC2UIEABycfc', 
+                       '_$sSo37SAPUIMacHostedPaneButtonConfigurationCMa', '_$sSo38SAPUIExpressSettingIconProviderFactoryC20SetupAssistantPaneUIE04makecD004withc8ServicesC5NamedSo0abc4NameD0_pSS_tFZ', 
+                       '_$sSo38SAPUIExpressSettingIconProviderFactoryC20SetupAssistantPaneUIE04makecD014withSymbolNameSo0abcmD0_pSS_tFZ', 
+                       '_$sSo38SAPUIExpressSettingIconProviderFactoryC20SetupAssistantPaneUIEABycfC', 
+                       '_$sSo38SAPUIExpressSettingIconProviderFactoryC20SetupAssistantPaneUIEABycfc', 
+                       '_$sSo38SAPUIExpressSettingIconProviderFactoryCMa' ]
+    objc-classes:    [ SAPUIExperienceProvider, SAPUIExpressSettingIconProviderFactory, 
+                       SAPUIExpressSettingIconServicesType, SAPUIExpressSettingIconSymbolType, 
+                       SAPUIExpressSettingViewModel, SAPUIMacHostedPaneButtonConfiguration ]
+...

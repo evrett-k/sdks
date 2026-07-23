@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/displacement.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN29_ModuleDisplacementCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN29_ModuleDisplacementCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN29_ModuleDisplacementCallbacks_18create_module_dataERK8OfObject, 
+                       __ZN29_ModuleDisplacementCallbacks_19destroy_module_dataERK8OfObjectPv, 
+                       __ZN29_ModuleDisplacementCallbacks_25on_pre_deserialize_objectERK11CoreVersionR11ParserGroup, 
+                       _on_register_module ]
+...

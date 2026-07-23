@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/HybridDatabaseTokenizer.framework/Versions/A/HybridDatabaseTokenizer'
+current-version: 46.0.1
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ GenerativeSearch, GenerativeSearchTests, HybridDatabaseTokenizerTests, 
+                       HybridSearch, HybridSearchTests ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s23HybridDatabaseTokenizer03HdbC0V16tokenizeForQueryyAA0G5TermsVSSF', 
+                       '_$s23HybridDatabaseTokenizer03HdbC0V8tokenizeySaySSGSSF', 
+                       '_$s23HybridDatabaseTokenizer03HdbC0VACycfC', '_$s23HybridDatabaseTokenizer03HdbC0VMa', 
+                       '_$s23HybridDatabaseTokenizer03HdbC0VMn', '_$s23HybridDatabaseTokenizer03HdbC0VN', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV10inputRangeSnySS5IndexVGvg', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV10inputRangeSnySS5IndexVGvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV15normalizedRangeSnySS5IndexVGvg', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV15normalizedRangeSnySS5IndexVGvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV5fusedSbvg', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanV5fusedSbvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanVMa', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanVMn', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV0D8TermSpanVN', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV10normalizedSSvg', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV10normalizedSSvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV5inputSSvg', '_$s23HybridDatabaseTokenizer10QueryTermsV5inputSSvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV5termsSayAC0D8TermSpanVGvg', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsV5termsSayAC0D8TermSpanVGvpMV', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsVMa', '_$s23HybridDatabaseTokenizer10QueryTermsVMn', 
+                       '_$s23HybridDatabaseTokenizer10QueryTermsVN' ]
+...

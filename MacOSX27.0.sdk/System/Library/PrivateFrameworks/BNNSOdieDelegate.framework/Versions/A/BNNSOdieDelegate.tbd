@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/BNNSOdieDelegate.framework/Versions/A/BNNSOdieDelegate'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s16BNNSOdieDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfC', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfCTj', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfCTq', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfc', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC15resolveThrowing7context4ODIE13KernelBindingVSgAF0H17ResolutionContextV_tKF', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC19generateExecutionIR3for10Foundation4DataV4ODIE0B17FunctionArgumentsV_tKF', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC4ODIE0B0AAMc', '_$s16BNNSOdieDelegate12BNNSDelegateC4ODIE14SymbolResolverAAMc', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC4nameSSvgZ', '_$s16BNNSOdieDelegate12BNNSDelegateC4nameSSvpZMV', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateC7resolve7context4ODIE13KernelBindingVSgAF0G17ResolutionContextV_tF', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCMa', '_$s16BNNSOdieDelegate12BNNSDelegateCMm', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCMn', '_$s16BNNSOdieDelegate12BNNSDelegateCMo', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCMu', '_$s16BNNSOdieDelegate12BNNSDelegateCN', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCfD', '_$s16BNNSOdieDelegate12BNNSDelegateCfd', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCyAC4ODIE0B16ProgramArgumentsVYaKcfC', 
+                       '_$s16BNNSOdieDelegate12BNNSDelegateCyAC4ODIE0B16ProgramArgumentsVYaKcfCTu', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC15irConfiguration4ODIE8CompilerC9DelegatesV15IRConfigurationVvg', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC15irConfiguration4ODIE8CompilerC9DelegatesV15IRConfigurationVvpMV', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC22compiledModuleBytecode4from3for4ODIE8CompilerC9DelegatesV06SharedG0C10Foundation3URLV_s7RawSpanVtKF', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC2idSSvg', '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC2idSSvpMV', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC4ODIE8CompilerC9DelegatesV15BinaryGeneratorAAMc', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC6targetACSo16BNNSTargetSystema_tKcfC', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC6targetACSo16BNNSTargetSystema_tKcfCTj', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC6targetACSo16BNNSTargetSystema_tKcfCTq', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC6targetACSo16BNNSTargetSystema_tKcfc', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedC7compile14moduleBytecode2to4with4ODIE8CompilerC9DelegatesV06SharedG0Cs7RawSpanV_10Foundation3URLVAL22BinaryGeneratorContextVtKF', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCMa', '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCMm', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCMn', '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCMo', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCMu', '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCN', 
+                       '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCfD', '_$s16BNNSOdieDelegate21BNNSCompilerVersionedCfd', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedC15irConfiguration4ODIE8CompilerC9DelegatesV15IRConfigurationVvg', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedC15irConfiguration4ODIE8CompilerC9DelegatesV15IRConfigurationVvpMV', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedC4ODIE8CompilerC9DelegatesV9SegmenterAAMc', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedC7segment14moduleBytecode4with4ODIE8CompilerC9DelegatesV06SharedG0Cs7RawSpanV_AI18CompilationContextVtKF', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCACycfC', '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCACycfCTj', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCACycfCTq', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCACycfc', '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCMa', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCMm', '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCMn', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCMo', '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCMu', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCN', '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCfD', 
+                       '_$s16BNNSOdieDelegate22BNNSSegmenterVersionedCfd' ]
+...

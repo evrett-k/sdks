@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CallAudioServiceClient.framework/Versions/A/CallAudioServiceClient'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _CallAudioServiceClientVersionNumber, _CallAudioServiceClientVersionString, 
+                       _TACallAudioServiceErrorCallIDKey, _TACallAudioServiceErrorDomain, 
+                       _TACallAudioServiceErrorStreamTokenKey, _TACallAudioServiceErrorUnderlyingAVCErrorKey, 
+                       __ZN12ClientConfig14initFromConfigEN3xpc4dictE, __ZN3ims11DeviceEvent13eventWithNameERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZN3ims11kClientSlotE, __ZN3ims13categoryToUrnERKNS_17EmergencyCategoryE, 
+                       __ZN3ims13kMlsHomeKdsIdE, __ZN3ims14kClientPurposeE, __ZN3ims16kIsThirdPartyAppE, 
+                       __ZN3ims17kClientGenerationE, __ZN3ims21getStaticLogHandleForEPKc, 
+                       __ZN3ims21getStaticLogHandleForEPKc12ClientConfig, __ZN3ims8Services12namesForMaskEj, 
+                       __ZN3ims8Services14nameForServiceENS0_11ServiceTypeE, __ZN3ims8Services15serviceWithNameERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZN3ims8asStringENS_10ClientSlotE, __ZN3ims8asStringENS_11DeviceEvent9EventTypeE, 
+                       __ZN3ims8asStringENS_13ClientPurposeE, __ZN3ims8asStringENS_13FlowDirectionE, 
+                       __ZN3ims8asStringENS_15SipVerstatLevelE, __ZN3ims8asStringENS_16RegFailureReasonE, 
+                       __ZN3ims8asStringENS_25RegistrationIdentityStateE, __ZN3ims8asStringENS_9MediaTypeE, 
+                       __ZN3ims8asStringERKNS_17RegistrationStateE, __ZNK12ClientConfig9getLogTagEv ]
+    objc-classes:    [ AudioStreamCallbackProxy, TAAudioConfigProxy, TAAudioStreamProxy, 
+                       TABasebandAudioTapResult, TACallAudioServiceError, TAMediaStreamConfigProxy, 
+                       TANetworkAddressProxy, TARTCPPacketProxy, TARTCPReceiverReportProxy, 
+                       TARTCPSenderReportProxy, TARTCPSourceDescriptionProxy, TATextConfigProxy, 
+                       TATextStreamProxy, TextStreamCallbackProxy ]
+...

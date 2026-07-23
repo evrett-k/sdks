@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+flags:           [ not_app_extension_safe ]
+install-name:    '/System/Library/PrivateFrameworks/CoreALD.framework/CoreALD'
+current-version: 6.3
+compatibility-version: 0
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _CWeMQvFE, _FbLnABIk, _OZpDoyky, _QSIlMWCo, _SljH37Yp, _TBQFRWlW, 
+                       _adMedklO, _bE5fdykB, _cdHFeFDJ, _fyzGzQHg, _jYWQDEvI, _niaOacKH, 
+                       _qENIaLkr, _xrPnDyPw ]
+  - targets:         [ arm64e-macos ]
+    symbols:         [ _H8gsk43n, _Po2t2NB7, _QkJGIpQh, _SBuG0W98, _UGRal6nh, _WJUddQgY, 
+                       _YiOiO7rq, _ZOUWGx5P, _bmXjyxfx, _dUqv1FXe, _f1mnjBcq, _g4Bksweo, 
+                       _hTr790Tw, _p2yrTtRp, _sFDaXbNN, _waTiwMht, _wbPQbfLa, _wuxKUkPV, 
+                       _xXO6qWH0 ]
+...

@@ -1,0 +1,92 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target x86_64-apple-macos27.0 -target-variant x86_64-apple-ios27.0-macabi -enable-objc-interop -enable-library-evolution -language-mode 5 -Osize -library-level api -target-min-inlining-version min -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 301.0.43.6 -module-name _AppIntents_AppKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import AppIntents
+public import AppKit
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol NSCollectionViewAppIntentsDataSource : AnyObject {
+  @_Concurrency::MainActor func collectionView(_ collectionView: AppKit::NSCollectionView, appEntityIdentifierForItemAt indexPath: Foundation::IndexPath) -> AppIntents::EntityIdentifier?
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _AppIntents_AppKit::NSCollectionViewAppIntentsDataSource {
+  @_Concurrency::MainActor public func collectionView(_ collectionView: AppKit::NSCollectionView, appEntityIdentifierForItemAt indexPath: Foundation::IndexPath) -> AppIntents::EntityIdentifier?
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AppKit::NSCollectionView {
+  @_Concurrency::MainActor @preconcurrency weak public var appIntentsDataSource: (any _AppIntents_AppKit::NSCollectionViewAppIntentsDataSource)? {
+    get
+    set
+  }
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol NSTableViewAppIntentsDataSource : AnyObject {
+  @_Concurrency::MainActor func tableView(_ tableView: AppKit::NSTableView, appEntityIdentifierFor row: Swift::Int) -> AppIntents::EntityIdentifier?
+  @_Concurrency::MainActor func outlineView(_ outlineView: AppKit::NSOutlineView, appEntityIdentifierFor item: Any?) -> AppIntents::EntityIdentifier?
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _AppIntents_AppKit::NSTableViewAppIntentsDataSource {
+  @_Concurrency::MainActor public func tableView(_ tableView: AppKit::NSTableView, appEntityIdentifierFor row: Swift::Int) -> AppIntents::EntityIdentifier?
+  @_Concurrency::MainActor public func outlineView(_ outlineView: AppKit::NSOutlineView, appEntityIdentifierFor item: Any?) -> AppIntents::EntityIdentifier?
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AppKit::NSTableView {
+  @_Concurrency::MainActor @preconcurrency weak public var appIntentsDataSource: (any _AppIntents_AppKit::NSTableViewAppIntentsDataSource)? {
+    get
+    set
+  }
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AppKit::NSView : @retroactive AppIntents::AppEntityAnnotatable {
+  @_Concurrency::MainActor @preconcurrency public var appEntityIdentifier: AppIntents::EntityIdentifier? {
+    get
+    set
+  }
+}
+@available(macOS 15.4, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AppKit::NSView {
+  @_Concurrency::MainActor @preconcurrency public var appEntityUIElementProvider: ((AppKit::NSView, AppIntents::AppEntityUIElementsContext) -> [AppIntents::AppEntityUIElement])? {
+    get
+    set
+  }
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents::DisplayRepresentation.AppIntents::Image {
+  public init?(systemName name: Swift::String, tintColor: AppKit::NSColor? = nil, symbolConfiguration: AppKit::NSImage.AppKit::SymbolConfiguration? = nil)
+}

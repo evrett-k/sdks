@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/Versions/A/MechanismBase'
+current-version: 2319.0.33
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    clients:         [ '-allowable_client', DaemonUtils, LARecoveryUITest, LATester, 
+                       LATester macOS, LATesterAHP, LocalAuthentication, LocalAuthenticationAutomation, 
+                       LocalAuthenticationBinTests, LocalAuthenticationCoreTests, 
+                       LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationCredentialServicesTests, LocalAuthenticationEmbeddedUI, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthenticationUIService, 
+                       LocalAuthenticationUserTests, LocalAuthorizationTests, MechOyster, 
+                       MechPasscode, MechPearl, MechPushButton, MechTouchId, MechWatch, 
+                       MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, _LocalAuthentication_SwiftUI, coreautha, coreauthd, 
+                       latool, userauthd ]
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo24MechanismKofNTransformerC0A4BaseEABycfC', '_$sSo24MechanismKofNTransformerC0A4BaseEABycfc', 
+                       '_$sSo24MechanismKofNTransformerCMa', '_$sSo28MechanismBackgroundCompositeC0A4BaseE010backgroundA018forEventProcessingSoACCSgSDys11AnyHashableVypGSg_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE019bestEffortAvailableA03forSoACCSo20LACEvaluationRequest_pSg_tKF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE03subA15RequestsRestart_17reconnectRemoteUIySoACC_SbtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE04findA019withEventIdentifierSoACCSgSo8LACEventa_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE10requiresUi19withEventProcessingSbSDys11AnyHashableVypGSg_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE10willFinishyyF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE15eventIdentifier20remoteViewController19contextExternalizer7requestABSgSo8LACEventa_So21LACRemoteUIControllerVSo23LACContextExternalizing_pSgSo20LACEvaluationRequest_pSgtcfC', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE15eventIdentifier20remoteViewController19contextExternalizer7requestABSgSo8LACEventa_So21LACRemoteUIControllerVSo23LACContextExternalizing_pSgSo20LACEvaluationRequest_pSgtcfc', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE15eventIdentifier20remoteViewController1k15ofSubmechanisms7requestABSo8LACEventa_So21LACRemoteUIControllerVSiSaySoACCGSo20LACEvaluationRequest_ptcfC', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE15eventIdentifier20remoteViewController1k15ofSubmechanisms7requestABSo8LACEventa_So21LACRemoteUIControllerVSiSaySoACCGSo20LACEvaluationRequest_ptcfc', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE18availabilityEvents10forPurposeSDys11AnyHashableVypGSgSo10LACPurposea_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE20remoteViewController18forEventProcessingSo21LACRemoteUIControllerVSDys11AnyHashableVypGSg_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE24mechanismTreeDescriptionSSSgyF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE32additionalControllerInternalInfo9forPolicySDys11AnyHashableVypGSgSo9LACPolicya_tF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE3run9withHints12eventHandler20activationCompletion5replyySDys11AnyHashableVypGSg_So26LACEvaluationEventHandling_pSgyAL_s5Error_pSgtcSgyAL_APtYbcSgtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE3run9withHints14eventsDelegate5replyySDys11AnyHashableVypGSg_So20LACContextUIDelegate_pSgyAK_s5Error_pSgtYbcSgtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE5pause_8forEventySb_So8LACEventatKF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE6handle_6paramsySo16LACRemoteUIEventV_SDys11AnyHashableVypGSgtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE6params7requestABSgSDys11AnyHashableVypGSg_So20LACEvaluationRequest_pSgtcfC', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE6params7requestABSgSDys11AnyHashableVypGSg_So20LACEvaluationRequest_pSgtcfc', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE7restart19withEventIdentifier11lastAttemptySo8LACEventa_SbtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseE9finishRun10withResult5errorySDys11AnyHashableVypGSg_s5Error_pSgtF', 
+                       '_$sSo28MechanismBackgroundCompositeC0A4BaseEABycfC', '_$sSo28MechanismBackgroundCompositeC0A4BaseEABycfc', 
+                       '_$sSo28MechanismBackgroundCompositeCMa', _kRemoteUIManagerDefaultActivateTimeout, 
+                       _kRemoteUIManagerDefaultDeactivateTimeout ]
+    objc-classes:    [ ACMContextRecord, MechanismACM, MechanismAssertion, MechanismAssertionHolding, 
+                       MechanismAssertionKeyBagUnlocked, MechanismAssertionLoginWindowShield, 
+                       MechanismAssertionWithDarwinNotifications, MechanismBackgroundComposite, 
+                       MechanismBase, MechanismBaseComposite, MechanismBiometry, 
+                       MechanismContext, MechanismKofN, MechanismKofNReorganizer, 
+                       MechanismKofNTransformer, MechanismPSSO, MechanismTouchIDWatch, 
+                       MechanismUI, MechanismUI_PC, RemoteUIActivator, RemoteUIManager, 
+                       RemoteUIManagerConfig ]
+...

@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/AlwaysOnExclavesDaemon.framework/Versions/A/AlwaysOnExclavesDaemon'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s22AlwaysOnExclavesDaemon0D0C5start5label12mach_serviceySS_SStKFZ', 
+                       '_$s22AlwaysOnExclavesDaemon0D0C6sharedACSgvMZ', '_$s22AlwaysOnExclavesDaemon0D0C6sharedACSgvgZ', 
+                       '_$s22AlwaysOnExclavesDaemon0D0C6sharedACSgvpZMV', '_$s22AlwaysOnExclavesDaemon0D0C6sharedACSgvsZ', 
+                       '_$s22AlwaysOnExclavesDaemon0D0CMa', '_$s22AlwaysOnExclavesDaemon0D0CMm', 
+                       '_$s22AlwaysOnExclavesDaemon0D0CMn', '_$s22AlwaysOnExclavesDaemon0D0CMo', 
+                       '_$s22AlwaysOnExclavesDaemon0D0CMu', '_$s22AlwaysOnExclavesDaemon0D0CN', 
+                       '_$s22AlwaysOnExclavesDaemon0D0CfD', '_$s22AlwaysOnExclavesDaemon0D0Cfd', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorO25serviceEnumerationFailureyA2CmFWC', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorO2eeoiySbAC_ACtFZ', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorO4hash4intoys6HasherVz_tF', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorO9hashValueSivg', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorO9hashValueSivpMV', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorOMa', '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorOMn', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorON', '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorOSHAAMc', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorOSQAAMc', 
+                       '_$s22AlwaysOnExclavesDaemon21WorkerThreadPoolErrorOs0H0AAMc', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverC5start5labelySS_tKFZ', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCMa', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCMm', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCMn', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCMo', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCMu', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCN', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCfD', 
+                       '_$s22AlwaysOnExclavesDaemon24CrossConclaveIpcReceiverCfd', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorO02noF0yA2CmFWC', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorO2eeoiySbAC_ACtFZ', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorO4hash4intoys6HasherVz_tF', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorO9hashValueSivg', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorO9hashValueSivpMV', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorOMa', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorOMn', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorON', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorOSHAAMc', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorOSQAAMc', 
+                       '_$s22AlwaysOnExclavesDaemon29CrossConclaveIpcReceiverErrorOs0I0AAMc', 
+                       _AlwaysOnExclavesDaemonVersionNumber, _AlwaysOnExclavesDaemonVersionString ]
+...

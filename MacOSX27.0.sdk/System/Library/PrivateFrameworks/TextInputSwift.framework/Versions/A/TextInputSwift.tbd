@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/TextInputSwift.framework/Versions/A/TextInputSwift'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$sSo24TIClientContextRetrieverC14TextInputSwiftEABycfC', 
+                       '_$sSo24TIClientContextRetrieverC14TextInputSwiftEABycfc', 
+                       '_$sSo24TIClientContextRetrieverCMa', _TextInputSwiftVersionNumber, 
+                       _TextInputSwiftVersionString ]
+    objc-classes:    [ TIClientContextRetriever ]
+...

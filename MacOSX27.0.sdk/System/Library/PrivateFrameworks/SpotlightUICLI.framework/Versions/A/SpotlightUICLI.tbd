@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SpotlightUICLI.framework/Versions/A/SpotlightUICLI'
+current-version: 236.0.4
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s14SpotlightUICLI9UtilitiesO10pathForCSV5namedSSSgSS_tFZ', 
+                       '_$s14SpotlightUICLI9UtilitiesOMa', '_$s14SpotlightUICLI9UtilitiesOMn', 
+                       '_$s14SpotlightUICLI9UtilitiesON', _SpotlightUICLIVersionNumber, 
+                       _SpotlightUICLIVersionString ]
+...

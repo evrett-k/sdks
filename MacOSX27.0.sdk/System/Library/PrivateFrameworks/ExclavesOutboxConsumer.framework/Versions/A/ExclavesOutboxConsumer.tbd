@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ExclavesOutboxConsumer.framework/Versions/A/ExclavesOutboxConsumer'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s22ExclavesOutboxConsumerAAC14messageConsume9serviceId0A17MessageQueueTypes0aH0VSgAE0b7ServiceG0V_tKF', 
+                       '_$s22ExclavesOutboxConsumerAAC4fromAB9Tightbeam0E8EndpointO_tcfC', 
+                       '_$s22ExclavesOutboxConsumerAAC4fromAB9Tightbeam0E8EndpointO_tcfCTj', 
+                       '_$s22ExclavesOutboxConsumerAAC4fromAB9Tightbeam0E8EndpointO_tcfCTq', 
+                       '_$s22ExclavesOutboxConsumerAAC4fromAB9Tightbeam0E8EndpointO_tcfc', 
+                       '_$s22ExclavesOutboxConsumerAAC9Tightbeam0D17EndpointDecodableAAMc', 
+                       '_$s22ExclavesOutboxConsumerAACMa', '_$s22ExclavesOutboxConsumerAACMm', 
+                       '_$s22ExclavesOutboxConsumerAACMn', '_$s22ExclavesOutboxConsumerAACMo', 
+                       '_$s22ExclavesOutboxConsumerAACMu', '_$s22ExclavesOutboxConsumerAACN', 
+                       '_$s22ExclavesOutboxConsumerAACfD', '_$s22ExclavesOutboxConsumerAACfd', 
+                       _ExclavesOutboxConsumerVersionNumber, _ExclavesOutboxConsumerVersionString ]
+...

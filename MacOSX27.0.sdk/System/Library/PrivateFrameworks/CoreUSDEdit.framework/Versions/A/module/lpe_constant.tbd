@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/lpe_constant.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN28_ModuleLpeConstantCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN28_ModuleLpeConstantCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN28_ModuleLpeConstantCallbacks_18create_module_dataERK8OfObject, 
+                       __ZN28_ModuleLpeConstantCallbacks_19destroy_module_dataERK8OfObjectPv, 
+                       __ZN28_ModuleLpeConstantCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN28_ModuleLpeConstantCallbacks_21get_lpe_constant_descER8OfObjectR15LpeConstantDesc, 
+                       _on_register_module ]
+...

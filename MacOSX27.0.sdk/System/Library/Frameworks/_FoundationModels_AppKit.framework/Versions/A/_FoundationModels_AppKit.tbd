@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/Frameworks/_FoundationModels_AppKit.framework/Versions/A/_FoundationModels_AppKit'
+current-version: 2.0.59
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s16FoundationModels10AttachmentV01_aB7_AppKitAA05ImageC7ContentVRszlE_11orientationACyAFGSo7NSImageC_So26CGImagePropertyOrientationVSgtcfC', 
+                       '_$sSo7NSImageC16FoundationModels19PromptRepresentable01_bC7_AppKitMc', 
+                       '_$sSo7NSImageC16FoundationModels25InstructionsRepresentable01_bC7_AppKitMc', 
+                       '_$sSo7NSImageC24_FoundationModels_AppKitE20promptRepresentation0bC06PromptVvg', 
+                       '_$sSo7NSImageC24_FoundationModels_AppKitE20promptRepresentation0bC06PromptVvpMV', 
+                       '_$sSo7NSImageC24_FoundationModels_AppKitE26instructionsRepresentation0bC012InstructionsVvg', 
+                       '_$sSo7NSImageC24_FoundationModels_AppKitE26instructionsRepresentation0bC012InstructionsVvpMV' ]
+...

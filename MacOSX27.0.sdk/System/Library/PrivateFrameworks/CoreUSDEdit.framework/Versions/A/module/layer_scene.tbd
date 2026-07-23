@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/layer_scene.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN33_ModuleModuleLayerSceneCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN33_ModuleModuleLayerSceneCallbacks_21on_deserialize_objectER8OfObjectRK11CoreVersionRK11ParserGroupRK15OfSerialOptions, 
+                       _on_register_module ]
+...

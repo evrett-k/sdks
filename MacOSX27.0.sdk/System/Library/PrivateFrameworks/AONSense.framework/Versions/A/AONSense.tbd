@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AONSense.framework/Versions/A/AONSense.dylib'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s8AONSense11isAvailableSbyF', '_$s8AONSense23ALFResultsRequesterDataC10unregisteryyFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC10unregisteryyFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC11queryCancelyyFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC11queryCancelyyFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC11sendRequestyyFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC11sendRequestyyFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC13updateOptionsyy10Foundation0D0VKFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC13updateOptionsyy10Foundation0D0VKFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5labelSSvMTj', '_$s8AONSense23ALFResultsRequesterDataC5labelSSvMTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5labelSSvgTj', '_$s8AONSense23ALFResultsRequesterDataC5labelSSvgTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5labelSSvpMV', '_$s8AONSense23ALFResultsRequesterDataC5labelSSvsTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5labelSSvsTq', '_$s8AONSense23ALFResultsRequesterDataC5query7options12dataCallback5start3endy11ALDataTypes15ALResultOptionsVSg_y10Foundation0D0VKcAM4DateVAQtKFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5query7options12dataCallback5start3endy11ALDataTypes15ALResultOptionsVSg_y10Foundation0D0VKcAM4DateVAQtKFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5queueACSo012OS_dispatch_E0C_tcfC', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5queueACSo012OS_dispatch_E0C_tcfCTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5queueACSo012OS_dispatch_E0C_tcfCTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC5queueACSo012OS_dispatch_E0C_tcfc', 
+                       '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvMTj', '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvMTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvgTj', '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvgTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvpMV', '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvsTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC6_labelSSSgvsTq', '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvMTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvMTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvgTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvgTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvpMV', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvsTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC7options11ALDataTypes15ALResultOptionsVvsTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvMTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvMTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvgTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvgTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvpMV', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvsTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8_options11ALDataTypes15ALResultOptionsVvsTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8register7payload12dataCallbacky10Foundation0D0V_yAIKctFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8register7payload12dataCallbacky10Foundation0D0V_yAIKctFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8register7request12dataCallbacky10Foundation0D0VyKc_yAIKctKFTj', 
+                       '_$s8AONSense23ALFResultsRequesterDataC8register7request12dataCallbacky10Foundation0D0VyKc_yAIKctKFTq', 
+                       '_$s8AONSense23ALFResultsRequesterDataCMa', '_$s8AONSense23ALFResultsRequesterDataCMm', 
+                       '_$s8AONSense23ALFResultsRequesterDataCMn', '_$s8AONSense23ALFResultsRequesterDataCMo', 
+                       '_$s8AONSense23ALFResultsRequesterDataCMu', '_$s8AONSense23ALFResultsRequesterDataCN', 
+                       '_$s8AONSense23ALFResultsRequesterDataCfD', '_$s8AONSense23ALFResultsRequesterDataCfd' ]
+...

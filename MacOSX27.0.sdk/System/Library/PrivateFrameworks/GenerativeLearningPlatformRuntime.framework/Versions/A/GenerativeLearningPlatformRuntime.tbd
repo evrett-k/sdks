@@ -1,0 +1,5 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/GenerativeLearningPlatformRuntime.framework/Versions/A/GenerativeLearningPlatformRuntime'
+...

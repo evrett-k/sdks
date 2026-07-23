@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/PersonalAudio.framework/Versions/A/PersonalAudio'
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ _PAConfigurationWildcard, _PAPresetAdjustmentSpeechModeKey, 
+                       _PARegionSupportsHearingAid, _PAYodelConfigDidUpdate, _PersonalAudioVersionNumber, 
+                       _PersonalAudioVersionString, _paBundle, _paDescriptionForLevel, 
+                       _paDescriptionForShape, _paKeyFromNodeParameters, _paLocString, 
+                       _paSupportedWiredRoutes ]
+    objc-classes:    [ PAAccessoryManager, PAAudiogramUtilities, PAConfiguration, 
+                       PADatabaseManager, PAEnrollment, PAEnrollmentNode, PAHMSManager, 
+                       PASettings, PAStimulus, PersonalAudioSettings ]
+...

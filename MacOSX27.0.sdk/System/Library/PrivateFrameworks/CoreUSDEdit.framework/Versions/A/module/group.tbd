@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreUSDEdit.framework/Versions/A/module/group.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ __ZN28_ModuleModuleGroupCallbacks_10create_gasER8OfObjectRK14CoreBasicArrayIP16GeometryOverrideE, 
+                       __ZN28_ModuleModuleGroupCallbacks_10init_classER7OfClass, 
+                       __ZN28_ModuleModuleGroupCallbacks_11destroy_gasER8OfObjectP9GasObject, 
+                       __ZN28_ModuleModuleGroupCallbacks_11get_gas_ctxER8OfObjectRK7CtxEvalRK9CtxShaderR6CtxGas, 
+                       __ZN28_ModuleModuleGroupCallbacks_12pre_evaluateER8OfObjectRK7CtxEvalRK9CtxShader, 
+                       __ZN28_ModuleModuleGroupCallbacks_14declare_moduleER8OfObjectR15OfObjectFactory, 
+                       __ZN28_ModuleModuleGroupCallbacks_14destroy_moduleER8OfObjectR15OfObjectFactoryP8OfModule, 
+                       __ZN28_ModuleModuleGroupCallbacks_16create_eval_dataERK8OfObjectRK7CtxEval, 
+                       __ZN28_ModuleModuleGroupCallbacks_16fill_filter_tagsERK8OfObjectRK6OfAttrR10CoreVectorI10CoreStringER9CoreArrayIbE, 
+                       __ZN28_ModuleModuleGroupCallbacks_17destroy_eval_dataERK8OfObjectRK7CtxEvalPv, 
+                       __ZN28_ModuleModuleGroupCallbacks_19on_attribute_changeER8OfObjectRK6OfAttrRiRKi, 
+                       __ZN28_ModuleModuleGroupCallbacks_20get_integration_dataER8OfObjectRK7CtxEvalRK9CtxShaderRK16ModuleIntegrator, 
+                       __ZN28_ModuleModuleGroupCallbacks_21get_scene_object_infoER8OfObjectR15SceneObjectInfo, 
+                       __ZN28_ModuleModuleGroupCallbacks_21on_deserialize_objectER8OfObjectRK11CoreVersionRK11ParserGroupRK15OfSerialOptions, 
+                       __ZN28_ModuleModuleGroupCallbacks_23on_pre_process_overrideER8OfObjectR11OfOverridesRK10CoreString, 
+                       __ZN28_ModuleModuleGroupCallbacks_25on_pre_deserialize_objectERK11CoreVersionR11ParserGroup, 
+                       _on_register_module ]
+...

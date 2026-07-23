@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/OnDeviceDaemon.framework/Versions/A/OnDeviceDaemon'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    clients:         [ OnDeviceDaemonTests, OnDeviceStorageDaemon, OnDeviceStorageDaemonTests, 
+                       ServicesAnalyticsDaemon, ServicesAnalyticsDaemonTests, ServicesAnalyticsKitTests, 
+                       amsondevicestoraged ]
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s14OnDeviceDaemon0C0V35didReceiveMemoryWarningNotificationSo18NSNotificationNameavgZ', 
+                       '_$s14OnDeviceDaemon0C0V35didReceiveMemoryWarningNotificationSo18NSNotificationNameavpZMV', 
+                       '_$s14OnDeviceDaemon0C0V3runyyKF', '_$s14OnDeviceDaemon0C0V8servicesACxxQp_tKcRvzAA0C7ServiceRzlufC', 
+                       '_$s14OnDeviceDaemon0C0VMa', '_$s14OnDeviceDaemon0C0VMn', 
+                       '_$s14OnDeviceDaemon0C0VN', '_$s14OnDeviceDaemon0C7ServiceMp', 
+                       '_$s14OnDeviceDaemon0C7ServiceP04machD4NameSSvgZTj', '_$s14OnDeviceDaemon0C7ServiceP04machD4NameSSvgZTq', 
+                       '_$s14OnDeviceDaemon0C7ServiceP16xpcListenerQueueSo24OS_dispatch_queue_serialCvgTj', 
+                       '_$s14OnDeviceDaemon0C7ServiceP16xpcListenerQueueSo24OS_dispatch_queue_serialCvgTq', 
+                       '_$s14OnDeviceDaemon0C7ServiceP21handleIncomingSessiony3XPC11XPCListenerC0fG7RequestC8DecisionVAIFTj', 
+                       '_$s14OnDeviceDaemon0C7ServiceP21handleIncomingSessiony3XPC11XPCListenerC0fG7RequestC8DecisionVAIFTq', 
+                       '_$s14OnDeviceDaemon0C7ServiceTL', '_$s14OnDeviceDaemon16ProcessAuditableV20withUnsafeAuditTokenyxxSo13audit_token_taKXEKlF', 
+                       '_$s14OnDeviceDaemon16ProcessAuditableVAA0E0AAMc', '_$s14OnDeviceDaemon16ProcessAuditableVAA0E0AAWP', 
+                       '_$s14OnDeviceDaemon16ProcessAuditableVACycfC', '_$s14OnDeviceDaemon16ProcessAuditableVMa', 
+                       '_$s14OnDeviceDaemon16ProcessAuditableVMn', '_$s14OnDeviceDaemon16ProcessAuditableVN', 
+                       '_$s14OnDeviceDaemon24ClientEntitlementCheckerV03hasE0ySbSSF', 
+                       '_$s14OnDeviceDaemon24ClientEntitlementCheckerV15hasEntitlementsySbSaySSGF', 
+                       '_$s14OnDeviceDaemon24ClientEntitlementCheckerVMa', '_$s14OnDeviceDaemon24ClientEntitlementCheckerVMn', 
+                       '_$s14OnDeviceDaemon24ClientEntitlementCheckerVyACyxGxcfC', 
+                       '_$s14OnDeviceDaemon24ClientEntitlementCheckerVyxG0aB10Foundation0eF0AAMc', 
+                       '_$s14OnDeviceDaemon7SandboxO10initialize11profileNameySS_tFZ', 
+                       '_$s14OnDeviceDaemon7SandboxOMa', '_$s14OnDeviceDaemon7SandboxOMn', 
+                       '_$s14OnDeviceDaemon7SandboxON', '_$s14OnDeviceDaemon9AuditableMp', 
+                       '_$s14OnDeviceDaemon9AuditableP20withUnsafeAuditTokenyqd__qd__So13audit_token_taKXEKlFTj', 
+                       '_$s14OnDeviceDaemon9AuditableP20withUnsafeAuditTokenyqd__qd__So13audit_token_taKXEKlFTq', 
+                       '_$s14OnDeviceDaemon9AuditableTL', '_$s18OnDeviceFoundation8OSLoggerV0aB6DaemonE9lifecycleACvgZ', 
+                       '_$s3XPC11XPCListenerC22IncomingSessionRequestC14OnDeviceDaemon9AuditableAFMc', 
+                       '_$s3XPC11XPCListenerC22IncomingSessionRequestC14OnDeviceDaemon9AuditableAFWP', 
+                       '_$s3XPC18XPCReceivedMessageV14OnDeviceDaemon9AuditableADMc', 
+                       '_$s3XPC18XPCReceivedMessageV14OnDeviceDaemon9AuditableADWP', 
+                       '_$s3XPC18XPCReceivedMessageV14OnDeviceDaemonE20withUnsafeAuditTokenyxxSo13audit_token_taKXEKlF', 
+                       _OnDeviceDaemonVersionNumber, _OnDeviceDaemonVersionString ]
+...

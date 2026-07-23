@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/AnalyticsAgentFramework.framework/Versions/A/AnalyticsAgentFramework'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s23AnalyticsAgentFramework0A16XPCEventHandlersC5startyyF', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersC8xpcQueueSo17OS_dispatch_queueCvg', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersC8xpcQueueSo17OS_dispatch_queueCvpMV', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCACycfC', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCACycfCTj', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCACycfCTq', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCACycfc', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCMa', '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCMm', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCMn', '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCMo', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCMu', '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCN', 
+                       '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCfD', '_$s23AnalyticsAgentFramework0A16XPCEventHandlersCfd', 
+                       '_$s23AnalyticsAgentFramework15BackgroundTasksV5start5queueySo012OS_dispatch_G0C_tF', 
+                       '_$s23AnalyticsAgentFramework15BackgroundTasksVACycfC', '_$s23AnalyticsAgentFramework15BackgroundTasksVMa', 
+                       '_$s23AnalyticsAgentFramework15BackgroundTasksVMn', '_$s23AnalyticsAgentFramework15BackgroundTasksVN', 
+                       '_$sSo21CLAuthorizationStatusV23AnalyticsAgentFrameworkE10authorizedSbvg', 
+                       '_$sSo21CLAuthorizationStatusV23AnalyticsAgentFrameworkE10authorizedSbvpMV' ]
+...

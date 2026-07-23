@@ -1,0 +1,6 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/ArchetypeUI.framework/Versions/A/ArchetypeUI'
+current-version: 41.6
+...

@@ -1,0 +1,8 @@
+framework module AccessoryAccess [system] {
+    requires !maccatalyst
+
+    umbrella header "AccessoryAccess.h"
+
+    export *
+    module * { export * }
+}

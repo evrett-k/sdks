@@ -1,0 +1,55 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CharacterPicker.framework/Versions/A/CharacterPicker'
+current-version: 320
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s15CharacterPicker12StickerQueryC015shouldNormalizeD0Sbvg', 
+                       '_$s15CharacterPicker12StickerQueryC015shouldNormalizeD0SbvpMV', 
+                       '_$s15CharacterPicker12StickerQueryC03rawD0015shouldNormalizeD013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfC', 
+                       '_$s15CharacterPicker12StickerQueryC03rawD0015shouldNormalizeD013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfCTj', 
+                       '_$s15CharacterPicker12StickerQueryC03rawD0015shouldNormalizeD013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfCTq', 
+                       '_$s15CharacterPicker12StickerQueryC03rawD0015shouldNormalizeD013searchLocalesACSS_SbSay10Foundation6LocaleVGtcfc', 
+                       '_$s15CharacterPicker12StickerQueryC03rawD0SSvg', '_$s15CharacterPicker12StickerQueryC03rawD0SSvpMV', 
+                       '_$s15CharacterPicker12StickerQueryC13searchLocalesSay10Foundation6LocaleVGvg', 
+                       '_$s15CharacterPicker12StickerQueryC13searchLocalesSay10Foundation6LocaleVGvpMV', 
+                       '_$s15CharacterPicker12StickerQueryCACycfC', '_$s15CharacterPicker12StickerQueryCACycfc', 
+                       '_$s15CharacterPicker12StickerQueryCMa', '_$s15CharacterPicker12StickerQueryCMn', 
+                       '_$s15CharacterPicker12StickerQueryCMo', '_$s15CharacterPicker12StickerQueryCMu', 
+                       '_$s15CharacterPicker12StickerQueryCN', '_$s15CharacterPicker12StickerQueryCfD', 
+                       '_$s15CharacterPicker20StickerSearchManagerC10flushCacheyyF', 
+                       '_$s15CharacterPicker20StickerSearchManagerC18stickerIdentifiers8matchingSay10Foundation4UUIDVGAA0C5QueryC_tYaKF', 
+                       '_$s15CharacterPicker20StickerSearchManagerC18stickerIdentifiers8matchingSay10Foundation4UUIDVGAA0C5QueryC_tYaKFTu', 
+                       '_$s15CharacterPicker20StickerSearchManagerC8stickers3forSay8Stickers11_STKStickerCGSay10Foundation4UUIDVG_tYaKF', 
+                       '_$s15CharacterPicker20StickerSearchManagerC8stickers3forSay8Stickers11_STKStickerCGSay10Foundation4UUIDVG_tYaKFTu', 
+                       '_$s15CharacterPicker20StickerSearchManagerCACycfC', '_$s15CharacterPicker20StickerSearchManagerCACycfc', 
+                       '_$s15CharacterPicker20StickerSearchManagerCMa', '_$s15CharacterPicker20StickerSearchManagerCMn', 
+                       '_$s15CharacterPicker20StickerSearchManagerCMo', '_$s15CharacterPicker20StickerSearchManagerCN', 
+                       '_$s15CharacterPicker20StickerSearchManagerCfD', _CPKCategoryTitleFavorites, 
+                       _CPKCategoryTitleGenmoji, _CPKCategoryTitleMore, _CPKCategoryTitleRecents, 
+                       _CPKCategoryTitleRecentsAndFavorites, _CPKCategoryTitleSearch, 
+                       _CPKCategoryTitleSeparator, _CPKCategoryTitleSpace, _CPKCategoryTitleStickers, 
+                       _CPKCategoryTitleSuggested, _CPKCategoryTitleSuggestedGenmoji, 
+                       _CPKCharacterPickerRecentsChangedNotification, _CPKCharacterPickerWindowDidCloseNotification, 
+                       _CPKCharacterPickerWindowWillOpenNotification, _CPKCharacterViewerWindowRevertToPickerNotification, 
+                       _CPKCharacterViewerWindowWillOpenNotification, _CPKCharactersViewDidChangedLayoutNotification, 
+                       _CPKCreateEmojiButtonPressedNotificationName, _CPKCreateMixmojiSelectPopoverWithDelegate, 
+                       _CPKEmitActivationSignpostBegin, _CPKEmitActivationSignpostEnd, 
+                       _CPKEmitCountedImageLoadingSignpostBegin, _CPKEmitCountedImageLoadingSignpostEnd, 
+                       _CPKEmitImageLoadingSignpostBegin, _CPKEmitImageLoadingSignpostEnd, 
+                       _CPKEmojiFoundationPrefsChangedNotification, _CPKGenmojiCreationIsAvailable, 
+                       _CPKGetRawCategoryData, _CPKHasShownSkinToneHelp, _CPKLogTypeSessionEvents, 
+                       _CPKLogTypeStartupPerformance, _CPKLoggingGetDefaultLog, _CPKLoggingGetSignpostLog, 
+                       _CPKLoggingGetUserInterfaceLog, _CPKPopoverControllerDidSelectCharacter, 
+                       _CPKPopoverDidRequestGenmojiCancellation, _CPKPopoverWillCloseForFocusLostNotification, 
+                       _CPKPopoverWillCloseForNonFocusLostNotification, _CPKSetHasShownSkinToneHelp, 
+                       _CPKShowGenmojiCreationFirstOnNextSession, _CPKTextAttachmentFromCharacterEntity, 
+                       _CPKTextAttachmentFromImage, _kCPKEmojiFontSize ]
+    objc-classes:    [ CPKCharactersView, CPKDefaultDataSource, CPKEmojiAndStickersDataSource, 
+                       CPKEmojiDataSource, CPKEmojiIMDataSource, CPKEmojiIMViewController, 
+                       CPKFont, CPKPopover, CPKPopoverController, CPKStandardCharacterEntity, 
+                       CPKStarmojiDataSource, CPKState, CPKSuggestedEmojiController, 
+                       CPKSuggestedEmojiResult, CPKWindow, SSCStickerQuery, SSCStickerSearchManager ]
+...

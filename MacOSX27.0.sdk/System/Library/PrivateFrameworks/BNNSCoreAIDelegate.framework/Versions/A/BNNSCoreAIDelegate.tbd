@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/BNNSCoreAIDelegate.framework/Versions/A/BNNSCoreAIDelegate'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s18BNNSCoreAIDelegate12BNNSCompilerC14CoreAICompiler8CompilerC9DelegatesV15BinaryGeneratorAAMc', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerC15irConfiguration14CoreAICompiler8CompilerC9DelegatesV15IRConfigurationVvg', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerC15irConfiguration14CoreAICompiler8CompilerC9DelegatesV15IRConfigurationVvpMV', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerC22compiledModuleBytecode4from3for14CoreAICompiler8CompilerC9DelegatesV06SharedF0C10Foundation3URLV_s7RawSpanVtKF', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerC2idSSvg', '_$s18BNNSCoreAIDelegate12BNNSCompilerC2idSSvpMV', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerC7compile14moduleBytecode2to4with14CoreAICompiler8CompilerC9DelegatesV06SharedF0Cs7RawSpanV_10Foundation3URLVAL22BinaryGeneratorContextVtKF', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCACycfC', '_$s18BNNSCoreAIDelegate12BNNSCompilerCACycfCTj', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCACycfCTq', '_$s18BNNSCoreAIDelegate12BNNSCompilerCACycfc', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCMa', '_$s18BNNSCoreAIDelegate12BNNSCompilerCMm', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCMn', '_$s18BNNSCoreAIDelegate12BNNSCompilerCMo', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCMu', '_$s18BNNSCoreAIDelegate12BNNSCompilerCN', 
+                       '_$s18BNNSCoreAIDelegate12BNNSCompilerCfD', '_$s18BNNSCoreAIDelegate12BNNSCompilerCfd', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfC', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfCTj', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfCTq', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC10contentsOfAC10Foundation3URLV_tKcfc', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC4nameSSvgZ', '_$s18BNNSCoreAIDelegate12BNNSDelegateC4nameSSvpZMV', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateC7resolve7context13CoreAIRuntime13KernelBindingVSgAF0H17ResolutionContextV_tKF', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateCMa', '_$s18BNNSCoreAIDelegate12BNNSDelegateCMm', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateCMn', '_$s18BNNSCoreAIDelegate12BNNSDelegateCMo', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateCMu', '_$s18BNNSCoreAIDelegate12BNNSDelegateCN', 
+                       '_$s18BNNSCoreAIDelegate12BNNSDelegateCfD', '_$s18BNNSCoreAIDelegate12BNNSDelegateCfd', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterC14CoreAICompiler8CompilerC9DelegatesV9SegmenterAAMc', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterC15irConfiguration14CoreAICompiler8CompilerC9DelegatesV15IRConfigurationVvg', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterC15irConfiguration14CoreAICompiler8CompilerC9DelegatesV15IRConfigurationVvpMV', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterC7segment14moduleBytecode4with14CoreAICompiler8CompilerC9DelegatesV06SharedF0Cs7RawSpanV_AI18CompilationContextVtKF', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCACycfC', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCACycfCTj', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCACycfCTq', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCACycfc', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCMa', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCMm', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCMn', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCMo', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCMu', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCN', 
+                       '_$s18BNNSCoreAIDelegate13BNNSSegmenterCfD', '_$s18BNNSCoreAIDelegate13BNNSSegmenterCfd' ]
+...

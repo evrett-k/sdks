@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/_SwiftMedia_SwiftUI_MacHelper.framework/Versions/A/_SwiftMedia_SwiftUI_MacHelper'
+swift-abi-version: 7
+allowable-clients:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    clients:         [ _SwiftMedia_SwiftUI ]
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s012_SwiftMedia_A12UI_MacHelper0B3LogOMa', '_$s012_SwiftMedia_A12UI_MacHelper0B3LogOMn', 
+                       '_$s012_SwiftMedia_A12UI_MacHelper0B3LogON' ]
+...

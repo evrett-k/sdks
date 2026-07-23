@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriAnalyticsToolKitSupport.framework/Versions/A/SiriAnalyticsToolKitSupport'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s13SiriAnalytics14TaggingServiceC0aB14ToolKitSupportE8registeryySDySSSay0eF010TypedValueOGGYaF', 
+                       '_$s13SiriAnalytics14TaggingServiceC0aB14ToolKitSupportE8registeryySDySSSay0eF010TypedValueOGGYaFTu', 
+                       _FFTSchemaFFTWrapperReadFrom, _FFTSchemaRegistrationDataReadFrom, 
+                       _FFTSchemaRegistrationErrorReadFrom ]
+    objc-classes:    [ FFTSchemaFFTWrapper, FFTSchemaRegistrationData, FFTSchemaRegistrationError ]
+    objc-ivars:      [ FFTSchemaFFTWrapper._errors, FFTSchemaFFTWrapper._fftId, FFTSchemaFFTWrapper._has, 
+                       FFTSchemaFFTWrapper._numTools, FFTSchemaFFTWrapper._numTypedValues, 
+                       FFTSchemaFFTWrapper._skippedMessages, FFTSchemaFFTWrapper._taggedMessages, 
+                       FFTSchemaRegistrationData._classifiedString, FFTSchemaRegistrationData._entityName, 
+                       FFTSchemaRegistrationData._propertyName, FFTSchemaRegistrationData._tagMetadata, 
+                       FFTSchemaRegistrationData._toolId, FFTSchemaRegistrationError._errorMessage, 
+                       FFTSchemaRegistrationError._registration ]
+...

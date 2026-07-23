@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/StopwatchAppIntents.framework/Versions/A/StopwatchAppIntents'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ '_$s19StopwatchAppIntents0A6EntityV011__appSchemaD0SSvgZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV0bC009_SupportsB12DependenciesAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV0bC00dE0AAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV0bC022DynamicOptionsProviderAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV0bC024PersistentlyIdentifiableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV13defaultResultACSgyYaF', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV13defaultResultACSgyYaFTu', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV7resultsSayACGyYaKF', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV7resultsSayACGyYaKFTu', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV8entities3forSayACGSaySSG_tYaKF', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryV8entities3forSayACGSaySSG_tYaKFTu', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryVAEycfC', '_$s19StopwatchAppIntents0A6EntityV0A5QueryVMa', 
+                       '_$s19StopwatchAppIntents0A6EntityV0A5QueryVMn', '_$s19StopwatchAppIntents0A6EntityV0A5QueryVN', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC0012AttributableD0AAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC0015AssistantSchemaD0AAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC007IndexedD0AAMc', '_$s19StopwatchAppIntents0A6EntityV0bC009AssistantD0AAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC00B5ValueAAMc', '_$s19StopwatchAppIntents0A6EntityV0bC00bD0AAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC012_IntentValueAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC020DisplayRepresentableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC024PersistentlyIdentifiableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC024TypeDisplayRepresentableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV0bC028InstanceDisplayRepresentableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV10Foundation40CustomLocalizedStringResourceConvertibleAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityV12defaultQueryAC0aF0VvgZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV12defaultQueryAC0aF0VvpZMV', 
+                       '_$s19StopwatchAppIntents0A6EntityV21displayRepresentation0bC007DisplayF0Vvg', 
+                       '_$s19StopwatchAppIntents0A6EntityV21displayRepresentation0bC007DisplayF0VvpMV', 
+                       '_$s19StopwatchAppIntents0A6EntityV25typeDisplayRepresentation0bC004TypefG0VvgZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV25typeDisplayRepresentation0bC004TypefG0VvpZMV', 
+                       '_$s19StopwatchAppIntents0A6EntityV27attributionBundleIdentifierSSvMZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV27attributionBundleIdentifierSSvgZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV27attributionBundleIdentifierSSvpZMV', 
+                       '_$s19StopwatchAppIntents0A6EntityV27attributionBundleIdentifierSSvsZ', 
+                       '_$s19StopwatchAppIntents0A6EntityV2idSSvM', '_$s19StopwatchAppIntents0A6EntityV2idSSvg', 
+                       '_$s19StopwatchAppIntents0A6EntityV2idSSvpMV', '_$s19StopwatchAppIntents0A6EntityV2idSSvs', 
+                       '_$s19StopwatchAppIntents0A6EntityVMa', '_$s19StopwatchAppIntents0A6EntityVMn', 
+                       '_$s19StopwatchAppIntents0A6EntityVN', '_$s19StopwatchAppIntents0A6EntityVs12IdentifiableAAMc', 
+                       '_$s19StopwatchAppIntents0A6EntityVyACSgSo11MTStopwatchCcfC' ]
+...

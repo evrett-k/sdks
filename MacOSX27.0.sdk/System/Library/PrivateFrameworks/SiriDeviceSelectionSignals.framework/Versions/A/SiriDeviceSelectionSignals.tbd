@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/SiriDeviceSelectionSignals.framework/Versions/A/SiriDeviceSelectionSignals'
+swift-abi-version: 7
+exports:
+  - targets:         [ x86_64-macos, arm64e-macos ]
+    symbols:         [ '_$s26SiriDeviceSelectionSignals16LiftTimeObserverC15unownedExecutorScevg', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverC15unownedExecutorScevpMV', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverC6sharedACvgZ', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverC6sharedACvpZMV', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCMa', '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCMm', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCMn', '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCMo', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCMu', '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCN', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCScAAAMc', 
+                       '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCfD', '_$s26SiriDeviceSelectionSignals16LiftTimeObserverCfd', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverC15unownedExecutorScevg', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverC15unownedExecutorScevpMV', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverC6sharedACvgZ', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverC6sharedACvpZMV', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCMa', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCMm', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCMn', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCMo', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCMu', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCN', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCScAAAMc', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCfD', 
+                       '_$s26SiriDeviceSelectionSignals26MediaPlaybackStateObserverCfd', 
+                       '_$sSo31DeviceSelectionSignalsRegistrarC04SiriabC0E5setup10completionyySb_s5Error_pSgtYbc_tFZ', 
+                       '_$sSo31DeviceSelectionSignalsRegistrarC04SiriabC0EABycfC', 
+                       '_$sSo31DeviceSelectionSignalsRegistrarC04SiriabC0EABycfc', 
+                       '_$sSo31DeviceSelectionSignalsRegistrarCMa' ]
+    objc-classes:    [ DeviceSelectionSignalsRegistrar ]
+...

@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+install-name:    '/System/Library/PrivateFrameworks/Coordination.framework/Versions/A/Coordination'
+exports:
+  - targets:         [ x86_64-macos, x86_64-maccatalyst, arm64e-macos, arm64e-maccatalyst ]
+    symbols:         [ _COAccessoryDispatchabilityKey, _COAlarmManagerAlarmFired, 
+                       _COAlarmManagerAlarmsAdded, _COAlarmManagerAlarmsChanged, 
+                       _COAlarmManagerAlarmsRemoved, _COAlarmManagerAlarmsUpdated, 
+                       _COAlarmManagerCanDispatchDidUpdate, _COAlarmManagerFiringAlarmChanged, 
+                       _COAlarmManagerFiringAlarmDismissed, _COAlarmManagerServiceName, 
+                       _COAlarmManagerStateReset, _COAlarmSiriContextTargetReferenceForAccessory, 
+                       _COAlarmSiriContextTargetReferenceForMemento, _COAlarmSiriContextTargetReferenceKey, 
+                       _COClusterActivityGroup, _COClusterDynamicGroup, _COClusterHome, 
+                       _COClusterPair, _COMessageChannelDuplicateSessionConsumerKey, 
+                       _COMessageChannelDuplicateSessionProducerKey, _COMessageChannelErrorDomain, 
+                       _COMessageChannelFailedRequestHandlerErrorKey, _COMessageChannelUnknownClassErrorKey, 
+                       _COMessageSessionDuplicateSessionConsumerKey, _COMessageSessionDuplicateSessionProducerKey, 
+                       _COMessageSessionErrorDomain, _COMessageSessionUnknownClassErrorKey, 
+                       _COTimerManagerCanDispatchDidUpdate, _COTimerManagerFiringTimerChanged, 
+                       _COTimerManagerFiringTimerDismissed, _COTimerManagerServiceName, 
+                       _COTimerManagerStateReset, _COTimerManagerTimerFired, _COTimerManagerTimersAdded, 
+                       _COTimerManagerTimersChanged, _COTimerManagerTimersRemoved, 
+                       _COTimerManagerTimersUpdated, _COTimerSiriContextTargetReferenceForAccessory, 
+                       _COTimerSiriContextTargetReferenceForMemento, _COTimerSiriContextTargetReferenceKey ]
+    objc-classes:    [ COAlarmManager, COCluster, COClusterConfiguration, COClusterMember, 
+                       COClusterMemberRoleSnapshot, COClusterRealm, COClusterRole, 
+                       COClusterRoleMonitor, COHomeKitAccessoryMemento, COMessageChannel, 
+                       COMessageChannelRequest, COMessageChannelResponse, COMessageSession, 
+                       COMessageSessionConsumer, COMessageSessionManagementRequest, 
+                       COMessageSessionManagementResponse, COMessageSessionNotice, 
+                       COMessageSessionProducer, COMessageSessionRequest, COMessageSessionResponse, 
+                       COTimerManager ]
+...

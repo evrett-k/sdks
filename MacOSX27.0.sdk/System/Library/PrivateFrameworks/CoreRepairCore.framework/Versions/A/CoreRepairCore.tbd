@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-macos ]
+install-name:    '/System/Library/PrivateFrameworks/CoreRepairCore.framework/Versions/A/CoreRepairCore'
+exports:
+  - targets:         [ arm64e-macos ]
+    symbols:         [ _CRCopySupportedComponents, _CRErrorDomain, _CRGenerateRepairReport, 
+                       _CRGetComponentState, _CRGetRepairDate, _CRIsRepairAvailable, 
+                       _CRIsSelfRepairedComponent, _CoreRepairCoreVersionNumber, 
+                       _CoreRepairCoreVersionString, __logHandler, __verboseLogHandler, 
+                       _handleForCategory ]
+    objc-classes:    [ CRAttestationHelper, CRBatteryController, CRBatteryStatus, 
+                       CRBatteryUpdaterFactory, CRBootIntentController, CRBootIntentHelper, 
+                       CRCAttestationManager, CRCCertificate, CRCCertificateUtils, 
+                       CRChallengeObject, CRChallengeResponse, CRComponentAuth, CRComponentSigning, 
+                       CRDaemonController, CRDeviceMap, CRDisplayStatus, CREANController, 
+                       CRFDRBaseDeviceHandler, CRFDRDeviceController, CRFDRRetryController, 
+                       CRFDRSeal, CRFDRUtils, CRFileSystemController, CRIOServiceController, 
+                       CRInputDeviceController, CRInputDeviceManager, CRKeyStrokeMonitor, 
+                       CRLASController, CRLASStatus, CRLocalization, CRLogicBoardStatus, 
+                       CRMesaController, CRMobileAsset, CRNVRAMController, CRPatchUtils, 
+                       CRPersonalizationElement, CRPersonalizationManager, CRPreflightController, 
+                       CRPreflightHelper, CRPreflightRequest, CRPreflightRequestComponent, 
+                       CRPreflightUtils, CRRepairHistory, CRRepairHistoryItem, CRRepairReport, 
+                       CRRepairStateSnapshot, CRRepairStatusLite, CRSalvageStatus, 
+                       CRSmcController, CRStrongComponent, CRTopCaseStatus, CRTouchIDStatus, 
+                       CRUserDefaults, CRUtils, CRWirelessStatus, CoreRepairHelper ]
+...
