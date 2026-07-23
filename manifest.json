@@ -2,6 +2,7 @@
   "schema_version": "1.0",
   "platforms": {
     "iphoneos": [
+      { "version": "27.0", "folder": "iPhoneOS27.0.sdk" },
       { "version": "26.5", "folder": "iPhoneOS26.5.sdk" },
       { "version": "26.4.1", "folder": "iPhoneOS26.4.1.sdk" },
       { "version": "26.4", "folder": "iPhoneOS26.4.sdk" },
@@ -48,6 +49,9 @@
       { "version": "11.2", "folder": "iPhoneOS11.2.sdk" },
       { "version": "10.3", "folder": "iPhoneOS10.3.sdk" },
       { "version": "9.3", "folder": "iPhoneOS9.3.sdk" }
+    ],
+    "macosx": [
+      { "version": "27.0", "folder": "MacOSX27.0.sdk" }
     ]
   }
 }
